@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Guyot Couverture – Couvreur à Écommoy</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Guyot Couverture, couvreur à Écommoy (Sarthe) : couverture ardoise et tuiles, zinguerie, charpente, fenêtres de toit. Neuf et rénovation. Devis gratuit au 07 85 71 70 97.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout : en-tête blanc fixe comme le logo, héros photo d'ardoise, sections alternées chaux / ardoise, faîtage (le toit du logo) qui se trace au-dessus de chaque titre */
+:root{
+  --chaux:#F3F5F2;      /* fond clair, gris chaulé légèrement vert */
+  --blanc:#FFFFFF;
+  --ardoise:#20272D;    /* texte et sections sombres */
+  --ardoise-2:#2C353C;
+  --zinc:#6E7A81;       /* texte secondaire */
+  --zinc-clair:#A9B3B8;
+  --trait:#D8DEDA;
+  --vert:#35B34F;       /* vert du logo */
+  --vert-fonce:#1E7F35; /* vert lisible sur fond clair */
+  --display:'Archivo','Arial Narrow',system-ui,sans-serif;
+  --texte:'Public Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --hdr:76px;
+  --large:1200px;
+  color-scheme:light;
+}
+@media (max-width:860px){:root{--hdr:64px}}
+html{scroll-padding-top:var(--hdr);background:var(--chaux)}
+body{background:var(--chaux);color:var(--ardoise);font-family:var(--texte);font-size:17px;line-height:1.6;margin:0}
+*,*::before,*::after{box-sizing:border-box}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--vert);outline-offset:3px}
+.enveloppe{width:100%;max-width:var(--large);margin-inline:auto;padding-inline:24px}
+@media (max-width:600px){.enveloppe{padding-inline:18px}}
+h1,h2,h3{font-family:var(--display);font-stretch:78%;font-weight:800;line-height:1.02;margin:0;text-wrap:balance;letter-spacing:-.005em}
+h2{font-size:clamp(34px,5vw,56px)}
+h3{font-size:24px;font-stretch:85%;font-weight:750;line-height:1.15}
+p{margin:0}
+.etiquette{font-family:var(--display);font-stretch:100%;font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--vert-fonce)}
+.chapo{max-width:60ch;color:var(--zinc);font-size:18px}
+
+/* Boutons */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-stretch:90%;font-weight:750;font-size:18px;text-decoration:none;padding:15px 26px;border-radius:4px;border:2px solid transparent;transition:background .2s,color .2s,border-color .2s,transform .2s}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-vert{background:var(--vert);color:var(--ardoise)}
+.btn-vert:hover{background:#45C55F;transform:translateY(-2px)}
+.btn-ligne{border-color:rgba(255,255,255,.75);color:#fff}
+.btn-ligne:hover{background:#fff;color:var(--ardoise)}
+
+/* En-tête */
+.entete{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;height:var(--hdr);background:var(--blanc);border-bottom:1px solid var(--trait);transition:box-shadow .3s}
+.entete.ombre{box-shadow:0 6px 24px rgba(32,39,45,.08)}
+.entete .enveloppe{height:100%;display:flex;align-items:center;gap:28px}
+.marque{display:flex;align-items:center;gap:12px;text-decoration:none;flex:none}
+.marque img{height:46px;width:auto}
+.marque span{font-family:var(--display);font-stretch:80%;font-weight:700;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--zinc);line-height:1.2}
+.nav{display:flex;gap:26px;margin-left:auto}
+.nav a{font-family:var(--display);font-stretch:90%;font-weight:650;font-size:16px;text-decoration:none;padding:6px 0;position:relative}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--vert);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.nav a:hover::after,.nav a.actif::after{transform:scaleX(1)}
+.appel-hdr{padding:11px 18px;font-size:17px}
+.burger{display:none;margin-left:auto;background:none;border:2px solid var(--trait);border-radius:4px;width:46px;height:46px;cursor:pointer;color:var(--ardoise)}
+.burger svg{width:22px;height:22px;margin:auto}
+@media (max-width:980px){.marque span{display:none}.nav{gap:18px}}
+@media (max-width:860px){
+  .marque img{height:38px}
+  .burger{display:grid;place-items:center}
+  .appel-hdr{padding:10px 14px;font-size:16px}
+  .appel-hdr .num{display:none}
+  .nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--blanc);border-bottom:1px solid var(--trait);padding:6px 18px 14px;margin:0;display:none}
+  .nav.ouvert{display:flex}
+  .nav a{font-size:20px;padding:14px 0;border-bottom:1px solid var(--trait)}
+  .nav a::after{display:none}
+}
+
+/* Héros */
+.heros{position:relative;overflow:hidden;background:var(--ardoise);color:#fff;min-height:clamp(540px,80vh,760px);display:grid;place-items:center;text-align:center}
+.heros-fond{position:absolute;inset:0}
+.heros-fond img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.heros::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,26,31,.55) 0%,rgba(20,26,31,.62) 55%,rgba(20,26,31,.88) 100%)}
+.heros-contenu{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:22px;padding-block:72px;max-width:900px}
+.heros .etiquette{color:var(--vert);font-size:14px}
+.heros h1{font-size:clamp(42px,7.4vw,92px);font-stretch:72%}
+.heros h1 .ligne{display:block;overflow:hidden;padding-bottom:.04em}
+.heros h1 .ligne>span{display:inline-block}
+.heros h1 em{font-style:normal;color:var(--vert)}
+.heros p.sous{font-size:clamp(17px,2vw,20px);max-width:44ch;color:#E3E8E5}
+.heros .actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:6px}
+.note{display:inline-flex;align-items:center;gap:10px;font-size:15px;color:#E3E8E5;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:8px 16px;border-radius:40px}
+.note .etoiles{color:#F5C54A;letter-spacing:2px}
+.note strong{color:#fff}
+
+/* Bande d'infos (jamais animée) */
+.infos{background:var(--blanc);border-bottom:1px solid var(--trait)}
+.infos .enveloppe{display:grid;grid-template-columns:repeat(3,1fr)}
+.info{display:flex;gap:14px;align-items:center;padding:22px 20px;border-left:1px solid var(--trait);min-width:0}
+.info:first-child{border-left:0;padding-left:0}
+.info svg{width:30px;height:30px;color:var(--vert-fonce);flex:none}
+.info b{display:block;font-family:var(--display);font-stretch:85%;font-size:19px;font-weight:750;line-height:1.2}
+.info small{color:var(--zinc);font-size:14px}
+@media (max-width:760px){.infos .enveloppe{grid-template-columns:1fr}.info{border-left:0;border-top:1px solid var(--trait);padding:16px 0}.info:first-child{border-top:0}}
+
+/* Titre de section avec faîtage */
+section{padding-block:clamp(72px,10vw,120px)}
+.tete{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;margin-bottom:clamp(40px,6vw,64px)}
+.faitage{width:120px;height:34px;overflow:visible}
+.faitage path{fill:none;stroke:var(--vert);stroke-width:5;stroke-linecap:square;stroke-linejoin:miter}
+
+/* Services */
+.services{background:var(--chaux)}
+.grille-services{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.service{background:var(--blanc);border:1px solid var(--trait);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.service figure{margin:0;aspect-ratio:4/3;overflow:hidden;max-width:100%}
+.service img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.service:hover img{transform:scale(1.05)}
+.service .corps{padding:22px 24px 26px;display:grid;gap:10px}
+.service p{color:var(--zinc);font-size:16px}
+.service ul{margin:4px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.service li{font-size:13px;font-weight:600;color:var(--vert-fonce);background:#E9F5EC;padding:4px 10px;border-radius:30px}
+@media (max-width:960px){.grille-services{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.grille-services{grid-template-columns:1fr}}
+
+/* Bandeau neuf / rénovation */
+.duo{background:var(--ardoise);color:#fff;padding-block:0}
+.duo .enveloppe{display:grid;grid-template-columns:1.05fr 1fr;align-items:stretch;padding-inline:0;max-width:none}
+.duo figure{margin:0;min-height:420px;overflow:hidden}
+.duo figure img{width:100%;height:100%;object-fit:cover}
+.duo .texte{padding:clamp(48px,7vw,96px) clamp(24px,6vw,88px);display:flex;flex-direction:column;justify-content:center;gap:20px;min-width:0}
+.duo .etiquette{color:var(--vert)}
+.duo p{color:#C9D1CD;max-width:52ch}
+.duo .deux{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px}
+.duo .deux div{border-top:3px solid var(--vert);padding-top:14px}
+.duo .deux b{font-family:var(--display);font-stretch:80%;font-size:26px;font-weight:800;display:block;color:#fff}
+.duo .deux span{font-size:15px;color:#C9D1CD}
+@media (max-width:860px){.duo .enveloppe{grid-template-columns:1fr}.duo figure{min-height:300px;max-height:420px}.duo .texte{padding-inline:18px}}
+@media (max-width:420px){.duo .deux{grid-template-columns:1fr}}
+
+/* Réalisations : défilement par boutons uniquement */
+.realisations{background:var(--blanc);overflow:hidden}
+.piste-zone{position:relative}
+.piste{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding-bottom:6px}
+.piste::-webkit-scrollbar{display:none}
+.carte{flex:0 0 clamp(270px,36vw,440px);scroll-snap-align:start;margin:0;min-width:0}
+.carte .cadre{aspect-ratio:4/5;overflow:hidden;border-radius:6px;background:var(--trait);max-width:100%}
+.carte img{width:100%;height:100%;object-fit:cover}
+.carte figcaption{padding-top:12px;font-family:var(--display);font-stretch:88%;font-weight:700;font-size:19px;line-height:1.25}
+.carte figcaption small{display:block;font-family:var(--texte);font-weight:400;font-size:14px;color:var(--zinc);margin-top:2px}
+.commandes{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:30px}
+.fleche{width:56px;height:56px;border-radius:50%;border:2px solid var(--ardoise);background:var(--blanc);color:var(--ardoise);display:grid;place-items:center;cursor:pointer;transition:background .2s,color .2s}
+.fleche:hover{background:var(--ardoise);color:#fff}
+.fleche:disabled{opacity:.3;cursor:default;background:var(--blanc);color:var(--ardoise)}
+.fleche svg{width:22px;height:22px}
+.compteur{font-family:var(--display);font-stretch:85%;font-weight:700;font-size:17px;min-width:70px;text-align:center;font-variant-numeric:tabular-nums}
+
+/* Méthode */
+.methode{background:var(--chaux)}
+.etapes{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;counter-reset:e}
+.etape{border-top:3px solid var(--ardoise);padding-top:20px;display:grid;gap:10px;align-content:start;min-width:0}
+.etape h3 .num{color:var(--vert-fonce);margin-right:.25em}
+.etape p{color:var(--zinc);font-size:16px}
+@media (max-width:900px){.etapes{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.etapes{grid-template-columns:1fr}}
+
+/* Avis */
+.avis{background:var(--blanc)}
+.avis-grille{display:grid;grid-template-columns:1fr 1.5fr;gap:28px;align-items:stretch}
+.bloc-note{background:var(--ardoise);color:#fff;border-radius:6px;padding:36px;display:flex;flex-direction:column;gap:12px;justify-content:center;text-align:center;align-items:center}
+.bloc-note .gros{font-family:var(--display);font-stretch:70%;font-weight:900;font-size:96px;line-height:.9}
+.bloc-note .gros small{font-size:36px;color:var(--zinc-clair)}
+.bloc-note .etoiles{color:#F5C54A;font-size:26px;letter-spacing:4px}
+.bloc-note p{color:#C9D1CD}
+.bloc-note a{color:var(--vert);font-weight:600}
+.temoignage{margin:0;border:1px solid var(--trait);border-radius:6px;padding:36px 40px;display:flex;flex-direction:column;justify-content:center;gap:18px;position:relative}
+.temoignage svg.guillemet{width:44px;height:44px;color:var(--vert)}
+.temoignage blockquote{margin:0;font-family:var(--display);font-stretch:88%;font-weight:600;font-size:clamp(21px,2.4vw,27px);line-height:1.35}
+.temoignage figcaption{color:var(--zinc);font-size:15px}
+.temoignage figcaption b{color:var(--ardoise)}
+@media (max-width:820px){.avis-grille{grid-template-columns:1fr}.temoignage{padding:28px 24px}}
+
+/* Contact */
+.contact{background:var(--ardoise);color:#fff}
+.contact .tete h2{color:#fff}
+.contact .etiquette{color:var(--vert)}
+.contact .chapo{color:#C9D1CD}
+.contact-grille{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(32px,6vw,80px);align-items:start}
+.coord{display:grid;gap:22px}
+.coord .tel{font-family:var(--display);font-stretch:72%;font-weight:900;font-size:clamp(44px,6vw,64px);line-height:1;text-decoration:none;color:#fff;font-variant-numeric:tabular-nums}
+.coord .tel:hover{color:var(--vert)}
+.ligne-coord{display:flex;gap:14px;align-items:flex-start;color:#C9D1CD;min-width:0}
+.ligne-coord svg{width:24px;height:24px;color:var(--vert);flex:none;margin-top:2px}
+.ligne-coord b{color:#fff;display:block}
+.ligne-coord a{word-break:break-all}
+form{display:grid;gap:16px;background:var(--ardoise-2);border-radius:6px;padding:clamp(22px,4vw,36px);min-width:0}
+.champs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:560px){.champs{grid-template-columns:1fr}}
+label{display:grid;gap:6px;font-size:14px;font-weight:600;color:#DDE3E0}
+input,select,textarea{font:inherit;font-size:17px;color:#fff;background:var(--ardoise);border:1px solid #47535B;border-radius:4px;padding:13px 14px;width:100%;min-width:0}
+textarea{min-height:130px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--vert);box-shadow:0 0 0 3px rgba(53,179,79,.25)}
+form .btn{justify-self:start;border:0;cursor:pointer}
+.cache{position:absolute;left:-9999px}
+.merci{color:var(--vert);font-weight:600}
+@media (max-width:860px){.contact-grille{grid-template-columns:1fr}}
+
+/* Pied */
+.pied{background:#171C20;color:#9AA5AB;font-size:14px;padding-block:28px}
+.pied .enveloppe{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center}
+.pied a{color:#C9D1CD}
+
+/* Bouton d'appel flottant (téléphone) */
+.appel-flottant{display:none}
+@media (max-width:860px){
+  .appel-flottant{display:flex;position:fixed;left:14px;right:14px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:60;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.3);font-size:19px}
+  .pied{padding-bottom:96px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+
+<header class="entete" id="entete">
+  <div class="enveloppe">
+    <a class="marque" href="#accueil" aria-label="Guyot Couverture, accueil">
+      <img src="img/logo.png" alt="Guyot Couverture" width="275" height="101">
+      <span>Couverture<br>Zinguerie</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Menu">
+      <a href="#services">Services</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#methode">Méthode</a>
+      <a href="#avis">Avis</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <a class="btn btn-vert appel-hdr" href="tel:+33785717097">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+      <span>Appeler</span><span class="num">&nbsp;07 85 71 70 97</span>
+    </a>
+  </div>
+</header>
+
+<main>
+<section class="heros" id="accueil">
+  <div class="heros-fond"><img src="img/toit-ardoise-velux.jpg" alt="Toiture en ardoise neuve avec fenêtres de toit, posée par Guyot Couverture" fetchpriority="high"></div>
+  <div class="enveloppe heros-contenu">
+    <p class="etiquette">Couvreur à Écommoy · Sarthe</p>
+    <h1><span class="ligne"><span>Votre toiture entre</span></span> <span class="ligne"><span>de <em>bonnes mains</em>.</span></span></h1>
+    <p class="sous">Couverture, zinguerie et charpente, en neuf comme en rénovation. Un artisan sarthois qui vient voir votre toit et vous conseille.</p>
+    <div class="actions">
+      <a class="btn btn-vert" href="tel:+33785717097">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+        Appeler le 07 85 71 70 97
+      </a>
+      <a class="btn btn-ligne" href="#contact">Demander un devis gratuit</a>
+    </div>
+    <p class="note"><span class="etoiles" aria-hidden="true">★★★★★</span><span><strong>5,0 / 5</strong> sur Google · 12 avis</span></p>
+  </div>
+</section>
+
+<div class="infos">
+  <div class="enveloppe">
+    <div class="info">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+      <div><b>07 85 71 70 97</b><small>Appelez pour un rendez-vous</small></div>
+    </div>
+    <div class="info">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg>
+      <div><b>Écommoy et alentours</b><small>Le Mans, sud Sarthe</small></div>
+    </div>
+    <div class="info">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 12 12 4l9 8"/><path d="M5 10.5V20h14v-9.5"/><path d="M9.5 15l2 2 3.5-4"/></svg>
+      <div><b>Devis gratuit</b><small>Neuf et rénovation</small></div>
+    </div>
+  </div>
+</div>
+
+<section class="services" id="services">
+  <div class="enveloppe">
+    <div class="tete">
+      <svg class="faitage" viewBox="0 0 120 34" aria-hidden="true"><path d="M4 32 L60 4 L116 32"/></svg>
+      <p class="etiquette">Nos services</p>
+      <h2>Tout ce qui se passe au-dessus de votre tête.</h2>
+      <p class="chapo">Du simple entretien à la toiture complète, chaque chantier est fait avec soin et finitions propres.</p>
+    </div>
+    <div class="grille-services">
+      <article class="service">
+        <figure><img src="img/couverture-ardoise.jpg" alt="Pose d'une couverture en ardoise sur échafaudage" loading="lazy"></figure>
+        <div class="corps"><h3>Couverture en ardoise</h3><p>Réfection complète ou réparation, ardoises posées au crochet, rives et faîtages soignés.</p><ul><li>Neuf</li><li>Rénovation</li></ul></div>
+      </article>
+      <article class="service">
+        <figure><img src="img/couverture-tuiles.jpg" alt="Maison avec toiture en tuiles et lucarnes" loading="lazy"></figure>
+        <div class="corps"><h3>Couverture en tuiles</h3><p>Tuiles plates ou mécaniques, remplacement des tuiles cassées, reprise des lucarnes.</p><ul><li>Tuile plate</li><li>Lucarnes</li></ul></div>
+      </article>
+      <article class="service">
+        <figure><img src="img/auvent-zinc.jpg" alt="Auvent en chêne habillé de zinc" loading="lazy"></figure>
+        <div class="corps"><h3>Zinguerie</h3><p>Gouttières, noues, habillages de lucarnes et d'auvents en zinc, façonnés sur mesure.</p><ul><li>Gouttières</li><li>Habillages</li></ul></div>
+      </article>
+      <article class="service">
+        <figure><img src="img/charpente.jpg" alt="Charpente bois neuve en cours de montage" loading="lazy"></figure>
+        <div class="corps"><h3>Charpente et ossature bois</h3><p>Création ou reprise de charpente, extensions, auvents en bois massif.</p><ul><li>Extension</li><li>Auvent</li></ul></div>
+      </article>
+      <article class="service">
+        <figure><img src="img/fenetres-de-toit.jpg" alt="Fenêtre de toit dans un plafond en bois" loading="lazy"></figure>
+        <div class="corps"><h3>Fenêtres de toit</h3><p>Pose et remplacement de fenêtres de toit pour faire entrer la lumière dans les combles.</p><ul><li>Pose</li><li>Remplacement</li></ul></div>
+      </article>
+      <article class="service">
+        <figure><img src="img/toit-terrasse.jpg" alt="Toit-terrasse en cours d'isolation" loading="lazy"></figure>
+        <div class="corps"><h3>Toits-terrasses et isolation</h3><p>Isolation par l'extérieur et étanchéité des toits plats, garages et extensions.</p><ul><li>Étanchéité</li><li>Isolation</li></ul></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="duo" aria-label="Neuf et rénovation">
+  <div class="enveloppe">
+    <figure><img src="img/camion-chantier.jpg" alt="Camion Guyot Couverture devant une maison en chantier" loading="lazy"></figure>
+    <div class="texte">
+      <p class="etiquette">Entreprise sarthoise du bâtiment</p>
+      <h2>Un seul interlocuteur, du premier coup de fil à la dernière ardoise.</h2>
+      <p>Vous parlez directement à l'artisan qui monte sur votre toit. Il vous explique ce qu'il voit, ce qui est urgent et ce qui peut attendre.</p>
+      <div class="deux">
+        <div><b>Neuf</b><span>Maisons, extensions, garages, auvents.</span></div>
+        <div><b>Rénovation</b><span>Réfection, réparations, zinguerie, lucarnes.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="realisations" id="realisations">
+  <div class="enveloppe">
+    <div class="tete">
+      <svg class="faitage" viewBox="0 0 120 34" aria-hidden="true"><path d="M4 32 L60 4 L116 32"/></svg>
+      <p class="etiquette">Réalisations</p>
+      <h2>Quelques chantiers récents en Sarthe.</h2>
+    </div>
+    <div class="piste-zone">
+      <div class="piste" id="piste" tabindex="0" aria-label="Photos de chantiers">
+        <figure class="carte"><div class="cadre"><img src="img/auvent-chene-zinc.jpg" alt="Auvent en chêne et zinc" loading="lazy"></div><figcaption>Auvent en chêne et zinc<small>Ossature bois et habillage zinc</small></figcaption></figure>
+        <figure class="carte"><div class="cadre"><img src="img/lucarne-zinc.jpg" alt="Lucarne habillée de zinc sur toiture en tuiles" loading="lazy"></div><figcaption>Lucarne habillée de zinc<small>Couverture tuiles</small></figcaption></figure>
+        <figure class="carte"><div class="cadre"><img src="img/zinguerie-faitage.jpg" alt="Travail du zinc sur un faîtage arrondi" loading="lazy"></div><figcaption>Zinguerie sur mesure<small>Façonnage sur place</small></figcaption></figure>
+        <figure class="carte"><div class="cadre"><img src="img/pose-liteaux.jpg" alt="Pose d'écran et de liteaux sur une toiture" loading="lazy"></div><figcaption>Réfection de toiture<small>Écran sous toiture et liteaux neufs</small></figcaption></figure>
+        <figure class="carte"><div class="cadre"><img src="img/noue-ardoise.jpg" alt="Toiture en ardoise avec gouttière zinc" loading="lazy"></div><figcaption>Couverture ardoise<small>Noue et gouttière en zinc</small></figcaption></figure>
+        <figure class="carte"><div class="cadre"><img src="img/panneaux-toiture.jpg" alt="Toiture en tuiles avec panneaux intégrés" loading="lazy"></div><figcaption>Panneaux intégrés en toiture<small>Couverture tuiles</small></figcaption></figure>
+        <figure class="carte"><div class="cadre"><img src="img/lucarne-tuiles.jpg" alt="Lucarne en tuiles avec gouttière neuve" loading="lazy"></div><figcaption>Lucarne et gouttière<small>Rénovation</small></figcaption></figure>
+        <figure class="carte"><div class="cadre"><img src="img/echafaudage-ardoise.jpg" alt="Chantier de toiture en ardoise sous échafaudage" loading="lazy"></div><figcaption>Toiture ardoise<small>Chantier sous échafaudage</small></figcaption></figure>
+        <figure class="carte"><div class="cadre"><img src="img/toit-tuiles-velux.jpg" alt="Toiture en tuiles avec fenêtres de toit" loading="lazy"></div><figcaption>Fenêtres de toit<small>Couverture tuiles</small></figcaption></figure>
+        <figure class="carte"><div class="cadre"><img src="img/ornement-zinc.jpg" alt="Ornement de toiture en zinc" loading="lazy"></div><figcaption>Ornement en zinc<small>Le détail qui fait la différence</small></figcaption></figure>
+      </div>
+      <div class="commandes">
+        <button class="fleche" id="prec" aria-label="Photo précédente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <span class="compteur" id="compteur" aria-live="polite">1 / 10</span>
+        <button class="fleche" id="suiv" aria-label="Photo suivante"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="methode" id="methode">
+  <div class="enveloppe">
+    <div class="tete">
+      <svg class="faitage" viewBox="0 0 120 34" aria-hidden="true"><path d="M4 32 L60 4 L116 32"/></svg>
+      <p class="etiquette">Comment ça se passe</p>
+      <h2>Simple, du premier appel à la fin du chantier.</h2>
+    </div>
+    <div class="etapes">
+      <div class="etape"><h3><span class="num">1.</span>Vous appelez</h3><p>Vous expliquez votre besoin : fuite, toiture à refaire, projet neuf.</p></div>
+      <div class="etape"><h3><span class="num">2.</span>Visite sur place</h3><p>Nous venons voir votre toit et prenons les mesures.</p></div>
+      <div class="etape"><h3><span class="num">3.</span>Devis clair</h3><p>Un devis détaillé et gratuit, poste par poste, sans surprise.</p></div>
+      <div class="etape"><h3><span class="num">4.</span>Chantier soigné</h3><p>Travaux réalisés avec soin, chantier rangé et nettoyé à la fin.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="avis" id="avis">
+  <div class="enveloppe">
+    <div class="tete">
+      <svg class="faitage" viewBox="0 0 120 34" aria-hidden="true"><path d="M4 32 L60 4 L116 32"/></svg>
+      <p class="etiquette">Avis clients</p>
+      <h2>Ils nous ont confié leur toiture.</h2>
+    </div>
+    <div class="avis-grille">
+      <div class="bloc-note">
+        <div class="gros">5,0<small> / 5</small></div>
+        <div class="etoiles" aria-label="5 étoiles sur 5">★★★★★</div>
+        <p>Note moyenne sur 12 avis Google</p>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Guyot%20Couverture%20Le%20Cruchet%20%C3%89commoy%20Sarthe" target="_blank" rel="noopener">Voir les avis sur Google</a>
+      </div>
+      <figure class="temoignage">
+        <svg class="guillemet" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M8 38V26c0-9 4-15 13-18l2 4c-5 2-7 5-7 9h6v17zm22 0V26c0-9 4-15 13-18l2 4c-5 2-7 5-7 9h6v17z"/></svg>
+        <blockquote>Un grand merci à M. Guyot qui a fait preuve de professionnalisme, avec un travail de qualité ! Ma satisfaction est valable sur les 2 chantiers que je lui ai confiés. Je le recommande sans hésiter.</blockquote>
+        <figcaption><b>Joanna D.</b> · recommandation Facebook, novembre 2025</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="enveloppe">
+    <div class="tete">
+      <svg class="faitage" viewBox="0 0 120 34" aria-hidden="true"><path d="M4 32 L60 4 L116 32"/></svg>
+      <p class="etiquette">Contact</p>
+      <h2>Parlons de votre toiture.</h2>
+      <p class="chapo">Le plus simple est d'appeler. Vous pouvez aussi laisser un message, nous vous rappelons rapidement.</p>
+    </div>
+    <div class="contact-grille">
+      <div class="coord">
+        <a class="tel" href="tel:+33785717097">07 85 71 70 97</a>
+        <div class="ligne-coord">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          <div><b>E-mail</b><a href="mailto:guyot.couverture@gmail.com">guyot.couverture@gmail.com</a></div>
+        </div>
+        <div class="ligne-coord">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          <div><b>Adresse</b>Le Cruchet, 72220 Écommoy</div>
+        </div>
+        <div class="ligne-coord">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 12 12 4l9 8"/><path d="M5 10.5V20h14v-9.5"/></svg>
+          <div><b>Zone d'intervention</b>Écommoy, Le Mans et le sud de la Sarthe</div>
+        </div>
+      </div>
+      <form name="contact" id="formulaire">
+        <div class="champs">
+          <label for="nom">Nom<input id="nom" name="nom" autocomplete="name" required></label>
+          <label for="telephone">Téléphone<input id="telephone" name="telephone" type="tel" autocomplete="tel" required></label>
+        </div>
+        <div class="champs">
+          <label for="commune">Commune<input id="commune" name="commune" autocomplete="address-level2"></label>
+          <label for="travaux">Type de travaux
+            <select id="travaux" name="travaux">
+              <option>Couverture ardoise</option><option>Couverture tuiles</option><option>Zinguerie, gouttières</option><option>Charpente</option><option>Fenêtre de toit</option><option>Toit-terrasse</option><option>Autre</option>
+            </select>
+          </label>
+        </div>
+        <label for="message">Votre message<textarea id="message" name="message" placeholder="Décrivez votre besoin en quelques mots"></textarea></label>
+        <button class="btn btn-vert" type="submit">Envoyer ma demande</button>
+        <p class="merci" id="merci" hidden>Merci ! Sur votre vrai site, cette demande vous arrivera par e-mail.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="pied">
+  <div class="enveloppe">
+    <span>© 2026 Guyot Couverture · Couvreur à Écommoy (72)</span>
+    <a href="#">Mentions légales</a>
+  </div>
+</footer>
+
+<a class="btn btn-vert appel-flottant" href="tel:+33785717097">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+  Appeler 07 85 71 70 97
+</a>
+
+<script src="js/gsap.min.js"></script>
+<script src="js/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  /* Menu téléphone */
+  var burger=document.getElementById('burger'),nav=document.getElementById('nav');
+  burger.addEventListener('click',function(){var o=nav.classList.toggle('ouvert');burger.setAttribute('aria-expanded',o)});
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('ouvert');burger.setAttribute('aria-expanded','false')})});
+
+  /* En-tête : ombre, lien actif et ancres calées exactement sous l'en-tête */
+  var entete=document.getElementById('entete');
+  var liens=[].slice.call(nav.querySelectorAll('a'));
+  var sections=liens.map(function(l){return document.querySelector(l.getAttribute('href'))}).filter(Boolean);
+  function hauteurEntete(){return entete.getBoundingClientRect().height}
+  function majEntete(){
+    entete.classList.toggle('ombre',window.scrollY>10);
+    var limite=hauteurEntete()+2,actif=null;
+    sections.forEach(function(s){if(s.getBoundingClientRect().top<=limite)actif=s});
+    if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-2)actif=sections[sections.length-1];
+    liens.forEach(function(l){l.classList.toggle('actif',!!actif&&l.getAttribute('href')==='#'+actif.id)});
+  }
+  window.addEventListener('scroll',function(){window.requestAnimationFrame(majEntete)},{passive:true});
+  window.addEventListener('resize',majEntete);majEntete();
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('href');
+      var cible=id==='#'?null:document.querySelector(id);
+      if(id!=='#'&&!cible)return;
+      e.preventDefault();
+      var haut=cible&&cible.id!=='accueil'?cible.getBoundingClientRect().top+window.scrollY-hauteurEntete():0;
+      var doux=!window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({top:Math.max(0,Math.round(haut)),behavior:doux?'smooth':'auto'});
+    });
+  });
+
+  /* Réalisations : uniquement par boutons */
+  var piste=document.getElementById('piste'),cartes=piste.querySelectorAll('.carte'),prec=document.getElementById('prec'),suiv=document.getElementById('suiv'),compteur=document.getElementById('compteur');
+  function pas(){return cartes[1].offsetLeft-cartes[0].offsetLeft}
+  /* Compteur = nombre de positions réellement atteignables : il finit toujours sur N / N */
+  function maj(){var der=cartes[cartes.length-1];var max=Math.max(0,der.offsetLeft+der.offsetWidth-cartes[0].offsetLeft-piste.clientWidth);var total=Math.round(max/pas())+1;var i=piste.scrollLeft>=max-4?total:Math.min(Math.round(piste.scrollLeft/pas())+1,total);compteur.textContent=i+' / '+total;prec.disabled=i<=1;suiv.disabled=i>=total}
+  prec.addEventListener('click',function(){piste.scrollBy({left:-pas(),behavior:'smooth'})});
+  suiv.addEventListener('click',function(){piste.scrollBy({left:pas(),behavior:'smooth'})});
+  piste.addEventListener('scroll',function(){window.requestAnimationFrame(maj)},{passive:true});
+  piste.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();suiv.click()}if(e.key==='ArrowLeft'){e.preventDefault();prec.click()}});
+  window.addEventListener('resize',maj);window.addEventListener('load',maj);if(document.fonts)document.fonts.ready.then(maj);maj();
+
+  /* Formulaire de démonstration : message de remerciement */
+  document.getElementById('formulaire').addEventListener('submit',function(e){
+    e.preventDefault();document.getElementById('merci').hidden=false;
+  });
+
+  /* Animations */
+  if(!window.gsap)return;
+  gsap.registerPlugin(ScrollTrigger);
+  var mm=gsap.matchMedia();
+  mm.add('(prefers-reduced-motion: no-preference)',function(){
+    /* Héros : photo qui recule doucement, titre ligne par ligne */
+    gsap.fromTo('.heros-fond img',{scale:1.14},{scale:1,duration:2.4,ease:'power2.out'});
+    gsap.to('.heros-fond img',{yPercent:12,ease:'none',scrollTrigger:{trigger:'.heros',start:'top top',end:'bottom top',scrub:true}});
+    gsap.from('.heros h1 .ligne>span',{yPercent:110,duration:1,ease:'power4.out',stagger:.12,delay:.15});
+    gsap.from('.heros .sous, .heros .note',{y:20,opacity:0,duration:.8,ease:'power2.out',stagger:.12,delay:.6});
+
+    /* Faîtage tracé au-dessus de chaque titre */
+    document.querySelectorAll('.faitage path').forEach(function(p){
+      var l=p.getTotalLength();
+      gsap.fromTo(p,{strokeDasharray:l,strokeDashoffset:l},{strokeDashoffset:0,duration:1.1,ease:'power2.inOut',scrollTrigger:{trigger:p,start:'top 88%',once:true}});
+    });
+    document.querySelectorAll('.tete h2').forEach(function(h){
+      gsap.from(h,{y:34,opacity:0,duration:.9,ease:'power3.out',scrollTrigger:{trigger:h,start:'top 88%',once:true}});
+    });
+
+    /* Cartes de services, étapes, réalisations en cascade */
+    ScrollTrigger.batch('.service',{start:'top 90%',once:true,onEnter:function(b){gsap.from(b,{y:46,opacity:0,duration:.8,ease:'power3.out',stagger:.1})}});
+    ScrollTrigger.batch('.etape',{start:'top 90%',once:true,onEnter:function(b){gsap.from(b,{y:30,opacity:0,duration:.7,ease:'power2.out',stagger:.12})}});
+    gsap.from('.carte',{x:80,opacity:0,duration:.9,ease:'power3.out',stagger:.08,scrollTrigger:{trigger:'#piste',start:'top 85%',once:true}});
+
+    /* Bandeau duo : photo en léger parallaxe */
+    gsap.fromTo('.duo figure img',{yPercent:-6,scale:1.12},{yPercent:6,ease:'none',scrollTrigger:{trigger:'.duo',start:'top bottom',end:'bottom top',scrub:true}});
+
+    /* Note Google qui compte, témoignage */
+    var gros=document.querySelector('.bloc-note .gros');
+    var compte={v:0};
+    gsap.to(compte,{v:5,duration:1.2,ease:'power2.out',scrollTrigger:{trigger:gros,start:'top 88%',once:true},onUpdate:function(){gros.firstChild.nodeValue=compte.v.toFixed(1).replace('.',',')}});
+    gsap.from('.temoignage',{x:40,opacity:0,duration:.9,ease:'power3.out',scrollTrigger:{trigger:'.temoignage',start:'top 88%',once:true}});
+
+    /* Formulaire élément par élément (le téléphone reste visible) */
+    gsap.from('#formulaire > *:not(#merci)',{y:22,opacity:0,duration:.6,ease:'power2.out',stagger:.08,scrollTrigger:{trigger:'#formulaire',start:'top 88%',once:true}});
+  });
+  window.addEventListener('load',function(){ScrollTrigger.refresh()});
+})();
+</script>
+
+</body>
+</html>
