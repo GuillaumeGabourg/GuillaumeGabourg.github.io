@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Woodmood – Menuisier au Mans | Marc Heurtault</title>
+<meta name="description" content="Woodmood, menuiserie de Marc Heurtault au Mans : agencement intérieur, meubles sur mesure, verrières, cuisines, parquets et aménagements extérieurs. Devis gratuit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --espresso:#4D3A2B;   /* fond de la bannière */
+  --espresso-2:#3B2C20;
+  --noyer:#654B36;
+  --chene:#8F6E52;
+  --sable:#D5B89E;      /* bois clair de la bannière */
+  --taupe:#AE9076;
+  --creme:#F5E8D7;      /* fond du logo */
+  --lin:#FBF5EC;
+  --encre:#2A2019;
+  --gris:#6E5E50;
+  --trait:rgba(77,58,43,.18);
+  --hdr:84px;
+}
+*{box-sizing:border-box}
+html{background:var(--lin);color-scheme:light;scroll-padding-top:calc(var(--hdr) - 2px)}
+body{margin:0;background:var(--lin);color:var(--encre);font-family:'Jost',system-ui,sans-serif;font-weight:400;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--chene);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.serif{font-family:'Cormorant Garamond',Georgia,serif}
+.caps{text-transform:uppercase;letter-spacing:.32em;font-size:12px;font-weight:500}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;letter-spacing:-.005em;margin:0}
+h2{font-size:clamp(38px,5vw,64px);line-height:1.04}
+h2 em,h1 em{font-style:italic;color:var(--chene)}
+
+/* ---------- En-tête ---------- */
+.hdr{position:fixed;inset:0 0 auto 0;z-index:60;height:var(--hdr);background:var(--creme);border-bottom:1px solid var(--trait)}
+.hdr .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.marque{display:flex;align-items:center;text-decoration:none}
+.marque img{height:60px;width:auto}
+.nav{display:flex;gap:34px}
+.nav a{text-decoration:none;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--noyer);position:relative;padding:4px 0}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .35s ease}
+.nav a:hover::after{transform:scaleX(1);transform-origin:left}
+.tel{display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:var(--espresso);color:var(--creme);padding:12px 20px;font-size:15px;font-weight:500;letter-spacing:.04em;white-space:nowrap;transition:background .25s}
+.tel:hover{background:var(--encre)}
+.tel svg{width:16px;height:16px}
+
+/* ---------- Héros ---------- */
+.heros{position:relative;background:var(--espresso);color:var(--creme);padding-top:var(--hdr);overflow:hidden}
+.veines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.55}
+.veines path{fill:none;stroke:var(--taupe);stroke-width:1;vector-effect:non-scaling-stroke}
+.heros-grille{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;min-height:calc(100svh - var(--hdr));padding-top:56px;padding-bottom:72px}
+.heros .caps{color:var(--sable)}
+.heros h1{font-size:clamp(50px,7vw,104px);line-height:.98;margin:22px 0 26px}
+.heros h1 em{color:var(--sable)}
+.heros .ligne{display:block;overflow:hidden;padding-bottom:.06em}
+.heros .ligne>span{display:inline-block}
+.heros p.intro{max-width:470px;font-size:18px;font-weight:300;color:#E9DAC6;margin:0 0 34px}
+.actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-weight:500;font-size:16px;letter-spacing:.03em;padding:17px 28px;transition:background .25s,color .25s}
+.btn-clair{background:var(--creme);color:var(--espresso)}
+.btn-clair:hover{background:#fff}
+.btn-ligne{border:1px solid rgba(245,232,215,.5);color:var(--creme)}
+.btn-ligne:hover{background:rgba(245,232,215,.08)}
+.note{display:flex;align-items:center;gap:14px;margin-top:38px;font-size:14px;color:#D9C7B1}
+.note b{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:500;color:var(--creme);line-height:1}
+.etoiles{color:var(--sable);letter-spacing:3px}
+.compo{position:relative;height:min(640px,72vh);min-height:460px}
+.arche{position:absolute;overflow:hidden;background:var(--noyer)}
+.arche img{width:100%;height:115%;object-fit:cover}
+.arche-1{right:8%;top:0;width:58%;height:88%;border-radius:999px 999px 0 0}
+.arche-2{left:0;bottom:0;width:40%;height:46%;border-radius:999px}
+.tampon{position:absolute;right:0;bottom:6%;width:132px;height:132px}
+.tampon svg{width:100%;height:100%}
+.tampon text{fill:var(--creme);font-family:'Jost',sans-serif;font-size:10.5px;letter-spacing:4px;text-transform:uppercase}
+.tampon .anneau{fill:var(--espresso);stroke:var(--sable)}
+.devise{position:relative;border-top:1px solid rgba(245,232,215,.15)}
+.devise .wrap{display:flex;justify-content:space-between;gap:20px;padding-top:22px;padding-bottom:22px;color:var(--sable)}
+
+/* ---------- Manifeste : Créer · Concevoir · Réaliser ---------- */
+.manifeste{padding:130px 0 110px}
+.manifeste-tete{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;margin-bottom:80px}
+.manifeste-tete p{margin:0;color:var(--gris);font-size:18px;max-width:480px}
+.verbes{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--trait)}
+.verbe{padding:40px 36px 10px 0;border-right:1px solid var(--trait)}
+.verbe+.verbe{padding-left:36px}
+.verbe:last-child{border-right:0}
+.num{font-style:italic;color:var(--chene);font-size:.62em;margin-right:.35em;vertical-align:.12em}
+.verbe h3{font-size:46px;margin:0 0 14px}
+.verbe p{margin:0;color:var(--gris)}
+
+/* ---------- Savoir-faire ---------- */
+.savoir{background:var(--creme);padding:120px 0}
+.savoir-tete{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
+.savoir-tete p{max-width:400px;margin:0;color:var(--gris)}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:48px 32px;list-style:none;margin:0;padding:0}
+.service{display:grid;gap:14px;align-content:start}
+.service .photo{aspect-ratio:4/5;overflow:hidden;border-radius:999px 999px 0 0;background:var(--noyer)}
+.service:nth-child(even) .photo{border-radius:0}
+.service img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.service:hover img{transform:scale(1.04)}
+.service h3{border-top:1px solid var(--trait);padding-top:16px}
+.service h3{font-size:clamp(28px,2.6vw,36px);line-height:1.1}
+.service p{margin:0;color:var(--gris);font-size:16px}
+
+/* ---------- Réalisations ---------- */
+.real{background:var(--espresso);color:var(--creme);overflow:hidden}
+.real-tete{padding-top:110px;padding-bottom:48px;display:flex;justify-content:space-between;align-items:end;gap:40px}
+.real-tete h2 em{color:var(--sable)}
+.real-tete p{margin:0;max-width:360px;color:#D9C7B1}
+.piste-zone{position:relative}
+.piste{display:flex;gap:28px;padding:10px max(32px,calc((100vw - 1240px)/2 + 32px)) 40px 0;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scroll-padding-left:0;scrollbar-width:none}
+.piste::-webkit-scrollbar{display:none}
+.carte{scroll-snap-align:start}
+.nav-galerie{display:flex;align-items:center;gap:14px;padding-bottom:110px}
+.nav-galerie button{width:58px;height:58px;border-radius:50%;border:1px solid rgba(245,232,215,.45);background:transparent;color:var(--creme);font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,opacity .25s}
+.nav-galerie button:hover{background:rgba(245,232,215,.12)}
+.nav-galerie button:disabled{opacity:.3;cursor:default}
+.nav-galerie .compteur{margin-left:10px;color:#D9C7B1;font-size:15px;letter-spacing:.1em;font-variant-numeric:tabular-nums}
+.carte{margin:0;width:min(400px,78vw);flex-shrink:0}
+.carte .cadre{overflow:hidden;background:var(--noyer);aspect-ratio:3/4}
+.carte:nth-child(3n+1) .cadre{border-radius:999px 999px 0 0}
+.carte:nth-child(3n+2){margin-top:70px}
+.carte img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.carte:hover img{transform:scale(1.04)}
+.carte figcaption{display:flex;gap:14px;align-items:baseline;padding-top:16px;font-size:15px;color:#E9DAC6}
+.carte figcaption span{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--sable)}
+.fin-piste{width:min(360px,70vw);flex-shrink:0;align-self:center;padding:0 20px}
+.fin-piste p{font-family:'Cormorant Garamond',serif;font-size:34px;line-height:1.15;margin:0 0 24px}
+.fin-piste a{color:var(--sable)}
+
+/* ---------- Bandeau citation ---------- */
+.fait-main{padding:120px 0 40px;text-align:center;position:relative;overflow:hidden}
+.fait-main .grand{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,8vw,120px);line-height:1;color:var(--espresso);text-wrap:balance}
+.fait-main .grand em{color:var(--chene)}
+.fait-main p{max-width:620px;margin:34px auto 0;color:var(--gris);font-size:18px}
+
+/* ---------- Méthode ---------- */
+.methode{padding:100px 0 120px}
+.etapes{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:e}
+.etape{padding:34px 28px 0 0;position:relative}
+.etape::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--espresso);transform-origin:left;transform:scaleX(var(--trace,1))}
+
+.etape h3{font-size:30px;margin:0 0 8px}
+.etape p{margin:0;color:var(--gris);font-size:16px}
+
+/* ---------- Avis + FAQ ---------- */
+.duo{background:var(--creme);padding:120px 0}
+.duo .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px}
+.avis{background:var(--espresso);color:var(--creme);padding:48px 40px;border-radius:999px 999px 0 0;text-align:center;align-self:start;position:sticky;top:calc(var(--hdr) + 30px)}
+.avis .score{font-family:'Cormorant Garamond',serif;font-size:110px;line-height:1;margin:46px 0 6px}
+.avis .etoiles{font-size:20px}
+.avis p{color:#D9C7B1;margin:14px 0 26px}
+.avis a{display:inline-block;color:var(--creme);text-decoration:none;border-bottom:1px solid var(--sable);padding-bottom:3px;font-size:15px}
+.faq h2{margin-bottom:30px}
+.faq-zone{padding:120px 0}
+.faq{max-width:820px;margin:0 auto}
+.temoins h2{margin-bottom:40px}
+.temoin{margin:0 0 28px;padding:34px 36px;background:var(--lin);border-left:2px solid var(--sable)}
+.temoin blockquote{margin:0 0 20px;font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.2vw,27px);line-height:1.4;color:var(--encre)}
+.temoin blockquote::before{content:"« "}
+.temoin blockquote::after{content:" »"}
+.temoin figcaption{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;font-size:15px;color:var(--gris)}
+.temoin figcaption b{font-weight:500;color:var(--noyer);letter-spacing:.04em}
+details{border-bottom:1px solid var(--trait)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:24px;align-items:center;padding:24px 0;font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:500}
+summary::-webkit-details-marker{display:none}
+summary i{flex-shrink:0;width:30px;height:30px;border:1px solid var(--chene);border-radius:50%;position:relative}
+summary i::before,summary i::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:1px;background:var(--chene);transform:translate(-50%,-50%);transition:transform .3s}
+summary i::after{transform:translate(-50%,-50%) rotate(90deg)}
+details[open] summary i::after{transform:translate(-50%,-50%) rotate(0)}
+details p{margin:0 0 24px;color:var(--gris);max-width:620px}
+
+/* ---------- Contact ---------- */
+.contact{background:var(--espresso-2);color:var(--creme);padding:120px 0 90px;position:relative;overflow:hidden}
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;position:relative}
+.contact h2 em{color:var(--sable)}
+.gros-tel{display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(44px,5.4vw,72px);text-decoration:none;margin:34px 0 10px;color:var(--creme)}
+.gros-tel:hover{color:var(--sable)}
+.coord{list-style:none;padding:0;margin:26px 0 0;color:#D9C7B1;font-size:16px}
+.coord li{padding:12px 0;border-top:1px solid rgba(245,232,215,.12)}
+.coord a{color:var(--creme)}
+form{display:grid;gap:18px;align-content:start}
+label{display:grid;gap:8px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--sable)}
+input,textarea{font:inherit;font-size:17px;letter-spacing:0;text-transform:none;color:var(--creme);background:transparent;border:0;border-bottom:1px solid rgba(245,232,215,.35);padding:10px 0;border-radius:0}
+input:focus,textarea:focus{outline:none;border-bottom-color:var(--sable)}
+textarea{min-height:110px;resize:vertical}
+form button{justify-self:start;margin-top:10px;font:inherit;font-weight:500;letter-spacing:.04em;background:var(--creme);color:var(--espresso);border:0;padding:17px 34px;cursor:pointer}
+form button:hover{background:#fff}
+.pied{background:var(--espresso-2);color:#B9A58F;font-size:14px;border-top:1px solid rgba(245,232,215,.1)}
+.pied .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-top:26px;padding-bottom:26px;flex-wrap:wrap}
+.pied .rond{width:56px;height:56px;border-radius:50%;background:var(--creme);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.pied .rond img{width:86%;mix-blend-mode:multiply}
+.pied a{color:#D9C7B1}
+
+/* Bouton d'appel fixe sur téléphone */
+.appel-mobile{display:none}
+
+/* ---------- Responsive ---------- */
+@media (max-width:980px){
+  .nav{display:none}
+  .heros-grille{grid-template-columns:1fr;min-height:0;gap:40px;padding-top:40px}
+  .compo{height:520px;min-height:0}
+  .manifeste-tete,.duo .wrap,.contact .wrap{grid-template-columns:1fr;gap:40px}
+  .verbes{grid-template-columns:1fr}
+  .services{grid-template-columns:1fr 1fr}
+  .verbe,.verbe+.verbe{padding:30px 0;border-right:0;border-bottom:1px solid var(--trait)}
+  .etapes{grid-template-columns:1fr 1fr;gap:40px 0}
+  .avis{position:static}
+  .savoir-tete,.real-tete{flex-direction:column;align-items:flex-start}
+}
+@media (max-width:700px){
+  :root{--hdr:70px}
+  body{font-size:16px}
+  .wrap{padding-left:16px;padding-right:16px}
+  .marque img{height:50px}
+  .tel span{display:none}
+  .tel{padding:12px 14px}
+  .compo{height:420px}
+  .tampon{width:100px;height:100px}
+  .devise .wrap{flex-direction:column;gap:6px}
+  .manifeste,.savoir,.duo,.contact,.faq-zone{padding:80px 0}
+  .temoin{padding:26px 22px}
+  .services{grid-template-columns:1fr;gap:40px}
+  .service .photo{aspect-ratio:4/3}
+  .real-tete{padding-top:80px}
+  .piste{padding:10px 16px 30px 0;gap:16px}
+  .nav-galerie{padding-bottom:80px}
+  .nav-galerie button{width:52px;height:52px}
+  .carte:nth-child(3n+2){margin-top:0}
+  .etapes{grid-template-columns:1fr}
+  .fait-main{padding:80px 0}
+  .avis{padding:40px 24px}
+  .appel-mobile{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;justify-content:center;align-items:center;gap:10px;background:var(--espresso);color:var(--creme);text-decoration:none;font-weight:500;padding:16px;box-shadow:0 10px 30px rgba(42,32,25,.35);padding-bottom:calc(16px + env(safe-area-inset-bottom,0px))}
+  .appel-mobile svg{width:18px;height:18px}
+  .pied{padding-bottom:84px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a class="marque" href="#accueil" aria-label="Woodmood, accueil"><img src="img/logo-trim.jpg" alt="Woodmood – Créer, concevoir, réaliser" width="94" height="60"></a>
+    <nav class="nav" aria-label="Menu">
+      <a href="#savoir-faire">Savoir-faire</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#methode">Méthode</a>
+      <a href="#avis">Avis</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="tel" href="tel:+33675585667"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span>06 75 58 56 67</span></a>
+  </div>
+</header>
+
+<main id="accueil">
+<section class="heros">
+  <svg class="veines" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <path d="M-40 120 C 200 60, 340 220, 560 150 S 900 40, 1100 140 S 1400 260, 1500 180"/>
+    <path d="M-40 170 C 210 110, 350 270, 570 200 S 910 90, 1110 190 S 1410 310, 1500 230"/>
+    <path d="M-40 220 C 220 160, 360 320, 580 250 S 920 140, 1120 240 S 1420 360, 1500 280"/>
+    <path d="M1500 640 C 1260 700, 1120 560, 900 640 S 560 760, 380 690 S 80 560, -40 640"/>
+    <path d="M1500 690 C 1270 750, 1130 610, 910 690 S 570 810, 390 740 S 90 610, -40 690"/>
+    <path d="M1500 740 C 1280 800, 1140 660, 920 740 S 580 860, 400 790 S 100 660, -40 740"/>
+    <path d="M1500 790 C 1290 850, 1150 710, 930 790 S 590 910, 410 840 S 110 710, -40 790"/>
+  </svg>
+  <div class="wrap heros-grille">
+    <div>
+      <div class="caps">Menuisier · Le Mans</div>
+      <h1><span class="ligne"><span>Le bois,</span></span><span class="ligne"><span><em>façonné</em> pour</span></span><span class="ligne"><span>votre maison.</span></span></h1>
+      <p class="intro">Je suis Marc Heurtault. Verrières, placards, meubles, cuisines : je dessine, fabrique et pose chaque projet sur mesure, au Mans et autour.</p>
+      <div class="actions">
+        <a class="btn btn-clair" href="tel:+33675585667">Appeler le 06 75 58 56 67</a>
+        <a class="btn btn-ligne" href="#contact">Demander un devis gratuit</a>
+      </div>
+      <div class="note"><b>5,0</b><div><span class="etoiles" aria-hidden="true">★★★★★</span><br>18 avis sur Google</div></div>
+    </div>
+    <div class="compo" aria-hidden="true">
+      <div class="arche arche-1"><img data-parallax src="img/chantier-02.jpg" alt=""></div>
+      <div class="arche arche-2"><img data-parallax src="img/chantier-03.jpg" alt=""></div>
+      <div class="tampon">
+        <svg viewBox="0 0 140 140">
+          <defs>
+            <path id="arc-haut" d="M 22,70 A 48,48 0 0 1 118,70"/>
+            <path id="arc-bas" d="M 14,70 A 56,56 0 0 0 126,70"/>
+          </defs>
+          <circle class="anneau" cx="70" cy="70" r="66" stroke-width="1"/>
+          <g class="tourne">
+            <text text-anchor="middle"><textPath href="#arc-haut" startOffset="50%">Fait main</textPath></text>
+            <text text-anchor="middle"><textPath href="#arc-bas" startOffset="50%">avec passion</textPath></text>
+            <circle cx="15" cy="70" r="1.6" style="fill:#D5B89E;stroke:none"/><circle cx="125" cy="70" r="1.6" style="fill:#D5B89E;stroke:none"/>
+          </g>
+          <g transform="translate(70 70)" fill="none" stroke="#D5B89E" stroke-width="1.4" stroke-linecap="round">
+            <path d="M0 -18 V18"/><path d="M0 -8 L-8 -14 M0 -8 L8 -14 M0 0 L-9 -6 M0 0 L9 -6 M0 8 L-9 2 M0 8 L9 2"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="devise"><div class="wrap caps"><span>Créer</span><span>Concevoir</span><span>Réaliser</span></div></div>
+</section>
+
+<section class="manifeste" id="methode-intro">
+  <div class="wrap">
+    <div class="manifeste-tete">
+      <h2 data-titre>Trois mots,<br><em>une seule main.</em></h2>
+      <p data-monte>Woodmood, c'est un artisan, pas une enseigne. Le même menuisier écoute votre idée, dessine la pièce et la pose chez vous. Vous savez toujours à qui parler.</p>
+    </div>
+    <div class="verbes">
+      <article class="verbe" data-monte><h3><span class="num">I.</span>Créer</h3><p>On part de votre pièce, de vos habitudes et de vos envies. Une photo vue sur internet suffit pour commencer.</p></article>
+      <article class="verbe" data-monte><h3><span class="num">II.</span>Concevoir</h3><p>Je prends les mesures chez vous et je dessine une solution adaptée au centimètre, avec un devis clair.</p></article>
+      <article class="verbe" data-monte><h3><span class="num">III.</span>Réaliser</h3><p>Fabrication sur mesure, pose soignée et chantier laissé propre. Il ne reste qu'à en profiter.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="savoir" id="savoir-faire">
+  <div class="wrap">
+    <div class="savoir-tete">
+      <div><div class="caps" style="color:var(--chene);margin-bottom:18px">Savoir-faire</div><h2 data-titre>Ce que je <em>fabrique</em><br>pour vous</h2></div>
+      <p data-monte>Du petit aménagement au projet complet, toujours sur mesure et dans le bois qui convient à votre intérieur.</p>
+    </div>
+    <ul class="services">
+      <li class="service" data-monte><div class="photo"><img src="img/chantier-05.jpg" alt="Placards sous escalier" loading="lazy"></div><h3><span class="num">1.</span>Agencement intérieur</h3><p>Placards, dressings, rangements sous escalier ou sous les combles.</p></li>
+      <li class="service" data-monte><div class="photo"><img src="img/chantier-09.jpg" alt="Grande table en bois" loading="lazy"></div><h3><span class="num">2.</span>Meubles sur mesure</h3><p>Tables, consoles, banquettes, bibliothèques : des pièces uniques.</p></li>
+      <li class="service" data-monte><div class="photo"><img src="img/chantier-10.jpg" alt="Verrière à motif géométrique" loading="lazy"></div><h3><span class="num">3.</span>Verrières et claustras</h3><p>Pour séparer une pièce sans perdre la lumière.</p></li>
+      <li class="service" data-monte><div class="photo"><img src="img/chantier-11.jpg" alt="Plan de travail en bois" loading="lazy"></div><h3><span class="num">4.</span>Pose de cuisine</h3><p>Montage, plans de travail en bois et finitions.</p></li>
+      <li class="service" data-monte><div class="photo"><img src="img/chantier-06.jpg" alt="Porte coulissante en bois" loading="lazy"></div><h3><span class="num">5.</span>Portes et parquets</h3><p>Portes sur mesure, pose et rénovation de parquets.</p></li>
+      <li class="service" data-monte><div class="photo"><img src="img/exterieur-terrasse.jpg" alt="Terrasse en bois avec garde-corps" loading="lazy"></div><h3><span class="num">6.</span>Aménagements extérieurs</h3><p>Terrasses, clôtures et abris en bois.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="real" id="realisations">
+  <div class="wrap real-tete">
+    <div><div class="caps" style="color:var(--sable);margin-bottom:18px">Réalisations</div><h2 data-titre>Quelques projets<br><em>sortis de l'atelier</em></h2></div>
+    <p data-monte>Des réalisations récentes, chez des particuliers au Mans et dans les environs.</p>
+  </div>
+  <div class="piste-zone">
+    <div class="piste">
+      <figure class="carte"><div class="cadre"><img src="img/chantier-01.jpg" alt="Verrière d'atelier sur cage d'escalier" loading="lazy"></div><figcaption><span>01</span>Verrière d'atelier sur cage d'escalier</figcaption></figure>
+      <figure class="carte"><div class="cadre"><img src="img/chantier-08.jpg" alt="Banquette et rangements sur mesure" loading="lazy"></div><figcaption><span>02</span>Banquette et rangements sur mesure</figcaption></figure>
+      <figure class="carte"><div class="cadre"><img src="img/chantier-04.jpg" alt="Console en bois aux pieds tournés" loading="lazy"></div><figcaption><span>03</span>Console en bois, pieds tournés</figcaption></figure>
+      <figure class="carte"><div class="cadre"><img src="img/chantier-02.jpg" alt="Claustra en bois le long d'un escalier" loading="lazy"></div><figcaption><span>04</span>Claustra le long de l'escalier</figcaption></figure>
+      <figure class="carte"><div class="cadre"><img src="img/chantier-07.jpg" alt="Soubassement mouluré avec patères" loading="lazy"></div><figcaption><span>05</span>Soubassement mouluré et patères</figcaption></figure>
+      <figure class="carte"><div class="cadre"><img src="img/chantier-03.jpg" alt="Table basse en bois massif" loading="lazy"></div><figcaption><span>06</span>Table basse en bois massif</figcaption></figure>
+      <figure class="carte"><div class="cadre"><img src="img/chantier-12.jpg" alt="Étagères sous rampant" loading="lazy"></div><figcaption><span>07</span>Étagères sous rampant</figcaption></figure>
+      <figure class="carte"><div class="cadre"><img src="img/chantier-10.jpg" alt="Verrière à motif géométrique" loading="lazy"></div><figcaption><span>08</span>Verrière à motif géométrique</figcaption></figure>
+      <div class="fin-piste"><p>Votre projet pourrait être le prochain.</p><a href="#contact" class="caps">Parlons-en →</a></div>
+    </div>
+    <div class="wrap nav-galerie">
+      <button type="button" id="prec" aria-label="Photo précédente">←</button>
+      <button type="button" id="suiv" aria-label="Photo suivante">→</button>
+      <span class="compteur" id="compteur" aria-live="polite">1 / 8</span>
+    </div>
+  </div>
+</section>
+
+<section class="fait-main">
+  <div class="grand" data-titre>Fait main, <em>avec passion</em></div>
+  <div class="wrap"><p data-monte>Chaque pièce est pensée pour un intérieur précis. Pas de catalogue : on choisit ensemble les dimensions, le bois et les finitions.</p></div>
+</section>
+
+<section class="methode" id="methode">
+  <div class="wrap">
+    <div class="caps" style="color:var(--chene);margin-bottom:18px">Méthode</div>
+    <h2 data-titre style="margin-bottom:60px">Votre projet <em>en 4 étapes</em></h2>
+    <div class="etapes">
+      <div class="etape"><h3><span class="num">1.</span>Visite</h3><p>Je viens chez vous, je prends les mesures et j'écoute vos idées.</p></div>
+      <div class="etape"><h3><span class="num">2.</span>Devis</h3><p>Un devis clair et détaillé, gratuit et sans engagement.</p></div>
+      <div class="etape"><h3><span class="num">3.</span>Fabrication</h3><p>Votre pièce est fabriquée sur mesure.</p></div>
+      <div class="etape"><h3><span class="num">4.</span>Pose</h3><p>Pose soignée, chantier laissé propre.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="duo" id="avis">
+  <div class="wrap">
+    <aside class="avis" data-monte>
+      <div class="caps" style="color:var(--sable)">Note Google</div>
+      <div class="score" data-compte="5">5,0</div>
+      <div class="etoiles" aria-label="5 étoiles sur 5">★★★★★</div>
+      <p>sur 18 avis de clients</p>
+      <a href="https://maps.google.com/?cid=14652578360058148956" target="_blank" rel="noopener">Lire tous les avis sur Google</a>
+    </aside>
+    <div class="temoins">
+      <div class="caps" style="color:var(--chene);margin-bottom:18px">Avis clients</div>
+      <h2 data-titre>Ils m'ont fait <em>confiance</em></h2>
+      <figure class="temoin" data-monte>
+        <blockquote>Nous avons fait appel à Marc pour la pose d’une verrière dans notre cuisine et nous en sommes ravis. Marc est très professionnel et soigné dans les tâches qu’il entreprend. Il a également réalisé une kitchenette sur mesure pour enfant qui était tout à fait incroyable. Je conseille sans hésiter.</blockquote>
+        <figcaption><b>Claire P.</b><span>Août 2025 · Avis Google</span></figcaption>
+      </figure>
+      <figure class="temoin" data-monte>
+        <blockquote>Nous avons fait appel aux services de Marc et c’était tout simplement top ! Très professionnel, travail soigneux, nous recommandons vivement cet artisan qui a de l’or dans les mains et d’une belle gentillesse, merci.</blockquote>
+        <figcaption><b>Antonin G.</b><span>Août 2025 · Avis Google</span></figcaption>
+      </figure>
+      <figure class="temoin" data-monte>
+        <blockquote>Travail de grande qualité, réalisé avec soin et précision. Un menuisier passionné, à l’écoute des besoins et toujours force de proposition. Je recommande vivement ses services !</blockquote>
+        <figcaption><b>Jade R.</b><span>Août 2025 · Avis Google</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="faq-zone" id="questions">
+  <div class="wrap">
+    <div class="faq">
+      <div class="caps" style="color:var(--chene);margin-bottom:18px">Questions fréquentes</div>
+      <h2 data-titre>Vous vous <em>demandez</em>…</h2>
+      <details><summary>Le devis est-il gratuit ?<i></i></summary><p>Oui. Je viens voir votre projet et je vous remets un devis détaillé, sans engagement.</p></details>
+      <details><summary>Dans quel secteur intervenez-vous ?<i></i></summary><p>Au Mans et dans les communes autour. Appelez-moi pour vérifier que votre commune est dans ma zone.</p></details>
+      <details><summary>Quel délai pour un meuble sur mesure ?<i></i></summary><p>Il dépend du projet et du carnet de commandes : je vous le précise dans le devis.</p></details>
+      <details><summary>Pouvez-vous reprendre une idée vue sur internet ?<i></i></summary><p>Oui, montrez-moi vos photos d'inspiration : on adapte l'idée à votre pièce et à votre budget.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <svg class="veines" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="opacity:.25">
+    <path d="M-40 760 C 260 700, 420 840, 700 780 S 1100 660, 1500 760"/>
+    <path d="M-40 810 C 270 750, 430 890, 710 830 S 1110 710, 1500 810"/>
+    <path d="M-40 860 C 280 800, 440 940, 720 880 S 1120 760, 1500 860"/>
+  </svg>
+  <div class="wrap">
+    <div>
+      <div class="caps" style="color:var(--sable);margin-bottom:18px">Contact</div>
+      <h2 data-titre>Parlons de<br><em>votre projet</em></h2>
+      <a class="gros-tel" href="tel:+33675585667">06 75 58 56 67</a>
+      <p style="color:#D9C7B1;margin:0">Appelez-moi ou laissez un message, je vous rappelle.</p>
+      <ul class="coord">
+        <li><a href="mailto:woodmood.menuiserie@gmail.com">woodmood.menuiserie@gmail.com</a></li>
+        <li>13 rue de Barcelone, 72000 Le Mans</li>
+        <li>Le Mans et alentours</li>
+      </ul>
+    </div>
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="site-web">
+      <input type="hidden" name="form-name" value="contact">
+      <p hidden><label>Ne pas remplir <input name="site-web"></label></p>
+      <label>Nom<input name="nom" autocomplete="name" required></label>
+      <label>Téléphone<input name="telephone" type="tel" autocomplete="tel" required></label>
+      <label>Commune<input name="commune" autocomplete="address-level2"></label>
+      <label>Votre projet<textarea name="projet" placeholder="Un placard sous l'escalier, une verrière, une table…"></textarea></label>
+      <button type="submit">Envoyer ma demande</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="pied">
+  <div class="wrap">
+    <div style="display:flex;align-items:center;gap:16px"><span class="rond"><img src="img/logo-trim.jpg" alt=""></span><span>Woodmood – MH Menuiserie · Marc Heurtault, menuisier au Mans</span></div>
+    <a href="#">Mentions légales</a>
+  </div>
+</footer>
+
+<a class="appel-mobile" href="tel:+33675585667"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Appeler Marc</a>
+
+<script src="js/gsap.min.js"></script>
+<script src="js/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+
+  // Galerie : boutons précédent / suivant
+  var piste=document.querySelector('.piste'),cartes=piste.querySelectorAll('.carte'),prec=document.getElementById('prec'),suiv=document.getElementById('suiv'),cpt=document.getElementById('compteur');
+  function pas(){return cartes[1].offsetLeft-cartes[0].offsetLeft;}
+  function maj(){var i=Math.min(cartes.length,Math.round(piste.scrollLeft/pas())+1);cpt.textContent=i+' / '+cartes.length;prec.disabled=piste.scrollLeft<5;suiv.disabled=piste.scrollLeft>=piste.scrollWidth-piste.clientWidth-5;}
+  prec.addEventListener('click',function(){piste.scrollBy({left:-pas()});});
+  suiv.addEventListener('click',function(){piste.scrollBy({left:pas()});});
+  piste.addEventListener('scroll',function(){clearTimeout(piste._t);piste._t=setTimeout(maj,60);},{passive:true});
+  addEventListener('resize',maj);maj();
+
+  if(!window.gsap||!window.ScrollTrigger) return; // sans GSAP, tout reste visible
+  gsap.registerPlugin(ScrollTrigger);
+  var mm=gsap.matchMedia();
+
+  mm.add('(prefers-reduced-motion: no-preference)',function(){
+    // Héros
+    var tl=gsap.timeline({defaults:{ease:'power3.out'}});
+    tl.from('.heros .ligne>span',{yPercent:110,duration:1,stagger:.12})
+      .from('.heros .caps, .heros .intro, .heros .actions, .heros .note',{y:20,opacity:0,duration:.8,stagger:.08},'-=.6')
+      .from('.arche-1',{clipPath:'inset(100% 0 0 0)',duration:1.3,ease:'power4.inOut'},0.1)
+      .from('.arche-2',{clipPath:'inset(0 100% 0 0)',duration:1.1,ease:'power4.inOut'},0.45)
+      .from('.tampon',{scale:.6,opacity:0,duration:.8},0.9);
+    document.querySelectorAll('.heros .veines path').forEach(function(p,i){
+      var l=p.getTotalLength();gsap.fromTo(p,{strokeDasharray:l,strokeDashoffset:l},{strokeDashoffset:0,duration:2.4,delay:.2+i*.12,ease:'power2.out'});
+    });
+    gsap.utils.toArray('[data-parallax]').forEach(function(img){
+      gsap.fromTo(img,{yPercent:-8},{yPercent:4,ease:'none',scrollTrigger:{trigger:img.parentNode,start:'top bottom',end:'bottom top',scrub:true}});
+    });
+
+    // Titres et blocs qui montent
+    gsap.utils.toArray('[data-titre]').forEach(function(t){
+      gsap.from(t,{y:40,opacity:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:t,start:'top 85%'}});
+    });
+    gsap.utils.toArray('[data-monte]').forEach(function(t){
+      gsap.from(t,{y:30,opacity:0,duration:.9,ease:'power2.out',scrollTrigger:{trigger:t,start:'top 88%'}});
+    });
+
+
+    // Étapes : le trait se dessine
+    gsap.utils.toArray('.etape').forEach(function(e,i){
+      gsap.fromTo(e,{'--trace':0},{'--trace':1,duration:1,delay:i*.15,ease:'power2.inOut',scrollTrigger:{trigger:'.etapes',start:'top 80%'}});
+      gsap.from(e.children,{y:20,opacity:0,duration:.7,delay:.2+i*.15,stagger:.06,scrollTrigger:{trigger:'.etapes',start:'top 80%'}});
+    });
+
+    // Note Google qui compte
+    var s=document.querySelector('[data-compte]'),o={v:0};
+    gsap.to(o,{v:5,duration:1.4,ease:'power2.out',scrollTrigger:{trigger:s,start:'top 85%'},onUpdate:function(){s.textContent=o.v.toFixed(1).replace('.',',');}});
+  });
+
+
+})();
+</script>
+<script>document.querySelectorAll('form[name="contact"]').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();var b=f.querySelector('button[type="submit"]');b.textContent='Merci ! Sur votre vrai site, cette demande vous arrivera par e-mail.';b.disabled=true;});});</script>
+</body>
+</html>
