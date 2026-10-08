@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>EG Bâti Service · Peinture et aménagements intérieurs</title>
+<meta name="description" content="EG Bâti Service, peintre en bâtiment à Souillé (Sarthe) : peinture, murs, plafonds, escaliers et aménagements intérieurs au Mans, à La Milesse, La Bazoge et Beaumont-sur-Sarthe. Devis gratuit au 06 49 55 54 41.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Style : fond crème, bleu canard du logo, touches arc-en-ciel comme l'éclaboussure de peinture */
+:root{
+  --fond:#FBF7F0;
+  --blanc:#FFFFFF;
+  --encre:#14303C;
+  --encre-2:#0F2630;
+  --gris:#58666D;
+  --trait:#E8DFD0;
+  --canard:#2B7695;       /* bleu du logo */
+  --canard-fonce:#1E5E78; /* lisible en texte et sur fond clair */
+  --canard-clair:#E3F0F5;
+  --jaune:#F6BE1F;
+  --orange:#F47B20;
+  --rose:#E0307B;
+  --vert:#7CBF2E;
+  --display:'Bricolage Grotesque','Trebuchet MS',system-ui,sans-serif;
+  --texte:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --arcenciel:linear-gradient(90deg,var(--rose),var(--orange),var(--jaune),var(--vert),var(--canard));
+  --hdr:80px;
+  --large:1200px;
+  color-scheme:light;
+}
+@media (max-width:860px){:root{--hdr:66px}}
+html{scroll-padding-top:var(--hdr);background:var(--fond)}
+body{background:var(--fond);color:var(--encre);font-family:var(--texte);font-size:17.5px;line-height:1.62;margin:0}
+*,*::before,*::after{box-sizing:border-box}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--canard-fonce);outline-offset:3px}
+.enveloppe{width:100%;max-width:var(--large);margin-inline:auto;padding-inline:24px}
+@media (max-width:600px){.enveloppe{padding-inline:18px}}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.015em}
+h2{font-size:clamp(32px,4.6vw,52px)}
+h3{font-size:23px;line-height:1.2}
+p{margin:0}
+.etiquette{font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--canard-fonce)}
+.chapo{max-width:58ch;color:var(--gris);font-size:18.5px}
+
+/* Boutons */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:19px;text-decoration:none;padding:14px 26px;border-radius:999px;border:2px solid transparent;cursor:pointer;transition:background .25s,color .25s,transform .25s,border-color .25s}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-canard{background:var(--canard-fonce);color:#fff}
+.btn-canard:hover{background:#174C62;transform:translateY(-2px)}
+.btn-jaune{background:var(--jaune);color:var(--encre-2)}
+.btn-jaune:hover{background:#FFD046;transform:translateY(-2px)}
+.btn-ligne{border-color:var(--canard-fonce);color:var(--canard-fonce);background:transparent}
+.btn-ligne:hover{background:var(--canard-fonce);color:#fff;transform:translateY(-2px)}
+.btn-clair{background:#fff;color:var(--encre-2)}
+.btn-clair:hover{background:var(--jaune);transform:translateY(-2px)}
+
+/* En-tête */
+.entete{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;height:var(--hdr);background:rgba(255,255,255,.97);border-bottom:1px solid var(--trait);transition:box-shadow .3s}
+.entete.ombre{box-shadow:0 8px 26px rgba(20,48,60,.1)}
+.entete .enveloppe{height:100%;display:flex;align-items:center;gap:24px}
+.marque{display:flex;align-items:center;gap:12px;text-decoration:none;flex:none;font-family:var(--display);font-weight:700;font-size:21px;line-height:1.05;color:var(--encre)}
+.marque img{height:54px;width:54px}
+.marque small{display:block;font-family:var(--texte);font-weight:500;font-size:13px;color:var(--gris);letter-spacing:.02em}
+.nav{display:flex;gap:24px;margin-left:auto}
+.nav a{white-space:nowrap;font-family:var(--display);font-weight:500;font-size:17.5px;text-decoration:none;padding:6px 0;position:relative;color:var(--encre)}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;border-radius:3px;background:var(--arcenciel);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.nav a:hover::after,.nav a.actif::after{transform:scaleX(1)}
+.nav a.actif{color:var(--canard-fonce)}
+.appel-hdr{padding:10px 20px;font-size:18px;white-space:nowrap}
+.burger{display:none;margin-left:auto;background:none;border:2px solid var(--trait);border-radius:12px;width:46px;height:46px;cursor:pointer;color:var(--encre)}
+.burger svg{width:22px;height:22px;margin:auto}
+.progres{position:absolute;left:0;bottom:-1px;height:4px;width:100%;background:var(--arcenciel);transform:scaleX(0);transform-origin:left;pointer-events:none}
+@media (max-width:1280px){.marque small{display:none}.nav{gap:18px}}
+@media (max-width:1120px){
+  .marque img{height:46px;width:46px}
+  .burger{display:grid;place-items:center}
+  .appel-hdr{padding:9px 14px;font-size:17px}
+  .appel-hdr .num{display:none}
+  .nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:#fff;border-bottom:1px solid var(--trait);padding:6px 18px 14px;margin:0;display:none;box-shadow:0 18px 30px rgba(20,48,60,.12)}
+  .nav.ouvert{display:flex}
+  .nav a{font-size:22px;padding:14px 0;border-bottom:1px solid var(--trait)}
+  .nav a::after{display:none}
+}
+@media (max-width:480px){.appel-hdr{display:none}.entete .enveloppe{gap:12px}.marque{font-size:19px}}
+
+/* Héros */
+.heros{position:relative;overflow:hidden;background:linear-gradient(180deg,#fff 0%,var(--fond) 100%);padding-block:clamp(40px,6vw,84px) clamp(56px,7vw,96px)}
+.heros-grille{display:grid;grid-template-columns:1.02fr 1fr;gap:clamp(28px,5vw,72px);align-items:center}
+.heros-texte{display:flex;flex-direction:column;gap:22px;align-items:flex-start;min-width:0}
+.heros h1{font-size:clamp(36px,4.5vw,58px);font-weight:600;line-height:1.04}
+.heros h1 .ligne{display:block;overflow:hidden;padding-bottom:.1em}
+.heros h1 .ligne>span{display:inline-block}
+.heros h1 em{font-style:normal;color:var(--canard-fonce)}
+.heros .sous{font-size:clamp(17px,1.8vw,20px);max-width:46ch;color:var(--gris)}
+.heros .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
+.note{display:inline-flex;align-items:center;gap:10px;font-size:15.5px;color:var(--encre);background:#fff;border:1px solid var(--trait);padding:8px 16px;border-radius:40px}
+.note .etoiles{color:#E8A917;letter-spacing:2px}
+.heros-photo{position:relative;min-width:0}
+.heros-photo .cadre{position:relative;z-index:1;border-radius:28px;overflow:hidden;aspect-ratio:1240/962;box-shadow:0 30px 60px -30px rgba(20,48,60,.5);background:var(--trait)}
+.heros-photo .cadre img{width:100%;height:100%;object-fit:cover}
+.pastilles{position:absolute;inset:-26px;z-index:0;pointer-events:none}
+.pastille{position:absolute;width:74px;height:74px;border-radius:50%}
+.p1{background:var(--rose);top:-22px;right:8px}
+.p2{background:var(--jaune);bottom:-26px;left:30px;width:60px;height:60px}
+.p3{background:var(--canard);bottom:48px;right:-18px;width:52px;height:52px}
+.p4{background:var(--orange);top:60px;left:-24px;width:44px;height:44px}
+@media (max-width:900px){
+  .heros-grille{grid-template-columns:1fr}
+  .heros-photo{max-width:600px;margin-inline:auto;width:100%}
+  .pastilles{inset:-12px}
+  .pastille{transform:scale(.8)}
+}
+
+/* Bande d'infos (jamais animée) */
+.infos{background:var(--blanc);border-block:1px solid var(--trait)}
+.infos .enveloppe{display:grid;grid-template-columns:repeat(3,1fr)}
+.info{display:flex;gap:14px;align-items:center;padding:22px 20px;border-left:1px solid var(--trait);min-width:0}
+.info:first-child{border-left:0;padding-left:0}
+.info svg{width:32px;height:32px;color:var(--canard-fonce);flex:none}
+.info b{display:block;font-family:var(--display);font-size:21px;font-weight:600;line-height:1.2}
+.info small{color:var(--gris);font-size:15px}
+@media (max-width:760px){.infos .enveloppe{grid-template-columns:1fr}.info{border-left:0;border-top:1px solid var(--trait);padding:16px 0}.info:first-child{border-top:0}}
+
+/* Titres de section avec coups de pinceau */
+main{overflow-x:clip}
+section{padding-block:clamp(68px,9vw,112px)}
+.tete{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;margin-bottom:clamp(36px,5vw,60px)}
+.traits{display:flex;gap:6px;align-items:center;height:10px}
+.traits i{display:block;width:34px;height:8px;border-radius:8px;background:var(--canard)}
+.traits i:nth-child(1){background:var(--rose)}
+.traits i:nth-child(2){background:var(--jaune)}
+.traits i:nth-child(3){background:var(--canard)}
+
+/* Savoir-faire */
+.services{background:var(--fond)}
+.grille-services{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.service{background:var(--blanc);border:1px solid var(--trait);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.service figure{margin:0;aspect-ratio:4/5;overflow:hidden;position:relative}
+.service img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.service:hover img{transform:scale(1.05)}
+.service .corps{padding:20px 22px 24px;display:grid;gap:9px}
+.service p{color:var(--gris);font-size:16.5px}
+@media (max-width:1060px){.grille-services{grid-template-columns:repeat(2,1fr)}.service figure{aspect-ratio:4/3}}
+@media (max-width:560px){.grille-services{grid-template-columns:1fr}}
+
+/* Avant / Après : on choisit le chantier et Avant ou Après avec des boutons */
+.avantapres{background:var(--encre-2);color:#fff}
+.avantapres .etiquette{color:var(--jaune)}
+.avantapres .chapo{color:#C5D3DA}
+.ba-grille{display:grid;grid-template-columns:minmax(0,420px) 1fr;gap:clamp(28px,5vw,72px);align-items:center;justify-content:center}
+.ba-vue{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:3/4;background:#1B3946;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.ba-vue img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .45s}
+.ba-vue img.cache{opacity:0}
+.ba-commandes{display:flex;flex-direction:column;gap:22px;min-width:0}
+.ba-bascule{display:inline-flex;background:#1B3946;border-radius:999px;padding:6px;gap:6px;align-self:flex-start;max-width:100%}
+.ba-bascule button{font-family:var(--display);font-weight:600;font-size:21px;border:0;border-radius:999px;padding:12px 30px;background:transparent;color:#C5D3DA;cursor:pointer;transition:background .25s,color .25s}
+.ba-bascule button[aria-pressed="true"]{background:var(--jaune);color:var(--encre-2)}
+.ba-chantiers{display:flex;flex-wrap:wrap;gap:10px}
+.ba-chantiers button{font-family:var(--display);font-weight:500;font-size:18px;border:2px solid #3B5967;border-radius:999px;padding:9px 18px;background:transparent;color:#fff;cursor:pointer;transition:background .25s,border-color .25s}
+.ba-chantiers button:hover{border-color:var(--jaune)}
+.ba-chantiers button[aria-pressed="true"]{background:#fff;color:var(--encre-2);border-color:#fff}
+.ba-texte{color:#C5D3DA;max-width:46ch;min-height:3.3em}
+.ba-texte b{color:#fff;font-family:var(--display);font-size:24px;display:block;line-height:1.2}
+@media (max-width:860px){.ba-grille{grid-template-columns:1fr}.ba-vue{max-width:420px;margin-inline:auto;width:100%}.ba-bascule button{padding:12px 24px}}
+
+/* Réalisations : défilement par boutons uniquement */
+.realisations{background:var(--blanc);overflow:hidden}
+.piste{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding-bottom:6px}
+.piste::-webkit-scrollbar{display:none}
+.carte{flex:0 0 clamp(270px,36vw,440px);scroll-snap-align:start;margin:0;min-width:0}
+.carte .cadre{aspect-ratio:4/3.5;overflow:hidden;border-radius:20px;background:var(--trait)}
+.carte img{width:100%;height:100%;object-fit:cover}
+.carte figcaption{padding-top:12px;font-family:var(--display);font-weight:600;font-size:20px;line-height:1.2}
+.carte figcaption small{display:block;font-family:var(--texte);font-weight:400;font-size:15px;color:var(--gris);margin-top:2px}
+.commandes{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:30px}
+.fleche{width:56px;height:56px;border-radius:50%;border:2px solid var(--canard-fonce);background:var(--blanc);color:var(--canard-fonce);display:grid;place-items:center;cursor:pointer;transition:background .2s,color .2s}
+.fleche:hover{background:var(--canard-fonce);color:#fff}
+.fleche:disabled{opacity:.3;cursor:default;background:var(--blanc);color:var(--canard-fonce)}
+.fleche svg{width:22px;height:22px}
+.compteur{font-family:var(--display);font-weight:600;font-size:21px;min-width:76px;text-align:center;font-variant-numeric:tabular-nums}
+
+/* Méthode */
+.methode{background:var(--fond)}
+.etapes{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.etape{background:#fff;border:1px solid var(--trait);border-radius:20px;padding:26px 24px;display:grid;gap:10px;align-content:start;min-width:0}
+.etape h3 .num{color:var(--canard-fonce);margin-right:.25em}
+.etape p{color:var(--gris);font-size:16.5px}
+@media (max-width:900px){.etapes{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.etapes{grid-template-columns:1fr}}
+
+/* Avis */
+.avis{background:var(--blanc)}
+.avis-grille{display:grid;grid-template-columns:1fr 1.5fr;gap:26px;align-items:stretch}
+.bloc-note{background:var(--encre-2);color:#fff;border-radius:22px;padding:36px;display:flex;flex-direction:column;gap:12px;justify-content:center;text-align:center;align-items:center}
+.bloc-note .gros{font-family:var(--display);font-weight:600;font-size:104px;line-height:.9}
+.bloc-note .gros small{font-size:38px;color:#9FB4BE}
+.bloc-note .etoiles{color:#F5C54A;font-size:28px;letter-spacing:4px}
+.bloc-note p{color:#C5D3DA}
+.bloc-note a{color:var(--jaune);font-weight:600}
+.social{border:1px solid var(--trait);border-radius:22px;padding:36px 40px;display:flex;flex-direction:column;justify-content:center;gap:16px;align-items:flex-start;background:var(--fond)}
+.social h3{font-size:clamp(26px,3.2vw,36px);line-height:1.12}
+.social p{color:var(--gris);max-width:48ch}
+@media (max-width:820px){.avis-grille{grid-template-columns:1fr}.social{padding:28px 24px}}
+
+/* Contact */
+.contact{background:var(--encre-2);color:#fff}
+.contact .tete h2{color:#fff}
+.contact .etiquette{color:var(--jaune)}
+.contact .chapo{color:#C5D3DA}
+.contact-grille{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(32px,6vw,80px);align-items:start}
+.coord{display:grid;gap:22px}
+.coord .tel{font-family:var(--display);font-weight:600;font-size:clamp(40px,5.6vw,60px);line-height:1;text-decoration:none;color:#fff;font-variant-numeric:tabular-nums}
+.coord .tel:hover{color:var(--jaune)}
+.ligne-coord{display:flex;gap:14px;align-items:flex-start;color:#C5D3DA;min-width:0}
+.ligne-coord svg{width:24px;height:24px;color:var(--jaune);flex:none;margin-top:3px}
+.ligne-coord b{color:#fff;display:block}
+.ligne-coord a{word-break:break-all}
+form{display:grid;gap:16px;background:#183644;border-radius:22px;padding:clamp(22px,4vw,36px);min-width:0}
+.champs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:560px){.champs{grid-template-columns:1fr}}
+label{display:grid;gap:6px;font-size:15px;font-weight:600;color:#EAF0F2}
+input,select,textarea{font:inherit;font-size:17px;color:#fff;background:var(--encre-2);border:1px solid #4F6B78;border-radius:12px;padding:13px 14px;width:100%;min-width:0}
+textarea{min-height:130px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--jaune);box-shadow:0 0 0 3px rgba(246,190,31,.3)}
+form .btn{justify-self:start;border:0}
+.merci{color:var(--jaune);font-weight:600}
+@media (max-width:860px){.contact-grille{grid-template-columns:1fr}}
+
+/* Réseaux et Google */
+.reseaux{display:flex;flex-wrap:wrap;gap:10px}
+.reseau{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-family:var(--display);font-weight:500;font-size:17px;color:#fff;border:2px solid rgba(246,190,31,.55);border-radius:999px;padding:9px 16px;transition:background .2s,color .2s,transform .2s,border-color .2s}
+.reseau svg{width:22px;height:22px;flex:none;color:var(--jaune)}
+.reseau:hover{background:var(--jaune);color:var(--encre-2);border-color:var(--jaune);transform:translateY(-2px)}
+.reseau:hover svg{color:var(--encre-2)}
+.reseaux-titre{font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--jaune);margin-bottom:-6px}
+.reseaux-pied{display:flex;gap:10px}
+.reseaux-pied .reseau{padding:8px;border-radius:50%;gap:0;position:relative}
+.reseaux-pied .reseau span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.reseaux-pied .reseau svg{width:24px;height:24px}
+
+/* Pied */
+.pied{background:#0A1B22;color:#9FB4BE;font-size:15px;padding-block:28px;position:relative}
+.pied::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:var(--arcenciel)}
+.pied .enveloppe{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center}
+.pied a{color:#D5E0E5}
+
+/* Bouton d'appel flottant (téléphone) */
+.appel-flottant{display:none}
+@media (max-width:960px){
+  .appel-flottant{display:flex;position:fixed;left:14px;right:14px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:60;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.3);font-size:21px}
+  .pied{padding-bottom:96px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="entete" id="entete">
+  <div class="enveloppe">
+    <a class="marque" href="#accueil" aria-label="EG Bâti Service, peinture et aménagements intérieurs, accueil">
+      <img src="img/logo.png" alt="" width="360" height="360">
+      <span>EG Bâti Service<small>Peinture · aménagements intérieurs</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Menu">
+      <a href="#savoir-faire">Savoir-faire</a>
+      <a href="#avant-apres">Avant / Après</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#methode">Méthode</a>
+      <a href="#avis">Avis</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <a class="btn btn-canard appel-hdr" href="tel:+33649555441">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+      <span>Appeler</span><span class="num">&nbsp;06 49 55 54 41</span>
+    </a>
+    <div class="progres" id="progres" aria-hidden="true"></div>
+  </div>
+</header>
+
+<main>
+<section class="heros" id="accueil">
+  <div class="enveloppe heros-grille">
+    <div class="heros-texte">
+      <p class="etiquette">Peinture · aménagements intérieurs · Souillé</p>
+      <h1><span class="ligne"><span>Vos murs et plafonds</span></span> <span class="ligne"><span>repeints avec <em>soin</em>.</span></span></h1>
+      <p class="sous">Peinture et rénovation intérieure au Mans et autour de Souillé. Un artisan qui se déplace, vous conseille sur les couleurs et laisse le chantier propre.</p>
+      <div class="actions">
+        <a class="btn btn-canard" href="tel:+33649555441">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+          Appeler le 06 49 55 54 41
+        </a>
+        <a class="btn btn-ligne" href="#contact">Demander un devis gratuit</a>
+      </div>
+      <p class="note"><span class="etoiles" aria-hidden="true">★★★★★</span><span><strong>5,0 / 5</strong> sur Google · 11 avis</span></p>
+    </div>
+    <div class="heros-photo">
+      <div class="pastilles" aria-hidden="true"><span class="pastille p1"></span><span class="pastille p2"></span><span class="pastille p3"></span><span class="pastille p4"></span></div>
+      <div class="cadre" id="cadre-heros"><img src="img/p012.jpg" alt="Un couloir avant et après peinture : murs roses et orange remplacés par des teintes claires" fetchpriority="high" width="1000" height="776"></div>
+    </div>
+  </div>
+</section>
+
+<div class="infos">
+  <div class="enveloppe">
+    <div class="info">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+      <div><b>06 49 55 54 41</b><small>Appelez pour un rendez-vous</small></div>
+    </div>
+    <div class="info">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg>
+      <div><b>Le Mans et alentours</b><small>La Milesse, La Bazoge, Beaumont-sur-Sarthe, Souillé</small></div>
+    </div>
+    <div class="info">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+      <div><b>Devis gratuit</b><small>Sur place, sans engagement</small></div>
+    </div>
+  </div>
+</div>
+
+<section class="services" id="savoir-faire">
+  <div class="enveloppe">
+    <div class="tete">
+      <div class="traits" aria-hidden="true"><i></i><i></i><i></i></div>
+      <p class="etiquette">Savoir-faire</p>
+      <h2>Chaque pièce mérite une belle finition.</h2>
+      <p class="chapo">Préparation des supports, enduits, peinture, boiseries : un travail propre du premier coup de brosse au dernier raccord.</p>
+    </div>
+    <div class="grille-services">
+      <article class="service">
+        <figure><img src="img/p054-apres.jpg" alt="Salon repeint en blanc avec moulures et lambris conservés" loading="lazy" style="object-position:center 55%"></figure>
+        <div class="corps"><h3>Peinture intérieure</h3><p>Murs, plafonds, moulures : des finitions nettes, dans la couleur que vous avez choisie.</p></div>
+      </article>
+      <article class="service">
+        <figure><img src="img/p074.jpg" alt="Une pièce en travaux : placo, enduit puis peinture" loading="lazy"></figure>
+        <div class="corps"><h3>Rénovation de pièces</h3><p>Placo, enduits, reprise des murs : on remet la pièce en état avant de peindre.</p></div>
+      </article>
+      <article class="service">
+        <figure><img src="img/p040-apres.jpg" alt="Escalier en bois verni avec mur peint en vert et blanc" loading="lazy"></figure>
+        <div class="corps"><h3>Escaliers et boiseries</h3><p>Rampes, marches, portes et lambris : poncés, peints ou vernis pour repartir pour des années.</p></div>
+      </article>
+      <article class="service">
+        <figure><img src="img/p026.jpg" alt="Volets en bois peints en vert d'eau sur une maison" loading="lazy"></figure>
+        <div class="corps"><h3>Volets et extérieur</h3><p>Volets et menuiseries en bois : on leur redonne de l'éclat, couleur au choix.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="avantapres" id="avant-apres">
+  <div class="enveloppe">
+    <div class="tete">
+      <div class="traits" aria-hidden="true"><i></i><i></i><i></i></div>
+      <p class="etiquette">Avant / Après</p>
+      <h2>La même pièce, avant et après les travaux.</h2>
+      <p class="chapo">Choisissez un chantier, puis appuyez sur « Avant » ou « Après ».</p>
+    </div>
+    <div class="ba-grille">
+      <div class="ba-vue" id="ba-vue">
+        <img id="ba-img" src="img/p002-apres.jpg" alt="Salle d'eau après les travaux">
+      </div>
+      <div class="ba-commandes">
+        <div class="ba-bascule" role="group" aria-label="Avant ou après">
+          <button type="button" id="ba-avant" aria-pressed="false">Avant</button>
+          <button type="button" id="ba-apres" aria-pressed="true">Après</button>
+        </div>
+        <div class="ba-chantiers" id="ba-chantiers" role="group" aria-label="Choisir un chantier">
+          <button type="button" data-p="p002" aria-pressed="true">Salle d'eau</button>
+          <button type="button" data-p="p054" aria-pressed="false">Salon</button>
+          <button type="button" data-p="p017" aria-pressed="false">Combles</button>
+          <button type="button" data-p="p040" aria-pressed="false">Escalier</button>
+        </div>
+        <p class="ba-texte" id="ba-texte" aria-live="polite"><b>Salle d'eau</b>Murs abîmés et moisis remplacés par des murs sains, lumineux et propres.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="realisations" id="realisations">
+  <div class="enveloppe">
+    <div class="tete">
+      <div class="traits" aria-hidden="true"><i></i><i></i><i></i></div>
+      <p class="etiquette">Réalisations</p>
+      <h2>Quelques chantiers récents près du Mans.</h2>
+    </div>
+    <div class="piste-zone">
+      <div class="piste" id="piste" tabindex="0" aria-label="Photos de chantiers">
+        <figure class="carte"><div class="cadre"><img src="img/p005.jpg" alt="Une entrée avant et après peinture, de l'orange au blanc" loading="lazy"></div><figcaption>Entrée et palier<small>Du orange au blanc lumineux</small></figcaption></figure>
+        <figure class="carte"><div class="cadre"><img src="img/p034.jpg" alt="Escalier en bois avant et après rénovation" loading="lazy"></div><figcaption>Escalier à rampe<small>Bois remis à neuf, murs repeints</small></figcaption></figure>
+        <figure class="carte"><div class="cadre"><img src="img/p040.jpg" alt="Cage d'escalier avant et après peinture" loading="lazy"></div><figcaption>Cage d'escalier<small>Un mur sombre devenu vert et blanc</small></figcaption></figure>
+        <figure class="carte"><div class="cadre"><img src="img/p086.jpg" alt="Cuisine avant et après peinture des murs" loading="lazy"></div><figcaption>Cuisine<small>Murs rafraîchis</small></figcaption></figure>
+        <figure class="carte"><div class="cadre"><img src="img/p074.jpg" alt="Une pièce avant, pendant et après les travaux" loading="lazy"></div><figcaption>Avant, pendant, après<small>Placo, enduits puis peinture</small></figcaption></figure>
+        <figure class="carte"><div class="cadre"><img src="img/p026.jpg" alt="Volets en bois peints en vert d'eau" loading="lazy" style="object-position:center 40%"></div><figcaption>Volets<small>Peinture bois, vert d'eau</small></figcaption></figure>
+        <figure class="carte"><div class="cadre"><img src="img/p090.jpg" alt="Salle de bains avec murs sombres et meuble vasque" loading="lazy" style="object-position:center 40%"></div><figcaption>Salle de bains<small>Murs sombres, finition nette</small></figcaption></figure>
+        <figure class="carte"><div class="cadre"><img src="img/p095.jpg" alt="Douche à l'italienne en grands carreaux gris marbré" loading="lazy" style="object-position:center 40%"></div><figcaption>Douche<small>Grands carreaux gris</small></figcaption></figure>
+      </div>
+      <div class="commandes">
+        <button class="fleche" id="prec" aria-label="Photo précédente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <span class="compteur" id="compteur" aria-live="polite">1 / 8</span>
+        <button class="fleche" id="suiv" aria-label="Photo suivante"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="methode" id="methode">
+  <div class="enveloppe">
+    <div class="tete">
+      <div class="traits" aria-hidden="true"><i></i><i></i><i></i></div>
+      <p class="etiquette">Comment ça se passe</p>
+      <h2>Simple, du premier appel au dernier raccord.</h2>
+    </div>
+    <div class="etapes">
+      <div class="etape"><h3><span class="num">1.</span>Vous appelez</h3><p>Vous expliquez votre projet : une pièce, un escalier, toute la maison.</p></div>
+      <div class="etape"><h3><span class="num">2.</span>Visite sur place</h3><p>Je viens voir les murs, prends les mesures et vous conseille sur les couleurs.</p></div>
+      <div class="etape"><h3><span class="num">3.</span>Devis clair</h3><p>Un devis détaillé et gratuit, poste par poste, sans surprise.</p></div>
+      <div class="etape"><h3><span class="num">4.</span>Chantier soigné</h3><p>Sols protégés, finitions régulières et chantier laissé propre.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="avis" id="avis">
+  <div class="enveloppe">
+    <div class="tete">
+      <div class="traits" aria-hidden="true"><i></i><i></i><i></i></div>
+      <p class="etiquette">Avis clients</p>
+      <h2>La confiance de ses clients, en toute transparence.</h2>
+    </div>
+    <div class="avis-grille">
+      <div class="bloc-note">
+        <div class="gros">5,0<small> / 5</small></div>
+        <div class="etoiles" aria-label="5 étoiles sur 5">★★★★★</div>
+        <p>Note moyenne sur 11 avis Google</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=EG%20B%C3%A2ti%20Service%202%20rue%20Principale%20Souill%C3%A9%20Sarthe" target="_blank" rel="noopener">Voir les avis sur Google</a>
+      </div>
+      <div class="social">
+        <h3>Des chantiers publiés au fil des mois sur Facebook.</h3>
+        <p>Vous voyez des vrais chantiers, avec les photos avant et après, avant de décider.</p>
+        <a class="btn btn-canard" href="https://www.facebook.com/profile.php?id=100076743889863" target="_blank" rel="noopener">Voir la page Facebook</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="enveloppe">
+    <div class="tete">
+      <div class="traits" aria-hidden="true"><i></i><i></i><i></i></div>
+      <p class="etiquette">Contact</p>
+      <h2>Parlons de votre projet.</h2>
+      <p class="chapo">Le plus simple est d'appeler. Vous pouvez aussi laisser un message, je vous rappelle rapidement.</p>
+    </div>
+    <div class="contact-grille">
+      <div class="coord">
+        <a class="tel" href="tel:+33649555441">06 49 55 54 41</a>
+        <div class="ligne-coord">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          <div><b>E-mail</b><a href="mailto:egbati-service@hotmail.com">egbati-service@hotmail.com</a></div>
+        </div>
+        <div class="ligne-coord">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          <div><b>Secteur</b>Le Mans, La Milesse, La Bazoge, Beaumont-sur-Sarthe, Souillé (Sarthe)</div>
+        </div>
+        <p class="reseaux-titre">Retrouvez-moi</p>
+        <div class="reseaux">
+          <a class="reseau" href="https://www.facebook.com/profile.php?id=100076743889863" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.6-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.9v3h2.6V21z"/></svg><span>Facebook</span></a>
+          <a class="reseau" href="https://www.google.com/maps/search/?api=1&query=EG%20B%C3%A2ti%20Service%202%20rue%20Principale%20Souill%C3%A9%20Sarthe" target="_blank" rel="noopener" aria-label="Fiche Google"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 12.2c0-.7-.1-1.3-.2-1.9H12v3.7h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.3z"/><path d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.100v2.600A10 10 0 0 0 12 22z"/><path d="M6.400 14c-.2-.6-.3-1.300-.3-2s.1-1.400.3-2V7.400H3.100A10 10 0 0 0 2 12c0 1.600.4 3.100 1.100 4.600z"/><path d="M12 5.900c1.500 0 2.800.5 3.800 1.500l2.900-2.900C17 2.900 14.700 2 12 2A10 10 0 0 0 3.100 7.400L6.400 10C7.200 7.700 9.400 5.900 12 5.900z"/></svg><span>Fiche Google</span></a>
+          <a class="reseau" href="https://www.google.com/maps/search/?api=1&query=EG%20B%C3%A2ti%20Service%202%20rue%20Principale%20Souill%C3%A9%20Sarthe" target="_blank" rel="noopener" aria-label="Plan d'accès Google Maps"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.800 7 12 7 12z"/><circle cx="12" cy="10" r="2.600"/></svg><span>Plan d'accès</span></a>
+        </div>
+      </div>
+      <form name="contact" id="formulaire">
+        <div class="champs">
+          <label for="nom">Nom<input id="nom" name="nom" autocomplete="name" required></label>
+          <label for="telephone">Téléphone<input id="telephone" name="telephone" type="tel" autocomplete="tel" required></label>
+        </div>
+        <div class="champs">
+          <label for="commune">Commune<input id="commune" name="commune" autocomplete="address-level2"></label>
+          <label for="travaux">Type de travaux
+            <select id="travaux" name="travaux">
+              <option>Peinture de pièces</option><option>Plafonds</option><option>Escalier, boiseries</option><option>Volets, extérieur</option><option>Rénovation complète</option><option>Autre</option>
+            </select>
+          </label>
+        </div>
+        <label for="message">Votre message<textarea id="message" name="message" placeholder="Décrivez votre projet en quelques mots"></textarea></label>
+        <button class="btn btn-clair" type="submit">Envoyer ma demande</button>
+        <p class="merci" id="merci" hidden>Merci, votre demande est bien partie. Je vous rappelle rapidement.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="pied">
+  <div class="enveloppe">
+    <span>© 2026 EG Bâti Service · Peinture et aménagements intérieurs · Souillé (72)</span>
+    <div class="reseaux-pied reseaux">
+      <a class="reseau" href="https://www.facebook.com/profile.php?id=100076743889863" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.6-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.9v3h2.6V21z"/></svg><span>Facebook</span></a>
+      <a class="reseau" href="https://www.google.com/maps/search/?api=1&query=EG%20B%C3%A2ti%20Service%202%20rue%20Principale%20Souill%C3%A9%20Sarthe" target="_blank" rel="noopener" aria-label="Fiche Google"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 12.2c0-.7-.1-1.3-.2-1.9H12v3.7h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.3z"/><path d="M12 22c2.7 0 5-.9 6.600-2.400l-3.200-2.500c-.9.600-2 1-3.400 1-2.600 0-4.8-1.8-5.6-4.1H3.100v2.600A10 10 0 0 0 12 22z"/><path d="M6.400 14c-.2-.6-.3-1.300-.3-2s.1-1.400.3-2V7.400H3.100A10 10 0 0 0 2 12c0 1.600.4 3.100 1.100 4.600z"/><path d="M12 5.900c1.500 0 2.800.5 3.800 1.500l2.900-2.900C17 2.900 14.700 2 12 2A10 10 0 0 0 3.100 7.400L6.400 10C7.200 7.700 9.400 5.900 12 5.900z"/></svg><span>Fiche Google</span></a>
+      <a class="reseau" href="https://www.google.com/maps/search/?api=1&query=EG%20B%C3%A2ti%20Service%202%20rue%20Principale%20Souill%C3%A9%20Sarthe" target="_blank" rel="noopener" aria-label="Plan d'accès Google Maps"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.800 7 12 7 12z"/><circle cx="12" cy="10" r="2.600"/></svg><span>Plan d'accès</span></a>
+    </div>
+    <a href="#">Mentions légales</a>
+  </div>
+</footer>
+
+<a class="btn btn-jaune appel-flottant" href="tel:+33649555441">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+  Appeler 06 49 55 54 41
+</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  /* Menu téléphone */
+  var burger=document.getElementById('burger'),nav=document.getElementById('nav');
+  burger.addEventListener('click',function(){var o=nav.classList.toggle('ouvert');burger.setAttribute('aria-expanded',o)});
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('ouvert');burger.setAttribute('aria-expanded','false')})});
+
+  /* En-tête : ombre, lien actif, progression, ancres calées exactement sous l'en-tête */
+  var entete=document.getElementById('entete'),progres=document.getElementById('progres');
+  var liens=[].slice.call(nav.querySelectorAll('a'));
+  var sections=liens.map(function(l){return document.querySelector(l.getAttribute('href'))}).filter(Boolean);
+  function hauteurEntete(){return entete.getBoundingClientRect().height}
+  function majEntete(){
+    entete.classList.toggle('ombre',window.scrollY>10);
+    var total=document.documentElement.scrollHeight-window.innerHeight;
+    progres.style.transform='scaleX('+(total>0?Math.min(1,window.scrollY/total):0)+')';
+    var limite=hauteurEntete()+2,actif=null;
+    sections.forEach(function(s){if(s.getBoundingClientRect().top<=limite)actif=s});
+    if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-2)actif=sections[sections.length-1];
+    liens.forEach(function(l){l.classList.toggle('actif',!!actif&&l.getAttribute('href')==='#'+actif.id)});
+  }
+  window.addEventListener('scroll',function(){window.requestAnimationFrame(majEntete)},{passive:true});
+  window.addEventListener('resize',majEntete);majEntete();
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('href');
+      var cible=id==='#'?null:document.querySelector(id);
+      if(id!=='#'&&!cible)return;
+      e.preventDefault();
+      var haut=cible&&cible.id!=='accueil'?cible.getBoundingClientRect().top+window.scrollY-hauteurEntete():0;
+      var doux=!window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({top:Math.max(0,Math.round(haut)),behavior:doux?'smooth':'auto'});
+    });
+  });
+
+  /* Avant / Après : boutons uniquement */
+  var chantiers={
+    p002:{nom:"Salle d'eau",txt:"Murs abîmés et moisis remplacés par des murs sains, lumineux et propres.",alt:"Salle d'eau"},
+    p054:{nom:"Salon",txt:"Un salon repeint tout en clarté, avec les moulures et les lambris remis en valeur.",alt:"Salon"},
+    p017:{nom:"Combles",txt:"Des combles repeints : charpente grise, un mur décoré et des murs plus clairs.",alt:"Combles"},
+    p040:{nom:"Escalier",txt:"Un mur sombre et abîmé devenu vert et blanc, avec un escalier remis à neuf.",alt:"Escalier"}
+  };
+  var cle='p002',apres=true,img=document.getElementById('ba-img'),texte=document.getElementById('ba-texte');
+  var bAv=document.getElementById('ba-avant'),bAp=document.getElementById('ba-apres'),btns=[].slice.call(document.querySelectorAll('#ba-chantiers button'));
+  Object.keys(chantiers).forEach(function(k){['avant','apres'].forEach(function(s){var i=new Image();i.src='img/'+k+'-'+s+'.jpg'})});
+  function majBA(){
+    var c=chantiers[cle],src='img/'+cle+'-'+(apres?'apres':'avant')+'.jpg';
+    img.classList.add('cache');
+    setTimeout(function(){img.src=src;img.alt=c.alt+(apres?' après les travaux':' avant les travaux');img.classList.remove('cache')},150);
+    bAv.setAttribute('aria-pressed',!apres);bAp.setAttribute('aria-pressed',apres);
+    btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.p===cle)});
+    texte.innerHTML='<b>'+c.nom+'</b>'+c.txt;
+  }
+  bAv.addEventListener('click',function(){apres=false;majBA()});
+  bAp.addEventListener('click',function(){apres=true;majBA()});
+  btns.forEach(function(b){b.addEventListener('click',function(){cle=b.dataset.p;majBA()})});
+
+  /* Réalisations : uniquement par boutons */
+  var piste=document.getElementById('piste'),cartes=piste.querySelectorAll('.carte'),prec=document.getElementById('prec'),suiv=document.getElementById('suiv'),compteur=document.getElementById('compteur');
+  function pas(){return cartes[1].offsetLeft-cartes[0].offsetLeft}
+  /* Compteur = positions réellement atteignables : finit toujours sur N / N */
+  function maj(){var der=cartes[cartes.length-1];var max=Math.max(0,der.offsetLeft+der.offsetWidth-cartes[0].offsetLeft-piste.clientWidth);var total=Math.round(max/pas())+1;var i=piste.scrollLeft>=max-4?total:Math.min(Math.round(piste.scrollLeft/pas())+1,total);compteur.textContent=i+' / '+total;prec.disabled=i<=1;suiv.disabled=i>=total}
+  prec.addEventListener('click',function(){piste.scrollBy({left:-pas(),behavior:'smooth'})});
+  suiv.addEventListener('click',function(){piste.scrollBy({left:pas(),behavior:'smooth'})});
+  piste.addEventListener('scroll',function(){window.requestAnimationFrame(maj)},{passive:true});
+  piste.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();suiv.click()}if(e.key==='ArrowLeft'){e.preventDefault();prec.click()}});
+  window.addEventListener('resize',maj);window.addEventListener('load',maj);if(document.fonts)document.fonts.ready.then(maj);maj();
+
+  /* Formulaire de démonstration : message de remerciement */
+  document.getElementById('formulaire').addEventListener('submit',function(e){
+    e.preventDefault();document.getElementById('merci').hidden=false;
+  });
+
+  /* Animations */
+  if(!window.gsap)return;
+  gsap.registerPlugin(ScrollTrigger);
+  var mm=gsap.matchMedia();
+  mm.add('(prefers-reduced-motion: no-preference)',function(){
+    /* Héros : titre ligne par ligne, photo dévoilée, pastilles de peinture qui jaillissent */
+    gsap.from('.heros h1 .ligne>span',{yPercent:110,duration:1,ease:'power4.out',stagger:.12,delay:.1});
+    gsap.from('.heros .etiquette, .heros .sous, .heros .actions, .heros .note',{y:20,opacity:0,duration:.8,ease:'power2.out',stagger:.12,delay:.45});
+    gsap.fromTo('#cadre-heros',{clipPath:'inset(0 0 0 100%)'},{clipPath:'inset(0 0 0 0%)',duration:1.2,ease:'power3.inOut',delay:.2});
+    gsap.fromTo('#cadre-heros img',{scale:1.18},{scale:1,duration:1.8,ease:'power2.out',delay:.2});
+    gsap.from('.pastille',{scale:0,duration:.9,ease:'elastic.out(1,.55)',stagger:.12,delay:.9});
+    gsap.to('.p1',{y:44,ease:'none',scrollTrigger:{trigger:'.heros',start:'top top',end:'bottom top',scrub:true}});
+    gsap.to('.p2',{y:-30,ease:'none',scrollTrigger:{trigger:'.heros',start:'top top',end:'bottom top',scrub:true}});
+
+    /* Coups de pinceau au-dessus de chaque titre, titres qui montent */
+    document.querySelectorAll('.traits').forEach(function(c){
+      gsap.from(c.children,{scaleX:0,transformOrigin:'left center',duration:.6,ease:'power3.out',stagger:.14,scrollTrigger:{trigger:c,start:'top 92%',once:true}});
+    });
+    document.querySelectorAll('.tete h2').forEach(function(h){
+      gsap.from(h,{y:30,opacity:0,duration:.9,ease:'power3.out',scrollTrigger:{trigger:h,start:'top 88%',once:true}});
+    });
+
+    /* Cartes en cascade */
+    ScrollTrigger.batch('.service',{start:'top 90%',once:true,onEnter:function(b){gsap.from(b,{y:46,opacity:0,duration:.8,ease:'power3.out',stagger:.1})}});
+    ScrollTrigger.batch('.etape',{start:'top 90%',once:true,onEnter:function(b){gsap.from(b,{y:30,opacity:0,duration:.7,ease:'power2.out',stagger:.12})}});
+    gsap.from('.carte',{x:80,opacity:0,duration:.9,ease:'power3.out',stagger:.08,scrollTrigger:{trigger:'#piste',start:'top 85%',once:true}});
+
+    /* Avant / Après : photo dévoilée, commandes qui arrivent */
+    gsap.fromTo('#ba-vue',{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0% 0 0)',duration:1.1,ease:'power3.inOut',scrollTrigger:{trigger:'#ba-vue',start:'top 85%',once:true}});
+    gsap.from('.ba-commandes > *',{x:30,opacity:0,duration:.8,ease:'power3.out',stagger:.12,scrollTrigger:{trigger:'.ba-commandes',start:'top 85%',once:true}});
+
+    /* Note Google qui compte, bloc Facebook */
+    var gros=document.querySelector('.bloc-note .gros');
+    var compte={v:0};
+    gsap.to(compte,{v:5,duration:1.2,ease:'power2.out',scrollTrigger:{trigger:gros,start:'top 88%',once:true},onUpdate:function(){gros.firstChild.nodeValue=compte.v.toFixed(1).replace('.',',')}});
+    gsap.from('.social',{x:40,opacity:0,duration:.9,ease:'power3.out',scrollTrigger:{trigger:'.social',start:'top 88%',once:true}});
+
+    /* Formulaire élément par élément (le téléphone reste visible) */
+    gsap.from('#formulaire > *:not(#merci)',{y:22,opacity:0,duration:.6,ease:'power2.out',stagger:.08,scrollTrigger:{trigger:'#formulaire',start:'top 88%',once:true}});
+  });
+  window.addEventListener('load',function(){ScrollTrigger.refresh()});
+})();
+</script>
+</body>
+</html>
