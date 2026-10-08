@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Secoma – Serrurier au Mans, Point Fort Fichet</title>
+<meta name="description" content="Secoma, serrurier au Mans : portes blindées, serrures, volets roulants, portails et alarmes. Point Fort Fichet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--noir:#14161a;--acier:#22262d;--acier2:#2d323b;--jaune:#bdbc00;--jaune-v:#d8d700;--blanc:#fff;--gris:#eff1f3;--ligne:#dde0e4;--texte:#23272e;--doux:#5b626d;--h:76px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto;-webkit-text-size-adjust:100%}
+body{font-family:'Barlow',system-ui,sans-serif;color:var(--texte);background:var(--blanc);font-size:17px;line-height:1.6;padding-bottom:0}
+img{display:block;max-width:100%}
+a{color:inherit}
+.cond{font-family:'Barlow Condensed','Arial Narrow',sans-serif}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+section{position:relative}
+h1,h2,h3{font-family:'Barlow Condensed','Arial Narrow',sans-serif;line-height:1.05;letter-spacing:.2px}
+h2{font-size:clamp(34px,5vw,54px);font-weight:800;text-transform:uppercase}
+.sur{display:inline-flex;align-items:center;gap:10px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;letter-spacing:2.4px;text-transform:uppercase;color:var(--doux);margin-bottom:12px}
+.sur::before{content:"";width:34px;height:4px;background:var(--jaune)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;letter-spacing:.8px;text-transform:uppercase;text-decoration:none;padding:15px 26px;border:2px solid var(--jaune);background:var(--jaune);color:var(--noir);cursor:pointer;transition:transform .2s,background .2s,color .2s,box-shadow .2s}
+.btn:hover{background:var(--jaune-v);transform:translateY(-2px);box-shadow:0 8px 0 -2px rgba(0,0,0,.25)}
+.btn.vide{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.btn.vide:hover{background:#fff;color:var(--noir);border-color:#fff}
+.btn svg{width:22px;height:22px;flex:none}
+.btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--jaune-v);outline-offset:3px}
+
+/* En-tête */
+#haut{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--ligne);height:var(--h)}
+#haut .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:100%}
+.marque{display:flex;align-items:center;gap:14px;text-decoration:none;flex:none}
+.marque img{height:52px;width:auto}
+nav#nav{display:flex;align-items:center;gap:6px}
+nav#nav a{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:19px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;padding:8px 14px;position:relative;color:var(--acier)}
+nav#nav a::after{content:"";position:absolute;left:14px;right:14px;bottom:2px;height:4px;background:var(--jaune);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+nav#nav a:hover::after,nav#nav a.on::after{transform:scaleX(1)}
+.appel-h{display:inline-flex;align-items:center;gap:9px;background:var(--noir);color:#fff;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;letter-spacing:.6px;padding:10px 18px;flex:none;transition:background .2s,color .2s}
+.appel-h:hover{background:var(--jaune);color:var(--noir)}
+.appel-h svg{width:20px;height:20px}
+#burger{display:none;background:none;border:2px solid var(--acier);width:46px;height:46px;cursor:pointer;flex:none}
+#burger span,#burger span::before,#burger span::after{display:block;width:22px;height:3px;background:var(--acier);margin:auto;position:relative;content:""}
+#burger span::before{position:absolute;top:-7px;left:0}
+#burger span::after{position:absolute;top:7px;left:0}
+
+/* Hero */
+#accueil{background:var(--noir);color:#fff;overflow:hidden}
+#accueil::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 2px,transparent 2px 22px)}
+.hero{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;padding:72px 0 80px}
+.hero h1{font-size:clamp(46px,7vw,88px);font-weight:800;text-transform:uppercase;margin-bottom:22px}
+.hero h1 em{font-style:normal;color:var(--jaune-v)}
+.hero p.lead{font-size:20px;max-width:560px;color:#d5d9df;margin-bottom:32px}
+.hero .actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:38px}
+.preuves{display:flex;gap:0;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.18);padding-top:22px}
+.preuves div{padding:0 26px;border-left:1px solid rgba(255,255,255,.18)}
+.preuves div:first-child{padding-left:0;border-left:0}
+.preuves b{display:block;font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:800;color:var(--jaune-v);line-height:1.1}
+.preuves span{font-size:15px;color:#c3c8cf}
+.cadre{position:relative;justify-self:center;width:min(420px,100%)}
+.cadre::before{content:"";position:absolute;inset:22px -22px -22px 22px;border:4px solid var(--jaune)}
+.cadre img{position:relative;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;background:#444}
+.cadre .badge{position:absolute;left:-18px;bottom:28px;background:var(--jaune);color:var(--noir);padding:12px 18px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;line-height:1.1;text-transform:uppercase;box-shadow:0 8px 22px rgba(0,0,0,.35)}
+
+/* Prestations */
+#prestations{padding:96px 0;background:var(--gris)}
+.tete{max-width:760px;margin-bottom:46px}
+.tete p{color:var(--doux);margin-top:14px;font-size:18px}
+.grille{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.carte{background:#fff;padding:30px 28px 32px;border-top:5px solid var(--noir);box-shadow:0 1px 0 var(--ligne);transition:transform .25s,border-color .25s,box-shadow .25s}
+.carte:hover{transform:translateY(-5px);border-top-color:var(--jaune);box-shadow:0 18px 34px -18px rgba(0,0,0,.35)}
+.carte header{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.carte .ic{flex:none;width:50px;height:50px;background:var(--noir);display:grid;place-items:center}
+.carte .ic svg{width:28px;height:28px;stroke:var(--jaune-v);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.carte h3{font-size:27px;font-weight:800;text-transform:uppercase}
+.carte p{color:var(--doux);font-size:16.5px}
+
+/* Réalisations */
+#realisations{padding:96px 0;background:var(--noir);color:#fff}
+#realisations .sur{color:#b6bcc5}
+#realisations .tete p{color:#b6bcc5}
+.car-barre{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:26px;flex-wrap:wrap}
+.car-cmd{display:flex;align-items:center;gap:12px}
+.car-cmd button{width:54px;height:54px;border:2px solid var(--jaune);background:transparent;color:var(--jaune-v);cursor:pointer;display:grid;place-items:center;transition:background .2s,color .2s}
+.car-cmd button:hover:not(:disabled){background:var(--jaune);color:var(--noir)}
+.car-cmd button:disabled{opacity:.3;cursor:default}
+.car-cmd svg{width:24px;height:24px}
+#cn{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;min-width:74px;text-align:center;letter-spacing:1px}
+#car{overflow:hidden}
+#piste{display:flex;gap:18px;position:relative;transition:transform .55s cubic-bezier(.2,.7,.2,1)}
+#piste figure{flex:0 0 calc((100% - 36px)/3);position:relative;background:#222}
+#piste img{width:100%;aspect-ratio:4/5;object-fit:cover}
+#piste figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 18px 16px;background:linear-gradient(transparent,rgba(0,0,0,.82));font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:21px;letter-spacing:.6px;text-transform:uppercase}
+
+/* L'enseigne */
+#enseigne{padding:96px 0;background:#fff}
+.duo{display:grid;grid-template-columns:.95fr 1.05fr;gap:64px;align-items:center}
+.duo .photos{position:relative}
+.duo .photos .a{width:86%;aspect-ratio:1/1;object-fit:cover}
+.duo .photos .b{position:absolute;right:0;bottom:-34px;width:48%;aspect-ratio:4/5;object-fit:cover;border:8px solid #fff;box-shadow:0 14px 34px -12px rgba(0,0,0,.45)}
+.duo .texte p{color:var(--doux);margin:16px 0 28px}
+.points{list-style:none;display:grid;gap:18px}
+.points li{padding-left:0;border-left:5px solid var(--jaune);padding:2px 0 2px 18px}
+.points h3{font-size:25px;font-weight:800;text-transform:uppercase;margin-bottom:3px}
+.points p{margin:0;color:var(--doux);font-size:16.5px}
+
+/* Avis */
+#avis{padding:96px 0;background:var(--gris)}
+.note-ligne{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-bottom:38px}
+.note-ligne .gros{font-family:'Barlow Condensed',sans-serif;font-size:76px;font-weight:800;line-height:1;color:var(--noir)}
+.etoiles{color:#f2b400;letter-spacing:3px;font-size:22px;line-height:1}
+.note-ligne small{display:block;color:var(--doux);font-size:15.5px;margin-top:6px}
+.colonnes{column-count:3;column-gap:20px}
+.avis-c{break-inside:avoid;margin:0 0 20px;background:#fff;padding:24px 24px 22px;border-top:5px solid var(--jaune);box-shadow:0 1px 0 var(--ligne)}
+.avis-c .etoiles{font-size:17px;margin-bottom:10px}
+.avis-c blockquote{font-size:16.5px;color:var(--texte)}
+.avis-c footer{margin-top:14px;font-size:14.5px;color:var(--doux);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.avis-c footer b{color:var(--texte);font-weight:600}
+.lien-g{display:inline-flex;align-items:center;gap:10px;margin-top:10px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;letter-spacing:.8px;text-transform:uppercase;text-decoration:none;border-bottom:3px solid var(--jaune);padding-bottom:3px}
+.lien-g:hover{background:var(--jaune)}
+
+/* Contact */
+#contact{padding:96px 0;background:var(--noir);color:#fff}
+#contact .sur{color:#b6bcc5}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.tel{display:inline-flex;align-items:center;gap:14px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(40px,6vw,64px);text-decoration:none;color:var(--jaune-v);line-height:1;margin:12px 0 26px}
+.tel svg{width:44px;height:44px;flex:none}
+.coord{list-style:none;display:grid;gap:14px;margin-bottom:28px}
+.coord li{display:flex;gap:14px;align-items:flex-start;color:#d5d9df}
+.coord svg{width:24px;height:24px;flex:none;stroke:var(--jaune-v);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-top:3px}
+.coord a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4)}
+.horaires{width:100%;border-collapse:collapse;margin-bottom:26px}
+.horaires th,.horaires td{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.14);text-align:left;font-weight:500}
+.horaires th{font-family:'Barlow Condensed',sans-serif;font-size:20px;letter-spacing:.8px;text-transform:uppercase;width:34%;color:#fff}
+.horaires td{color:#d5d9df}
+.horaires tr.ferme td{color:#8e95a0}
+.reseaux{display:flex;gap:12px;flex-wrap:wrap}
+.reseaux a{display:inline-flex;align-items:center;gap:10px;border:2px solid rgba(255,255,255,.4);padding:10px 16px 10px 12px;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.8px;text-transform:uppercase;transition:background .2s,color .2s,border-color .2s}
+.reseaux a:hover{background:var(--jaune);color:var(--noir);border-color:var(--jaune)}
+.reseaux svg{width:24px;height:24px;flex:none}
+.form{background:#fff;color:var(--texte);padding:34px 32px 36px;border-top:6px solid var(--jaune)}
+.form h3{font-size:34px;font-weight:800;text-transform:uppercase;margin-bottom:6px}
+.form>p{color:var(--doux);font-size:16px;margin-bottom:20px}
+.champ{margin-bottom:16px}
+.champ label{display:block;font-weight:600;font-size:15px;margin-bottom:5px}
+.champ input,.champ textarea{width:100%;font:inherit;font-size:17px;padding:13px 14px;border:2px solid var(--ligne);background:#fff;color:var(--texte);border-radius:0}
+.champ textarea{min-height:120px;resize:vertical}
+.champ input:focus,.champ textarea:focus{border-color:var(--noir)}
+#merci{display:none;padding:18px 0 4px}
+#merci h4{font-family:'Barlow Condensed',sans-serif;font-size:32px;text-transform:uppercase;font-weight:800;margin-bottom:6px}
+#merci p{color:var(--doux)}
+
+/* Pied */
+footer.pied{background:#0b0c0e;color:#9aa1ab;padding:34px 0 40px;font-size:15px}
+footer.pied .wrap{display:flex;gap:24px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+footer.pied .marque-p{display:flex;align-items:center;gap:16px}
+footer.pied .marque-p img{height:44px;background:#fff;padding:4px 8px}
+footer.pied .reseaux a{padding:7px 12px 7px 9px;font-size:16px;color:#d5d9df;border-color:rgba(255,255,255,.25)}
+footer.pied .reseaux svg{width:20px;height:20px}
+
+/* Barre d'appel mobile */
+.barre-appel{display:none}
+
+/* Apparition */
+.js .rev{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.js .rev.vu{opacity:1;transform:none}
+.js .hero-in{opacity:0;transform:translateY(22px);animation:entree .8s ease forwards}
+.js .hero-in:nth-child(2){animation-delay:.12s}.js .hero-in:nth-child(3){animation-delay:.24s}.js .hero-in:nth-child(4){animation-delay:.36s}
+@keyframes entree{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.js .rev,.js .hero-in{opacity:1;transform:none;animation:none;transition:none}#piste{transition:none}}
+
+/* Tablette */
+@media (max-width:1020px){
+ nav#nav a{padding:8px 9px;font-size:17px}
+ .appel-h .lib{display:none}
+ .hero{grid-template-columns:1fr;gap:54px;padding:56px 0 68px}
+ .cadre{width:min(380px,86%)}
+ .grille{grid-template-columns:repeat(2,1fr)}
+ #piste figure{flex-basis:calc((100% - 18px)/2)}
+ .duo{grid-template-columns:1fr;gap:64px}
+ .duo .photos{max-width:520px}
+ .colonnes{column-count:2}
+ .contact{grid-template-columns:1fr}
+}
+/* Mobile */
+@media (max-width:760px){
+ :root{--h:68px}
+ body{font-size:16.5px;padding-bottom:64px}
+ .marque img{height:46px}
+ #burger{display:block}
+ .appel-h{display:none}
+ nav#nav{position:absolute;top:var(--h);left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;gap:0;border-bottom:1px solid var(--ligne);box-shadow:0 18px 30px -18px rgba(0,0,0,.4);display:none;padding:6px 20px 14px}
+ nav#nav.ouvert{display:flex}
+ nav#nav a{padding:14px 0;font-size:21px;border-bottom:1px solid var(--gris)}
+ nav#nav a::after{display:none}
+ nav#nav a.on{color:#8b8a00}
+ .hero{padding:44px 0 60px}
+ .hero p.lead{font-size:18px}
+ .hero .actions .btn{flex:1 1 100%;justify-content:center}
+ .preuves div{padding:0 16px}
+ .preuves b{font-size:26px}
+ .cadre{width:86%;margin-left:0}
+ .cadre .badge{left:-8px}
+ #prestations,#realisations,#enseigne,#avis,#contact{padding:68px 0}
+ .grille{grid-template-columns:1fr}
+ .carte{padding:24px 22px 26px}
+ #piste figure{flex-basis:100%}
+ .colonnes{column-count:1}
+ .duo .photos .b{bottom:-26px}
+ .note-ligne .gros{font-size:60px}
+ .form{padding:26px 22px 28px}
+ .tel svg{width:34px;height:34px}
+ footer.pied .wrap{flex-direction:column;align-items:flex-start}
+ .barre-appel{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--jaune);color:var(--noir);text-decoration:none;align-items:center;justify-content:center;gap:12px;height:58px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:23px;letter-spacing:.8px;text-transform:uppercase;box-shadow:0 -6px 18px rgba(0,0,0,.25)}
+ .barre-appel svg{width:24px;height:24px}
+}
+</style>
+</head>
+<body>
+
+<header id="haut">
+ <div class="wrap">
+  <a class="marque" href="#accueil" aria-label="Secoma, Point Fort Fichet – accueil"><img src="img/logo.png" alt="Point Fort Fichet – Nous protégeons ce que vous avez de plus cher" width="128" height="52"></a>
+  <nav id="nav" aria-label="Menu principal">
+   <a href="#prestations">Prestations</a>
+   <a href="#realisations">Réalisations</a>
+   <a href="#enseigne">L'enseigne</a>
+   <a href="#avis">Avis</a>
+   <a href="#contact">Contact</a>
+  </nav>
+  <a class="appel-h" href="tel:+33243824866"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span class="lib">Appeler</span> 02 43 82 48 66</a>
+  <button id="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span></button>
+ </div>
+</header>
+
+<main>
+<section id="accueil">
+ <div class="wrap hero">
+  <div>
+   <p class="sur hero-in" style="color:#b6bcc5">Serrurier · Point Fort Fichet · Le Mans</p>
+   <h1 class="hero-in">Votre porte mérite la <em>meilleure protection.</em></h1>
+   <p class="lead hero-in">Portes blindées, serrures, volets roulants, portails et alarmes : Secoma vous conseille et installe, au Mans et dans ses environs.</p>
+   <div class="actions hero-in">
+    <a class="btn" href="tel:+33243824866"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Appeler le 02 43 82 48 66</a>
+    <a class="btn vide" href="#realisations">Voir nos réalisations</a>
+   </div>
+   <div class="preuves hero-in">
+    <div><b>5,0 / 5</b><span>Note Google</span></div>
+    <div><b>14</b><span>Avis clients</span></div>
+    <div><b>Fichet</b><span>Point Fort officiel</span></div>
+   </div>
+  </div>
+  <div class="cadre hero-in">
+   <img src="img/porte-bleue-imposte.jpg" alt="Porte d'entrée anthracite avec imposte vitrée posée par Secoma" width="420" height="525">
+   <div class="badge">Point Fort<br>Fichet</div>
+  </div>
+ </div>
+</section>
+
+<section id="prestations">
+ <div class="wrap">
+  <div class="tete rev">
+   <p class="sur">Nos prestations</p>
+   <h2>Tout pour sécuriser votre maison et vos locaux</h2>
+   <p>Une seule adresse au Mans pour protéger vos accès, de la serrure à l'alarme.</p>
+  </div>
+  <div class="grille">
+   <article class="carte rev"><header><span class="ic"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="1"/><circle cx="15" cy="12" r="1.3"/><path d="M9 7h6"/></svg></span><h3>Portes blindées</h3></header><p>Porte d'entrée blindée Fichet, ou blindage de votre porte actuelle : plus de résistance, sans changer l'allure de votre entrée.</p></article>
+   <article class="carte rev"><header><span class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="1"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14.5v3"/></svg></span><h3>Serrures et cylindres</h3></header><p>Changement de serrure, cylindre sécurisé, clés protégées : on vous conseille la bonne solution pour votre porte.</p></article>
+   <article class="carte rev"><header><span class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="4" rx="1"/><path d="M5 7v14M19 7v14M8 10h8M8 13.5h8M8 17h8"/></svg></span><h3>Volets roulants</h3></header><p>Pose et remplacement de volets roulants, pour la sécurité, l'isolation et le confort au quotidien.</p></article>
+   <article class="carte rev"><header><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 20V8M21 20V8M3 8h18M3 12h18M7 8v12M12 8v12M17 8v12"/></svg></span><h3>Portails et garages</h3></header><p>Portails, motorisation de portail et de porte de garage : une entrée qui s'ouvre d'un geste, et qui reste bien fermée.</p></article>
+   <article class="carte rev"><header><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.4 8.2-8 9-4.6-.8-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span><h3>Alarmes Daitem</h3></header><p>Alarmes et détection, installées par un professionnel pour protéger votre domicile ou votre commerce.</p></article>
+   <article class="carte rev"><header><span class="ic"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.8 7L4 20l1.1-4.5A8 8 0 1 1 21 12z"/><path d="M8.5 11h7M8.5 14h4"/></svg></span><h3>Conseil et devis</h3></header><p>Passez à la boutique ou appelez-nous : on regarde votre besoin ensemble et on vous remet un devis clair.</p></article>
+  </div>
+ </div>
+</section>
+
+<section id="realisations">
+ <div class="wrap">
+  <div class="car-barre rev">
+   <div class="tete" style="margin:0">
+    <p class="sur">Réalisations</p>
+    <h2>Des installations soignées, partout au Mans</h2>
+   </div>
+   <div class="car-cmd">
+    <button id="prec" aria-label="Photo précédente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <span id="cn" aria-live="polite">1 / 1</span>
+    <button id="suiv" aria-label="Photo suivante"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+   </div>
+  </div>
+  <div id="car" tabindex="0" aria-label="Galerie de réalisations">
+   <div id="piste">
+    <figure><img src="img/porte-verte-arche.jpg" alt="Porte d'entrée verte en arche" loading="lazy"><figcaption>Porte d'entrée verte</figcaption></figure>
+    <figure><img src="img/porte-design.jpg" alt="Porte anthracite à motifs vitrés" loading="lazy"><figcaption>Porte design anthracite</figcaption></figure>
+    <figure><img src="img/porte-anthracite.jpg" alt="Porte d'entrée anthracite à panneaux" loading="lazy"><figcaption>Porte à panneaux</figcaption></figure>
+    <figure><img src="img/volet-roulant.jpg" alt="Volet roulant aluminium posé" loading="lazy"><figcaption>Volet roulant</figcaption></figure>
+    <figure><img src="img/portail-bois.jpg" alt="Portail aspect bois motorisé" loading="lazy"><figcaption>Portail motorisé</figcaption></figure>
+    <figure><img src="img/porte-rouge.jpg" alt="Porte d'appartement rouge" loading="lazy"><figcaption>Porte d'appartement</figcaption></figure>
+    <figure><img src="img/volet-pose.jpg" alt="Technicien Secoma posant un volet roulant" loading="lazy"><figcaption>Pose de volet roulant</figcaption></figure>
+    <figure><img src="img/porte-verte-lisere.jpg" alt="Porte verte avec encadrement" loading="lazy"><figcaption>Porte palière verte</figcaption></figure>
+    <figure><img src="img/portail-fer-forge.jpg" alt="Portail en fer forgé motorisé" loading="lazy"><figcaption>Portail en fer forgé</figcaption></figure>
+    <figure><img src="img/motorisation-garage.jpg" alt="Motorisation de porte de garage" loading="lazy"><figcaption>Motorisation de garage</figcaption></figure>
+    <figure><img src="img/escalier-technicien.jpg" alt="Technicien Point Fort Fichet dans une cage d'escalier" loading="lazy"><figcaption>Intervention en immeuble</figcaption></figure>
+    <figure><img src="img/technicien-fenetre.jpg" alt="Technicien Point Fort Fichet à une fenêtre" loading="lazy"><figcaption>Pose en façade</figcaption></figure>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="enseigne">
+ <div class="wrap duo">
+  <div class="photos rev">
+   <img class="a" src="img/boutique.jpg" alt="La boutique Point Fort Fichet Secoma au Mans" loading="lazy">
+   <img class="b" src="img/escalier-technicien.jpg" alt="Technicien Point Fort Fichet au travail" loading="lazy">
+  </div>
+  <div class="texte rev">
+   <p class="sur">L'enseigne</p>
+   <h2>Une boutique et des professionnels près de chez vous</h2>
+   <p>Secoma est Point Fort Fichet au Mans : une boutique où l'on vient voir, comparer et poser ses questions, et une équipe qui se déplace pour installer.</p>
+   <ul class="points">
+    <li><h3>1. Des marques reconnues</h3><p>Fichet pour les portes et serrures, Daitem pour les alarmes : des références de la sécurité.</p></li>
+    <li><h3>2. Un conseil adapté</h3><p>Maison, appartement ou local professionnel : on vous propose la solution qui correspond à votre besoin.</p></li>
+    <li><h3>3. Une pose soignée</h3><p>Chaque installation est faite proprement, par des techniciens de l'équipe Secoma.</p></li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<section id="avis">
+ <div class="wrap">
+  <div class="tete rev">
+   <p class="sur">Avis clients</p>
+   <h2>Ils nous ont fait confiance</h2>
+  </div>
+  <div class="note-ligne rev">
+   <span class="gros">5,0</span>
+   <div><div class="etoiles" aria-label="5 étoiles sur 5">★★★★★</div><small>Note moyenne sur Google, 14 avis</small></div>
+  </div>
+  <div class="colonnes">
+<!--AVIS-->
+  </div>
+  <a class="lien-g" href="GOOGLE_FICHE" target="_blank" rel="noopener">Voir tous les avis sur Google →</a>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="wrap contact">
+  <div class="rev">
+   <p class="sur">Contact</p>
+   <h2>Parlons de votre projet</h2>
+   <a class="tel" href="tel:+33243824866"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>02 43 82 48 66</a>
+   <ul class="coord">
+    <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>ADRESSE</span></li>
+    <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Le Mans et ses environs</span></li>
+   </ul>
+   <table class="horaires" aria-label="Horaires d'ouverture">
+    <tr><th>Lundi</th><td>8h30 – 12h · 14h – 17h30</td></tr>
+    <tr><th>Mardi</th><td>8h30 – 12h · 14h – 17h30</td></tr>
+    <tr><th>Mercredi</th><td>10h – 12h</td></tr>
+    <tr><th>Jeudi</th><td>8h30 – 12h · 14h – 17h30</td></tr>
+    <tr><th>Vendredi</th><td>8h30 – 12h</td></tr>
+    <tr class="ferme"><th>Samedi</th><td>Fermé</td></tr>
+    <tr class="ferme"><th>Dimanche</th><td>Fermé</td></tr>
+   </table>
+   <div class="reseaux">
+    <a href="https://www.facebook.com/SECOMA72" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>Facebook</a>
+    <a href="GOOGLE_FICHE" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 12.2c0-.7-.1-1.3-.2-1.9H12v3.6h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.300 3-7.200z"/><path d="M12 22c2.7 0 5-.9 6.600-2.400l-3.200-2.500c-.9.600-2 1-3.400 1-2.600 0-4.800-1.800-5.600-4.100H3.100v2.600A10 10 0 0 0 12 22z" opacity=".85"/><path d="M6.400 13.900a6 6 0 0 1 0-3.800V7.500H3.100a10 10 0 0 0 0 9z" opacity=".7"/><path d="M12 6c1.500 0 2.800.5 3.800 1.500l2.900-2.900A10 10 0 0 0 3.100 7.500l3.300 2.600C7.200 7.800 9.400 6 12 6z" opacity=".55"/></svg>Google</a>
+    <a href="GOOGLE_PLAN" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Itinéraire</a>
+   </div>
+  </div>
+  <div class="rev">
+   <form class="form" id="form">
+    <h3>Demandez un devis</h3>
+    <p>Dites-nous ce qu'il vous faut, on vous rappelle.</p>
+    <div class="champ"><label for="nom">Votre nom</label><input id="nom" name="nom" autocomplete="name" required></div>
+    <div class="champ"><label for="tel">Votre téléphone</label><input id="tel" name="tel" type="tel" autocomplete="tel" required></div>
+    <div class="champ"><label for="msg">Votre besoin</label><textarea id="msg" name="msg" placeholder="Porte blindée, serrure, volet roulant, alarme…"></textarea></div>
+    <button class="btn" type="submit">Envoyer ma demande</button>
+   </form>
+   <div id="merci" class="form" role="status"><h4>Merci !</h4><p>Votre demande est bien prise en compte. L'équipe Secoma vous rappelle dès que possible.</p></div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer class="pied">
+ <div class="wrap">
+  <div class="marque-p"><img src="img/logo.png" alt="Point Fort Fichet" height="44"><span>Secoma · Serrurier au Mans</span></div>
+  <div class="reseaux">
+   <a href="https://www.facebook.com/SECOMA72" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>Facebook</a>
+   <a href="GOOGLE_FICHE" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 12.2c0-.7-.1-1.3-.2-1.9H12v3.6h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.300 3-7.200z"/><path d="M12 22c2.7 0 5-.9 6.600-2.400l-3.200-2.500c-.9.600-2 1-3.400 1-2.600 0-4.800-1.800-5.600-4.100H3.100v2.600A10 10 0 0 0 12 22z" opacity=".85"/><path d="M6.400 13.900a6 6 0 0 1 0-3.800V7.500H3.100a10 10 0 0 0 0 9z" opacity=".7"/><path d="M12 6c1.500 0 2.800.5 3.800 1.500l2.900-2.900A10 10 0 0 0 3.100 7.500l3.300 2.600C7.200 7.800 9.400 6 12 6z" opacity=".55"/></svg>Google</a>
+  </div>
+  <span>© Secoma – Le Mans</span>
+ </div>
+</footer>
+
+<a class="barre-appel" href="tel:+33243824866"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Appeler Secoma</a>
+
+<script>
+document.documentElement.classList.add('js');
+(function(){
+ var hd=document.getElementById('haut'),nav=document.getElementById('nav'),bg=document.getElementById('burger');
+ var links=[].slice.call(nav.querySelectorAll('a'));
+ var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+ function H(){return hd.offsetHeight}
+ function go(id){var s=document.querySelector(id);if(!s)return;window.scrollTo(0,s.getBoundingClientRect().top+window.pageYOffset-H())}
+ [].slice.call(document.querySelectorAll('a[href^="#"]')).forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id.length<2)return;e.preventDefault();nav.classList.remove('ouvert');bg.setAttribute('aria-expanded','false');go(id)})});
+ bg.addEventListener('click',function(){var o=nav.classList.toggle('ouvert');bg.setAttribute('aria-expanded',o)});
+ function spy(){var y=H()+2,cur=-1;secs.forEach(function(s,i){if(s.getBoundingClientRect().top<=y)cur=i});
+  if(window.innerHeight+window.pageYOffset>=document.body.scrollHeight-2)cur=secs.length-1;
+  links.forEach(function(a,i){a.classList.toggle('on',i===cur)})}
+ window.addEventListener('scroll',spy,{passive:true});window.addEventListener('resize',spy);spy();
+ /* galerie : positions atteignables = photos - photos visibles + 1 */
+ var car=document.getElementById('car'),p=document.getElementById('piste'),fig=[].slice.call(p.children),n=fig.length,i=0;
+ var pr=document.getElementById('prec'),su=document.getElementById('suiv'),cn=document.getElementById('cn');
+ function vis(){return Math.max(1,Math.round(car.offsetWidth/fig[0].offsetWidth))}
+ function max(){return Math.max(0,n-vis())}
+ function show(){if(i>max())i=max();p.style.transform='translateX(-'+fig[i].offsetLeft+'px)';cn.textContent=(i+1)+' / '+(max()+1);pr.disabled=i===0;su.disabled=i>=max()}
+ pr.addEventListener('click',function(){if(i>0){i--;show()}});
+ su.addEventListener('click',function(){if(i<max()){i++;show()}});
+ car.addEventListener('keydown',function(e){if(e.key==='ArrowLeft')pr.click();if(e.key==='ArrowRight')su.click()});
+ var x0=null;car.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+ car.addEventListener('touchend',function(e){if(x0===null)return;var d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>40){(d<0?su:pr).click()}x0=null});
+ window.addEventListener('resize',show);window.addEventListener('load',show);show();
+ /* apparition douce */
+ var rev=[].slice.call(document.querySelectorAll('.rev'));
+ if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vu');io.unobserve(e.target)}})},{threshold:.08});
+  rev.forEach(function(r,k){r.style.transitionDelay=(k%3)*90+'ms';io.observe(r)});
+ }else rev.forEach(function(r){r.classList.add('vu')});
+ /* formulaire : remerciement */
+ document.getElementById('form').addEventListener('submit',function(e){e.preventDefault();this.style.display='none';document.getElementById('merci').style.display='block'});
+})();
+</script>
+</body>
+</html>
