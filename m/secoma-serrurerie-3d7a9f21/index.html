@@ -133,7 +133,7 @@ nav#nav a:hover::after,nav#nav a.on::after{transform:scaleX(1)}
 .coord a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4)}
 .horaires{width:100%;border-collapse:collapse;margin-bottom:26px}
 .horaires th,.horaires td{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.14);text-align:left;font-weight:500}
-.horaires th{font-family:'Barlow Condensed',sans-serif;font-size:20px;letter-spacing:.8px;text-transform:uppercase;width:34%;color:#fff}
+.horaires th{font-family:'Barlow Condensed',sans-serif;font-size:20px;letter-spacing:.8px;text-transform:uppercase;width:44%;color:#fff;padding-right:12px}
 .horaires td{color:#d5d9df}
 .horaires tr.ferme td{color:#8e95a0}
 .reseaux{display:flex;gap:12px;flex-wrap:wrap}
@@ -205,7 +205,7 @@ footer.pied .reseaux svg{width:20px;height:20px}
  .cadre{width:86%;margin-left:0}
  .cadre .badge{left:-8px}
  #prestations,#realisations,#enseigne,#avis,#contact{padding:68px 0}
- .grille{grid-template-columns:1fr}
+ .grille{grid-template-columns:1fr;grid-auto-rows:1fr}
  .carte{padding:24px 22px 26px}
  #piste figure{flex-basis:100%}
  .colonnes{column-count:1}
@@ -366,13 +366,10 @@ footer.pied .reseaux svg{width:20px;height:20px}
     <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/></svg><span>Interventions au Mans et dans ses environs</span></li>
    </ul>
    <table class="horaires" aria-label="Horaires d'ouverture">
-    <tr><th>Lundi</th><td>8h30 – 12h · 14h – 17h30</td></tr>
-    <tr><th>Mardi</th><td>8h30 – 12h · 14h – 17h30</td></tr>
+    <tr><th>Lundi, mardi, jeudi</th><td>8h30 – 12h · 14h – 17h30</td></tr>
     <tr><th>Mercredi</th><td>10h – 12h</td></tr>
-    <tr><th>Jeudi</th><td>8h30 – 12h · 14h – 17h30</td></tr>
     <tr><th>Vendredi</th><td>8h30 – 12h</td></tr>
-    <tr class="ferme"><th>Samedi</th><td>Fermé</td></tr>
-    <tr class="ferme"><th>Dimanche</th><td>Fermé</td></tr>
+    <tr class="ferme"><th>Samedi et dimanche</th><td>Fermé</td></tr>
    </table>
    <div class="reseaux">
     <a href="https://www.facebook.com/SECOMA72" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>Facebook</a>
