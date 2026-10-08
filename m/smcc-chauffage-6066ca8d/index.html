@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>SMCC · Chauffage et climatisation au Mans</title>
+<meta name="description" content="SMCC, Sébastien Maintenance Chauffage Climatisation, au Mans : entretien de chaudière, pompe à chaleur, climatisation, plancher chauffant. Appelez le 06 08 36 91 01.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Manrope:wght@400;600;700;800&display=swap">
+<style>
+/* Style : noir du logo, anneau rouge (chaud) et bleu (froid), serif comme les lettres SMCC */
+:root{
+  --noir:#0a0a0c;--noir2:#15151b;--noir3:#1f1f27;
+  --blanc:#fff;--creme:#f5f2ec;--ligne:#e3ded4;
+  --rouge:#e4313a;--rouge-f:#c4202a;--bleu:#2a40e8;--bleu-c:#7d8dff;
+  --texte:#1a1a20;--doux:#5b5b66;
+  --hdr:76px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-padding-top:var(--hdr);background:var(--noir);-webkit-text-size-adjust:100%}
+body{font-family:'Manrope',system-ui,sans-serif;color:var(--texte);background:var(--creme);line-height:1.6;font-size:17px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.15;font-weight:700}
+.enveloppe{width:min(1180px,100% - 40px);margin-inline:auto}
+section{position:relative}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font-weight:800;text-decoration:none;font-size:1.02rem;border:2px solid transparent;cursor:pointer;font-family:inherit;transition:transform .2s,background .2s,color .2s,border-color .2s}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-rouge{background:var(--rouge);color:#fff}
+.btn-rouge:hover{background:var(--rouge-f);transform:translateY(-2px)}
+.btn-contour{border-color:rgba(255,255,255,.5);color:#fff}
+.btn-contour:hover{background:#fff;color:var(--noir)}
+.btn-noir{background:var(--noir);color:#fff}
+.btn-noir:hover{background:var(--noir3);transform:translateY(-2px)}
+
+/* En-tête */
+.entete{position:fixed;inset:0 0 auto 0;height:var(--hdr);background:var(--noir);z-index:50;display:flex;align-items:center;border-bottom:1px solid rgba(255,255,255,.08);transition:box-shadow .3s}
+.entete.ombre{box-shadow:0 8px 30px rgba(0,0,0,.45)}
+.entete .enveloppe{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.marque{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;flex:none}
+.marque img{height:54px;width:auto;mix-blend-mode:lighten}
+.marque b{font-family:'Playfair Display',serif;font-size:1.5rem;letter-spacing:.06em;line-height:1}
+.marque small{display:block;font-family:'Manrope',sans-serif;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.65);font-weight:600;margin-top:4px}
+nav ul{display:flex;gap:6px;list-style:none;align-items:center}
+nav a.lien{display:block;padding:10px 14px;color:rgba(255,255,255,.78);text-decoration:none;font-weight:700;font-size:.95rem;border-radius:999px;position:relative;transition:color .2s}
+nav a.lien:hover{color:#fff}
+nav a.lien.actif{color:#fff}
+nav a.lien.actif::after{content:"";position:absolute;left:14px;right:14px;bottom:4px;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--rouge) 50%,var(--bleu-c) 50%)}
+.tel-entete{display:inline-flex;align-items:center;gap:8px;background:var(--rouge);color:#fff;text-decoration:none;font-weight:800;padding:0 20px;min-height:46px;border-radius:999px;white-space:nowrap}
+.tel-entete svg{width:18px;height:18px}
+.burger{display:none;width:48px;height:48px;border:0;background:transparent;color:#fff;cursor:pointer}
+.burger span,.burger span::before,.burger span::after{display:block;width:24px;height:2.5px;background:#fff;border-radius:2px;position:relative;margin:auto;transition:transform .25s,background .25s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}
+.burger span::before{top:-8px}.burger span::after{top:8px}
+.burger[aria-expanded="true"] span{background:transparent}
+.burger[aria-expanded="true"] span::before{transform:translateY(8px) rotate(45deg)}
+.burger[aria-expanded="true"] span::after{transform:translateY(-8px) rotate(-45deg)}
+.progres{position:absolute;left:0;bottom:-1px;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--rouge),var(--bleu))}
+
+/* Héros */
+.heros{background:var(--noir);color:#fff;padding:calc(var(--hdr) + 56px) 0 96px;overflow:hidden}
+.anneau-fond{position:absolute;right:-180px;top:50%;width:760px;height:760px;margin-top:-330px;opacity:.55;pointer-events:none}
+.anneau-fond svg{width:100%;height:100%}
+.heros .enveloppe{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.etiquette{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.8);margin-bottom:22px}
+.etiquette::before{content:"";width:34px;height:6px;border-radius:3px;background:linear-gradient(90deg,var(--rouge) 50%,var(--bleu-c) 50%);flex:none}
+.heros h1{font-size:clamp(2.2rem,4vw,3.4rem);margin-bottom:22px}
+.heros h1 .ligne{display:block;overflow:hidden;padding-bottom:.08em}
+.heros h1 .ligne>span{display:block}
+.heros h1 em{font-style:normal;color:var(--rouge)}
+.heros h1 em.froid{color:var(--bleu-c)}
+.heros .sous{font-size:1.15rem;color:rgba(255,255,255,.82);max-width:34em;margin-bottom:30px}
+.actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:26px}
+.heros .note-h{display:flex;align-items:center;gap:12px;color:rgba(255,255,255,.75);font-weight:600;font-size:.95rem}
+.heros .note-h svg{width:20px;height:20px;color:var(--rouge);flex:none}
+.cadre{position:relative}
+.cadre .photo{border-radius:28px;overflow:hidden;aspect-ratio:4/3.1;box-shadow:0 30px 70px rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.12)}
+.cadre .photo img{width:100%;height:100%;object-fit:cover}
+.pastille{position:absolute;left:-22px;bottom:-26px;background:#fff;color:var(--noir);border-radius:20px;padding:14px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 18px 40px rgba(0,0,0,.4)}
+.pastille .gros{font-family:'Playfair Display',serif;font-size:2.1rem;font-weight:700;line-height:1}
+.pastille .etoiles{color:#f4a300;letter-spacing:2px;font-size:1rem;line-height:1}
+.pastille small{display:block;color:var(--doux);font-weight:600;font-size:.82rem;margin-top:3px}
+
+/* Bandeau */
+.bandeau{background:#fff;border-bottom:1px solid var(--ligne)}
+.bandeau .enveloppe{display:grid;grid-template-columns:repeat(4,1fr)}
+.fait{display:flex;align-items:center;gap:14px;padding:26px 18px;border-right:1px solid var(--ligne)}
+.fait:last-child{border-right:0}
+.fait svg{width:34px;height:34px;flex:none;color:var(--rouge)}
+.fait:nth-child(even) svg{color:var(--bleu)}
+.fait strong{display:block;font-weight:800;line-height:1.2}
+.fait span{color:var(--doux);font-size:.92rem;line-height:1.35;display:block}
+
+/* Sections */
+.bloc{padding:96px 0}
+.tete{max-width:46em;margin-bottom:46px}
+.tete h2{font-size:clamp(1.9rem,3.6vw,2.8rem);margin-bottom:14px}
+.tete p{color:var(--doux);font-size:1.08rem}
+.tete .etiquette{color:var(--doux)}
+.sombre .tete .etiquette,.sombre .tete p{color:rgba(255,255,255,.7)}
+.sombre{background:var(--noir);color:#fff}
+
+/* Présentation */
+.presentation{padding-bottom:30px}
+.presentation .enveloppe{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.carte-logo{background:var(--noir);border-radius:28px;padding:34px;display:grid;place-items:center;box-shadow:0 24px 50px rgba(10,10,12,.25)}
+.carte-logo img{width:min(100%,380px);mix-blend-mode:lighten}
+.presentation h2{font-size:clamp(1.8rem,3.2vw,2.5rem);margin-bottom:18px}
+.presentation p{color:var(--doux);margin-bottom:14px}
+.presentation p strong{color:var(--texte)}
+.puces{list-style:none;display:grid;gap:10px;margin-top:20px}
+.puces li{display:flex;align-items:flex-start;gap:12px;font-weight:600}
+.puces svg{width:22px;height:22px;flex:none;color:var(--rouge);margin-top:3px}
+
+/* Services */
+.services{background:var(--creme)}
+.grille-services{align-items:stretch;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.service{background:#fff;border:1px solid var(--ligne);border-radius:22px;padding:28px;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.service:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(10,10,12,.1)}
+.service::after{content:"";position:absolute;left:0;top:0;height:5px;width:100%;background:linear-gradient(90deg,var(--rouge),var(--bleu));opacity:.85}
+.service .titre{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.service .pic{width:50px;height:50px;border-radius:14px;background:var(--noir);color:#fff;display:grid;place-items:center;flex:none}
+.service .pic svg{width:28px;height:28px}
+.service .pic.rouge svg{color:#ff6a72}
+.service .pic.bleu svg{color:var(--bleu-c)}
+.service h3{font-size:1.3rem}
+.service p{color:var(--doux)}
+
+/* Déroulement */
+.etapes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:e}
+.etape{border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:28px;background:var(--noir2)}
+.etape h3{font-size:1.35rem;margin-bottom:10px;display:flex;gap:10px;align-items:baseline}
+.etape h3 .n{color:var(--rouge);font-size:1.35rem}
+.etape:nth-child(2) h3 .n{color:var(--bleu-c)}
+.etape p{color:rgba(255,255,255,.75)}
+.reassure{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px 28px;color:rgba(255,255,255,.85);font-weight:700}
+.reassure span{display:inline-flex;align-items:center;gap:10px}
+.reassure svg{width:20px;height:20px;color:var(--rouge)}
+
+/* Réalisations */
+.realisations{background:var(--creme);overflow:hidden}
+.tete-galerie{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:34px}
+.tete-galerie .tete{margin:0}
+.commandes{display:flex;align-items:center;gap:12px}
+.commandes button{width:52px;height:52px;border-radius:50%;border:2px solid var(--noir);background:#fff;color:var(--noir);cursor:pointer;display:grid;place-items:center;transition:background .2s,color .2s}
+.commandes button:hover:not(:disabled){background:var(--noir);color:#fff}
+.commandes button:disabled{opacity:.3;cursor:default}
+.commandes svg{width:22px;height:22px}
+.compteur{font-weight:800;min-width:64px;text-align:center}
+.piste{display:flex;gap:20px;overflow-x:auto;scrollbar-width:none;padding:6px 0 10px;scroll-snap-type:x proximity}
+.piste::-webkit-scrollbar{display:none}
+.piste:focus-visible{outline:3px solid var(--bleu);outline-offset:6px;border-radius:12px}
+.carte{flex:0 0 calc((100% - 40px)/3);scroll-snap-align:start;background:#fff;border-radius:22px;overflow:hidden;border:1px solid var(--ligne)}
+.carte .img{aspect-ratio:4/4.6;overflow:hidden;background:var(--noir2)}
+.carte img{width:100%;height:100%;object-fit:cover}
+.carte figcaption{padding:16px 18px 18px;font-weight:700;line-height:1.35}
+.carte figcaption small{display:block;color:var(--doux);font-weight:600;margin-top:2px}
+
+/* Avis */
+.avis{background:#fff}
+.bloc-note{display:flex;align-items:center;gap:22px;flex-wrap:wrap;background:var(--noir);color:#fff;border-radius:24px;padding:26px 32px;margin-bottom:34px}
+.bloc-note .gros{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:700;line-height:1}
+.bloc-note .etoiles{color:#f4a300;font-size:1.25rem;letter-spacing:3px;line-height:1}
+.bloc-note p{color:rgba(255,255,255,.75);font-weight:600}
+.bloc-note .btn{margin-left:auto}
+.mur{column-count:3;column-gap:20px}
+.avis-carte{break-inside:avoid;margin-bottom:20px;background:var(--creme);border:1px solid var(--ligne);border-radius:20px;padding:22px 24px}
+.avis-carte .etoiles{color:#f4a300;letter-spacing:2px;line-height:1;margin-bottom:10px}
+.avis-carte blockquote{font-size:1rem}
+.avis-carte footer{margin-top:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;color:var(--doux);font-size:.88rem}
+.avis-carte footer b{color:var(--texte);font-weight:800}
+.source-avis{margin-top:6px;color:var(--doux);font-size:.9rem}
+
+/* Contact */
+.contact{background:var(--noir);color:#fff}
+.grille-contact{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.coordonnees{display:grid;gap:14px}
+.ligne-contact{display:flex;align-items:center;gap:16px;padding:16px 20px;border-radius:18px;background:var(--noir2);border:1px solid rgba(255,255,255,.1);text-decoration:none}
+.ligne-contact svg{width:26px;height:26px;color:var(--rouge);flex:none}
+.ligne-contact:nth-child(even) svg{color:var(--bleu-c)}
+.ligne-contact small{display:block;color:rgba(255,255,255,.6);font-weight:600;font-size:.85rem}
+.ligne-contact strong{font-size:1.1rem;font-weight:800;overflow-wrap:anywhere}
+a.ligne-contact:hover{border-color:rgba(255,255,255,.4)}
+.horaires{margin-top:8px;background:var(--noir2);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:22px}
+.horaires h3{font-size:1.25rem;margin-bottom:6px;display:flex;align-items:center;gap:12px}
+.horaires h3 svg{width:24px;height:24px;color:var(--bleu-c);flex:none}
+.etat{display:inline-block;font-weight:800;font-size:.85rem;border-radius:999px;padding:3px 12px;margin-bottom:12px;background:rgba(255,255,255,.1)}
+.etat.ouvert{background:#16a34a;color:#fff}
+.etat.ferme{background:rgba(228,49,58,.25);color:#ffb3b7}
+.horaires table{width:100%;border-collapse:collapse}
+.horaires td{padding:8px 0;border-top:1px solid rgba(255,255,255,.1)}
+.horaires td:last-child{text-align:right;font-weight:700}
+.horaires tr.auj td{color:#fff;font-weight:800}
+.horaires tr:not(.auj) td{color:rgba(255,255,255,.75)}
+.horaires tr.ferme-j td:last-child{color:#ffb3b7}
+.formulaire{position:sticky;top:calc(var(--hdr) + 20px);background:#fff;color:var(--texte);border-radius:26px;padding:34px}
+.formulaire h3{font-size:1.6rem;margin-bottom:6px}
+.formulaire>p{color:var(--doux);margin-bottom:20px}
+.formulaire label{display:block;font-weight:700;margin-bottom:16px;font-size:.95rem}
+.formulaire input,.formulaire textarea{display:block;width:100%;margin-top:6px;border:2px solid var(--ligne);border-radius:14px;padding:13px 16px;font:inherit;background:var(--creme);color:var(--texte)}
+.formulaire input:focus,.formulaire textarea:focus{outline:none;border-color:var(--bleu);background:#fff}
+.formulaire textarea{min-height:120px;resize:vertical}
+.formulaire .btn{width:100%}
+.merci{margin-top:16px;padding:14px 16px;border-radius:14px;background:#e8f7ee;color:#14532d;font-weight:700}
+.reseaux{display:flex;flex-wrap:wrap;gap:10px}
+.reseau{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 18px;border-radius:999px;border:1.5px solid rgba(255,255,255,.3);color:#fff;text-decoration:none;font-weight:700;font-size:.95rem;transition:background .2s,color .2s}
+.reseau svg{width:22px;height:22px;flex:none}
+.reseau:hover{background:#fff;color:var(--noir)}
+.reseaux-contact{margin-top:6px}
+
+/* Pied */
+.pied{background:#000;color:rgba(255,255,255,.7);padding:34px 0 100px;font-size:.92rem}
+.pied .enveloppe{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.pied a{text-decoration:none}
+.appel-flottant{position:fixed;right:16px;bottom:16px;z-index:40;box-shadow:0 14px 34px rgba(0,0,0,.45)}
+
+/* Tablette et téléphone */
+@media (max-width:1080px){
+  nav ul{gap:0}
+  nav a.lien{padding:10px 10px;font-size:.9rem}
+  .tel-entete span.num{display:none}
+  .tel-entete{padding:0 16px}
+}
+@media (max-width:960px){
+  :root{--hdr:68px}
+  .burger{display:block}
+  .marque img{height:46px}
+  nav{position:fixed;left:0;right:0;top:var(--hdr);background:var(--noir);border-bottom:1px solid rgba(255,255,255,.1);max-height:0;overflow:hidden;transition:max-height .35s}
+  nav.ouvert{max-height:80vh;overflow:auto}
+  nav ul{flex-direction:column;align-items:stretch;padding:10px 20px 22px;gap:2px}
+  nav a.lien{padding:15px 6px;font-size:1.08rem;border-bottom:1px solid rgba(255,255,255,.08);border-radius:0}
+  nav a.lien.actif::after{left:6px;right:auto;width:46px;bottom:8px}
+  .entete .enveloppe{gap:10px}
+  .tel-entete{margin-left:auto}
+  .heros{padding:calc(var(--hdr) + 36px) 0 70px}
+  .heros .enveloppe{grid-template-columns:1fr;gap:44px}
+  .anneau-fond{right:-300px;opacity:.22}
+  .pastille{left:14px;bottom:-24px}
+  .bandeau .enveloppe{grid-template-columns:1fr 1fr}
+  .fait{border-bottom:1px solid var(--ligne)}
+  .fait:nth-child(2){border-right:0}
+  .fait:nth-child(n+3){border-bottom:0}
+  .bloc{padding:72px 0}
+  .presentation .enveloppe{grid-template-columns:1fr;gap:34px}
+  .grille-services,.etapes{grid-template-columns:1fr 1fr}
+  .carte{flex-basis:calc((100% - 20px)/2)}
+  .mur{column-count:2}
+  .grille-contact{grid-template-columns:1fr}
+  .formulaire{position:static}
+}
+@media (max-width:620px){
+  body{font-size:16.5px}
+  .enveloppe{width:calc(100% - 32px)}
+  .marque b{font-size:1.3rem}
+  .marque small{font-size:.62rem}
+  .tel-entete{display:none}
+  .burger{margin-left:auto}
+  .actions .btn{width:100%}
+  .bandeau .enveloppe{grid-template-columns:1fr}
+  .fait{border-right:0;border-bottom:1px solid var(--ligne)!important;padding:18px 4px}
+  .fait:last-child{border-bottom:0!important}
+  .grille-services,.etapes{grid-template-columns:1fr}
+  .carte{flex-basis:84%}
+  .mur{column-count:1}
+  .bloc-note{padding:22px}
+  .bloc-note .btn{margin-left:0;width:100%}
+  .formulaire{padding:24px}
+  .carte-logo{padding:22px}
+  .tete-galerie{align-items:flex-start}
+  .appel-flottant{left:16px;right:16px}
+  .pied .enveloppe{flex-direction:column;align-items:flex-start}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="entete" id="entete">
+  <div class="enveloppe">
+    <a class="marque" href="#accueil" aria-label="SMCC, retour à l'accueil">
+      <img src="img/logo-rond.png" alt="Logo SMCC" width="285" height="262">
+      <span><b>SMCC</b><small>Chauffage · Climatisation</small></span>
+    </a>
+    <nav id="nav" aria-label="Menu principal">
+      <ul>
+        <li><a class="lien" href="#services">Services</a></li>
+        <li><a class="lien" href="#deroulement">Déroulement</a></li>
+        <li><a class="lien" href="#realisations">Réalisations</a></li>
+        <li><a class="lien" href="#avis">Avis</a></li>
+        <li><a class="lien" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="tel-entete" href="tel:+33608369101"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg><span class="num">06 08 36 91 01</span><span class="mot">Appeler</span></a>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav"><span></span></button>
+  </div>
+  <div class="progres" id="progres"></div>
+</header>
+
+<main>
+<section class="heros" id="accueil">
+  <div class="anneau-fond" aria-hidden="true">
+    <svg viewBox="0 0 400 400" fill="none" stroke-linecap="round">
+      <defs>
+        <linearGradient id="gr" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#e4313a"/><stop offset=".5" stop-color="#e4313a"/><stop offset=".5" stop-color="#2a40e8"/><stop offset="1" stop-color="#2a40e8"/></linearGradient>
+      </defs>
+      <g id="tour"><circle id="arc1" cx="200" cy="200" r="170" stroke="url(#gr)" stroke-width="10" stroke-dasharray="1068" stroke-dashoffset="0"/><circle cx="200" cy="200" r="150" stroke="#2a40e8" stroke-width="3" stroke-dasharray="420 523" opacity=".7"/><circle cx="200" cy="200" r="190" stroke="#e4313a" stroke-width="3" stroke-dasharray="380 814" opacity=".7"/></g>
+    </svg>
+  </div>
+  <div class="enveloppe">
+    <div class="texte-heros">
+      <span class="etiquette">Chauffagiste · Le Mans</span>
+      <h1><span class="ligne"><span><em>Chaud</em> l'hiver,</span></span><span class="ligne"><span><em class="froid">frais</em> l'été,</span></span><span class="ligne"><span>votre confort entretenu en confiance.</span></span></h1>
+      <p class="sous">Sébastien Rondet entretient et optimise vos chaudières, pompes à chaleur et climatisations au Mans et aux alentours. Un rendez-vous respecté, un compte rendu clair, des conseils qui servent.</p>
+      <div class="actions">
+        <a class="btn btn-rouge" href="tel:+33608369101"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Appeler le 06 08 36 91 01</a>
+        <a class="btn btn-contour" href="#avis">Lire les avis clients</a>
+      </div>
+      <p class="note-h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Ouvert du lundi au vendredi, de 8h à 18h</p>
+    </div>
+    <div class="cadre" id="cadre">
+      <div class="photo"><img src="img/camion.jpg" alt="Camionnette SMCC, entretien et maintenance de chaudière, pompe à chaleur et climatisation" width="1000" height="749"></div>
+      <div class="pastille"><span class="gros">4,8</span><span><span class="etoiles" aria-hidden="true">★★★★★</span><small>19 avis Google</small></span></div>
+    </div>
+  </div>
+</section>
+
+<div class="bandeau">
+  <div class="enveloppe">
+    <div class="fait"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg><div><strong>4,8 sur 5 sur Google</strong><span>19 avis clients</span></div></div>
+    <div class="fait"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v5c0 5 3.400 8.600 8 10 4.600-1.400 8-5 8-10V6z"/><path d="m8.500 12 2.500 2.500 4.500-5"/></svg><div><strong>Qualifié QualiSAV</strong><span>Spécialité chaudière</span></div></div>
+    <div class="fait"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><strong>Lundi au vendredi</strong><span>De 8h à 18h</span></div></div>
+    <div class="fait"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.200 7-12a7 7 0 1 0-14 0c0 5.800 7 12 7 12z"/><circle cx="12" cy="10" r="2.600"/></svg><div><strong>Le Mans et alentours</strong><span>19 av. Louis Cordelet</span></div></div>
+  </div>
+</div>
+
+<section class="presentation bloc" id="presentation">
+  <div class="enveloppe">
+    <div class="carte-logo" id="carte-logo"><img src="img/logo.png" alt="Logo SMCC : Sébastien, Maintenance, Chauffage, Climatisation" width="427" height="268"></div>
+    <div>
+      <span class="etiquette" style="color:var(--doux)">Votre artisan</span>
+      <h2>Un interlocuteur unique, du premier appel à l'intervention.</h2>
+      <p>SMCC, c'est <strong>Sébastien Rondet</strong>, chauffagiste au Mans. Vous parlez toujours à la personne qui se déplace chez vous : pas de standard, pas de sous-traitant que vous ne connaissez pas.</p>
+      <p>Entretien et contrat de maintenance de chaudière gaz, entretien de pompe à chaleur et de climatisation, optimisation et conseils en installation de chauffage : l'essentiel pour que votre maison reste confortable toute l'année.</p>
+      <ul class="puces">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.500 4.500 4.500L19 7.500"/></svg>Chaudières gaz et fioul</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.500 4.500 4.500L19 7.500"/></svg>Pompes à chaleur et climatisations</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.500 4.500 4.500L19 7.500"/></svg>Conseils clairs, tarifs raisonnables selon ses clients</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="services bloc" id="services">
+  <div class="enveloppe">
+    <div class="tete">
+      <span class="etiquette">Ce que fait SMCC</span>
+      <h2>Chauffage, eau chaude et climatisation, entretenus par un seul artisan.</h2>
+      <p>Chaque intervention se termine par un compte rendu précis et des conseils pour votre installation.</p>
+    </div>
+    <div class="grille-services">
+      <article class="service">
+        <div class="titre"><span class="pic rouge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1 3.500 5 5.500 5 10a5 5 0 0 1-10 0c0-2 1-3.200 2-4.200.200 1.500 1 2.200 1.800 2.500C10.500 8 11 5.500 12 3z"/></svg></span><h3>Chaudières gaz et fioul</h3></div>
+        <p>Entretien et contrat de maintenance, inspection de chaque élément de la chaudière, réglages. Qualification QualiSAV, spécialité chaudière.</p>
+      </article>
+      <article class="service">
+        <div class="titre"><span class="pic bleu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 3v18M4.200 7.500l15.600 9M4.200 16.500l15.600-9M9.500 4.500 12 6.500l2.500-2M9.500 19.500 12 17.500l2.500 2"/></svg></span><h3>Pompe à chaleur et clim</h3></div>
+        <p>Entretien et maintenance de votre pompe à chaleur ou de votre climatisation, pour du chaud l'hiver et du frais l'été, sans surprise sur la facture.</p>
+      </article>
+      <article class="service">
+        <div class="titre"><span class="pic rouge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8c2-2 4 2 6 0s4-2 6 0 4 2 6 0M3 13c2-2 4 2 6 0s4-2 6 0 4 2 6 0M3 18c2-2 4 2 6 0s4-2 6 0 4 2 6 0"/></svg></span><h3>Plancher chauffant</h3></div>
+        <p>Entretien et réglage de votre plancher chauffant et de son collecteur, pour une chaleur douce et régulière dans toute la maison.</p>
+      </article>
+      <article class="service">
+        <div class="titre"><span class="pic bleu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6.200 6 10.500A6 6 0 0 1 6 13.500C6 9.200 12 3 12 3z"/><path d="M9.500 14a2.500 2.500 0 0 0 2.500 2.500"/></svg></span><h3>Désembouage</h3></div>
+        <p>Nettoyage du circuit de chauffage pour retrouver des radiateurs qui chauffent partout et une installation qui consomme moins.</p>
+      </article>
+      <article class="service">
+        <div class="titre"><span class="pic rouge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="5"/><path d="M6 9h12M12 12v4M10 14h4"/></svg></span><h3>Ballon et eau chaude</h3></div>
+        <p>Entretien de votre ballon thermodynamique et de votre production d'eau chaude, pour qu'elle soit toujours là au bon moment.</p>
+      </article>
+      <article class="service">
+        <div class="titre"><span class="pic bleu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.900 4.900 7 7M17 17l2.100 2.100M4.900 19.100 7 17M17 7l2.100-2.100"/></svg></span><h3>Panneaux solaires</h3></div>
+        <p>Nettoyage et entretien de vos panneaux solaires thermiques, directement sur le toit, pour garder tout leur rendement.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sombre bloc" id="deroulement">
+  <div class="enveloppe">
+    <div class="tete">
+      <span class="etiquette">Déroulement</span>
+      <h2>Simple du premier appel au compte rendu.</h2>
+      <p>Pas de jargon, pas de mauvaise surprise : vous savez à chaque étape ce qui va se passer.</p>
+    </div>
+    <div class="etapes">
+      <div class="etape"><h3><span class="n">1.</span> Vous appelez</h3><p>Vous décrivez votre chaudière, votre pompe à chaleur ou votre clim et on fixe ensemble un rendez-vous qui vous arrange.</p></div>
+      <div class="etape"><h3><span class="n">2.</span> Sébastien intervient</h3><p>Il se déplace à l'horaire prévu, inspecte votre installation et réalise l'entretien avec soin.</p></div>
+      <div class="etape"><h3><span class="n">3.</span> Compte rendu et conseils</h3><p>Vous repartez avec un compte rendu précis et des conseils clairs pour que votre installation dure.</p></div>
+    </div>
+    <div class="reassure">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.500 4.500 4.500L19 7.500"/></svg>Rendez-vous respecté</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.500 4.500 4.500L19 7.500"/></svg>Travail soigné</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.500 4.500 4.500L19 7.500"/></svg>Un seul interlocuteur</span>
+    </div>
+  </div>
+</section>
+
+<section class="realisations bloc" id="realisations">
+  <div class="enveloppe">
+    <div class="tete-galerie">
+      <div class="tete">
+        <span class="etiquette">Sur le terrain</span>
+        <h2>Quelques interventions de SMCC.</h2>
+        <p>Photos issues de la page Facebook de l'entreprise.</p>
+      </div>
+      <div class="commandes">
+        <button id="prec" aria-label="Photos précédentes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
+        <span class="compteur" id="compteur" aria-live="polite">1 / 1</span>
+        <button id="suiv" aria-label="Photos suivantes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+      </div>
+    </div>
+    <div class="piste" id="piste" tabindex="0" aria-label="Photos des interventions, utilisez les flèches">
+      <figure class="carte"><div class="img"><img src="img/chaudiere-gaz.jpg" alt="Chaudière gaz et vase d'expansion rouge" loading="lazy"></div><figcaption>Chaudière gaz<small>Installation entretenue</small></figcaption></figure>
+      <figure class="carte"><div class="img"><img src="img/chaudiere-ouverte.jpg" alt="Chaudière ouverte pour inspection des éléments" loading="lazy"></div><figcaption>Inspection de chaudière<small>Contrôle de chaque élément</small></figcaption></figure>
+      <figure class="carte"><div class="img"><img src="img/plancher-chauffant.jpg" alt="Collecteur de plancher chauffant" loading="lazy"></div><figcaption>Plancher chauffant<small>Collecteur et circuits</small></figcaption></figure>
+      <figure class="carte"><div class="img"><img src="img/ballon.jpg" alt="Ballon thermodynamique et ses raccords" loading="lazy"></div><figcaption>Ballon thermodynamique<small>Eau chaude sanitaire</small></figcaption></figure>
+      <figure class="carte"><div class="img"><img src="img/pac-fujitsu.jpg" alt="Unité extérieure de pompe à chaleur Fujitsu" loading="lazy"></div><figcaption>Pompe à chaleur<small>Unité extérieure</small></figcaption></figure>
+      <figure class="carte"><div class="img"><img src="img/pac-mitsubishi.jpg" alt="Unité extérieure Mitsubishi ouverte pour entretien" loading="lazy"></div><figcaption>Entretien d'unité extérieure<small>Climatisation et pompe à chaleur</small></figcaption></figure>
+      <figure class="carte"><div class="img"><img src="img/desembouage.jpg" alt="Machine de désembouage dans une cuisine" loading="lazy"></div><figcaption>Désembouage<small>Nettoyage du circuit de chauffage</small></figcaption></figure>
+      <figure class="carte"><div class="img"><img src="img/solaire.jpg" alt="Panneaux solaires thermiques sur une toiture" loading="lazy"></div><figcaption>Panneaux solaires<small>Nettoyage sur toiture</small></figcaption></figure>
+      <figure class="carte"><div class="img"><img src="img/camion-porte.jpg" alt="Portière de la camionnette SMCC avec le numéro de téléphone" loading="lazy"></div><figcaption>La camionnette SMCC<small>06 08 36 91 01</small></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="avis bloc" id="avis">
+  <div class="enveloppe">
+    <div class="tete">
+      <span class="etiquette">Avis clients</span>
+      <h2>Ils recommandent SMCC.</h2>
+    </div>
+    <div class="bloc-note">
+      <span class="gros" id="gros-note">4,8</span>
+      <div><div class="etoiles" aria-label="5 étoiles">★★★★★</div><p>sur Google, 19 avis</p></div>
+      <a class="btn btn-rouge" href="https://www.google.com/maps?cid=2947868372773325385" target="_blank" rel="noopener">Voir la fiche Google</a>
+    </div>
+    <div class="mur">
+      <figure class="avis-carte"><div class="etoiles" aria-label="5 étoiles">★★★★★</div><blockquote>«&nbsp;Sébastien est très bien organisé et connaît son métier. Intervention à l'horaire prévu, compte rendu précis, conseils pertinentsformalités accomplies sur le champ... Une entreprise digne de confiance.&nbsp;»</blockquote><footer><b>Alain B.</b><span>Modifié il y a 7 mois</span></footer></figure>
+      <figure class="avis-carte"><div class="etoiles" aria-label="5 étoiles">★★★★★</div><blockquote>«&nbsp;Excellent service, Sébastien a été rapide, serviable et competent. Je recommande fortement.&nbsp;»</blockquote><footer><b>Steffen T.</b><span>il y a 3 mois</span></footer></figure>
+      <figure class="avis-carte"><div class="etoiles" aria-label="5 étoiles">★★★★★</div><blockquote>«&nbsp;Comme toujours, que des compliments à adresser à cette entreprise : organisation parfaite, délais tenus, amabilité et travail soigné et efficace.&nbsp;»</blockquote><footer><b>Dominique</b><span>il y a 8 mois</span></footer></figure>
+      <figure class="avis-carte"><div class="etoiles" aria-label="5 étoiles">★★★★★</div><blockquote>«&nbsp;Artisan compétent et sérieux, je recommande Vivement cette société .&nbsp;»</blockquote><footer><b>frederick r.</b><span>il y a 5 mois</span></footer></figure>
+      <figure class="avis-carte"><div class="etoiles" aria-label="5 étoiles">★★★★★</div><blockquote>«&nbsp;Très bon relationnel avec le client. L inspection des différents éléments de la chaudière ont été réalisés avec sérieux. A recommander&nbsp;»</blockquote><footer><b>Gilles P.</b><span>il y a un an</span></footer></figure>
+      <figure class="avis-carte"><div class="etoiles" aria-label="5 étoiles">★★★★★</div><blockquote>«&nbsp;Personne sérieuse et de bon conseil. Je recommande.&nbsp;»</blockquote><footer><b>Yvon B.</b><span>il y a 3 mois</span></footer></figure>
+      <figure class="avis-carte"><div class="etoiles" aria-label="5 étoiles">★★★★★</div><blockquote>«&nbsp;Excellent technicien, Disponible, pédagogue. Les tarifs pratiqués sont raisonnables. Vivement recommandable !&nbsp;»</blockquote><footer><b>Thierry G.</b><span>il y a un an</span></footer></figure>
+      <figure class="avis-carte"><div class="etoiles" aria-label="5 étoiles">★★★★★</div><blockquote>«&nbsp;Un artisan de confiance ! Et qui s'occupe des chaudières au fioul.&nbsp;»</blockquote><footer><b>Guillaume de R.</b><span>Modifié il y a 4 mois</span></footer></figure>
+      <figure class="avis-carte"><div class="etoiles" aria-label="5 étoiles">★★★★★</div><blockquote>«&nbsp;Travail sérieux, à recommander.&nbsp;»</blockquote><footer><b>William M.</b><span>il y a un an</span></footer></figure>
+      <figure class="avis-carte"><div class="etoiles" aria-label="5 étoiles">★★★★★</div><blockquote>«&nbsp;Rendez-vous respecté&nbsp;»</blockquote><footer><b>Pierre D.</b><span>il y a un an</span></footer></figure>
+    </div>
+    <p class="source-avis">Avis publiés sur la fiche Google de SMCC, recopiés tels quels.</p>
+  </div>
+</section>
+
+<section class="contact bloc" id="contact">
+  <div class="enveloppe">
+    <div class="tete">
+      <span class="etiquette" style="color:rgba(255,255,255,.7)">Contact</span>
+      <h2>Un appel suffit.</h2>
+      <p style="color:rgba(255,255,255,.7)">Appelez Sébastien directement, ou laissez votre demande : il vous rappelle.</p>
+    </div>
+    <div class="grille-contact">
+      <div class="coordonnees">
+        <a class="ligne-contact" href="tel:+33608369101"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg><div><small>Téléphone</small><strong>06 08 36 91 01</strong></div></a>
+        <a class="ligne-contact" href="mailto:sarl.smcc72@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><div><small>E-mail</small><strong>sarl.smcc72@gmail.com</strong></div></a>
+        <div class="ligne-contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.200 7-12a7 7 0 1 0-14 0c0 5.800 7 12 7 12z"/><circle cx="12" cy="10" r="2.600"/></svg><div><small>Adresse</small><strong>19 av. Louis Cordelet, 72000 Le Mans</strong></div></div>
+        <div class="horaires">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Horaires d'ouverture</h3>
+          <span class="etat" id="etat">Lundi au vendredi, 8h à 18h</span>
+          <table id="tab-horaires">
+            <tr data-j="1,2,3,4,5"><td>Lundi au vendredi</td><td>8h00 – 18h00</td></tr>
+            <tr data-j="6,0" class="ferme-j"><td>Samedi et dimanche</td><td>Fermé</td></tr>
+          </table>
+        </div>
+        <div class="reseaux reseaux-contact">
+          <a class="reseau" href="https://www.facebook.com/profile.php?id=100059695071995" target="_blank" rel="noopener" aria-label="Page Facebook de SMCC"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.500 21v-7.600h2.600l.4-3h-3V8.500c0-.9.3-1.500 1.600-1.500h1.600V4.300c-.3 0-1.200-.1-2.300-.1-2.300 0-3.900 1.400-3.900 4v2.200H7.900v3h2.600V21z"/></svg><span>Facebook</span></a>
+          <a class="reseau" href="https://www.instagram.com/smcc_72/" target="_blank" rel="noopener" aria-label="Instagram de SMCC"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3.500" y="3.500" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.200" cy="6.800" r="1" fill="currentColor" stroke="none"/></svg><span>Instagram</span></a>
+          <a class="reseau" href="https://www.google.com/maps?cid=2947868372773325385" target="_blank" rel="noopener" aria-label="Fiche Google de SMCC"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.600 12.200c0-.7-.1-1.300-.2-1.900H12v3.700h5.400a4.600 4.600 0 0 1-2 3v2.500h3.200c1.900-1.700 3-4.300 3-7.300z"/><path d="M12 22c2.700 0 5-.9 6.600-2.400l-3.200-2.500c-.9.600-2 1-3.400 1-2.600 0-4.800-1.800-5.600-4.100H3.100v2.600A10 10 0 0 0 12 22z"/><path d="M6.400 14c-.2-.6-.3-1.300-.3-2s.1-1.400.3-2V7.400H3.100a10 10 0 0 0 0 9.200z"/><path d="M12 5.900c1.500 0 2.800.5 3.800 1.500l2.800-2.800A10 10 0 0 0 3.100 7.400L6.400 10c.8-2.300 3-4.100 5.600-4.100z"/></svg><span>Fiche Google</span></a>
+          <a class="reseau" href="https://www.google.com/maps/search/?api=1&query=SMCC%20Maintenance%20Chauffage%20Climatisation%2019%20av.%20Louis%20Cordelet%20Le%20Mans" target="_blank" rel="noopener" aria-label="Plan d'accès Google Maps"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s7-6.200 7-12a7 7 0 1 0-14 0c0 5.800 7 12 7 12z"/><circle cx="12" cy="10" r="2.600"/></svg><span>Plan d'accès</span></a>
+        </div>
+      </div>
+      <form class="formulaire" id="formulaire" action="#" novalidate>
+        <h3>Laissez votre demande</h3>
+        <p>Dites-nous en deux mots de quoi il s'agit, on vous rappelle.</p>
+        <label for="nom">Votre nom<input id="nom" name="nom" type="text" autocomplete="name" placeholder="Prénom et nom"></label>
+        <label for="tel">Votre téléphone<input id="tel" name="tel" type="tel" autocomplete="tel" placeholder="06 00 00 00 00"></label>
+        <label for="message">Votre message<textarea id="message" name="message" placeholder="Entretien de chaudière, pompe à chaleur, climatisation…"></textarea></label>
+        <button class="btn btn-noir" type="submit">Envoyer ma demande</button>
+        <p class="merci" id="merci" hidden>Merci ! Sur votre vrai site, cette demande vous arrivera par e-mail.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="pied">
+  <div class="enveloppe">
+    <span>© 2026 SARL SMCC · Chauffage et climatisation · Le Mans (72)</span>
+    <div class="reseaux">
+      <a class="reseau" href="https://www.facebook.com/profile.php?id=100059695071995" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.500 21v-7.600h2.600l.4-3h-3V8.500c0-.9.3-1.500 1.600-1.500h1.600V4.300c-.3 0-1.200-.1-2.300-.1-2.300 0-3.900 1.400-3.900 4v2.200H7.900v3h2.600V21z"/></svg><span>Facebook</span></a>
+      <a class="reseau" href="https://www.instagram.com/smcc_72/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3.500" y="3.500" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.200" cy="6.800" r="1" fill="currentColor" stroke="none"/></svg><span>Instagram</span></a>
+      <a class="reseau" href="https://www.google.com/maps?cid=2947868372773325385" target="_blank" rel="noopener" aria-label="Fiche Google"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.600 12.200c0-.7-.1-1.300-.2-1.900H12v3.700h5.400a4.600 4.600 0 0 1-2 3v2.500h3.200c1.900-1.700 3-4.300 3-7.300z"/><path d="M12 22c2.700 0 5-.9 6.600-2.400l-3.200-2.500c-.9.600-2 1-3.400 1-2.600 0-4.800-1.800-5.600-4.100H3.100v2.600A10 10 0 0 0 12 22z"/><path d="M6.400 14c-.2-.6-.3-1.300-.3-2s.1-1.400.3-2V7.400H3.100a10 10 0 0 0 0 9.200z"/><path d="M12 5.900c1.500 0 2.800.5 3.800 1.500l2.800-2.800A10 10 0 0 0 3.100 7.400L6.400 10c.8-2.300 3-4.100 5.600-4.100z"/></svg><span>Fiche Google</span></a>
+    </div>
+    <a href="#">Mentions légales</a>
+  </div>
+</footer>
+
+<a class="btn btn-rouge appel-flottant" href="tel:+33608369101"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Appeler 06 08 36 91 01</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  /* Menu téléphone */
+  var burger=document.getElementById('burger'),nav=document.getElementById('nav');
+  burger.addEventListener('click',function(){var o=nav.classList.toggle('ouvert');burger.setAttribute('aria-expanded',o)});
+
+  /* En-tête : ombre, lien actif, progression, ancres calées exactement sous l'en-tête */
+  var entete=document.getElementById('entete'),progres=document.getElementById('progres');
+  var liens=[].slice.call(nav.querySelectorAll('a'));
+  var sections=liens.map(function(l){return document.querySelector(l.getAttribute('href'))}).filter(Boolean);
+  function hauteurEntete(){return entete.getBoundingClientRect().height}
+  function majEntete(){
+    entete.classList.toggle('ombre',window.scrollY>10);
+    var total=document.documentElement.scrollHeight-window.innerHeight;
+    progres.style.transform='scaleX('+(total>0?Math.min(1,window.scrollY/total):0)+')';
+    var limite=hauteurEntete()+2,actif=null;
+    sections.forEach(function(s){if(s.getBoundingClientRect().top<=limite)actif=s});
+    if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-2)actif=sections[sections.length-1];
+    liens.forEach(function(l){l.classList.toggle('actif',!!actif&&l.getAttribute('href')==='#'+actif.id)});
+  }
+  window.addEventListener('scroll',function(){window.requestAnimationFrame(majEntete)},{passive:true});
+  window.addEventListener('resize',majEntete);majEntete();
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('href');
+      var cible=id==='#'?null:document.querySelector(id);
+      if(id!=='#'&&!cible)return;
+      e.preventDefault();
+      nav.classList.remove('ouvert');burger.setAttribute('aria-expanded','false');
+      var haut=cible&&cible.id!=='accueil'?cible.getBoundingClientRect().top+window.scrollY-hauteurEntete():0;
+      var doux=!window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({top:Math.max(0,Math.round(haut)),behavior:doux?'smooth':'auto'});
+    });
+  });
+
+  /* Réalisations : uniquement par boutons, compteur = positions atteignables */
+  var piste=document.getElementById('piste'),cartes=piste.querySelectorAll('.carte'),prec=document.getElementById('prec'),suiv=document.getElementById('suiv'),compteur=document.getElementById('compteur');
+  function pas(){return cartes[1].offsetLeft-cartes[0].offsetLeft}
+  function maj(){var der=cartes[cartes.length-1];var max=Math.max(0,der.offsetLeft+der.offsetWidth-cartes[0].offsetLeft-piste.clientWidth);var total=Math.round(max/pas())+1;var i=piste.scrollLeft>=max-4?total:Math.min(Math.round(piste.scrollLeft/pas())+1,total);compteur.textContent=i+' / '+total;prec.disabled=i<=1;suiv.disabled=i>=total}
+  prec.addEventListener('click',function(){piste.scrollBy({left:-pas(),behavior:'smooth'})});
+  suiv.addEventListener('click',function(){piste.scrollBy({left:pas(),behavior:'smooth'})});
+  piste.addEventListener('scroll',function(){window.requestAnimationFrame(maj)},{passive:true});
+  piste.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();suiv.click()}if(e.key==='ArrowLeft'){e.preventDefault();prec.click()}});
+  window.addEventListener('resize',maj);window.addEventListener('load',maj);if(document.fonts)document.fonts.ready.then(maj);maj();
+
+  /* Horaires : jour en cours et état ouvert / fermé (heure de Paris) */
+  try{
+    var p=new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date());
+    var jours={'dim.':0,'lun.':1,'mar.':2,'mer.':3,'jeu.':4,'ven.':5,'sam.':6};
+    var wd=jours[p.filter(function(x){return x.type==='weekday'})[0].value.toLowerCase()];
+    var h=+p.filter(function(x){return x.type==='hour'})[0].value+(+p.filter(function(x){return x.type==='minute'})[0].value)/60;
+    document.querySelectorAll('#tab-horaires tr').forEach(function(tr){tr.classList.toggle('auj',tr.getAttribute('data-j').split(',').indexOf(String(wd))>-1)});
+    var ouvert=wd>=1&&wd<=5&&h>=8&&h<18;
+    var etat=document.getElementById('etat');
+    etat.textContent=ouvert?'Ouvert maintenant, jusqu\'à 18h':'Fermé actuellement';
+    etat.classList.add(ouvert?'ouvert':'ferme');
+  }catch(e){}
+
+  /* Formulaire de démonstration : message de remerciement */
+  document.getElementById('formulaire').addEventListener('submit',function(e){
+    e.preventDefault();document.getElementById('merci').hidden=false;
+  });
+
+  /* Animations (le texte utile reste lisible sans) */
+  if(!window.gsap)return;
+  gsap.registerPlugin(ScrollTrigger);
+  var mm=gsap.matchMedia();
+  mm.add('(prefers-reduced-motion: no-preference)',function(){
+    /* Héros : titre ligne par ligne, anneau qui se trace puis tourne, photo dévoilée */
+    gsap.from('.heros h1 .ligne>span',{yPercent:110,duration:1,ease:'power4.out',stagger:.13,delay:.1});
+    gsap.from('.heros .etiquette, .heros .sous, .heros .actions, .heros .note-h',{y:20,opacity:0,duration:.8,ease:'power2.out',stagger:.12,delay:.4});
+    gsap.fromTo('#arc1',{strokeDashoffset:1068},{strokeDashoffset:0,duration:2.4,ease:'power2.inOut',delay:.2});
+    gsap.to('#tour',{rotation:360,svgOrigin:'200 200',duration:60,ease:'none',repeat:-1});
+    gsap.fromTo('#cadre .photo',{clipPath:'inset(0 0 100% 0)'},{clipPath:'inset(0 0 0% 0)',duration:1.2,ease:'power3.inOut',delay:.25});
+    gsap.fromTo('#cadre .photo img',{scale:1.2},{scale:1,duration:1.8,ease:'power2.out',delay:.25});
+    gsap.from('.pastille',{scale:.6,opacity:0,duration:.8,ease:'back.out(1.8)',delay:1.1});
+    gsap.to('.anneau-fond',{y:90,ease:'none',scrollTrigger:{trigger:'.heros',start:'top top',end:'bottom top',scrub:true}});
+
+    /* Bandeau, titres de section, cartes en cascade */
+    ScrollTrigger.batch('.fait',{start:'top 95%',once:true,onEnter:function(b){gsap.fromTo(b,{y:20,opacity:0},{y:0,opacity:1,duration:.6,stagger:.1,ease:'power2.out',clearProps:'transform,opacity'})}});
+    document.querySelectorAll('.tete h2, .presentation h2').forEach(function(h){
+      gsap.from(h,{y:30,opacity:0,duration:.9,ease:'power3.out',scrollTrigger:{trigger:h,start:'top 88%',once:true}});
+    });
+    gsap.fromTo('#carte-logo',{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0% 0 0)',duration:1.1,ease:'power3.inOut',scrollTrigger:{trigger:'#carte-logo',start:'top 85%',once:true}});
+    ScrollTrigger.batch('.service',{start:'top 90%',once:true,onEnter:function(b){gsap.fromTo(b,{y:46,opacity:0},{y:0,opacity:1,duration:.8,ease:'power3.out',stagger:.1,clearProps:'transform,opacity'})}});
+    ScrollTrigger.batch('.etape',{start:'top 90%',once:true,onEnter:function(b){gsap.fromTo(b,{y:34,opacity:0},{y:0,opacity:1,duration:.7,ease:'power2.out',stagger:.14,clearProps:'transform,opacity'})}});
+    gsap.fromTo('.carte',{x:80,opacity:0},{x:0,opacity:1,duration:.9,ease:'power3.out',stagger:.08,clearProps:'transform,opacity',scrollTrigger:{trigger:'#piste',start:'top 85%',once:true}});
+
+    /* Note Google qui compte, avis en cascade */
+    var gros=document.getElementById('gros-note'),compte={v:0};
+    gsap.to(compte,{v:4.8,duration:1.2,ease:'power2.out',scrollTrigger:{trigger:gros,start:'top 90%',once:true},onUpdate:function(){gros.textContent=compte.v.toFixed(1).replace('.',',')}});
+    ScrollTrigger.batch('.avis-carte',{start:'top 92%',once:true,onEnter:function(b){gsap.fromTo(b,{y:30,opacity:0},{y:0,opacity:1,duration:.7,ease:'power2.out',stagger:.1,clearProps:'transform,opacity'})}});
+
+    /* Contact : le téléphone reste visible, le formulaire arrive élément par élément */
+    gsap.from('#formulaire > *:not(#merci)',{y:22,opacity:0,duration:.6,ease:'power2.out',stagger:.08,scrollTrigger:{trigger:'#formulaire',start:'top 88%',once:true}});
+  });
+  window.addEventListener('load',function(){ScrollTrigger.refresh()});
+})();
+</script>
+</body>
+</html>
