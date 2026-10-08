@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Baradel au Mans : maçonnerie, terrassement, carottage et localisation de réseaux. 06 08 17 38 32.">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<title>Baradel Maçonnerie</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--rouge:#d8391d;--rouge-fonce:#b02c14;--ardoise:#4a4a54;--noir:#25252b;--beton:#ecebe8;--blanc:#fff;--texte:#33333a;--h:72px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto}
+body{background:#fff;font-family:Barlow,system-ui,sans-serif;color:var(--texte);background:var(--blanc);line-height:1.6;font-size:17px}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:'Barlow Condensed',sans-serif;line-height:1.1;color:var(--noir)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--blanc);border-bottom:3px solid var(--rouge);height:var(--h)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:100%;gap:14px}
+.brand img{height:50px;width:auto}
+nav ul{display:flex;gap:4px;list-style:none}
+nav a{display:block;padding:8px 12px;text-decoration:none;font-weight:600;color:var(--ardoise);border-radius:4px;font-size:16px}
+nav a:hover{background:var(--beton)}
+nav a.on{color:var(--rouge);box-shadow:inset 0 -3px 0 var(--rouge)}
+.btn{display:inline-flex;align-items:center;gap:9px;background:var(--rouge);color:#fff;text-decoration:none;font-weight:600;padding:12px 22px;border-radius:4px;border:0;font-size:17px;cursor:pointer;font-family:inherit;transition:background .2s}
+.btn:hover{background:var(--rouge-fonce)}
+.btn svg{width:20px;height:20px;fill:currentColor;flex:none}
+.btn.clair{background:#fff;color:var(--rouge)}
+.btn.clair:hover{background:var(--beton)}
+.btn.contour{background:transparent;border:2px solid #fff;color:#fff}
+.btn.contour:hover{background:rgba(255,255,255,.15)}
+.burger{display:none;background:none;border:2px solid var(--ardoise);border-radius:4px;padding:8px 10px;cursor:pointer}
+.burger span{display:block;width:22px;height:2px;background:var(--ardoise);margin:4px 0}
+section{scroll-margin-top:0}
+.hero{background:linear-gradient(rgba(37,37,43,.78),rgba(37,37,43,.82)),url(img/gaines-reseaux.jpg) center/cover;color:#fff;text-align:center;padding:96px 0 88px}
+.hero h1{color:#fff;font-size:clamp(40px,7vw,76px);font-weight:800;text-transform:uppercase;letter-spacing:.5px}
+.hero h1 em{font-style:normal;color:#ff8a70}
+.hero p{max-width:640px;margin:18px auto 30px;font-size:20px;color:#eee}
+.hero .actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.hero .badges{display:flex;gap:10px 26px;justify-content:center;flex-wrap:wrap;margin-top:40px;font-weight:600;font-size:16px}
+.hero .badges span::before{content:"✓ ";color:#ff8a70}
+.bloc{padding:80px 0}
+.bloc.gris{background:var(--beton)}
+.titre{text-align:center;margin-bottom:46px}
+.titre h2{font-size:clamp(32px,5vw,46px);text-transform:uppercase;font-weight:800}
+.titre h2::after{content:"";display:block;width:70px;height:5px;background:var(--rouge);margin:14px auto 0}
+.titre p{margin-top:14px;color:#555;max-width:640px;margin-left:auto;margin-right:auto}
+.grille{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.carte{background:#fff;border-radius:6px;padding:26px;border-top:5px solid var(--rouge);box-shadow:0 2px 10px rgba(0,0,0,.07)}
+.carte h3{display:flex;align-items:center;gap:12px;font-size:25px;margin-bottom:10px;text-transform:uppercase}
+.carte h3 svg{width:34px;height:34px;flex:none;fill:none;stroke:var(--rouge);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.carte p{font-size:16px}
+/* carrousel */
+.car{max-width:900px;margin:0 auto}
+.car-vue{overflow:hidden;border-radius:6px;background:#000;position:relative}
+.car-piste{display:flex;transition:transform .5s ease}
+.car-piste figure{min-width:100%;position:relative}
+.car-piste img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.car-piste figcaption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#fff;padding:36px 20px 16px;font-weight:600;font-size:18px}
+.car-bas{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:18px}
+.car-bas button{width:50px;height:50px;border-radius:50%;border:0;background:var(--rouge);color:#fff;font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.car-bas button:disabled{background:#bbb;cursor:default}
+.car-bas button:hover:not(:disabled){background:var(--rouge-fonce)}
+.car-n{font-weight:600;min-width:70px;text-align:center;font-size:19px}
+/* étapes */
+.etapes{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.etape{background:#fff;border-radius:6px;padding:24px;border-left:5px solid var(--rouge);box-shadow:0 2px 10px rgba(0,0,0,.07)}
+.etape h3{font-size:24px;text-transform:uppercase;margin-bottom:8px}
+.etape h3 b{color:var(--rouge)}
+/* avis */
+.note{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:34px;font-size:20px;font-weight:600}
+.note .etoiles{color:#f5a623;letter-spacing:2px;font-size:24px}
+.avis{column-count:3;column-gap:20px}
+.avis blockquote{break-inside:avoid;margin:0 0 20px;background:#fff;border-radius:6px;padding:22px;box-shadow:0 2px 10px rgba(0,0,0,.07)}
+.avis .st{color:#f5a623;letter-spacing:2px}
+.avis p{margin:8px 0 12px;font-size:16px}
+.avis cite{font-style:normal;font-weight:600;display:block}
+.avis small{color:#777}
+.avis-lien{text-align:center;margin-top:28px}
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.coord{background:var(--noir);color:#eee;border-radius:6px;padding:32px}
+.coord h3{color:#fff;font-size:28px;text-transform:uppercase;margin-bottom:16px}
+.coord .ligne{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px}
+.coord .ligne svg{width:22px;height:22px;flex:none;margin-top:3px;fill:none;stroke:#ff8a70;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.coord a{text-decoration:none}
+.coord .tel{font-family:'Barlow Condensed',sans-serif;font-size:34px;font-weight:700;color:#fff}
+.horaires{border-collapse:collapse;width:100%;margin-top:4px}
+.horaires td{color:#eee;padding:3px 0;font-size:16px}
+.horaires td:last-child{text-align:right}
+.reseaux{display:flex;gap:12px;margin-top:22px}
+.reseaux a{width:46px;height:46px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center}
+.reseaux a:hover{background:var(--beton)}
+.reseaux svg{width:24px;height:24px}
+form{display:grid;gap:14px}
+label{font-weight:600;font-size:15px;display:block;margin-bottom:4px}
+input,textarea{width:100%;padding:12px;border:2px solid #cfcfd2;border-radius:4px;font:inherit;background:#fff}
+input:focus,textarea:focus{outline:none;border-color:var(--rouge)}
+textarea{min-height:130px;resize:vertical}
+.merci{display:none;background:#e8f5e9;border:2px solid #4caf50;border-radius:6px;padding:20px;font-weight:600}
+footer{background:var(--noir);color:#bbb;padding:34px 0;font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer .reseaux{margin:0}
+footer .brand-pied{display:flex;align-items:center;gap:14px}
+footer .brand-pied img{height:44px;background:#fff;padding:4px 8px;border-radius:4px}
+.appel-mobile{display:none}
+.js .rev{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.js .rev.vu{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rev{opacity:1;transform:none;transition:none}.car-piste{transition:none}}
+@media (max-width:900px){
+ .grille{grid-template-columns:1fr 1fr}
+ .etapes{grid-template-columns:1fr 1fr}
+ .avis{column-count:2}
+ .contact{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+ :root{--h:64px}
+ body{font-size:16px}
+ .burger{display:block}
+ .brand img{height:42px}
+ header .btn{display:none}
+ nav{position:absolute;top:var(--h);left:0;right:0;background:#fff;border-bottom:3px solid var(--rouge);display:none}
+ nav.ouvert{display:block}
+ nav ul{flex-direction:column;padding:8px 20px 14px}
+ nav a{padding:13px 8px;font-size:18px}
+ .hero{padding:64px 0 56px}
+ .bloc{padding:56px 0}
+ .grille,.etapes{grid-template-columns:1fr}
+ .avis{column-count:1}
+ .appel-mobile{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+ footer{padding-bottom:90px}
+}
+</style>
+</head>
+<body>
+
+<header id="haut">
+ <div class="wrap">
+  <a class="brand" href="#accueil" aria-label="Baradel, accueil"><img src="img/logo.png" alt="Baradel"></a>
+  <nav id="nav" aria-label="Menu principal">
+   <ul>
+    <li><a href="#accueil">Accueil</a></li>
+    <li><a href="#metiers">Nos travaux</a></li>
+    <li><a href="#realisations">Réalisations</a></li>
+    <li><a href="#methode">Méthode</a></li>
+    <li><a href="#avis">Avis</a></li>
+    <li><a href="#contact">Contact</a></li>
+   </ul>
+  </nav>
+  <a class="btn" href="tel:0608173832"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.300.2 2.500.6 3.600.1.300 0 .700-.2 1z"/></svg>Appeler</a>
+  <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+ </div>
+</header>
+
+<main>
+<section id="accueil" class="hero">
+ <div class="wrap">
+  <h1>Maçonnerie, terrassement<br>et <em>réseaux</em> au Mans</h1>
+  <p>Des chantiers menés avec soin pour les particuliers, les entreprises et les collectivités, au Mans et dans les environs.</p>
+  <div class="actions">
+   <a class="btn clair" href="tel:0608173832"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.300.2 2.500.6 3.600.1.300 0 .700-.2 1z"/></svg>06 08 17 38 32</a>
+   <a class="btn contour" href="#contact">Demander un devis gratuit</a>
+  </div>
+  <div class="badges"><span>Note Google 5,0</span><span>Devis gratuit</span><span>Intervention au Mans et alentours</span></div>
+ </div>
+</section>
+
+<section id="metiers" class="bloc gris">
+ <div class="wrap">
+  <div class="titre rev"><h2>Nos travaux</h2><p>Du petit chantier à l'intervention technique, une seule entreprise pour la maçonnerie, le terrassement et les réseaux.</p></div>
+  <div class="grille">
+   <article class="carte rev"><h3><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M3 9h18M3 14h18M9 4v5M15 9v5M9 14v6"/></svg>Maçonnerie</h3><p>Murs, piliers, regards, dalles et ouvrages en béton ou en pierre : construction, réparation et remise en état.</p></article>
+   <article class="carte rev"><h3><svg viewBox="0 0 24 24"><path d="M3 20h18M5 20l3-9h6l2 4h3M14 11V6l4-2M8 11 6 8"/></svg>Terrassement</h3><p>Tranchées, fouilles et préparation de terrain avec nos engins, pour vos réseaux, fondations et aménagements.</p></article>
+   <article class="carte rev"><h3><svg viewBox="0 0 24 24"><path d="M3 21h18M6 21V11l6-6 6 6v10M9 21v-6h6v6"/></svg>Démolition</h3><p>Démolition de murs, dalles et ouvrages, avec évacuation propre du chantier.</p></article>
+   <article class="carte rev"><h3><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8"/><path d="M12 1v3M12 20v3M1 12h3M20 12h3"/></svg>Localisation de réseaux</h3><p>Repérage des réseaux enterrés avant de creuser, pour travailler en sécurité et éviter les mauvaises surprises.</p></article>
+   <article class="carte rev"><h3><svg viewBox="0 0 24 24"><path d="M4 8h16v8H4zM8 8V4M16 8V4M8 16v4M16 16v4"/></svg>Carottage et sciage</h3><p>Percements dans le béton et les murs pour le passage de gaines, de câbles et de canalisations.</p></article>
+   <article class="carte rev"><h3><svg viewBox="0 0 24 24"><path d="M3 15c3-4 6-4 9 0s6 4 9 0M3 9c3-4 6-4 9 0s6 4 9 0"/></svg>Assainissement</h3><p>Canalisations, regards et raccordements : pose, remplacement et mise aux normes.</p></article>
+  </div>
+ </div>
+</section>
+
+<section id="realisations" class="bloc">
+ <div class="wrap">
+  <div class="titre rev"><h2>Nos réalisations</h2><p>Quelques chantiers récents au Mans et dans les environs.</p></div>
+  <div class="car rev" id="car">
+   <div class="car-vue"><div class="car-piste" id="piste">
+    <figure><img src="img/gaines-reseaux.jpg" alt="Gaines de réseaux posées en tranchée" loading="lazy"><figcaption>Pose de gaines pour les réseaux</figcaption></figure>
+    <figure><img src="img/trottoir-beton.jpg" alt="Trottoir en béton coulé" loading="lazy"><figcaption>Trottoir en béton</figcaption></figure>
+    <figure><img src="img/assainissement.jpg" alt="Raccordement de canalisation d'assainissement" loading="lazy"><figcaption>Raccordement d'assainissement</figcaption></figure>
+    <figure><img src="img/regard-beton.jpg" alt="Regard en béton posé" loading="lazy"><figcaption>Pose d'un regard en béton</figcaption></figure>
+    <figure><img src="img/ralentisseur.jpg" alt="Ralentisseur sur chaussée" loading="lazy"><figcaption>Ralentisseur et marquage</figcaption></figure>
+    <figure><img src="img/mini-pelle.jpg" alt="Mini-pelle sur un chantier de terrassement" loading="lazy"><figcaption>Terrassement à la mini-pelle</figcaption></figure>
+    <figure><img src="img/carottage.jpg" alt="Carotteuse sur un mur en béton" loading="lazy"><figcaption>Carottage dans le béton</figcaption></figure>
+   </div></div>
+   <div class="car-bas"><button id="prec" aria-label="Photo précédente">‹</button><span class="car-n" id="cn">1 / 7</span><button id="suiv" aria-label="Photo suivante">›</button></div>
+  </div>
+ </div>
+</section>
+
+<section id="methode" class="bloc gris">
+ <div class="wrap">
+  <div class="titre rev"><h2>Comment ça se passe</h2><p>Simple et sans surprise, de votre appel à la fin du chantier.</p></div>
+  <div class="etapes">
+   <div class="etape rev"><h3><b>1.</b> Vous appelez</h3><p>Vous décrivez votre projet par téléphone ou via le formulaire.</p></div>
+   <div class="etape rev"><h3><b>2.</b> Visite et devis</h3><p>Nous venons voir le chantier et vous remettons un devis gratuit.</p></div>
+   <div class="etape rev"><h3><b>3.</b> Le chantier</h3><p>Les travaux sont réalisés dans les délais annoncés, chantier propre.</p></div>
+   <div class="etape rev"><h3><b>4.</b> Réception</h3><p>Nous vérifions ensemble que tout vous convient avant de terminer.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="avis" class="bloc">
+ <div class="wrap">
+  <div class="titre rev"><h2>Ils nous ont fait confiance</h2></div>
+  <div class="note rev"><span class="etoiles">★★★★★</span><span>5,0 sur Google · 3 avis</span></div>
+  <div class="avis rev">
+<blockquote><span class="st">★★★★★</span><p>« Nous avons fait appel à Mr Baradel pour des travaux de maçonnerie. Travail de qualité , réalisé dans un délai rapide. Bonne prestation , je recommande »</p><cite>Anthony L.</cite><small>Avis Google · il y a 4 ans</small></blockquote>
+<blockquote><span class="st">★★★★★</span><p>« Une entreprise à qui vous pouvez faire confiance les yeux fermés. Travaux de qualité. Chantier toujours propre,.... Le tout en étant sympathique »</p><cite>Passionne M.</cite><small>Avis Google · il y a 4 ans</small></blockquote>
+<blockquote><span class="st">★★★★★</span><p>« Equipe de professionnels au rendez vous ! de la réactivité et de la qualité. Je conseille l'entreprise BARADEL ! »</p><cite>Katia R.</cite><small>Avis Google · il y a 3 ans</small></blockquote>
+  </div>
+  <div class="avis-lien"><a class="btn" href="https://www.google.com/maps/place/Eurl+BARADEL+C%C3%A9dric/@47.9756808,0.2023509,728m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47e28f7e889d6fe5:0xe1af751ba298e690!8m2!3d47.9756808!4d0.2023509!16s%2Fg%2F11fl5bsytf" target="_blank" rel="noopener">Voir tous les avis sur Google</a></div>
+ </div>
+</section>
+
+<section id="contact" class="bloc gris">
+ <div class="wrap">
+  <div class="titre rev"><h2>Contactez-nous</h2><p>Décrivez votre projet : nous vous répondons rapidement et le devis est gratuit.</p></div>
+  <div class="contact">
+   <div class="coord rev">
+    <h3>Baradel</h3>
+    <div class="ligne" style="align-items:center"><svg style="margin-top:0" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg><a class="tel" href="tel:0608173832">06 08 17 38 32</a></div>
+    <div class="ligne"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.800-7 11-7 11z"/><circle cx="12" cy="10" r="2.500"/></svg><span>15 Rue du Rif<br>72100 Le Mans<br><small>Interventions au Mans et dans les environs</small></span></div>
+    <div class="ligne"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div style="flex:1"><strong>Horaires</strong><table class="horaires"><tr><td>Lundi au vendredi</td><td>7h30 – 18h00</td></tr><tr><td>Samedi et dimanche</td><td>Fermé</td></tr></table></div></div>
+    <div class="reseaux">
+     <a href="https://www.facebook.com/baradelcedric/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path fill="#1877F2" d="M24 12a12 12 0 1 0-13.9 11.900v-8.400H7.100V12h3V9.400c0-3 1.800-4.700 4.500-4.700 1.300 0 2.700.2 2.700.2v3h-1.500c-1.500 0-2 .9-2 1.900V12h3.400l-.5 3.500h-2.800v8.400A12 12 0 0 0 24 12z"/></svg></a>
+     <a href="https://www.google.com/maps/place/Eurl+BARADEL+C%C3%A9dric/@47.9756808,0.2023509,728m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47e28f7e889d6fe5:0xe1af751ba298e690!8m2!3d47.9756808!4d0.2023509!16s%2Fg%2F11fl5bsytf" target="_blank" rel="noopener" aria-label="Fiche Google"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M23 12.200c0-.8-.1-1.500-.2-2.200H12v4.300h6.200a5.300 5.300 0 0 1-2.300 3.500v2.900h3.700c2.200-2 3.400-5 3.400-8.500z"/><path fill="#34A853" d="M12 23.500c3.100 0 5.700-1 7.600-2.800l-3.700-2.900c-1 .7-2.300 1.100-3.900 1.100-3 0-5.500-2-6.400-4.700H1.800v3A11.500 11.500 0 0 0 12 23.500z"/><path fill="#FBBC05" d="M5.600 14.200a6.900 6.900 0 0 1 0-4.400v-3H1.800a11.500 11.500 0 0 0 0 10.400l3.800-3z"/><path fill="#EA4335" d="M12 5.600c1.700 0 3.200.6 4.400 1.700l3.300-3.300A11.500 11.500 0 0 0 1.800 6.800l3.800 3C6.500 7.600 9 5.600 12 5.600z"/></svg></a>
+    </div>
+   </div>
+   <div class="rev">
+    <form id="form" novalidate>
+     <div><label for="nom">Votre nom</label><input id="nom" name="nom" autocomplete="name" required></div>
+     <div><label for="tel">Votre téléphone</label><input id="tel" name="tel" type="tel" autocomplete="tel" required></div>
+     <div><label for="msg">Votre projet</label><textarea id="msg" name="msg" required></textarea></div>
+     <button class="btn" type="submit">Envoyer ma demande</button>
+    </form>
+    <div class="merci" id="merci" role="status">Merci ! Sur votre vrai site, cette demande vous arrivera par e-mail.</div>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="brand-pied"><img src="img/logo.png" alt="Baradel"><span>15 Rue du Rif, 72100 Le Mans · <a href="tel:0608173832">06 08 17 38 32</a></span></div>
+  <div class="reseaux">
+   <a href="https://www.facebook.com/baradelcedric/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path fill="#1877F2" d="M24 12a12 12 0 1 0-13.9 11.900v-8.400H7.100V12h3V9.400c0-3 1.800-4.700 4.500-4.700 1.300 0 2.700.2 2.700.2v3h-1.500c-1.500 0-2 .9-2 1.900V12h3.400l-.5 3.500h-2.800v8.400A12 12 0 0 0 24 12z"/></svg></a>
+   <a href="https://www.google.com/maps/place/Eurl+BARADEL+C%C3%A9dric/@47.9756808,0.2023509,728m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47e28f7e889d6fe5:0xe1af751ba298e690!8m2!3d47.9756808!4d0.2023509!16s%2Fg%2F11fl5bsytf" target="_blank" rel="noopener" aria-label="Fiche Google"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M23 12.200c0-.8-.1-1.500-.2-2.200H12v4.300h6.200a5.300 5.300 0 0 1-2.300 3.500v2.900h3.700c2.200-2 3.400-5 3.400-8.500z"/><path fill="#34A853" d="M12 23.500c3.100 0 5.700-1 7.600-2.800l-3.700-2.900c-1 .7-2.300 1.100-3.900 1.100-3 0-5.500-2-6.400-4.700H1.800v3A11.500 11.500 0 0 0 12 23.500z"/><path fill="#FBBC05" d="M5.600 14.200a6.900 6.900 0 0 1 0-4.400v-3H1.800a11.500 11.500 0 0 0 0 10.400l3.800-3z"/><path fill="#EA4335" d="M12 5.600c1.700 0 3.200.6 4.400 1.700l3.300-3.300A11.500 11.500 0 0 0 1.800 6.800l3.800 3C6.500 7.600 9 5.600 12 5.600z"/></svg></a>
+  </div>
+ </div>
+</footer>
+<a class="btn appel-mobile" href="tel:0608173832">Appeler le 06 08 17 38 32</a>
+
+<script>
+document.documentElement.classList.add('js');
+(function(){
+ var hd=document.getElementById('haut'),nav=document.getElementById('nav'),bg=document.getElementById('burger');
+ var links=[].slice.call(nav.querySelectorAll('a'));
+ var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+ function H(){return hd.offsetHeight}
+ function go(id){var s=document.querySelector(id);if(!s)return;window.scrollTo(0,s.getBoundingClientRect().top+window.pageYOffset-H())}
+ [].slice.call(document.querySelectorAll('a[href^="#"]')).forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id.length<2)return;e.preventDefault();nav.classList.remove('ouvert');bg.setAttribute('aria-expanded','false');go(id)})});
+ bg.addEventListener('click',function(){var o=nav.classList.toggle('ouvert');bg.setAttribute('aria-expanded',o)});
+ function spy(){var y=H()+2,cur=0;secs.forEach(function(s,i){if(s.getBoundingClientRect().top<=y)cur=i});
+  if(window.innerHeight+window.pageYOffset>=document.body.scrollHeight-2)cur=secs.length-1;
+  links.forEach(function(a,i){a.classList.toggle('on',i===cur&&window.pageYOffset>10)})}
+ window.addEventListener('scroll',spy,{passive:true});window.addEventListener('resize',spy);spy();
+ /* carrousel : 1 photo par vue, compteur = nombre de photos */
+ var p=document.getElementById('piste'),n=p.children.length,i=0,pr=document.getElementById('prec'),su=document.getElementById('suiv'),cn=document.getElementById('cn');
+ function show(){p.style.transform='translateX(-'+(i*100)+'%)';cn.textContent=(i+1)+' / '+n;pr.disabled=i===0;su.disabled=i===n-1}
+ pr.addEventListener('click',function(){if(i>0){i--;show()}});su.addEventListener('click',function(){if(i<n-1){i++;show()}});
+ document.getElementById('car').addEventListener('keydown',function(e){if(e.key==='ArrowLeft')pr.click();if(e.key==='ArrowRight')su.click()});show();
+ /* apparition douce */
+ var rev=[].slice.call(document.querySelectorAll('.rev'));
+ if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vu');io.unobserve(e.target)}})},{threshold:.08});
+  rev.forEach(function(r,k){r.style.transitionDelay=(k%3)*90+'ms';io.observe(r)});
+ }else rev.forEach(function(r){r.classList.add('vu')});
+ /* formulaire : remerciement */
+ document.getElementById('form').addEventListener('submit',function(e){e.preventDefault();this.style.display='none';document.getElementById('merci').style.display='block'});
+})();
+</script>
+
+</body>
+</html>
