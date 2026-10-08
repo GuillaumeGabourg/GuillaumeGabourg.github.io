@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Art' Froid Clim – Climatisation, chauffage et plomberie à Montfort-le-Gesnois</title>
+<meta name="description" content="Art' Froid Clim installe et entretient climatisation, pompes à chaleur, chauffage et plomberie à Montfort-le-Gesnois et dans les environs. Appelez le 06 31 50 63 59.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --glace:#0b97d8;--glace-fonce:#0873a8;--marine:#0c2a43;--marine-2:#14405f;
+  --flamme:#f08a1c;--rouge:#d9262c;--givre:#eef7fc;--creme:#fff6ec;--texte:#1d3347;--doux:#5a7184;--trait:#d6e6f0;--blanc:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto}
+body{font-family:'Nunito',system-ui,sans-serif;color:var(--texte);background:#fff;line-height:1.6;font-size:17px;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:'Baloo 2','Nunito',sans-serif;line-height:1.15;color:var(--marine)}
+.conteneur{width:min(1160px,100% - 40px);margin-inline:auto}
+:focus-visible{outline:3px solid var(--flamme);outline-offset:3px}
+
+/* En-tête */
+#entete{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait);transition:box-shadow .3s}
+#entete.ombre{box-shadow:0 6px 24px rgba(12,42,67,.12)}
+.barre{display:flex;align-items:center;justify-content:space-between;gap:16px;height:76px}
+.marque{display:flex;align-items:center;text-decoration:none}
+.marque img{height:56px;width:auto}
+nav ul{display:flex;gap:6px;list-style:none;align-items:center}
+nav a{display:block;padding:8px 14px;border-radius:999px;text-decoration:none;font-weight:700;color:var(--marine);transition:background .2s,color .2s}
+nav a:hover{background:var(--givre)}
+nav a.actif{background:var(--marine);color:#fff}
+.droite{display:flex;align-items:center;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 24px;border-radius:999px;border:0;font:700 17px 'Nunito',sans-serif;text-decoration:none;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-appel{background:var(--flamme);color:#fff;box-shadow:0 8px 20px rgba(240,138,28,.35)}
+.btn-appel:hover{background:#dc7a10;transform:translateY(-2px)}
+.btn-clair{background:#fff;color:var(--marine);box-shadow:inset 0 0 0 2px var(--marine)}
+.btn-clair:hover{background:var(--marine);color:#fff}
+.btn-bleu{background:var(--glace);color:#fff}
+.btn-bleu:hover{background:var(--glace-fonce)}
+#burger{display:none;width:46px;height:46px;border-radius:12px;border:2px solid var(--marine);background:#fff;cursor:pointer;align-items:center;justify-content:center}
+#burger span,#burger span::before,#burger span::after{display:block;width:20px;height:2px;background:var(--marine);position:relative;content:''}
+#burger span::before{position:absolute;top:-6px}#burger span::after{position:absolute;top:6px}
+#progres{position:absolute;left:0;bottom:-1px;height:3px;width:100%;background:linear-gradient(90deg,var(--glace),var(--flamme));transform-origin:0 50%;transform:scaleX(0)}
+
+/* Héros */
+.heros{position:relative;overflow:hidden;background:linear-gradient(105deg,var(--givre) 0%,var(--givre) 48%,var(--creme) 52%,var(--creme) 100%);padding:64px 0 80px}
+.heros::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 12% 20%,rgba(11,151,216,.14),transparent 38%),radial-gradient(circle at 92% 85%,rgba(240,138,28,.18),transparent 36%)}
+.heros-grille{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.etiquette{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--trait);padding:8px 16px;border-radius:999px;font-weight:700;font-size:15px;color:var(--marine)}
+.etiquette .etoile{color:var(--flamme)}
+.heros h1{font-size:clamp(2.3rem,5.2vw,3.9rem);margin:20px 0 18px;font-weight:800}
+.heros h1 .ligne{display:block;overflow:hidden;padding-bottom:.06em}
+.heros h1 .ligne>span{display:block}
+.froid{color:var(--glace)}.chaud{color:var(--flamme)}
+.sous{font-size:1.18rem;max-width:34em;color:var(--texte)}
+.actions{display:flex;flex-wrap:wrap;gap:14px;margin:30px 0 20px}
+.note{font-size:15px;color:var(--doux)}
+#cadre-heros{position:relative;border-radius:28px;overflow:hidden;box-shadow:0 30px 60px rgba(12,42,67,.25);aspect-ratio:4/3.3;background:var(--marine)}
+#cadre-heros img{width:100%;height:100%;object-fit:cover;object-position:35% 50%}
+.pastille{position:absolute;display:grid;place-items:center;width:78px;height:78px;border-radius:50%;background:#fff;box-shadow:0 12px 30px rgba(12,42,67,.22)}
+.pastille svg{width:42px;height:42px}
+.p-froid{left:-20px;top:28px}.p-chaud{right:-14px;bottom:36px}
+.heros-visuel{position:relative}
+
+/* Bandeau infos */
+.infos{background:var(--marine);color:#fff}
+.infos ul{list-style:none;display:grid;grid-template-columns:repeat(3,1fr)}
+.infos li{display:flex;align-items:center;justify-content:center;gap:14px;padding:22px 16px;font-weight:700;text-align:left}
+.infos li+li{border-left:1px solid rgba(255,255,255,.18)}
+.infos svg{width:30px;height:30px;flex:none;color:var(--flamme)}
+.infos small{display:block;font-weight:400;opacity:.8}
+
+/* Sections */
+section{padding:88px 0}
+.tete{max-width:760px;margin:0 auto 48px;text-align:center}
+.tete .sur{display:inline-flex;align-items:center;gap:8px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:14px;color:var(--glace-fonce);margin-bottom:10px}
+.tete .sur svg{width:20px;height:20px}
+.tete h2{font-size:clamp(1.9rem,3.8vw,2.8rem);font-weight:800}
+.tete p{margin-top:14px;color:var(--doux);font-size:1.1rem}
+
+/* Services : icône à gauche du titre */
+.services-grille{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.service{background:#fff;border:1px solid var(--trait);border-radius:22px;padding:28px;box-shadow:0 10px 30px rgba(12,42,67,.06);transition:transform .25s,box-shadow .25s}
+.service:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(12,42,67,.12)}
+.service-tete{display:flex;align-items:center;gap:16px;margin-bottom:12px}
+.service-tete .ico{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;flex:none;background:var(--givre);color:var(--glace-fonce)}
+.service.chaud-c .ico{background:var(--creme);color:#c96a0a}
+.service-tete .ico svg{width:30px;height:30px}
+.service h3{font-size:1.45rem}
+.service ul{margin:12px 0 0 1.1em;color:var(--doux)}
+.service li{margin:3px 0}
+
+/* Deux saisons */
+.saisons{background:linear-gradient(180deg,var(--givre),#fff)}
+.saisons-grille{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+#vue-saisons{border-radius:26px;overflow:hidden;box-shadow:0 24px 50px rgba(12,42,67,.2);aspect-ratio:4/4.6}
+#vue-saisons img{width:100%;height:100%;object-fit:cover}
+.saisons h2{font-size:clamp(1.9rem,3.6vw,2.6rem);font-weight:800;margin-bottom:16px}
+.saisons p{margin-bottom:14px;color:var(--texte)}
+.points{list-style:none;margin:20px 0 28px;display:grid;gap:12px}
+.points li{display:flex;gap:12px;align-items:flex-start;font-weight:700}
+.points svg{width:24px;height:24px;flex:none;color:var(--glace);margin-top:2px}
+
+/* Étapes : numéro avant le titre */
+.etapes{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:e}
+.etape{background:var(--marine);color:#fff;border-radius:22px;padding:26px}
+.etape h3{color:#fff;font-size:1.3rem;margin-bottom:8px}
+.etape .num{color:var(--flamme)}
+.etape p{opacity:.88;font-size:16px}
+.fond-marine{background:var(--marine-2)}
+
+/* Réalisations : grille à lignes complètes */
+.galerie{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.galerie figure{border-radius:18px;overflow:hidden;aspect-ratio:4/5;background:var(--givre);position:relative}
+.galerie img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.galerie figure:hover img{transform:scale(1.05)}
+.galerie figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 14px 12px;color:#fff;font-weight:700;font-size:15px;background:linear-gradient(transparent,rgba(12,42,67,.82))}
+.galerie-note{text-align:center;color:var(--doux);margin-top:22px;font-size:15px}
+
+/* Avis */
+.avis{background:var(--creme)}
+.bloc-note{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;margin-bottom:36px}
+.bloc-note .gros{font:800 3.4rem/1 'Baloo 2',sans-serif;color:var(--marine)}
+.bloc-note .etoiles{color:var(--flamme);font-size:1.5rem;letter-spacing:2px}
+.bloc-note .detail{color:var(--doux);font-weight:700}
+.colonnes{column-count:3;column-gap:20px}
+.avis-carte{break-inside:avoid;margin:0 0 20px;background:#fff;border:1px solid #f0dcc6;border-radius:18px;padding:22px}
+.avis-carte .haut{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+.avis-carte .qui{font-weight:800;color:var(--marine)}
+.avis-carte .quand{font-size:14px;color:var(--doux)}
+.avis-carte .etoiles{color:var(--flamme);letter-spacing:1px}
+.avis-carte p{color:var(--texte)}
+.lien-avis{text-align:center;margin-top:26px}
+
+/* Contact */
+.contact-grille{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+.carte-contact{background:#fff;border:1px solid var(--trait);border-radius:24px;padding:32px;box-shadow:0 14px 36px rgba(12,42,67,.08)}
+.carte-contact h3{font-size:1.5rem;margin-bottom:16px}
+.tel-gros{display:flex;align-items:center;gap:14px;font:800 clamp(1.6rem,3.6vw,2.2rem) 'Baloo 2',sans-serif;color:var(--marine);text-decoration:none;margin-bottom:6px}
+.tel-gros svg{width:34px;height:34px;color:var(--flamme)}
+.ligne-info{display:flex;gap:12px;align-items:flex-start;margin:12px 0;color:var(--texte)}
+.ligne-info svg{width:22px;height:22px;flex:none;color:var(--glace);margin-top:3px}
+table.horaires{width:100%;border-collapse:collapse;margin-top:6px}
+table.horaires td{padding:9px 0;border-bottom:1px dashed var(--trait)}
+table.horaires td:last-child{text-align:right;font-weight:700}
+table.horaires tr:last-child td{border:0}
+.ferme{color:var(--doux)}
+.reseaux{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.reseau{display:inline-flex;align-items:center;gap:10px;padding:10px 18px 10px 12px;border-radius:999px;border:2px solid var(--trait);text-decoration:none;font-weight:700;transition:border-color .2s,transform .2s}
+.reseau:hover{border-color:var(--glace);transform:translateY(-2px)}
+.reseau svg{width:28px;height:28px}
+form label{display:block;font-weight:700;margin:14px 0 6px}
+form input,form textarea{width:100%;padding:13px 14px;border:2px solid var(--trait);border-radius:12px;font:inherit;color:var(--texte);background:#fff}
+form input:focus,form textarea:focus{border-color:var(--glace);outline:none}
+form textarea{min-height:120px;resize:vertical}
+form .btn{margin-top:18px;width:100%}
+#merci{background:#e7f6ec;border:1px solid #9ad3ae;color:#1c5a33;padding:14px 16px;border-radius:12px;margin-top:16px;font-weight:700}
+.petit{font-size:14px;color:var(--doux);margin-top:12px}
+
+/* Pied de page */
+footer{background:var(--marine);color:#fff;padding:48px 0 90px}
+.pied{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:center}
+.pied .marque-pied{display:flex;align-items:center;gap:14px}
+.pied .marque-pied img{height:52px;width:auto;background:#fff;border-radius:12px;padding:4px 8px}
+.pied a{color:#fff}
+.pied .reseaux{margin:0}
+.pied .reseau{border-color:rgba(255,255,255,.3);color:#fff}
+.pied .reseau:hover{border-color:var(--flamme)}
+.legal{margin-top:26px;padding-top:20px;border-top:1px solid rgba(255,255,255,.18);font-size:14px;opacity:.8}
+
+/* Bouton Appeler fixe sur téléphone */
+.appel-fixe{display:none}
+
+@media (max-width:1000px){
+  .heros-grille,.saisons-grille,.contact-grille{grid-template-columns:1fr}
+  .heros-visuel{max-width:620px;margin:0 auto;width:100%}
+  .etapes{grid-template-columns:repeat(2,1fr)}
+  .galerie{grid-template-columns:repeat(2,1fr)}
+  .colonnes{column-count:2}
+  .heros{background:linear-gradient(180deg,var(--givre) 0%,var(--givre) 55%,var(--creme) 55%)}
+}
+@media (max-width:820px){
+  #burger{display:inline-flex}
+  nav{position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid var(--trait);display:none;box-shadow:0 14px 24px rgba(12,42,67,.12)}
+  nav.ouvert{display:block}
+  nav ul{flex-direction:column;align-items:stretch;padding:12px 20px 18px}
+  nav a{padding:14px 16px;font-size:18px}
+  .droite .btn-appel{padding:11px 16px;font-size:16px}
+}
+@media (max-width:680px){
+  body{font-size:16.5px}
+  section{padding:64px 0}
+  .barre{height:68px}
+  .marque img{height:46px}
+  .services-grille,.etapes{grid-template-columns:1fr}
+  .infos ul{grid-template-columns:1fr}
+  .infos li{justify-content:flex-start;padding:16px 20px}
+  .infos li+li{border-left:0;border-top:1px solid rgba(255,255,255,.18)}
+  .colonnes{column-count:1}
+  .galerie{gap:10px}
+  .galerie figcaption{font-size:13px;padding:26px 10px 9px}
+  .pastille{width:60px;height:60px}.pastille svg{width:32px;height:32px}
+  .p-froid{left:-6px;top:14px}.p-chaud{right:-6px;bottom:18px}
+  .actions .btn{width:100%}
+  .droite .btn-appel span{display:none}
+  .droite .btn-appel{width:46px;height:46px;padding:0;border-radius:50%}
+  .carte-contact{padding:24px}
+  .appel-fixe{display:flex;position:fixed;left:16px;right:16px;bottom:14px;z-index:60;justify-content:center}
+  .appel-fixe .btn{width:100%;box-shadow:0 12px 28px rgba(12,42,67,.35)}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header id="entete">
+  <div class="conteneur barre">
+    <a class="marque" href="#accueil" aria-label="Art' Froid Clim, accueil"><img src="img/logo.jpg" alt="Art' Froid Clim" width="112" height="56"></a>
+    <nav id="nav" aria-label="Menu principal">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#realisations">Réalisations</a></li>
+        <li><a href="#avis">Avis</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="droite">
+      <a class="btn btn-appel" href="tel:+33631506359" aria-label="Appeler Art' Froid Clim"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg><span>Appeler</span></a>
+      <button id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav"><span></span></button>
+    </div>
+  </div>
+  <div id="progres"></div>
+</header>
+
+<main>
+<!-- Héros -->
+<div class="heros" id="accueil">
+  <div class="conteneur heros-grille">
+    <div class="heros-texte">
+      <span class="etiquette"><span class="etoile">★</span> 4,6 sur Google · 27 avis</span>
+      <h1><span class="ligne"><span>Au <span class="chaud">chaud</span> l'hiver,</span></span><span class="ligne"><span>au <span class="froid">frais</span> l'été,</span></span><span class="ligne"><span>chez vous.</span></span></h1>
+      <p class="sous">Art' Froid Clim installe et entretient votre climatisation, votre pompe à chaleur et votre chauffage, à Montfort-le-Gesnois et dans les environs.</p>
+      <div class="actions">
+        <a class="btn btn-appel" href="tel:+33631506359"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>06 31 50 63 59</a>
+        <a class="btn btn-clair" href="#contact">Demander un devis</a>
+      </div>
+      <p class="note">Du lundi au vendredi de 8 h à 18 h, et le samedi matin.</p>
+    </div>
+    <div class="heros-visuel">
+      <div id="cadre-heros"><img src="img/camion.jpg" alt="Camionnette d'Art' Froid Clim" width="1200" height="674" fetchpriority="high"></div>
+      <div class="pastille p-froid" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="#0b97d8" stroke-width="3" stroke-linecap="round"><path d="M24 4v40M7 14l34 20M41 14L7 34M18 7l6 5 6-5M18 41l6-5 6 5M5 22l7 2-2 7M43 26l-7-2 2-7M5 26l7-2-2-7M43 22l-7 2 2 7"/></svg></div>
+      <div class="pastille p-chaud" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 4c2 8 12 12 12 24a12 12 0 0 1-24 0c0-6 3-9 5-12 1 4 3 5 4 5 0-6-1-11 3-17z" fill="#f08a1c"/><path d="M24 24c1 4 6 6 6 11a6 6 0 0 1-12 0c0-3 2-4 3-6 1 2 2 2 3 2 0-3-1-5 0-7z" fill="#ffd27a"/></svg></div>
+    </div>
+  </div>
+</div>
+
+<div class="infos">
+  <div class="conteneur">
+    <ul>
+      <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span>Montfort-le-Gesnois<small>et les environs</small></span></li>
+      <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm.5 5v5.2l4 2.4-.8 1.3-4.7-2.8V7z"/></svg><span>Lun-ven 8 h-18 h<small>samedi 8 h-12 h 30</small></span></li>
+      <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3 6.2 21l1.5-6.6L2.5 9.9l6.8-.6L12 3l2.7 6.3 6.8.6-5.2 4.5 1.5 6.6z"/></svg><span>4,6 sur 5 sur Google<small>27 avis de clients</small></span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Services -->
+<section id="services">
+  <div class="conteneur">
+    <div class="tete">
+      <span class="sur"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11 2h2v20h-2zM3.3 7l1-1.7 17.4 10 -1 1.7zM20.7 7l-17.4 10-1-1.7 17.4-10z"/></svg>Nos services</span>
+      <h2>Une seule entreprise pour votre confort, été comme hiver</h2>
+      <p>Du conseil à la pose, puis à l'entretien : vous gardez le même interlocuteur.</p>
+    </div>
+    <div class="services-grille">
+      <article class="service">
+        <div class="service-tete"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M4 7l16 10M20 7 4 17M9 4l3 2.5L15 4M9 20l3-2.5 3 2.5"/></svg></span><h3>Climatisation</h3></div>
+        <p>Installation de climatiseurs muraux pour rafraîchir votre salon, vos chambres ou vos bureaux, avec une pose soignée.</p>
+        <ul><li>Appareils muraux et unités extérieures</li><li>Maisons, appartements, locaux professionnels</li></ul>
+      </article>
+      <article class="service chaud-c">
+        <div class="service-tete"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1 4 6 6 6 12a6 6 0 0 1-12 0c0-3 1.5-4.5 2.5-6 .5 2 1.5 2.5 2 2.5 0-3-.5-5.5 1.5-8.5z"/></svg></span><h3>Pompe à chaleur</h3></div>
+        <p>Une pompe à chaleur chauffe l'hiver et rafraîchit l'été : une seule installation pour toute l'année.</p>
+        <ul><li>Conseil sur le matériel adapté à votre logement</li><li>Pose et mise en service</li></ul>
+      </article>
+      <article class="service chaud-c">
+        <div class="service-tete"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16M6 20V9a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v11M9 12h6M9 16h6M10 7V4m4 3V4"/></svg></span><h3>Chauffage</h3></div>
+        <p>Installation, remplacement et entretien de votre système de chauffage pour passer l'hiver au chaud.</p>
+        <ul><li>Dépannage et entretien</li><li>Remplacement d'ancien matériel</li></ul>
+      </article>
+      <article class="service">
+        <div class="service-tete"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11zM9.5 14.5a2.5 2.5 0 0 0 2.5 2.5"/></svg></span><h3>Plomberie et isolation</h3></div>
+        <p>Les petits et gros travaux de plomberie, et l'isolation de votre logement pour mieux garder la chaleur… ou la fraîcheur.</p>
+        <ul><li>Travaux de plomberie</li><li>Isolation</li></ul>
+      </article>
+      <article class="service">
+        <div class="service-tete"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 12h16M8 7v2M8 15v2"/></svg></span><h3>Froid et cuisine professionnelle</h3></div>
+        <p>Installation et dépannage du froid pour les professionnels : chambres froides, cuisines et locaux commerciaux.</p>
+        <ul><li>Restaurants, commerces, collectivités</li><li>Dépannage</li></ul>
+      </article>
+      <article class="service chaud-c">
+        <div class="service-tete"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></span><h3>Électricité</h3></div>
+        <p>Les travaux d'électricité liés à vos installations, pour un chantier complet confié à une seule entreprise.</p>
+        <ul><li>Raccordement des appareils</li><li>Mise en conformité</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Deux saisons -->
+<section class="saisons">
+  <div class="conteneur saisons-grille">
+    <div id="vue-saisons"><img src="img/exterieur-mitsubishi.jpg" alt="Unité extérieure de climatisation posée sur un mur" loading="lazy" width="900" height="1066"></div>
+    <div class="texte">
+      <h2>Bien installé, c'est un confort qui dure</h2>
+      <p>Un appareil bien posé fonctionne mieux, consomme moins et se fait oublier. C'est pour cela que chaque installation est pensée pour votre logement : l'emplacement de l'appareil, le passage des câbles et le choix du matériel.</p>
+      <ul class="points">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Conseil sur l'appareil adapté à vos pièces</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Pose propre, unités intérieure et extérieure discrètes</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Un artisan à qui parler après la pose</li>
+      </ul>
+      <a class="btn btn-bleu" href="#contact">Parler de votre projet</a>
+    </div>
+  </div>
+</section>
+
+<!-- Étapes -->
+<section class="fond-marine" id="deroulement">
+  <div class="conteneur">
+    <div class="tete" style="color:#fff"><h2 style="color:#fff">Comment ça se passe ?</h2><p style="color:#c6d9e8">Quatre étapes simples, sans surprise.</p></div>
+    <div class="etapes">
+      <div class="etape"><h3><span class="num">1.</span> Vous appelez</h3><p>Vous nous expliquez votre besoin par téléphone ou avec le formulaire.</p></div>
+      <div class="etape"><h3><span class="num">2.</span> Visite et devis</h3><p>On regarde vos pièces et on vous propose l'appareil qui convient.</p></div>
+      <div class="etape"><h3><span class="num">3.</span> Pose</h3><p>L'installation est réalisée proprement, puis l'appareil est mis en service.</p></div>
+      <div class="etape"><h3><span class="num">4.</span> Suivi</h3><p>Entretien et dépannage : vous savez à qui vous adresser.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Réalisations -->
+<section id="realisations">
+  <div class="conteneur">
+    <div class="tete">
+      <span class="sur">Réalisations</span>
+      <h2>Quelques installations réalisées</h2>
+      <p>Des poses chez des particuliers et des professionnels, photographiées sur chantier.</p>
+    </div>
+    <div class="galerie">
+      <figure><img src="img/mural-chambre.jpg" alt="Climatiseur mural dans une chambre" loading="lazy" width="900" height="1066"><figcaption>Pièce de vie</figcaption></figure>
+      <figure><img src="img/exterieur-daikin.jpg" alt="Unité extérieure Daikin fixée au mur" loading="lazy" width="900" height="1066"><figcaption>Unité extérieure</figcaption></figure>
+      <figure><img src="img/salon-bureau.jpg" alt="Climatiseur mural dans un bureau" loading="lazy" width="900" height="1066"><figcaption>Bureau</figcaption></figure>
+      <figure><img src="img/exterieur-lg.jpg" alt="Unité extérieure LG sur console" loading="lazy" width="900" height="674"><figcaption>Pose sur façade</figcaption></figure>
+      <figure><img src="img/porte-blanche.jpg" alt="Climatiseur mural au-dessus d'une porte" loading="lazy" width="900" height="1066"><figcaption>Au-dessus d'une porte</figcaption></figure>
+      <figure><img src="img/terrasse-gravier.jpg" alt="Petite unité extérieure posée au sol" loading="lazy" width="900" height="1066"><figcaption>Unité au sol</figcaption></figure>
+      <figure><img src="img/salon-rouge.jpg" alt="Climatiseur mural dans un salon" loading="lazy" width="900" height="1066"><figcaption>Salon</figcaption></figure>
+      <figure><img src="img/camion.jpg" alt="Camionnette Art' Froid Clim" loading="lazy" width="1200" height="674" style="object-position:30% 50%"><figcaption>Sur la route chez vous</figcaption></figure>
+    </div>
+    <p class="galerie-note">Retrouvez d'autres photos sur la page Facebook d'Art' Froid Clim.</p>
+  </div>
+</section>
+
+<!-- Avis -->
+<section class="avis" id="avis">
+  <div class="conteneur">
+    <div class="tete"><span class="sur">Avis clients</span><h2>Ce que disent ceux qui nous ont fait confiance</h2></div>
+    <div class="bloc-note">
+      <span class="gros">4,6</span>
+      <div><div class="etoiles" aria-label="4,6 étoiles sur 5">★★★★★</div><div class="detail">27 avis sur Google</div></div>
+    </div>
+    <div class="colonnes">
+      <article class="avis-carte"><div class="haut"><span class="qui">Jacky Halgrain</span><span class="quand">il y a 3 mois</span></div><div class="etoiles" aria-label="5 étoiles sur 5">★★★★★</div><p>Merci à Monsieur Weymann<br>Entrepreneur très professionnel,très à l'écoute de sa clientèle<br>Nous sommes très satisfaits nous recommandons cet artisan.</p></article>
+      <article class="avis-carte"><div class="haut"><span class="qui">Triboté Jean-Marc</span><span class="quand">il y a 7 mois</span></div><div class="etoiles" aria-label="5 étoiles sur 5">★★★★★</div><p>Bonjour Mr Mathieu Weymann<br>Merci pour l'installation de la climatisation travaille propre et soigné consciencieux bien organisé je le recommande très fortement merci encore et à bientôt pour de prochains travaux</p></article>
+      <article class="avis-carte"><div class="haut"><span class="qui">Aurelie Hermange</span><span class="quand">il y a un an</span></div><div class="etoiles" aria-label="5 étoiles sur 5">★★★★★</div><p>Nous avons fait appel à l entreprise ArtFroid Clim pour des travaux d isolation et nous avons été pleinement satisfaits de son travail. Il a su s adapter à nos contraintes.</p></article>
+      <article class="avis-carte"><div class="haut"><span class="qui">Alexandre CHARRON</span><span class="quand">il y a 2 ans</span></div><div class="etoiles" aria-label="5 étoiles sur 5">★★★★★</div><p>Réparation de mon gainable Hitachi qui était HS (plusieurs entreprises s'étaient cassées les dents dessus) . Entièrement satisfait de l'intervention. Il est très rare de nos jours de trouver un très bon technicien qui de plus est pédagogue. je recommande.</p></article>
+      <article class="avis-carte"><div class="haut"><span class="qui">Roland AYRAL</span><span class="quand">il y a 2 ans</span></div><div class="etoiles" aria-label="5 étoiles sur 5">★★★★★</div><p>Concernant cette Entreprise Art' Froid-Clim- Froid- Climatisation gérée par M. Weymann Mathieu, nous sommes entièrement satisfait de sa prestation concernant l'installation d'un mono split climatiseur Viessmann modèle Vitoclima 200-S  les 30 et 31 Août 2024.Cette prestation correspond tout à fait à notre demande et à nos besoins. Le travail a été réalisé avec le plus grand soin et professionnalisme. Respect des règles de sécurité dans le travail. Roland Ayral</p></article>
+      <article class="avis-carte"><div class="haut"><span class="qui">alexis leplu</span><span class="quand">il y a 4 ans</span></div><div class="etoiles" aria-label="5 étoiles sur 5">★★★★★</div><p>J’ai fait appel à Art Froid Clim pour qui me pose une pompe à chaleur monsieur Weymann appris le temps de m’expliquer comment sa marche et répond à les questions qu'on peut ce posé, l’entreprise Art Froid Clim et très professionnelle un travaille bien fait et qui va durer dans le temps, je recommande Art Froid Clim  sincèrement, cordialement.</p></article>
+      <article class="avis-carte"><div class="haut"><span class="qui">Stephane Niel</span><span class="quand">il y a 4 ans</span></div><div class="etoiles" aria-label="5 étoiles sur 5">★★★★★</div><p>Pose isolation et placo, peinture..<br>Travail soigné, professionnel. Monsieur Weyman est un professionnel à recommander sans soucis.</p></article>
+      <article class="avis-carte"><div class="haut"><span class="qui">Claudie Chevalier</span><span class="quand">il y a 3 ans</span></div><div class="etoiles" aria-label="5 étoiles sur 5">★★★★★</div><p>M Weymann a été très reactif lorsque notre chauffe-eau est tombé en panne. Il a diagnostiqué la panne rapidement et remplacé la pièce.</p></article>
+      <article class="avis-carte"><div class="haut"><span class="qui">Jean Delberghe</span><span class="quand">il y a 2 ans</span></div><div class="etoiles" aria-label="5 étoiles sur 5">★★★★★</div><p>Les intervenants sont sérieux, qualifiés et sympathiques. Je recommande ces artisans</p></article>
+    </div>
+    <p class="lien-avis"><a class="btn btn-clair" href="https://www.google.com/maps/place/Art%27+Froid+Clim+-+Froid+-+Climatisation+-+Cuisine+professionnelle+-+Chauffage+toutes+%C3%A9nergies+-+Plomberie+-+Electricit%C3%A9/@48.0473109,0.3996427,682m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47e289af49820635:0xe6905a176b486d71!8m2!3d48.0473109!4d0.3996427!16s%2Fg%2F11h_vw5pbb" target="_blank" rel="noopener">Voir tous les avis sur Google</a></p>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="conteneur">
+    <div class="tete"><span class="sur">Contact</span><h2>Parlons de votre projet</h2><p>Un appel suffit. Vous pouvez aussi nous écrire, on vous rappelle.</p></div>
+    <div class="contact-grille">
+      <div class="carte-contact">
+        <h3>Art' Froid Clim</h3>
+        <a class="tel-gros" href="tel:+33631506359"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>06 31 50 63 59</a>
+        <div class="ligne-info"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span>84 Chemin des Jardins, La Grande Vallée - L'Hermitage<br>72450 Montfort-le-Gesnois<br><small style="color:var(--doux)">Interventions à Montfort-le-Gesnois et dans les environs</small></span></div>
+        <div class="ligne-info"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm.5 5v5.2l4 2.4-.8 1.3-4.7-2.8V7z"/></svg><span><strong>Horaires</strong></span></div>
+        <table class="horaires">
+          <tr><td>Lundi</td><td>8 h-12 h · 13 h 30-18 h</td></tr>
+          <tr><td>Mardi</td><td>8 h-12 h · 13 h 30-18 h</td></tr>
+          <tr><td>Mercredi</td><td>8 h-12 h · 13 h 30-18 h</td></tr>
+          <tr><td>Jeudi</td><td>8 h-12 h · 13 h 30-18 h</td></tr>
+          <tr><td>Vendredi</td><td>8 h-12 h · 13 h 30-18 h</td></tr>
+          <tr><td>Samedi</td><td>8 h-12 h 30</td></tr>
+          <tr><td>Dimanche</td><td class="ferme">Fermé</td></tr>
+        </table>
+        <div class="reseaux">
+          <a class="reseau" href="https://www.facebook.com/Artfroidclim" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1877f2"/><path fill="#fff" d="M13.4 19v-6.2h2.1l.4-2.5h-2.5V8.7c0-.7.3-1.2 1.3-1.2h1.3V5.3c-.2 0-1-.1-1.9-.1-1.9 0-3.2 1.200-3.200 3.300v1.800H8.800v2.500h2.100V19z"/></svg>Facebook</a>
+          <a class="reseau" href="https://www.google.com/maps/place/Art%27+Froid+Clim+-+Froid+-+Climatisation+-+Cuisine+professionnelle+-+Chauffage+toutes+%C3%A9nergies+-+Plomberie+-+Electricit%C3%A9/@48.0473109,0.3996427,682m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47e289af49820635:0xe6905a176b486d71!8m2!3d48.0473109!4d0.3996427!16s%2Fg%2F11h_vw5pbb" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#fff" stroke="#d6e6f0"/><path fill="#4285f4" d="M20 12.2c0-.6-.1-1.100-.2-1.600H12v3h4.500c-.2 1-.8 1.900-1.700 2.500v2h2.700c1.600-1.500 2.500-3.600 2.500-5.900z"/><path fill="#34a853" d="M12 20.500c2.300 0 4.200-.8 5.600-2.100l-2.700-2c-.8.500-1.700.8-2.900.8-2.200 0-4.100-1.500-4.800-3.500H4.400v2.100c1.400 2.800 4.300 4.700 7.600 4.700z"/><path fill="#fbbc05" d="M7.200 13.700c-.2-.5-.3-1.100-.3-1.700s.1-1.200.3-1.700V8.200H4.400a8.500 8.500 0 0 0 0 7.600z"/><path fill="#ea4335" d="M12 7.800c1.200 0 2.300.4 3.100 1.200l2.400-2.400C16.200 5.300 14.300 4.500 12 4.500c-3.300 0-6.200 1.900-7.600 4.700l2.800 2.100c.7-2 2.600-3.500 4.800-3.500z"/></svg>Fiche Google</a>
+        </div>
+      </div>
+      <div class="carte-contact">
+        <h3>Demande de devis</h3>
+        <form id="formulaire" action="#" method="post">
+          <label for="nom">Votre nom</label><input id="nom" name="nom" type="text" autocomplete="name" required>
+          <label for="tel">Votre téléphone</label><input id="tel" name="tel" type="tel" autocomplete="tel" required>
+          <label for="msg">Votre projet</label><textarea id="msg" name="msg" placeholder="Climatisation, pompe à chaleur, chauffage… dites-nous en quelques mots."></textarea>
+          <button class="btn btn-appel" type="submit">Envoyer ma demande</button>
+          <p id="merci" hidden>Merci ! Votre demande est bien prise en compte, nous vous rappelons rapidement.</p>
+          <p class="petit">Version de démonstration : ce formulaire n'envoie rien pour le moment.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="conteneur">
+    <div class="pied">
+      <div class="marque-pied"><img src="img/logo.jpg" alt="Art' Froid Clim" width="104" height="52"><span>Climatisation · Chauffage · Plomberie<br>Montfort-le-Gesnois et alentours</span></div>
+      <div class="reseaux">
+        <a class="reseau" href="https://www.facebook.com/Artfroidclim" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1877f2"/><path fill="#fff" d="M13.4 19v-6.2h2.1l.4-2.5h-2.5V8.7c0-.7.3-1.2 1.3-1.2h1.3V5.3c-.2 0-1-.1-1.9-.1-1.9 0-3.2 1.200-3.200 3.300v1.800H8.800v2.500h2.100V19z"/></svg>Facebook</a>
+        <a class="reseau" href="https://www.google.com/maps/place/Art%27+Froid+Clim+-+Froid+-+Climatisation+-+Cuisine+professionnelle+-+Chauffage+toutes+%C3%A9nergies+-+Plomberie+-+Electricit%C3%A9/@48.0473109,0.3996427,682m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47e289af49820635:0xe6905a176b486d71!8m2!3d48.0473109!4d0.3996427!16s%2Fg%2F11h_vw5pbb" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#fff"/><path fill="#4285f4" d="M20 12.2c0-.6-.1-1.100-.2-1.600H12v3h4.500c-.2 1-.8 1.900-1.700 2.500v2h2.700c1.600-1.500 2.500-3.600 2.500-5.900z"/><path fill="#34a853" d="M12 20.500c2.300 0 4.200-.8 5.600-2.100l-2.700-2c-.8.500-1.700.8-2.900.8-2.200 0-4.100-1.500-4.800-3.500H4.400v2.100c1.400 2.800 4.300 4.700 7.600 4.700z"/><path fill="#fbbc05" d="M7.200 13.700c-.2-.5-.3-1.100-.3-1.700s.1-1.200.3-1.700V8.200H4.400a8.500 8.500 0 0 0 0 7.600z"/><path fill="#ea4335" d="M12 7.800c1.200 0 2.300.4 3.100 1.200l2.400-2.400C16.200 5.300 14.300 4.500 12 4.500c-3.300 0-6.200 1.900-7.600 4.700l2.800 2.100c.7-2 2.600-3.500 4.800-3.500z"/></svg>Fiche Google</a>
+      </div>
+    </div>
+    <p class="legal">© Art' Froid Clim · Tél. <a href="tel:+33631506359">06 31 50 63 59</a> · Maquette de démonstration</p>
+  </div>
+</footer>
+
+<div class="appel-fixe"><a class="btn btn-appel" href="tel:+33631506359"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>Appeler le 06 31 50 63 59</a></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var burger=document.getElementById('burger'),nav=document.getElementById('nav');
+  burger.addEventListener('click',function(){var o=nav.classList.toggle('ouvert');burger.setAttribute('aria-expanded',o)});
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('ouvert');burger.setAttribute('aria-expanded','false')})});
+
+  var entete=document.getElementById('entete'),progres=document.getElementById('progres');
+  var liens=[].slice.call(nav.querySelectorAll('a'));
+  var sections=liens.map(function(l){return document.querySelector(l.getAttribute('href'))}).filter(Boolean);
+  function hauteurEntete(){return entete.getBoundingClientRect().height}
+  function majEntete(){
+    entete.classList.toggle('ombre',window.scrollY>10);
+    var total=document.documentElement.scrollHeight-window.innerHeight;
+    progres.style.transform='scaleX('+(total>0?Math.min(1,window.scrollY/total):0)+')';
+    var limite=hauteurEntete()+2,actif=null;
+    sections.forEach(function(s){if(s.getBoundingClientRect().top<=limite)actif=s});
+    if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-2)actif=sections[sections.length-1];
+    liens.forEach(function(l){l.classList.toggle('actif',!!actif&&l.getAttribute('href')==='#'+actif.id)});
+  }
+  window.addEventListener('scroll',function(){window.requestAnimationFrame(majEntete)},{passive:true});
+  window.addEventListener('resize',majEntete);majEntete();
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('href');
+      var cible=id==='#'?null:document.querySelector(id);
+      if(id!=='#'&&!cible)return;
+      e.preventDefault();
+      var haut=cible&&cible.id!=='accueil'?cible.getBoundingClientRect().top+window.scrollY-hauteurEntete():0;
+      var doux=!window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({top:Math.max(0,Math.round(haut)),behavior:doux?'smooth':'auto'});
+    });
+  });
+
+  document.getElementById('formulaire').addEventListener('submit',function(e){
+    e.preventDefault();document.getElementById('merci').hidden=false;
+  });
+
+  if(!window.gsap)return;
+  gsap.registerPlugin(ScrollTrigger);
+  var mm=gsap.matchMedia();
+  mm.add('(prefers-reduced-motion: no-preference)',function(){
+    gsap.from('.heros h1 .ligne>span',{yPercent:110,duration:1,ease:'power4.out',stagger:.12,delay:.1});
+    gsap.from('.heros .etiquette, .heros .sous, .heros .actions, .heros .note',{y:20,opacity:0,duration:.8,ease:'power2.out',stagger:.12,delay:.45});
+    gsap.fromTo('#cadre-heros',{clipPath:'inset(0 0 100% 0)'},{clipPath:'inset(0 0 0% 0)',duration:1.3,ease:'power3.inOut',delay:.2});
+    gsap.fromTo('#cadre-heros img',{scale:1.18},{scale:1,duration:1.8,ease:'power2.out',delay:.2});
+    gsap.from('.pastille',{scale:0,rotation:-30,duration:.9,ease:'back.out(1.8)',stagger:.2,delay:1});
+    gsap.to('.p-froid',{y:30,ease:'none',scrollTrigger:{trigger:'.heros',start:'top top',end:'bottom top',scrub:true}});
+    gsap.to('.p-chaud',{y:-26,ease:'none',scrollTrigger:{trigger:'.heros',start:'top top',end:'bottom top',scrub:true}});
+    document.querySelectorAll('.tete h2').forEach(function(h){
+      gsap.from(h,{y:30,opacity:0,duration:.9,ease:'power3.out',scrollTrigger:{trigger:h,start:'top 88%',once:true}});
+    });
+    ScrollTrigger.batch('.service',{start:'top 90%',once:true,onEnter:function(b){gsap.from(b,{y:46,opacity:0,duration:.8,ease:'power3.out',stagger:.1})}});
+    ScrollTrigger.batch('.etape',{start:'top 90%',once:true,onEnter:function(b){gsap.from(b,{y:30,opacity:0,duration:.7,ease:'power2.out',stagger:.12})}});
+    ScrollTrigger.batch('.galerie figure',{start:'top 92%',once:true,onEnter:function(b){gsap.from(b,{y:40,opacity:0,scale:.96,duration:.7,ease:'power2.out',stagger:.08})}});
+    gsap.fromTo('#vue-saisons',{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0% 0 0)',duration:1.1,ease:'power3.inOut',scrollTrigger:{trigger:'#vue-saisons',start:'top 85%',once:true}});
+    gsap.from('.saisons .texte > *',{x:30,opacity:0,duration:.8,ease:'power3.out',stagger:.1,scrollTrigger:{trigger:'.saisons .texte',start:'top 78%',once:true}});
+    var gros=document.querySelector('.bloc-note .gros'),compte={v:0};
+    gsap.to(compte,{v:4.6,duration:1.2,ease:'power2.out',scrollTrigger:{trigger:gros,start:'top 88%',once:true},onUpdate:function(){gros.firstChild.nodeValue=compte.v.toFixed(1).replace('.',',')}});
+    ScrollTrigger.batch('.avis-carte',{start:'top 92%',once:true,onEnter:function(b){gsap.from(b,{y:30,opacity:0,duration:.7,ease:'power2.out',stagger:.1})}});
+    gsap.from('#formulaire > *:not(#merci)',{y:22,opacity:0,duration:.6,ease:'power2.out',stagger:.08,scrollTrigger:{trigger:'#formulaire',start:'top 88%',once:true}});
+  });
+  window.addEventListener('load',function(){ScrollTrigger.refresh()});
+})();
+</script>
+</body>
+</html>
