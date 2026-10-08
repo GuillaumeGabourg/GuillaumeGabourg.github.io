@@ -69,8 +69,8 @@ nav#nav a:hover::after,nav#nav a.on::after{transform:scaleX(1)}
 .tete{max-width:760px;margin-bottom:46px}
 .tete p{color:var(--doux);margin-top:14px;font-size:18px}
 .grille{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.carte{background:#fff;padding:30px 28px 32px;border-top:5px solid var(--noir);box-shadow:0 1px 0 var(--ligne);transition:transform .25s,border-color .25s,box-shadow .25s}
-.carte:hover{transform:translateY(-5px);border-top-color:var(--jaune);box-shadow:0 18px 34px -18px rgba(0,0,0,.35)}
+.carte{background:#fff;padding:30px 28px 32px;border-top:5px solid var(--noir);box-shadow:0 1px 0 var(--ligne);transition:border-color .25s,box-shadow .25s}
+.carte:hover{border-top-color:var(--jaune);box-shadow:0 18px 34px -18px rgba(0,0,0,.35)}
 .carte header{display:flex;align-items:center;gap:14px;margin-bottom:12px;min-height:62px}
 .carte .ic{flex:none;width:50px;height:50px;background:var(--noir);display:grid;place-items:center}
 .carte .ic svg{width:28px;height:28px;stroke:var(--jaune-v);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
@@ -166,6 +166,7 @@ footer.pied .reseaux svg{width:20px;height:20px}
 /* Apparition */
 .js .rev{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
 .js .rev.vu{opacity:1;transform:none}
+.js .carte.rev,.js .avis-c.rev{transform:none;transition:opacity .6s ease;transition-delay:0ms!important}
 .js .hero-in{opacity:0;transform:translateY(22px);animation:entree .8s ease forwards}
 .js .hero-in:nth-child(2){animation-delay:.12s}.js .hero-in:nth-child(3){animation-delay:.24s}.js .hero-in:nth-child(4){animation-delay:.36s}
 @keyframes entree{to{opacity:1;transform:none}}
