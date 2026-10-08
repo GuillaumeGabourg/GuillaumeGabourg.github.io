@@ -167,7 +167,7 @@ section{padding-block:clamp(66px,9vw,110px)}
 .pergolas .texte p{color:#B9C3CA}
 .portails{background:var(--creme)}
 .portails .texte p{color:var(--gris)}
-.portails .photos{grid-template-columns:1.1fr 1fr}
+.portails .photos{grid-template-columns:1fr 1fr}
 .portails .photos .haute{grid-row:1/3;aspect-ratio:auto;min-height:100%}
 .portails .photos .petite{aspect-ratio:1/1}
 @media (max-width:900px){
@@ -636,8 +636,7 @@ form .btn{justify-self:start;border:0}
     /* Héros : titre ligne par ligne, photos qui glissent en biais */
     gsap.from('.heros h1 .ligne>span',{yPercent:110,duration:1,ease:'power4.out',stagger:.12,delay:.1});
     gsap.from('.heros .etiquette, .heros .sous, .heros .actions, .heros .note',{y:20,opacity:0,duration:.8,ease:'power2.out',stagger:.12,delay:.45});
-    gsap.from('#cadre-heros',{x:90,opacity:0,duration:1.1,ease:'power3.out',delay:.25});
-    gsap.from('#cadre-heros-2',{x:90,opacity:0,duration:1.1,ease:'power3.out',delay:.45});
+    gsap.from('#cadre-heros, #cadre-heros-2',{opacity:0,duration:1.1,ease:'power2.out',delay:.3,clearProps:'opacity'});
     gsap.fromTo('.coupe-jaune',{yPercent:100},{yPercent:0,duration:.9,ease:'power3.out',delay:.9});
     gsap.to('#cadre-heros img',{yPercent:6,ease:'none',scrollTrigger:{trigger:'.heros',start:'top top',end:'bottom top',scrub:true}});
     gsap.to('#cadre-heros-2 img',{yPercent:-6,ease:'none',scrollTrigger:{trigger:'.heros',start:'top top',end:'bottom top',scrub:true}});
@@ -651,23 +650,23 @@ form .btn{justify-self:start;border:0}
     });
 
     /* Tuiles et étapes en cascade */
-    ScrollTrigger.batch('.tuile',{start:'top 90%',once:true,onEnter:function(b){gsap.from(b,{y:46,opacity:0,duration:.8,ease:'power3.out',stagger:.1})}});
-    ScrollTrigger.batch('.etape',{start:'top 90%',once:true,onEnter:function(b){gsap.from(b,{y:30,opacity:0,duration:.7,ease:'power2.out',stagger:.12})}});
+    ScrollTrigger.batch('.tuile',{start:'top 90%',once:true,onEnter:function(b){gsap.from(b,{opacity:0,duration:.8,ease:'power2.out',clearProps:'opacity'})}});
+    ScrollTrigger.batch('.etape',{start:'top 90%',once:true,onEnter:function(b){gsap.from(b,{opacity:0,duration:.7,ease:'power2.out',clearProps:'opacity'})}});
     gsap.from('.aussi span',{x:-24,opacity:0,duration:.6,ease:'power2.out',stagger:.1,scrollTrigger:{trigger:'.aussi',start:'top 92%',once:true}});
 
     /* Pergolas et portails : photos qui arrivent, texte qui suit */
-    gsap.from('#photos-pergolas figure',{y:50,opacity:0,duration:.9,ease:'power3.out',stagger:.14,scrollTrigger:{trigger:'#photos-pergolas',start:'top 85%',once:true}});
+    gsap.from('#photos-pergolas figure',{opacity:0,duration:.9,ease:'power2.out',clearProps:'opacity',scrollTrigger:{trigger:'#photos-pergolas',start:'top 85%',once:true}});
     gsap.from('.pergolas .texte > *:not(h2):not(.etiquette)',{x:-30,opacity:0,duration:.8,ease:'power3.out',stagger:.1,scrollTrigger:{trigger:'.pergolas .texte',start:'top 75%',once:true}});
-    gsap.from('#photos-portails figure',{y:50,opacity:0,duration:.9,ease:'power3.out',stagger:.14,scrollTrigger:{trigger:'#photos-portails',start:'top 85%',once:true}});
+    gsap.from('#photos-portails figure',{opacity:0,duration:.9,ease:'power2.out',clearProps:'opacity',scrollTrigger:{trigger:'#photos-portails',start:'top 85%',once:true}});
     gsap.from('.portails .texte > *:not(h2):not(.etiquette)',{x:30,opacity:0,duration:.8,ease:'power3.out',stagger:.1,scrollTrigger:{trigger:'.portails .texte',start:'top 75%',once:true}});
-    gsap.from('.carte',{x:80,opacity:0,duration:.9,ease:'power3.out',stagger:.08,scrollTrigger:{trigger:'#piste',start:'top 85%',once:true}});
+    gsap.from('.carte',{opacity:0,duration:.9,ease:'power2.out',clearProps:'opacity',scrollTrigger:{trigger:'#piste',start:'top 85%',once:true}});
 
     /* Note Google qui compte, bloc Facebook */
     var gros=document.querySelector('.bloc-note .gros');
     var compte={v:0};
     gsap.to(compte,{v:5,duration:1.2,ease:'power2.out',scrollTrigger:{trigger:gros,start:'top 88%',once:true},onUpdate:function(){gros.firstChild.nodeValue=compte.v.toFixed(1).replace('.',',')}});
-    gsap.from('.social',{x:40,opacity:0,duration:.9,ease:'power3.out',scrollTrigger:{trigger:'.social',start:'top 88%',once:true}});
-    ScrollTrigger.batch('.avis-carte',{start:'top 92%',once:true,onEnter:function(b){gsap.from(b,{y:30,opacity:0,duration:.7,ease:'power2.out',stagger:.1})}});
+    gsap.from('.social',{opacity:0,duration:.9,ease:'power2.out',clearProps:'opacity',scrollTrigger:{trigger:'.social',start:'top 88%',once:true}});
+    ScrollTrigger.batch('.avis-carte',{start:'top 92%',once:true,onEnter:function(b){gsap.from(b,{opacity:0,duration:.7,ease:'power2.out',clearProps:'opacity'})}});
 
     /* Formulaire élément par élément (le téléphone reste visible) */
     gsap.from('#formulaire > *:not(#merci)',{y:22,opacity:0,duration:.6,ease:'power2.out',stagger:.08,scrollTrigger:{trigger:'#formulaire',start:'top 88%',once:true}});
