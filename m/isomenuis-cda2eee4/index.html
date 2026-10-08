@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Isomenuis' – Menuiseries, fermetures et stores à La Milesse</title>
+<meta name="description" content="Isomenuis', menuiserie à La Milesse près du Mans : portes d'entrée, fenêtres, volets, portes de garage, stores et pergolas. Devis gratuit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --anthracite:#2A2F34;   /* gris de la façade et des menuiseries alu */
+  --acier:#3C434A;
+  --vert:#00A650;         /* « Iso » du logo */
+  --vert-fonce:#007A3B;
+  --orange:#F05000;       /* « menuis' » du logo */
+  --orange-fonce:#C93F00;
+  --fond:#F5F6F4;
+  --blanc:#FFFFFF;
+  --gris:#5A636B;
+  --trait:#DADFDC;
+  --encre:#1C2024;
+  --hdr:84px;
+}
+*{box-sizing:border-box}
+html{background:var(--fond);color-scheme:light}
+body{margin:0;background:var(--fond);color:var(--encre);font-family:'Nunito Sans',system-ui,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.wrap{max-width:1220px;margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:'Outfit',system-ui,sans-serif;margin:0;line-height:1.1;letter-spacing:-.01em}
+h2{font-size:clamp(32px,4.4vw,52px);font-weight:700;color:var(--anthracite)}
+h2 .v{color:var(--vert)} h2 .o{color:var(--orange)}
+.etiquette{display:inline-flex;align-items:center;gap:10px;font-family:'Outfit',sans-serif;font-weight:600;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--vert-fonce)}
+.etiquette::before{content:"";width:9px;height:24px;background:var(--vert);border-radius:3px;box-shadow:14px 0 0 var(--orange);margin-right:14px;flex:none}
+.tete{max-width:760px;margin-bottom:44px}
+.tete h2{margin-top:14px}
+.tete p{margin:16px 0 0;color:var(--gris);font-size:18px}
+section{position:relative}
+
+/* ---------- En-tête ---------- */
+.entete{position:fixed;inset:0 0 auto 0;z-index:60;height:var(--hdr);background:var(--blanc);border-bottom:1px solid var(--trait);transition:box-shadow .3s}
+.entete.ombre{box-shadow:0 6px 24px rgba(28,32,36,.1)}
+.entete .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.marque{display:flex;align-items:center;text-decoration:none}
+.marque img{height:46px;width:auto}
+.nav{display:flex;gap:28px;align-items:center}
+.nav a{text-decoration:none;font-family:'Outfit',sans-serif;font-weight:500;font-size:16px;color:var(--anthracite);padding:6px 0;border-bottom:3px solid transparent;transition:color .2s,border-color .2s}
+.nav a:hover{color:var(--vert-fonce)}
+.nav a.actif{border-color:var(--orange);color:var(--anthracite)}
+.tel{display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:var(--orange);color:#fff;padding:12px 20px;border-radius:999px;font-family:'Outfit',sans-serif;font-weight:600;font-size:16px;white-space:nowrap;transition:background .2s,transform .2s}
+.tel:hover{background:var(--orange-fonce);transform:translateY(-1px)}
+.tel svg{width:18px;height:18px;flex:none}
+.burger{display:none;width:46px;height:46px;border:1px solid var(--trait);background:#fff;border-radius:12px;cursor:pointer;padding:0;align-items:center;justify-content:center}
+.burger span,.burger span::before,.burger span::after{display:block;width:20px;height:2px;background:var(--anthracite);border-radius:2px;position:relative;content:""}
+.burger span::before{position:absolute;top:-6px}.burger span::after{position:absolute;top:6px}
+.progres{position:absolute;left:0;bottom:-1px;height:3px;width:100%;background:linear-gradient(90deg,var(--vert),var(--orange));transform:scaleX(0);transform-origin:left}
+
+/* ---------- Héros ---------- */
+.heros{background:var(--fond);padding-top:var(--hdr);overflow:hidden}
+.heros-grille{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding-top:56px;padding-bottom:64px;min-height:calc(100svh - var(--hdr) - 76px)}
+.barres{position:absolute;left:0;top:var(--hdr);bottom:0;width:22px;display:flex;gap:6px;padding-left:0;pointer-events:none}
+.barres i{display:block;width:8px;height:100%;background:var(--vert)}
+.barres i+i{background:var(--orange);height:62%}
+.heros h1{font-size:clamp(38px,5vw,70px);font-weight:800;color:var(--anthracite);margin:22px 0 24px;line-height:1.02}
+.heros h1 .ligne{display:block;overflow:hidden;padding-bottom:.08em}
+.heros h1 .ligne>span{display:inline-block;white-space:nowrap}
+.heros h1 .v{color:var(--vert)} .heros h1 .o{color:var(--orange)}
+.intro{max-width:520px;font-size:19px;color:var(--gris);margin:0 0 32px}
+.actions{display:flex;flex-wrap:wrap;gap:14px}
+.btn{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-family:'Outfit',sans-serif;font-weight:600;font-size:17px;padding:16px 28px;border-radius:999px;transition:background .2s,color .2s,transform .2s,border-color .2s}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-plein{background:var(--orange);color:#fff}.btn-plein:hover{background:var(--orange-fonce);transform:translateY(-2px)}
+.btn-ligne{border:2px solid var(--anthracite);color:var(--anthracite)}.btn-ligne:hover{background:var(--anthracite);color:#fff}
+.btn-vert{background:var(--vert-fonce);color:#fff}.btn-vert:hover{background:var(--anthracite)}
+.note{display:flex;align-items:center;gap:14px;margin-top:34px;color:var(--gris);font-size:15px}
+.note b{font-family:'Outfit',sans-serif;font-size:34px;line-height:1;color:var(--anthracite)}
+.etoiles{color:#F2A900;letter-spacing:2px;font-size:19px}
+.compo{position:relative;height:min(660px,74vh);min-height:480px}
+.cadre{position:absolute;right:0;top:0;width:78%;height:100%;overflow:hidden;border-radius:26px 26px 26px 120px;background:var(--acier);box-shadow:0 30px 60px -28px rgba(28,32,36,.5)}
+.cadre img{width:100%;height:100%;object-fit:cover}
+.petit{position:absolute;left:0;bottom:7%;width:38%;aspect-ratio:3/4;border-radius:20px;overflow:hidden;border:7px solid var(--fond);box-shadow:0 22px 44px -20px rgba(28,32,36,.55)}
+.petit img{width:100%;height:100%;object-fit:cover}
+.pastille{position:absolute;right:-6px;top:30px;background:#fff;border-radius:18px;padding:12px 18px;box-shadow:0 14px 34px -14px rgba(28,32,36,.45);display:flex;align-items:center;gap:12px;font-family:'Outfit',sans-serif;font-weight:600;font-size:15px;line-height:1.25}
+.pastille b{font-size:28px;color:var(--vert);line-height:1}
+.bandeau{background:var(--anthracite);color:#fff;position:relative;z-index:2}
+.bandeau .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.info{display:flex;align-items:center;gap:16px;padding:20px 26px 20px 0}
+.info+.info{padding-left:26px;border-left:1px solid rgba(255,255,255,.14)}
+.info svg{width:30px;height:30px;flex:none;color:var(--orange)}
+.info small{display:block;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#AEB6BC;font-family:'Outfit',sans-serif}
+.info strong{font-family:'Outfit',sans-serif;font-weight:600;font-size:18px;line-height:1.3}
+
+/* ---------- Produits ---------- */
+.produits{padding:104px 0;background:var(--blanc)}
+.grille3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.produit{background:var(--fond);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--trait);transition:transform .3s,box-shadow .3s}
+.produit:hover{box-shadow:0 24px 40px -26px rgba(28,32,36,.45)}
+.produit .photo{aspect-ratio:4/3;overflow:hidden;background:var(--acier)}
+.produit .photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.produit:hover .photo img{transform:scale(1.05)}
+.produit .corps{padding:22px 24px 26px}
+.produit .ligne-titre{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.produit .ico{flex:none;width:42px;height:42px;border-radius:12px;background:var(--anthracite);color:#fff;display:grid;place-items:center}
+.produit:nth-child(even) .ico{background:var(--vert-fonce)}
+.produit .ico svg{width:24px;height:24px}
+.produit h3{font-size:22px;font-weight:700;color:var(--anthracite)}
+.produit p{margin:0;color:var(--gris);font-size:16.5px}
+
+/* ---------- Réalisations ---------- */
+.realisations{padding:104px 0;background:var(--anthracite);color:#fff;overflow:hidden}
+.realisations h2{color:#fff}.realisations .tete p{color:#B5BDC3}
+.realisations .etiquette{color:#8DE0B3}
+.entete-defile{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:34px}
+.entete-defile .tete{margin-bottom:0}
+.commandes{display:flex;align-items:center;gap:14px;flex:none}
+.commandes button{width:54px;height:54px;border-radius:50%;border:2px solid rgba(255,255,255,.35);background:transparent;color:#fff;cursor:pointer;display:grid;place-items:center;transition:background .2s,border-color .2s,opacity .2s}
+.commandes button:hover:not(:disabled){background:var(--orange);border-color:var(--orange)}
+.commandes button:disabled{opacity:.3;cursor:default}
+.commandes svg{width:22px;height:22px}
+.compteur{min-width:64px;text-align:center;font-family:'Outfit',sans-serif;font-weight:600;font-size:18px;letter-spacing:.04em}
+.piste{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 28px 6px;margin:0 auto;max-width:1220px;outline-offset:6px}
+.piste::-webkit-scrollbar{display:none}
+.carte{flex:0 0 clamp(250px,26%,330px);scroll-snap-align:start;margin:0;position:relative;border-radius:20px;overflow:hidden;background:var(--acier)}
+.carte img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.carte figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 18px 16px;background:linear-gradient(transparent,rgba(20,23,26,.88));font-family:'Outfit',sans-serif;font-weight:600;font-size:17px}
+
+/* ---------- L'entreprise ---------- */
+.entreprise{padding:104px 0;background:var(--fond)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.duo .images{position:relative}
+.duo .grande{border-radius:26px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(28,32,36,.45)}
+.duo .grande img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.duo .camion{position:absolute;right:-18px;bottom:-34px;width:52%;border-radius:18px;overflow:hidden;border:6px solid var(--fond);box-shadow:0 20px 40px -20px rgba(28,32,36,.5)}
+.duo .camion img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.texte p{color:var(--gris);font-size:18px;margin:16px 0 0}
+.points{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:18px}
+.points li{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:center}
+.points .pico{width:40px;height:40px;border-radius:50%;background:var(--vert);color:#fff;display:grid;place-items:center}
+.points li:nth-child(2) .pico{background:var(--orange)}
+.points li:nth-child(3) .pico{background:var(--anthracite)}
+.points .pico svg{width:22px;height:22px}
+.points h3{font-size:20px;color:var(--anthracite)}
+.points p{grid-column:2;margin:0;font-size:16.5px}
+.etapes{margin-top:96px;display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.etape{background:#fff;border:1px solid var(--trait);border-radius:20px;padding:24px 24px 26px;border-top:5px solid var(--vert)}
+.etape:nth-child(2){border-top-color:var(--orange)}.etape:nth-child(3){border-top-color:var(--anthracite)}.etape:nth-child(4){border-top-color:var(--vert)}
+.etape h3{font-size:21px;color:var(--anthracite);margin-bottom:8px}
+.etape h3 .n{color:var(--orange)}
+.etape p{margin:0;color:var(--gris);font-size:16px}
+
+/* ---------- Avis ---------- */
+.avis{padding:104px 0;background:var(--blanc)}
+.avis-tete{display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:center;margin-bottom:40px}
+.bloc-note{background:var(--anthracite);color:#fff;border-radius:24px;padding:26px 36px;text-align:center}
+.bloc-note .gros{font-family:'Outfit',sans-serif;font-weight:800;font-size:76px;line-height:1}
+.bloc-note .gros small{font-size:28px;font-weight:600;color:#AEB6BC}
+.bloc-note .etoiles{display:block;margin-top:6px}
+.bloc-note .sous{font-size:15px;color:#C7CED3;margin-top:4px}
+.masonry{column-count:3;column-gap:22px}
+.avis-carte{break-inside:avoid;margin:0 0 22px;background:var(--fond);border:1px solid var(--trait);border-radius:20px;padding:22px 24px}
+.avis-carte .haut{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.avis-carte .rond{width:42px;height:42px;border-radius:50%;background:var(--vert);color:#fff;display:grid;place-items:center;font-family:'Outfit',sans-serif;font-weight:700;font-size:18px;flex:none}
+.avis-carte:nth-child(3n+2) .rond{background:var(--orange)}.avis-carte:nth-child(3n) .rond{background:var(--anthracite)}
+.avis-carte .nom{font-family:'Outfit',sans-serif;font-weight:600;font-size:17px;line-height:1.2}
+.avis-carte .date{font-size:14px;color:var(--gris)}
+.avis-carte .etoiles{font-size:16px}
+.avis-carte p{margin:8px 0 0;font-size:16.5px}
+.voir-tous{text-align:center;margin-top:18px}
+.source{margin:26px auto 0;text-align:center;font-size:14px;color:var(--gris)}
+
+/* ---------- Contact ---------- */
+.contact{padding:104px 0;background:var(--anthracite);color:#fff}
+.contact h2{color:#fff}.contact .tete p{color:#B5BDC3}
+.contact .etiquette{color:#8DE0B3}
+.contact-grille{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.coord{display:grid;gap:22px}
+.gros-tel{display:inline-flex;align-items:center;gap:16px;text-decoration:none;font-family:'Outfit',sans-serif;font-weight:700;font-size:clamp(30px,4.4vw,46px);line-height:1;color:#fff}
+.gros-tel .rond{width:60px;height:60px;border-radius:50%;background:var(--orange);display:grid;place-items:center;flex:none}
+.gros-tel svg{width:28px;height:28px}
+.ligne-info{display:flex;align-items:flex-start;gap:14px}
+.ligne-info svg{width:26px;height:26px;color:var(--orange);flex:none;margin-top:2px}
+.ligne-info>div{flex:1;min-width:0}
+.ligne-info b{font-family:'Outfit',sans-serif;font-weight:600;font-size:18px;display:block}
+.ligne-info span{color:#C7CED3}
+.horaires{margin:6px 0 0;padding:0;list-style:none;display:grid;gap:4px;width:min(100%,340px)}
+.horaires li{display:flex;justify-content:space-between;gap:24px;border-bottom:1px solid rgba(255,255,255,.12);padding:6px 0;color:#E4E8EB}
+.horaires li b{font-weight:600;color:#fff}
+.horaires li.ferme span:last-child{color:#AEB6BC}
+.reseaux{display:flex;gap:12px;flex-wrap:wrap}
+.reseaux a{display:inline-flex;align-items:center;gap:10px;padding:10px 18px 10px 12px;border-radius:999px;background:rgba(255,255,255,.08);text-decoration:none;font-family:'Outfit',sans-serif;font-weight:600;font-size:15.5px;transition:background .2s}
+.reseaux a:hover{background:rgba(255,255,255,.18)}
+.reseaux .pic{width:32px;height:32px;border-radius:50%;background:#fff;display:grid;place-items:center;flex:none}
+.reseaux svg{width:20px;height:20px}
+form{background:#fff;color:var(--encre);border-radius:24px;padding:32px;display:grid;gap:16px}
+form h3{font-size:26px;color:var(--anthracite)}
+label{display:grid;gap:6px;font-family:'Outfit',sans-serif;font-weight:500;font-size:15px;color:var(--anthracite)}
+input,textarea{font:inherit;font-size:17px;padding:13px 15px;border:1.5px solid #C7CED3;border-radius:12px;background:var(--fond);color:var(--encre);width:100%}
+input:focus,textarea:focus{outline:3px solid rgba(240,80,0,.35);border-color:var(--orange)}
+textarea{min-height:130px;resize:vertical}
+form button{border:0;cursor:pointer;justify-content:center;font-family:'Outfit',sans-serif}
+.merci{background:#E6F6EC;border:1.5px solid var(--vert);color:#0B4F2A;padding:14px 16px;border-radius:12px;font-weight:600}
+.merci[hidden]{display:none}
+.petit-mot{margin:0;font-size:14px;color:var(--gris)}
+
+/* ---------- Pied de page ---------- */
+.pied{background:#1A1E22;color:#AEB6BC;padding:34px 0;font-size:15px}
+.pied .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.pied .logo-blanc{background:#fff;border-radius:12px;padding:8px 14px}
+.pied .logo-blanc img{height:34px;width:auto}
+.pied .reseaux a{background:rgba(255,255,255,.07);color:#fff}
+
+/* ---------- Téléphone ---------- */
+.appel-fixe{display:none}
+@media (max-width:1100px){
+  .nav{gap:20px}.nav a{font-size:15px}
+  .tel span.txt{display:none}.tel{padding:12px 14px}
+  .grille3{grid-template-columns:repeat(2,1fr)}
+  .masonry{column-count:2}
+  .etapes{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:900px){
+  :root{--hdr:72px}
+  .burger{display:flex}
+  .nav{position:absolute;top:var(--hdr);left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;gap:0;padding:8px 28px 18px;border-bottom:1px solid var(--trait);box-shadow:0 20px 30px -20px rgba(28,32,36,.35);display:none}
+  .nav.ouvert{display:flex}
+  .nav a{padding:14px 0;border-bottom:1px solid var(--trait);font-size:18px}
+  .nav a.actif{border-bottom-color:var(--orange)}
+  .marque img{height:40px}
+  .heros-grille{grid-template-columns:1fr;gap:44px;min-height:0;padding-top:40px}
+  .compo{height:560px;min-height:0;max-width:560px;margin:0 auto;width:100%}
+  .barres{display:none}
+  .bandeau .wrap{grid-template-columns:1fr}
+  .info,.info+.info{padding:16px 0;border-left:0}
+  .info+.info{border-top:1px solid rgba(255,255,255,.14)}
+  .duo{grid-template-columns:1fr;gap:70px}
+  .duo .camion{right:-8px}
+  .avis-tete{grid-template-columns:1fr}
+  .contact-grille{grid-template-columns:1fr}
+  .produits,.realisations,.entreprise,.avis,.contact{padding:76px 0}
+  .entete-defile{flex-direction:column;align-items:flex-start}
+}
+@media (max-width:620px){
+  body{font-size:16.5px}
+  .wrap{padding:0 20px}
+  .grille3,.etapes{grid-template-columns:1fr}
+  .masonry{column-count:1}
+  .compo{height:480px}
+  .cadre{width:84%;border-radius:22px 22px 22px 80px}
+  .petit{width:42%}
+  .pastille{right:0;top:18px;padding:10px 14px;font-size:13.5px}
+  .pastille b{font-size:23px}
+  .carte{flex-basis:78%}
+  .piste{padding:4px 20px 6px;gap:16px}
+  .actions .btn{width:100%;justify-content:center}
+  .bloc-note{padding:22px}
+  .bloc-note .gros{font-size:62px}
+  form{padding:24px 20px}
+  .gros-tel .rond{width:52px;height:52px}
+  .appel-fixe{display:flex;position:fixed;left:16px;right:16px;bottom:14px;z-index:55;justify-content:center;gap:12px;align-items:center;background:var(--orange);color:#fff;text-decoration:none;border-radius:999px;padding:15px 20px;font-family:'Outfit',sans-serif;font-weight:700;font-size:18px;box-shadow:0 14px 30px -10px rgba(28,32,36,.6)}
+  .appel-fixe svg{width:22px;height:22px}
+  .pied{padding-bottom:96px}
+  .tel{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-tel" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6" fill="none" stroke="currentColor" stroke-width="1.9"/></symbol>
+  <symbol id="i-horloge" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M12 7v5.2l3.4 2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+  <symbol id="i-fleche" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-gauche" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-porte" viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="9" y="5.5" width="6" height="5" rx=".8" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="15" cy="15" r="1" fill="currentColor"/></symbol>
+  <symbol id="i-fenetre" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 3v18M4 12h16" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-garage" viewBox="0 0 24 24"><path d="M3 10.5 12 4l9 6.5V21H3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M7 21v-8h10v8M7 15.3h10M7 18h10" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+  <symbol id="i-volet" viewBox="0 0 24 24"><rect x="3" y="3" width="7.5" height="18" rx="1" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13.5" y="3" width="7.5" height="18" rx="1" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5.5 7h2.5M5.5 10h2.5M5.5 13h2.5M5.5 16h2.5M16 7h2.5M16 10h2.5M16 13h2.5M16 16h2.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M3 4h18l1 6H2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M7 4l-1 6M12 4v6M17 4l1 6" stroke="currentColor" stroke-width="1.5"/><path d="M5 10v10M19 10v10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-bain" viewBox="0 0 24 24"><path d="M3 12h18v2.5a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5zM6 12V6.5A2.5 2.5 0 0 1 8.5 4c1 0 1.8.5 2.2 1.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 19.5 6 21M17 19.5 18 21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-coche" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-ecoute" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M8 9.5h8M8 12.5h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="i-maison" viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5M5.5 10v10h13V10" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 20v-5.5h4V20" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path fill="#1877F2" d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></symbol>
+  <symbol id="i-google" viewBox="0 0 24 24"><path fill="#4285F4" d="M23 12.3c0-.8-.1-1.5-.2-2.2H12v4.2h6.2a5.3 5.3 0 0 1-2.3 3.5v2.9h3.7c2.2-2 3.4-4.9 3.4-8.4z"/><path fill="#34A853" d="M12 23.5c3.1 0 5.7-1 7.6-2.8l-3.7-2.9c-1 .7-2.3 1.1-3.9 1.1-3 0-5.5-2-6.4-4.7H1.8v3A11.5 11.5 0 0 0 12 23.5z"/><path fill="#FBBC05" d="M5.6 14.2a6.9 6.9 0 0 1 0-4.4v-3H1.8a11.5 11.5 0 0 0 0 10.4z"/><path fill="#EA4335" d="M12 5.2c1.7 0 3.2.6 4.4 1.7l3.3-3.3A11.5 11.5 0 0 0 1.8 6.8l3.8 3C6.5 7.2 9 5.2 12 5.2z"/></symbol>
+</svg>
+
+<header class="entete" id="entete">
+  <div class="wrap">
+    <a class="marque" href="#accueil" aria-label="Isomenuis', retour à l'accueil"><img src="img/logo.png" alt="Isomenuis' – La société à vos côtés" width="200" height="46"></a>
+    <nav class="nav" id="nav" aria-label="Menu principal">
+      <a href="#accueil">Accueil</a>
+      <a href="#produits">Nos produits</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#entreprise">L'entreprise</a>
+      <a href="#avis">Avis</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="tel" href="tel:+33243293082"><svg><use href="#i-tel"/></svg><span class="txt">Appeler</span> <span>02 43 29 30 82</span></a>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav"><span></span></button>
+  </div>
+  <div class="progres" id="progres"></div>
+</header>
+
+<main>
+<!-- ================= ACCUEIL ================= -->
+<section id="accueil">
+  <div class="heros">
+    <div class="wrap heros-grille">
+      <div class="texte-heros">
+        <span class="etiquette">Menuiserie à La Milesse, près du Mans</span>
+        <h1>
+          <span class="ligne"><span>Des menuiseries</span></span>
+          <span class="ligne"><span><span class="v">qui durent,</span></span></span>
+          <span class="ligne"><span>posées <span class="o">avec soin.</span></span></span>
+        </h1>
+        <p class="intro">Portes d'entrée, fenêtres, volets, portes de garage, stores et pergolas : Isomenuis' vous conseille, établit votre devis et pose chez vous, à La Milesse et dans les environs.</p>
+        <div class="actions">
+          <a class="btn btn-plein" href="tel:+33243293082"><svg><use href="#i-tel"/></svg>Appeler le 02 43 29 30 82</a>
+          <a class="btn btn-ligne" href="#realisations">Voir les réalisations<svg><use href="#i-fleche"/></svg></a>
+        </div>
+        <div class="note"><b>4,8</b><div><span class="etoiles" aria-hidden="true">★★★★★</span><br>40 avis sur Google</div></div>
+      </div>
+      <div class="compo">
+        <div class="cadre" id="cadre-heros"><img src="img/pergola-terrasse.jpg" alt="Pergola à lames installée sur une terrasse avec salon de jardin" width="896" height="1061" fetchpriority="high"></div>
+        <div class="petit" id="petit-heros"><img src="img/porte-rouge.jpg" alt="Porte d'entrée rouge vitrée posée par Isomenuis'" width="716" height="941"></div>
+        <div class="pastille"><b>4,8</b><span>sur 5<br>avis Google</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="bandeau">
+    <div class="wrap">
+      <div class="info"><svg><use href="#i-tel"/></svg><div><small>Téléphone</small><strong><a href="tel:+33243293082" style="text-decoration:none">02 43 29 30 82</a></strong></div></div>
+      <div class="info"><svg><use href="#i-horloge"/></svg><div><small>Horaires</small><strong>Lun-ven 8h-18h · sam 8h-12h</strong></div></div>
+      <div class="info"><svg><use href="#i-pin"/></svg><div><small>Zone d'intervention</small><strong>La Milesse et alentours</strong></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRODUITS ================= -->
+<section id="produits" class="produits">
+  <div class="wrap">
+    <div class="tete">
+      <span class="etiquette">Nos produits</span>
+      <h2>Tout pour <span class="v">fermer</span>, <span class="o">isoler</span> et embellir votre maison</h2>
+      <p>Du conseil à la pose, une seule entreprise pour vos portes, fenêtres, volets, stores et plus encore.</p>
+    </div>
+    <div class="grille3">
+      <article class="produit">
+        <div class="photo"><img src="img/porte-alu.jpg" alt="Porte d'entrée en aluminium gris anthracite avec vitrages" loading="lazy" width="636" height="1061"></div>
+        <div class="corps"><div class="ligne-titre"><span class="ico"><svg><use href="#i-porte"/></svg></span><h3>Portes d'entrée</h3></div><p>En aluminium, PVC ou bois, vitrées ou pleines : une porte à votre style, solide et bien isolée.</p></div>
+      </article>
+      <article class="produit">
+        <div class="photo"><img src="img/fenetre-volets.jpg" alt="Fenêtre blanche à petits bois avec volets" loading="lazy" width="896" height="1061"></div>
+        <div class="corps"><div class="ligne-titre"><span class="ico"><svg><use href="#i-fenetre"/></svg></span><h3>Fenêtres et baies</h3></div><p>Fenêtres, portes-fenêtres et baies coulissantes pour mieux isoler et laisser entrer la lumière.</p></div>
+      </article>
+      <article class="produit">
+        <div class="photo"><img src="img/garage-gris.jpg" alt="Porte de garage gris anthracite avec hublot" loading="lazy" width="896" height="1061"></div>
+        <div class="corps"><div class="ligne-titre"><span class="ico"><svg><use href="#i-garage"/></svg></span><h3>Portes de garage</h3></div><p>Des portes de garage de toutes finitions, jusqu'à l'aspect bois, qui s'accordent à votre façade.</p></div>
+      </article>
+      <article class="produit">
+        <div class="photo"><img src="img/volets-verts.jpg" alt="Maison avec volets battants verts" loading="lazy" width="1236" height="926"></div>
+        <div class="corps"><div class="ligne-titre"><span class="ico"><svg><use href="#i-volet"/></svg></span><h3>Volets</h3></div><p>Protection, intimité et caractère : des volets choisis pour le style de votre maison.</p></div>
+      </article>
+      <article class="produit">
+        <div class="photo"><img src="img/pergola-structure.jpg" alt="Pergola à lames orientables sur une terrasse" loading="lazy" width="1236" height="926"></div>
+        <div class="corps"><div class="ligne-titre"><span class="ico"><svg><use href="#i-store"/></svg></span><h3>Stores et pergolas</h3></div><p>Stores bannes et pergolas à lames pour profiter de la terrasse en toute saison.</p></div>
+      </article>
+      <article class="produit">
+        <div class="photo"><img src="img/sdb-turquoise.jpg" alt="Salle de bains avec meuble double vasque et miroirs lumineux" loading="lazy" width="896" height="1061"></div>
+        <div class="corps"><div class="ligne-titre"><span class="ico"><svg><use href="#i-bain"/></svg></span><h3>Salles de bains</h3></div><p>Salle de bains, douche, meuble vasque, dressing : Isomenuis' s'occupe aussi de l'intérieur.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REALISATIONS ================= -->
+<section id="realisations" class="realisations">
+  <div class="wrap">
+    <div class="entete-defile">
+      <div class="tete">
+        <span class="etiquette">Réalisations</span>
+        <h2>Des chantiers livrés, des clients <span class="o">satisfaits</span></h2>
+        <p>Quelques-unes des réalisations d'Isomenuis' chez ses clients.</p>
+      </div>
+      <div class="commandes">
+        <button id="prec" aria-label="Photo précédente"><svg><use href="#i-gauche"/></svg></button>
+        <span class="compteur" id="compteur" aria-live="polite">1 / 1</span>
+        <button id="suiv" aria-label="Photo suivante"><svg><use href="#i-fleche"/></svg></button>
+      </div>
+    </div>
+  </div>
+  <div class="piste" id="piste" tabindex="0" role="region" aria-label="Photos des réalisations">
+    <figure class="carte"><img src="img/porte-alu.jpg" alt="Porte d'entrée en aluminium" loading="lazy" width="636" height="1061"><figcaption>Porte d'entrée aluminium</figcaption></figure>
+    <figure class="carte"><img src="img/pergola-terrasse.jpg" alt="Pergola sur terrasse" loading="lazy" width="896" height="1061"><figcaption>Pergola sur terrasse</figcaption></figure>
+    <figure class="carte"><img src="img/garage-gris.jpg" alt="Porte de garage gris anthracite" loading="lazy" width="896" height="1061"><figcaption>Porte de garage anthracite</figcaption></figure>
+    <figure class="carte"><img src="img/porte-rouge.jpg" alt="Porte d'entrée rouge" loading="lazy" width="716" height="941"><figcaption>Porte d'entrée rouge</figcaption></figure>
+    <figure class="carte"><img src="img/volets-bois.jpg" alt="Maison avec volets bois et balcon" loading="lazy" width="896" height="1061"><figcaption>Volets et balcon en bois</figcaption></figure>
+    <figure class="carte"><img src="img/sdb-turquoise.jpg" alt="Salle de bains turquoise" loading="lazy" width="896" height="1061"><figcaption>Salle de bains</figcaption></figure>
+    <figure class="carte"><img src="img/baie-store.jpg" alt="Baie coulissante avec store" loading="lazy" width="1236" height="926"><figcaption>Baie coulissante et store</figcaption></figure>
+    <figure class="carte"><img src="img/porte-verte.jpg" alt="Porte d'entrée verte sous auvent" loading="lazy" width="716" height="941"><figcaption>Porte verte sous auvent</figcaption></figure>
+    <figure class="carte"><img src="img/porte-vitree.jpg" alt="Porte vitrée en aluminium" loading="lazy" width="896" height="1061"><figcaption>Porte vitrée aluminium</figcaption></figure>
+    <figure class="carte"><img src="img/fenetre-volets.jpg" alt="Fenêtre à petits bois et volets" loading="lazy" width="896" height="1061"><figcaption>Fenêtre et volets</figcaption></figure>
+    <figure class="carte"><img src="img/garage-bois.jpg" alt="Porte de garage aspect bois" loading="lazy" width="1236" height="926"><figcaption>Porte de garage aspect bois</figcaption></figure>
+    <figure class="carte"><img src="img/douche-verriere.jpg" alt="Douche avec verrière noire" loading="lazy" width="896" height="1061"><figcaption>Douche avec verrière</figcaption></figure>
+    <figure class="carte"><img src="img/pergola-structure.jpg" alt="Pergola à lames" loading="lazy" width="1236" height="926"><figcaption>Pergola à lames</figcaption></figure>
+    <figure class="carte"><img src="img/volets-verts.jpg" alt="Volets verts" loading="lazy" width="1236" height="926"><figcaption>Volets battants verts</figcaption></figure>
+  </div>
+</section>
+
+<!-- ================= ENTREPRISE ================= -->
+<section id="entreprise" class="entreprise">
+  <div class="wrap">
+    <div class="duo">
+      <div class="images">
+        <div class="grande" id="vue-batiment"><img src="img/batiment.jpg" alt="Le bâtiment d'Isomenuis' à La Milesse avec son véhicule" loading="lazy" width="1236" height="926"></div>
+        <div class="camion"><img src="img/camion.jpg" alt="Camionnette aux couleurs d'Isomenuis'" loading="lazy" width="1076" height="806"></div>
+      </div>
+      <div class="texte">
+        <span class="etiquette">L'entreprise</span>
+        <h2 style="margin-top:14px">Une entreprise <span class="v">locale</span>, à vos côtés</h2>
+        <p>Installée à La Milesse, Isomenuis' intervient chez les particuliers du Mans et des alentours. Samuel Gasnier et son équipe vous accompagnent de la première visite jusqu'à la pose.</p>
+        <ul class="points">
+          <li><span class="pico"><svg><use href="#i-ecoute"/></svg></span><h3>À votre écoute</h3><p>On prend le temps de comprendre votre besoin avant de vous proposer une solution.</p></li>
+          <li><span class="pico"><svg><use href="#i-maison"/></svg></span><h3>Un seul interlocuteur</h3><p>Portes, fenêtres, volets, stores : tout se règle avec la même équipe.</p></li>
+          <li><span class="pico"><svg><use href="#i-coche"/></svg></span><h3>Une pose soignée</h3><p>Une installation propre, des finitions nettes et un chantier laissé en ordre.</p></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="etapes">
+      <div class="etape"><h3><span class="n">1.</span> Visite</h3><p>On se déplace chez vous, on prend les mesures et on écoute vos envies.</p></div>
+      <div class="etape"><h3><span class="n">2.</span> Devis</h3><p>Vous recevez un devis clair et gratuit, sans engagement.</p></div>
+      <div class="etape"><h3><span class="n">3.</span> Commande</h3><p>Le choix des modèles, des coloris et des finitions est validé avec vous.</p></div>
+      <div class="etape"><h3><span class="n">4.</span> Pose</h3><p>L'équipe installe, règle et vérifie tout avant de vous laisser les clés en main.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AVIS ================= -->
+<section id="avis" class="avis">
+  <div class="wrap">
+    <div class="avis-tete">
+      <div class="bloc-note"><div class="gros">4,8<small> / 5</small></div><span class="etoiles" aria-hidden="true">★★★★★</span><div class="sous">40 avis sur Google</div></div>
+      <div class="tete" style="margin:0">
+        <span class="etiquette">Avis clients</span>
+        <h2>Ce que disent <span class="v">nos clients</span></h2>
+        <p>Des avis publiés sur la fiche Google d'Isomenuis', recopiés tels quels.</p>
+      </div>
+    </div>
+    <div class="masonry">
+<!--AVIS-->
+      <article class="avis-carte"><div class="haut"><span class="rond">C</span><div><div class="nom">Claudine Busson</div><div class="date">il y a 6 mois</div></div></div><div class="etoiles" aria-label="5 étoiles sur 5">★★★★★</div><p>Nous sommes très satisfaits du résultat ! Le travail réalisé est parfait, soigné et correspond exactement à nos attentes. Merci beaucoup pour votre professionnalisme et votre sérieux. Nous recommandons sans hésitation !</p></article>
+      <article class="avis-carte"><div class="haut"><span class="rond">D</span><div><div class="nom">Damien Prud&#x27;homme</div><div class="date">il y a 2 mois</div></div></div><div class="etoiles" aria-label="5 étoiles sur 5">★★★★★</div><p>Le top !!! Cela fait deux fois que nous faisons appel aux services d'Isomenuis' et c'est toujours le même plaisir. Dès la prise de contact on ressent le professionnalisme. Au premier RDV, un artisan à l'écoute du client avec beaucoup de gentillesse. Tout est pris en compte, projets, envies, besoins et budget. En fonction de ces éléments cet artisan vous propose ce qui est possible de faire avec de très bons conseils et sans pousser à la consommation. Une fois sur le chantier, le travail est irréprochable et la propreté exemplaire. Un Artisan avec un grand À et digne de ce nom. Les travaux de rénovation peuvent être des moments stressant mais pas avec Isomenuis'. En résumé : professionnalisme, respect du client, rigueur, propreté, gentillesse et délais respecté. Je recommande Isomenuis' sans aucune réserve. Un grand merci Samuel.</p></article>
+      <article class="avis-carte"><div class="haut"><span class="rond">A</span><div><div class="nom">Annie Balligand</div><div class="date">il y a 7 mois</div></div></div><div class="etoiles" aria-label="5 étoiles sur 5">★★★★★</div><p>Travail sérieux .Artisan compétent</p></article>
+      <article class="avis-carte"><div class="haut"><span class="rond">C</span><div><div class="nom">Caroline Bailly</div><div class="date">il y a un mois</div></div></div><div class="etoiles" aria-label="5 étoiles sur 5">★★★★★</div><p>J'ai fait appel à cette entreprise pour le remplacement (avec dépose totale) de 2 menuiseries et pour la pose de volets roulants. L'intervention s'est parfaitement déroulée, le travail est extrêmement soigné, les échanges avec Samuel sont très clairs, cordiaux et respectueux. Je vous recommande de faire appel à lui, sans aucune hésitation !</p></article>
+      <article class="avis-carte"><div class="haut"><span class="rond">N</span><div><div class="nom">Noella Duhail</div><div class="date">il y a 2 ans</div></div></div><div class="etoiles" aria-label="5 étoiles sur 5">★★★★★</div><p>Entreprise très sérieuse. Pose d'une porte d' entrée et d'une porte isolante. Très bons conseils. Travail propre et soigné. Délai respecter. Nous conseillons fortement Isomenuis'. Nous en sommes très satisfaits.</p></article>
+      <article class="avis-carte"><div class="haut"><span class="rond">F</span><div><div class="nom">François Barrier</div><div class="date">il y a 9 mois</div></div></div><div class="etoiles" aria-label="5 étoiles sur 5">★★★★★</div><p>Très satisfait du changement de mes portes d'entrée, travail propre et sérieux effectué par cette entreprise, j'avais fait appel à eux il y a 6 ans pour le changement de fenêtres et baie vitrée, le travail avait été parfait, tout fonctionne comme à la première heure, c'est pour cette raison j'ai à nouveau fait affaire avec eux ! Je recommande les yeux fermés 😊</p></article>
+      <article class="avis-carte"><div class="haut"><span class="rond">M</span><div><div class="nom">Micheline Cartier</div><div class="date">il y a 5 mois</div></div></div><div class="etoiles" aria-label="5 étoiles sur 5">★★★★★</div><p>Travaux magnifiquement effectués. Travail minutieux et beaucoup d'idées et d'imagination pour que le rendu soit parfait.</p></article>
+      <article class="avis-carte"><div class="haut"><span class="rond">V</span><div><div class="nom">Valentin</div><div class="date">il y a 11 mois</div></div></div><div class="etoiles" aria-label="5 étoiles sur 5">★★★★★</div><p>Travail impeccable et sérieux – je recommande ! Je suis ravi du travail réalisé pour l'aménagement des dressings. Le résultat est à la fois pratique et esthétique, exactement comme je l'imaginais. Le sérieux, la ponctualité et la qualité des finitions sont vraiment à souligner. Un grand merci pour ce super travail, je n'hésiterai pas à faire appel à vous pour de futurs projets !</p></article>
+      <article class="avis-carte"><div class="haut"><span class="rond">J</span><div><div class="nom">Jacqueline Charriau</div><div class="date">il y a un an</div></div></div><div class="etoiles" aria-label="5 étoiles sur 5">★★★★★</div><p>Samuel est très professionnel, minutieux, à l'écoute. Je recommande</p></article>
+      <article class="avis-carte"><div class="haut"><span class="rond">M</span><div><div class="nom">Mathieu Levavasseur</div><div class="date">il y a un an</div></div></div><div class="etoiles" aria-label="5 étoiles sur 5">★★★★★</div><p>Isomenuis est venu installer toutes les menuiseries de notre maison. Le travail était très propre et toutes les menuiseries ont été parfaitement posées. L entreprise a aussi été disponible après les travaux pour les réglages et questions. Je recommande cette entreprise. Nous sommes très contents de la qualité du travail et des menuiseries. Mathieu</p></article>
+      <article class="avis-carte"><div class="haut"><span class="rond">B</span><div><div class="nom">Brigitte Lemay</div><div class="date">il y a un an</div></div></div><div class="etoiles" aria-label="4 étoiles sur 5">★★★★☆</div><p>Merci à monsieur gasnier entreprise isomenuis pour la réalisation d'un placard d'entrée avec miroir. Satisfaite du résultat.</p></article>
+      <article class="avis-carte"><div class="haut"><span class="rond">H</span><div><div class="nom">H C</div><div class="date">il y a un an</div></div></div><div class="etoiles" aria-label="5 étoiles sur 5">★★★★★</div><p>Entreprise sérieuse, respect des délais, très à l'écoute du client avec une facilité d'adaptation. L'entreprise est intervenue pour 2 portes de garage automatisées, une porte de service et une fenêtre, très beau rendu, pose sérieuse et soigneuse. Vous pouvez faire confiance à cette entreprise sans problème. Mr Gasnier respecte les DTU. Merci Samuel</p></article>
+      <article class="avis-carte"><div class="haut"><span class="rond">D</span><div><div class="nom">Denis Choplain</div><div class="date">il y a 2 ans</div></div></div><div class="etoiles" aria-label="5 étoiles sur 5">★★★★★</div><p>Sens du client et professionnalisme au rdv. Mr Gasnier est un vrai Artisan au sens noble du terme, soucieux du détail. Nous recommandons les yeux fermés.</p></article>
+      <article class="avis-carte"><div class="haut"><span class="rond">L</span><div><div class="nom">Lucette Lacroix</div><div class="date">il y a un an</div></div></div><div class="etoiles" aria-label="5 étoiles sur 5">★★★★★</div><p>Entreprise effectuant un travail sérieux et soigné, avec des menuiseries de qualité françaises, très à l'écoute des désirs du client et qui soumet des idées intéressantes. C'est un aperçu des qualités de cette entreprise qui de plus laisse un chantier impeccable chaque soir. (pose d'une porte de service et d'une porte à galandage)</p></article>
+      <article class="avis-carte"><div class="haut"><span class="rond">C</span><div><div class="nom">Corentin C</div><div class="date">il y a 4 ans</div></div></div><div class="etoiles" aria-label="5 étoiles sur 5">★★★★★</div><p>Réfection complète d'une maison. Isomenuis à changé 4 fenêtres, 1 porte isolante donnant dans le garage, 1 porte de garage et les poignées intérieures. Pas le moindre soucis que ce soit sur les délais, les prix, la qualité de l'exécution ou la qualité des produits posés. Bref… un sans faute !</p></article>
+      <article class="avis-carte"><div class="haut"><span class="rond">M</span><div><div class="nom">Monique Meslet</div><div class="date">il y a 2 ans</div></div></div><div class="etoiles" aria-label="5 étoiles sur 5">★★★★★</div><p>Excellente entreprise Travail de qualité, et Sérieux. Ils m'ont posé un claustra,une moustiquaire, et remplacé une plaque de verre epais sur mon bureau, que j'avais cassé. Maintenant j'attends prochainement Le remplacement de mes charnières d'armoire.Une entreprise dans laquelle, l'on peut avoir confiance.</p></article>
+<!--/AVIS-->
+    </div>
+    <div class="voir-tous"><a class="btn btn-vert" href="https://www.google.com/maps/place/Isomenuis'/@48.0746381,0.1320352,726m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47e28797cd8c9951:0x6cebe88ec8098597!8m2!3d48.0746381!4d0.1320352!16s%2Fg%2F11bzyzfjrs" target="_blank" rel="noopener">Voir tous les avis sur Google<svg><use href="#i-fleche"/></svg></a></div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="tete">
+      <span class="etiquette">Contact</span>
+      <h2>Parlons de <span class="o">votre projet</span></h2>
+      <p>Un appel suffit pour fixer une visite et recevoir un devis gratuit.</p>
+    </div>
+    <div class="contact-grille">
+      <div class="coord">
+        <a class="gros-tel" href="tel:+33243293082"><span class="rond"><svg><use href="#i-tel"/></svg></span>02 43 29 30 82</a>
+        <div class="ligne-info"><svg><use href="#i-pin"/></svg><div><b>Isomenuis', La Milesse</b><span>15 rue de la Tremblaie, 72650 La Milesse</span></div></div>
+        <div class="ligne-info"><svg><use href="#i-horloge"/></svg><div>
+          <b>Horaires d'ouverture</b>
+          <ul class="horaires">
+            <li><span><b>Lundi au vendredi</b></span><span>8h – 18h</span></li>
+            <li><span><b>Samedi</b></span><span>8h – 12h</span></li>
+            <li class="ferme"><span><b>Dimanche</b></span><span>Fermé</span></li>
+          </ul>
+        </div></div>
+        <div class="reseaux">
+          <a href="https://www.facebook.com/isomenuis" target="_blank" rel="noopener"><span class="pic"><svg><use href="#i-fb"/></svg></span>Facebook</a>
+          <a href="https://www.google.com/maps/place/Isomenuis'/@48.0746381,0.1320352,726m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47e28797cd8c9951:0x6cebe88ec8098597!8m2!3d48.0746381!4d0.1320352!16s%2Fg%2F11bzyzfjrs" target="_blank" rel="noopener"><span class="pic"><svg><use href="#i-google"/></svg></span>Fiche Google</a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=48.0746381,0.1320352" target="_blank" rel="noopener"><span class="pic"><svg style="color:#EA4335"><use href="#i-pin"/></svg></span>Itinéraire</a>
+        </div>
+      </div>
+      <form id="formulaire" novalidate>
+        <h3>Demander un devis gratuit</h3>
+        <label>Votre nom<input type="text" name="nom" autocomplete="name"></label>
+        <label>Votre téléphone<input type="tel" name="tel" autocomplete="tel"></label>
+        <label>Votre projet<textarea name="message" placeholder="Porte d'entrée, fenêtres, volets, store…"></textarea></label>
+        <button class="btn btn-plein" type="submit">Envoyer ma demande</button>
+        <div class="merci" id="merci" hidden role="status">Merci, votre demande a bien été prise en compte. Isomenuis' vous rappelle très vite.</div>
+        <p class="petit-mot">Vous préférez parler à quelqu'un ? Appelez le 02 43 29 30 82.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="pied">
+  <div class="wrap">
+    <div class="logo-blanc"><img src="img/logo.png" alt="Isomenuis'" width="150" height="34"></div>
+    <span>Isomenuis' · La Milesse (72) · 02 43 29 30 82</span>
+    <div class="reseaux">
+      <a href="https://www.facebook.com/isomenuis" target="_blank" rel="noopener"><span class="pic"><svg><use href="#i-fb"/></svg></span>Facebook</a>
+      <a href="https://www.google.com/maps/place/Isomenuis'/@48.0746381,0.1320352,726m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47e28797cd8c9951:0x6cebe88ec8098597!8m2!3d48.0746381!4d0.1320352!16s%2Fg%2F11bzyzfjrs" target="_blank" rel="noopener"><span class="pic"><svg><use href="#i-google"/></svg></span>Google</a>
+    </div>
+  </div>
+</footer>
+
+<a class="appel-fixe" href="tel:+33243293082"><svg><use href="#i-tel"/></svg>Appeler Isomenuis'</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  /* Menu téléphone */
+  var burger=document.getElementById('burger'),nav=document.getElementById('nav');
+  burger.addEventListener('click',function(){var o=nav.classList.toggle('ouvert');burger.setAttribute('aria-expanded',o)});
+
+  /* En-tête : ombre, lien actif, progression, ancres calées exactement sous l'en-tête */
+  var entete=document.getElementById('entete'),progres=document.getElementById('progres');
+  var liens=[].slice.call(nav.querySelectorAll('a'));
+  var sections=liens.map(function(l){return document.querySelector(l.getAttribute('href'))}).filter(Boolean);
+  function hauteurEntete(){return entete.getBoundingClientRect().height}
+  function majEntete(){
+    entete.classList.toggle('ombre',window.scrollY>10);
+    var total=document.documentElement.scrollHeight-window.innerHeight;
+    progres.style.transform='scaleX('+(total>0?Math.min(1,window.scrollY/total):0)+')';
+    var limite=hauteurEntete()+2,actif=sections[0];
+    sections.forEach(function(s){if(s.getBoundingClientRect().top<=limite)actif=s});
+    if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-2)actif=sections[sections.length-1];
+    liens.forEach(function(l){l.classList.toggle('actif',!!actif&&l.getAttribute('href')==='#'+actif.id)});
+  }
+  window.addEventListener('scroll',function(){window.requestAnimationFrame(majEntete)},{passive:true});
+  window.addEventListener('resize',majEntete);majEntete();
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('href');
+      var cible=id==='#'?null:document.querySelector(id);
+      if(id!=='#'&&!cible)return;
+      e.preventDefault();
+      nav.classList.remove('ouvert');burger.setAttribute('aria-expanded','false');
+      var haut=cible&&cible.id!=='accueil'?cible.getBoundingClientRect().top+window.scrollY-hauteurEntete():0;
+      var doux=!window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({top:Math.max(0,Math.round(haut)),behavior:doux?'smooth':'auto'});
+    });
+  });
+
+  /* Réalisations : uniquement par boutons, pas par la molette */
+  var piste=document.getElementById('piste'),cartes=piste.querySelectorAll('.carte'),prec=document.getElementById('prec'),suiv=document.getElementById('suiv'),compteur=document.getElementById('compteur');
+  function pas(){return cartes[1].offsetLeft-cartes[0].offsetLeft}
+  function maj(){
+    var der=cartes[cartes.length-1];
+    var max=Math.max(0,der.offsetLeft+der.offsetWidth-cartes[0].offsetLeft-piste.clientWidth-parseFloat(getComputedStyle(piste).paddingRight)+parseFloat(getComputedStyle(piste).paddingLeft));
+    var total=Math.round(max/pas())+1;
+    var i=piste.scrollLeft>=max-4?total:Math.min(Math.round(piste.scrollLeft/pas())+1,total);
+    compteur.textContent=i+' / '+total;
+    prec.disabled=i<=1;suiv.disabled=i>=total;
+  }
+  prec.addEventListener('click',function(){piste.scrollBy({left:-pas(),behavior:'smooth'})});
+  suiv.addEventListener('click',function(){piste.scrollBy({left:pas(),behavior:'smooth'})});
+  piste.addEventListener('scroll',function(){window.requestAnimationFrame(maj)},{passive:true});
+  piste.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();suiv.click()}if(e.key==='ArrowLeft'){e.preventDefault();prec.click()}});
+  window.addEventListener('resize',maj);window.addEventListener('load',maj);if(document.fonts)document.fonts.ready.then(maj);maj();
+
+  /* Formulaire de démonstration : message de remerciement */
+  document.getElementById('formulaire').addEventListener('submit',function(e){
+    e.preventDefault();document.getElementById('merci').hidden=false;
+  });
+
+  /* Animations */
+  if(!window.gsap)return;
+  gsap.registerPlugin(ScrollTrigger);
+  var mm=gsap.matchMedia();
+  mm.add('(prefers-reduced-motion: no-preference)',function(){
+    gsap.from('.heros h1 .ligne>span',{yPercent:110,duration:1,ease:'power4.out',stagger:.12,delay:.1});
+    gsap.from('.heros .etiquette, .heros .intro, .heros .actions, .heros .note',{y:20,opacity:0,duration:.8,ease:'power2.out',stagger:.12,delay:.4});
+    gsap.fromTo('#cadre-heros',{clipPath:'inset(0 0 100% 0)'},{clipPath:'inset(0 0 0% 0)',duration:1.2,ease:'power3.inOut',delay:.2});
+    gsap.fromTo('#cadre-heros img',{scale:1.2},{scale:1,duration:1.8,ease:'power2.out',delay:.2});
+    gsap.from('#petit-heros',{x:-50,opacity:0,duration:.9,ease:'power3.out',delay:.9});
+    gsap.from('.pastille',{scale:.6,opacity:0,duration:.8,ease:'back.out(2)',delay:1.1});
+    gsap.to('#petit-heros',{y:-40,ease:'none',scrollTrigger:{trigger:'.heros',start:'top top',end:'bottom top',scrub:true}});
+    gsap.to('#cadre-heros img',{yPercent:6,ease:'none',scrollTrigger:{trigger:'.heros',start:'top top',end:'bottom top',scrub:true}});
+
+    document.querySelectorAll('.tete h2').forEach(function(h){
+      gsap.from(h,{y:30,opacity:0,duration:.9,ease:'power3.out',scrollTrigger:{trigger:h,start:'top 88%',once:true}});
+    });
+    ScrollTrigger.batch('.produit',{start:'top 90%',once:true,onEnter:function(b){gsap.from(b,{opacity:0,duration:.7,ease:'power2.out',stagger:.1,clearProps:'opacity'})}});
+    gsap.from('.carte',{opacity:0,duration:.8,ease:'power2.out',stagger:.06,clearProps:'opacity',scrollTrigger:{trigger:'#piste',start:'top 85%',once:true}});
+    gsap.fromTo('#vue-batiment',{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0% 0 0)',duration:1.1,ease:'power3.inOut',scrollTrigger:{trigger:'#vue-batiment',start:'top 85%',once:true}});
+    gsap.from('.duo .camion',{y:50,opacity:0,duration:.9,ease:'power3.out',scrollTrigger:{trigger:'.duo .camion',start:'top 92%',once:true}});
+    gsap.from('.duo .texte > *',{x:30,opacity:0,duration:.8,ease:'power3.out',stagger:.1,scrollTrigger:{trigger:'.duo .texte',start:'top 78%',once:true}});
+    ScrollTrigger.batch('.etape',{start:'top 90%',once:true,onEnter:function(b){gsap.from(b,{opacity:0,duration:.7,ease:'power2.out',stagger:.12,clearProps:'opacity'})}});
+
+    var gros=document.querySelector('.bloc-note .gros'),compte={v:0};
+    gsap.to(compte,{v:4.8,duration:1.2,ease:'power2.out',scrollTrigger:{trigger:gros,start:'top 88%',once:true},onUpdate:function(){gros.firstChild.nodeValue=compte.v.toFixed(1).replace('.',',')}});
+    ScrollTrigger.batch('.avis-carte',{start:'top 92%',once:true,onEnter:function(b){gsap.from(b,{opacity:0,duration:.7,ease:'power2.out',stagger:.1,clearProps:'opacity'})}});
+    gsap.from('#formulaire > *:not(#merci)',{opacity:0,duration:.6,ease:'power2.out',stagger:.08,clearProps:'opacity',scrollTrigger:{trigger:'#formulaire',start:'top 88%',once:true}});
+  });
+  window.addEventListener('load',function(){ScrollTrigger.refresh()});
+})();
+</script>
+</body>
+</html>
