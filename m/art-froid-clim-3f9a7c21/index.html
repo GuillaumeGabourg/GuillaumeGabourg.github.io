@@ -85,8 +85,7 @@ section{padding:88px 0}
 
 /* Services : icône à gauche du titre */
 .services-grille{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-.service{background:#fff;border:1px solid var(--trait);border-radius:22px;padding:28px;box-shadow:0 10px 30px rgba(12,42,67,.06);transition:transform .25s,box-shadow .25s}
-.service:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(12,42,67,.12)}
+.service{background:#fff;border:1px solid var(--trait);border-radius:22px;padding:28px;box-shadow:0 10px 30px rgba(12,42,67,.06)}
 .service-tete{display:flex;align-items:center;gap:16px;margin-bottom:12px}
 .service-tete .ico{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;flex:none;background:var(--givre);color:var(--glace-fonce)}
 .service.chaud-c .ico{background:var(--creme);color:#c96a0a}
@@ -491,14 +490,14 @@ footer{background:var(--marine);color:#fff;padding:48px 0 90px}
     document.querySelectorAll('.tete h2').forEach(function(h){
       gsap.from(h,{y:30,opacity:0,duration:.9,ease:'power3.out',scrollTrigger:{trigger:h,start:'top 88%',once:true}});
     });
-    ScrollTrigger.batch('.service',{start:'top 90%',once:true,onEnter:function(b){gsap.from(b,{y:46,opacity:0,duration:.8,ease:'power3.out',stagger:.1})}});
-    ScrollTrigger.batch('.etape',{start:'top 90%',once:true,onEnter:function(b){gsap.from(b,{y:30,opacity:0,duration:.7,ease:'power2.out',stagger:.12})}});
-    ScrollTrigger.batch('.galerie figure',{start:'top 92%',once:true,onEnter:function(b){gsap.from(b,{y:40,opacity:0,scale:.96,duration:.7,ease:'power2.out',stagger:.08})}});
+    ScrollTrigger.batch('.service',{start:'top 92%',once:true,onEnter:function(b){gsap.fromTo(b,{opacity:0},{opacity:1,duration:.7,ease:'power1.out',clearProps:'opacity'})}});
+    ScrollTrigger.batch('.etape',{start:'top 92%',once:true,onEnter:function(b){gsap.fromTo(b,{opacity:0},{opacity:1,duration:.7,ease:'power1.out',clearProps:'opacity'})}});
+    ScrollTrigger.batch('.galerie figure',{start:'top 94%',once:true,onEnter:function(b){gsap.fromTo(b,{opacity:0},{opacity:1,duration:.7,ease:'power1.out',clearProps:'opacity'})}});
     gsap.fromTo('#vue-saisons',{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0% 0 0)',duration:1.1,ease:'power3.inOut',scrollTrigger:{trigger:'#vue-saisons',start:'top 85%',once:true}});
     gsap.from('.saisons .texte > *',{x:30,opacity:0,duration:.8,ease:'power3.out',stagger:.1,scrollTrigger:{trigger:'.saisons .texte',start:'top 78%',once:true}});
     var gros=document.querySelector('.bloc-note .gros'),compte={v:0};
     gsap.to(compte,{v:4.6,duration:1.2,ease:'power2.out',scrollTrigger:{trigger:gros,start:'top 88%',once:true},onUpdate:function(){gros.firstChild.nodeValue=compte.v.toFixed(1).replace('.',',')}});
-    ScrollTrigger.batch('.avis-carte',{start:'top 92%',once:true,onEnter:function(b){gsap.from(b,{y:30,opacity:0,duration:.7,ease:'power2.out',stagger:.1})}});
+    ScrollTrigger.batch('.avis-carte',{start:'top 94%',once:true,onEnter:function(b){gsap.fromTo(b,{opacity:0},{opacity:1,duration:.7,ease:'power1.out',clearProps:'opacity'})}});
     gsap.from('#formulaire > *:not(#merci)',{y:22,opacity:0,duration:.6,ease:'power2.out',stagger:.08,scrollTrigger:{trigger:'#formulaire',start:'top 88%',once:true}});
   });
   window.addEventListener('load',function(){ScrollTrigger.refresh()});
