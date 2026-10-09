@@ -56,23 +56,23 @@ p{margin:0}
 .btn-noir:hover{background:var(--jaune);color:var(--noir)}
 
 /* En-tête */
-.entete{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;height:var(--hdr);background:var(--noir);border-bottom:4px solid var(--jaune);transition:box-shadow .3s}
+.entete{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;height:var(--hdr);background:#000;border-bottom:4px solid var(--jaune);transition:box-shadow .3s}
 .progres{position:absolute;left:0;bottom:-4px;height:4px;width:100%;background:var(--blanc);transform:scaleX(0);transform-origin:left;pointer-events:none}
 .entete.ombre{box-shadow:0 8px 26px rgba(0,0,0,.35)}
 .entete .enveloppe{height:100%;display:flex;align-items:center;gap:24px}
 .marque{display:flex;align-items:center;flex:none}
-.marque img{height:56px;width:auto;border-radius:4px}
-@media (max-width:860px){.marque img{height:48px}}
+.marque img{height:30px;width:auto;border-radius:3px}
+@media (max-width:480px){.marque img{height:24px}}
 .nav{display:flex;gap:26px;margin-left:auto}
 .nav a{font-family:var(--display);font-weight:600;font-size:20px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:6px 0;position:relative;color:#E8E6DC}
 .nav a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:4px;background:var(--jaune);transform:scaleX(0);transform-origin:left;transition:transform .25s}
 .nav a:hover::after,.nav a.actif::after{transform:scaleX(1)}
 .nav a.actif{color:#fff}
-.appel-hdr{padding:9px 18px;font-size:20px}
+.appel-hdr{padding:9px 18px;font-size:20px;white-space:nowrap;flex:none}
 .burger{display:none;margin-left:auto;background:none;border:2px solid #555;border-radius:8px;width:46px;height:46px;cursor:pointer;color:#fff}
 .burger svg{width:22px;height:22px;margin:auto}
 @media (max-width:1040px){.nav{gap:18px}.nav a{font-size:18px}}
-@media (max-width:940px){
+@media (max-width:1300px){
   .burger{display:grid;place-items:center}
   .appel-hdr .num{display:none}
   .nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--noir-2);border-bottom:4px solid var(--jaune);padding:4px 18px 12px;margin:0;display:none}
@@ -245,7 +245,7 @@ h2 .split-line{perspective:600px}
 <header class="entete" id="entete">
   <div class="enveloppe">
     <a class="marque" href="#accueil" aria-label="Allo Dédé Le Plombier, accueil">
-      <img src="img/logo.jpg" alt="Logo Allo Dédé Le Plombier, plomberie, électricité, sanitaire" width="400" height="176">
+      <img src="img/logo-titre.jpg" alt="Allo Dédé Le Plombier" width="1088" height="100">
     </a>
     <nav class="nav" id="nav" aria-label="Menu">
       <a href="#savoir-faire">Services</a>
