@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Garraud Menuiserie et Services · Agencement et menuiserie intérieure au Mans</title>
+<meta name="description" content="Garraud Menuiserie et Services : menuiserie intérieure, agencement, rangements sur mesure, parquet et terrasses bois au Mans et alentours.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Montserrat:wght@400;500;600;700;800&display=swap">
+<style>
+/* Style : charbon et or du logo « G », crème chaud, bois de chêne des claustras */
+:root{
+  --charbon:#1F1D1B;
+  --charbon-2:#151311;
+  --charbon-3:#2B2825;
+  --or:#B98B3E;
+  --or-clair:#DDB871;
+  --or-encre:#7A5A22;
+  --chene:#C99A5B;
+  --creme:#F7F2E9;
+  --creme-2:#EDE4D3;
+  --blanc:#FFFDF9;
+  --encre:#26221E;
+  --gris:#6A625A;
+  --trait:#DDD0B8;
+  --titre:'Fraunces',Georgia,'Times New Roman',serif;
+  --texte:'Montserrat',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --hdr:76px;
+  --large:1200px;
+  color-scheme:light;
+}
+@media (max-width:860px){:root{--hdr:66px}}
+html{scroll-padding-top:var(--hdr);background:var(--charbon-2)}
+body{background:var(--creme);color:var(--encre);font-family:var(--texte);font-size:17px;line-height:1.65;margin:0;-webkit-text-size-adjust:100%}
+*,*::before,*::after{box-sizing:border-box}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--or);outline-offset:3px}
+.enveloppe{width:100%;max-width:var(--large);margin-inline:auto;padding-inline:24px}
+@media (max-width:600px){.enveloppe{padding-inline:18px}}
+h1,h2,h3{font-family:var(--titre);font-weight:600;line-height:1.1;margin:0;text-wrap:balance}
+h2{font-size:clamp(31px,4.4vw,48px)}
+h3{font-size:22px}
+p{margin:0}
+.etiquette{display:inline-flex;align-items:center;gap:12px;font-weight:700;font-size:13.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--or-encre)}
+.etiquette::before{content:"";width:34px;height:2px;background:var(--or);flex:none}
+.sombre .etiquette,.heros .etiquette{color:var(--or-clair)}
+.chapo{max-width:60ch;color:var(--gris);font-size:18px}
+.sombre .chapo{color:#D9CFC0}
+.tete{display:flex;flex-direction:column;gap:14px;margin-bottom:46px}
+.tete h2 .or,h1 .or{color:var(--or-encre);font-style:italic;font-weight:500}
+.sombre .tete h2 .or,.heros h1 .or{color:var(--or-clair)}
+
+/* Boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--texte);font-weight:700;font-size:16.5px;text-decoration:none;padding:15px 28px;border-radius:4px;border:2px solid transparent;cursor:pointer;transition:background .25s,color .25s,border-color .25s;line-height:1.1}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-or{background:var(--or);color:#17120A}
+.btn-or:hover{background:var(--or-clair)}
+.btn-clair{background:var(--blanc);color:var(--charbon)}
+.btn-clair:hover{background:var(--creme-2)}
+.btn-contour{border-color:rgba(255,255,255,.55);color:#fff;background:transparent}
+.btn-contour:hover{background:rgba(255,255,255,.12)}
+.btn-noir{background:var(--charbon);color:#fff}
+.btn-noir:hover{background:var(--charbon-3)}
+
+/* En-tête */
+.entete{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;height:var(--hdr);background:var(--charbon);border-bottom:2px solid var(--or);transition:box-shadow .3s}
+.entete.ombre{box-shadow:0 10px 28px rgba(0,0,0,.4)}
+.entete .enveloppe{height:100%;display:flex;align-items:center;gap:22px}
+.marque{display:flex;align-items:center;gap:13px;flex:none;text-decoration:none;color:#fff}
+.logo-g{width:48px;height:48px;border-radius:50%;background:#fff;display:grid;place-items:center;flex:none;overflow:hidden;border:2px solid var(--or)}
+.logo-g img{width:30px;height:auto}
+.marque .nom{display:flex;flex-direction:column;line-height:1.05}
+.marque .nom b{font-family:var(--titre);font-size:22px;font-weight:600;letter-spacing:.03em;text-transform:uppercase}
+.marque .nom small{font-size:10.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--or-clair);margin-top:4px}
+.nav{display:flex;gap:28px;margin-left:auto}
+.nav a{white-space:nowrap;font-weight:600;font-size:15px;text-decoration:none;padding:6px 0;position:relative;color:#E5DCCD}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:2px;background:var(--or);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.nav a:hover::after,.nav a.actif::after{transform:scaleX(1)}
+.nav a.actif{color:#fff}
+.appel-hdr{padding:11px 20px;font-size:15.5px;flex:none}
+.burger{display:none;margin-left:auto;background:none;border:2px solid #5A5148;border-radius:6px;width:46px;height:46px;cursor:pointer;color:#fff}
+.burger svg{width:22px;height:22px;margin:auto}
+@media (max-width:1120px){.nav{gap:20px}.nav a{font-size:14px}.appel-hdr .num{display:none}}
+@media (max-width:980px){
+  .burger{display:grid;place-items:center}
+  .appel-hdr{margin-left:auto}
+  .burger{margin-left:0}
+  .nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--charbon-2);border-bottom:2px solid var(--or);padding:6px 18px 14px;margin:0;display:none}
+  .nav.ouvert{display:flex}
+  .nav a{font-size:19px;padding:14px 0;border-bottom:1px solid #35302B}
+  .nav a::after{display:none}
+}
+@media (max-width:560px){.etiquette{letter-spacing:.14em;font-size:12.5px}}
+@media (max-width:440px){.marque .nom small{display:none}.marque .nom b{font-size:17px}.logo-g{width:40px;height:40px}.logo-g img{width:25px}.marque{gap:9px}.appel-hdr{padding:9px 13px;font-size:14.5px;gap:6px}.appel-hdr svg{width:17px;height:17px}.burger{width:42px;height:42px}.entete .enveloppe{gap:8px}}
+
+/* Héros */
+.heros{position:relative;background:var(--charbon);color:#fff;overflow:hidden;isolation:isolate}
+.heros::before{content:"";position:absolute;inset:0;z-index:-1;background:repeating-linear-gradient(90deg,rgba(185,139,62,.09) 0 3px,transparent 3px 46px)}
+.heros::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(21,19,17,.92) 0%,rgba(31,29,27,.55) 55%,rgba(31,29,27,0) 100%)}
+.heros .enveloppe{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding-block:clamp(48px,6vw,84px)}
+.heros-texte{display:flex;flex-direction:column;align-items:flex-start;gap:24px}
+.heros h1{font-size:clamp(38px,5.6vw,72px);font-weight:600;line-height:1.03;max-width:15ch;color:#fff}
+.heros .sous{font-size:clamp(17px,1.8vw,20px);max-width:48ch;color:#E3D9C9}
+.heros .actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:4px}
+.preuves{display:flex;flex-wrap:wrap;gap:12px}
+.puce{display:inline-flex;align-items:center;gap:10px;font-size:15px;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(221,184,113,.4);border-radius:999px;padding:8px 18px}
+.puce .etoiles{color:var(--or-clair);letter-spacing:2px;font-size:16px}
+.puce svg{width:18px;height:18px;color:var(--or-clair);flex:none}
+.heros-photo{position:relative;justify-self:end;width:100%;max-width:470px}
+.heros-photo figure{margin:0;position:relative;aspect-ratio:4/5;border:2px solid var(--or);padding:10px;background:var(--charbon-3);box-shadow:26px 26px 0 -2px rgba(185,139,62,.22),0 30px 60px rgba(0,0,0,.45)}
+.heros-photo .cadre{position:absolute;inset:10px;overflow:hidden}
+.heros-photo img{position:absolute;left:0;top:-6%;width:100%;height:112%;object-fit:cover}
+.lattes{position:absolute;left:-26px;top:22px;bottom:22px;display:flex;gap:7px;z-index:3;pointer-events:none}
+.lattes i{display:block;width:6px;border-radius:2px;background:linear-gradient(180deg,var(--or-clair),var(--or));height:100%}
+.lattes i:nth-child(2n){height:84%;margin-top:auto}
+.lattes i:nth-child(3n){height:68%}
+.heros-photo figcaption{position:absolute;padding-left:34px !important;left:10px;right:10px;bottom:10px;padding:12px 16px;background:linear-gradient(0deg,rgba(21,19,17,.85),rgba(21,19,17,0));font-size:13.5px;color:#EFE6D6;font-weight:500}
+@media (max-width:900px){
+  .heros .enveloppe{grid-template-columns:1fr;gap:34px}
+  .heros-photo{justify-self:center;max-width:430px}
+  .heros-photo figure{aspect-ratio:16/11;box-shadow:12px 12px 0 -2px rgba(185,139,62,.22)}
+  .lattes{display:none}
+  .heros::after{background:linear-gradient(180deg,rgba(21,19,17,.85),rgba(31,29,27,.5))}
+}
+
+/* Bande d'infos (jamais animée) */
+.infos{background:var(--creme-2);border-bottom:1px solid var(--trait)}
+.infos .enveloppe{display:grid;grid-template-columns:repeat(3,1fr)}
+.info{display:flex;gap:14px;align-items:center;padding:22px 20px;border-left:1px solid var(--trait);min-width:0}
+.info:first-child{border-left:0;padding-left:0}
+.info svg{width:30px;height:30px;color:var(--or-encre);flex:none}
+.info b{display:block;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--or-encre);font-weight:700}
+.info span,.info a{font-size:17px;font-weight:600;color:var(--encre);text-decoration:none}
+.info a:hover{text-decoration:underline}
+@media (max-width:760px){
+  .infos .enveloppe{grid-template-columns:1fr}
+  .info{border-left:0;border-top:1px solid var(--trait);padding:16px 0}
+  .info:first-child{border-top:0}
+}
+
+/* Sections */
+section{padding-block:clamp(60px,8vw,104px)}
+.sombre{background:var(--charbon);color:#fff}
+
+/* Savoir-faire */
+.cartes{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.carte{display:flex;flex-direction:column;background:var(--blanc);border:1px solid var(--trait);min-width:0}
+.carte .photo{aspect-ratio:4/5;overflow:hidden;background:var(--creme-2)}
+.carte .photo img{width:100%;height:100%;object-fit:cover}
+.carte .corps{padding:22px 22px 26px;display:flex;flex-direction:column;gap:10px;flex:1}
+.carte h3{font-size:22px}
+.carte p{color:var(--gris);font-size:16px;line-height:1.55}
+.carte .trait{width:44px;height:3px;background:var(--or)}
+@media (max-width:1060px){.cartes{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.cartes{grid-template-columns:1fr;gap:12px}.carte{flex-direction:row}.carte .photo{aspect-ratio:auto;width:38%;flex:none;min-height:150px}.carte .corps{padding:14px 16px 16px;gap:6px}.carte h3{font-size:19px}.carte p{font-size:14.5px;line-height:1.5}}
+.services-plus{margin-top:30px;background:var(--charbon);color:#fff;padding:26px 30px;display:grid;grid-template-columns:auto 1fr;gap:12px 36px;align-items:center}
+.services-plus h3{font-size:24px;color:var(--or-clair)}
+.services-plus ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:8px 28px}
+.services-plus li{display:flex;gap:10px;align-items:flex-start;font-size:16px;color:#EDE4D3}
+.services-plus li svg{width:19px;height:19px;color:var(--or-clair);flex:none;margin-top:3px}
+@media (max-width:860px){.services-plus{grid-template-columns:1fr;padding:22px}.services-plus ul{grid-template-columns:1fr}}
+
+/* Réalisations */
+.galerie{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.galerie button{display:block;padding:0;border:0;background:var(--charbon-3);cursor:pointer;aspect-ratio:4/5;overflow:hidden;position:relative}
+.galerie img{width:100%;height:100%;object-fit:cover;transition:opacity .3s}
+.galerie button::after{content:"";position:absolute;inset:0;border:2px solid transparent;transition:border-color .25s}
+.galerie button:hover::after,.galerie button:focus-visible::after{border-color:var(--or)}
+.galerie button:hover img{opacity:.88}
+@media (max-width:1000px){.galerie{grid-template-columns:repeat(3,1fr)}.galerie .p3{display:none}}
+@media (max-width:700px){.galerie{grid-template-columns:repeat(2,1fr);gap:8px}.galerie button:nth-child(n+7){display:none}}
+.visionneuse{position:fixed;inset:0;z-index:200;background:rgba(15,13,11,.95);display:none;align-items:center;justify-content:center;padding:56px 70px}
+.visionneuse.ouvert{display:flex}
+.visionneuse figure{margin:0;max-width:100%;max-height:100%;display:flex;flex-direction:column;align-items:center;gap:12px}
+.visionneuse img{max-width:100%;max-height:calc(100vh - 150px);width:auto;height:auto;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.visionneuse figcaption{color:#E9DFCE;font-size:15px;text-align:center;max-width:70ch}
+.visionneuse button{position:absolute;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);color:#fff;width:52px;height:52px;border-radius:50%;cursor:pointer;display:grid;place-items:center}
+.visionneuse button:hover:not(:disabled){background:var(--or);color:#17120A;border-color:var(--or)}
+.visionneuse button:disabled{opacity:.3;cursor:default}
+.visionneuse svg{width:24px;height:24px}
+.visionneuse .fermer{top:14px;right:14px}
+.visionneuse .prec{left:12px;top:50%;margin-top:-26px}
+.visionneuse .suiv{right:12px;top:50%;margin-top:-26px}
+@media (max-width:700px){.visionneuse{padding:64px 10px 76px}.visionneuse .prec,.visionneuse .suiv{top:auto;bottom:12px;margin:0}.visionneuse .prec{left:calc(50% - 64px)}.visionneuse .suiv{right:calc(50% - 64px)}.visionneuse button{width:48px;height:48px}.visionneuse img{max-height:calc(100vh - 190px)}}
+
+/* Façon de travailler */
+.piliers{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pilier{background:var(--charbon-3);border:1px solid rgba(221,184,113,.25);padding:30px 28px 32px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.pilier h3{font-size:25px;color:#fff}
+.pilier h3 .no{color:var(--or-clair);font-style:italic;margin-right:.35em}
+.pilier p{color:#D9CFC0;font-size:16.5px}
+@media (max-width:860px){.piliers{grid-template-columns:1fr}.pilier{padding:22px 22px 24px}}
+.devise{margin-top:40px;text-align:center;font-family:var(--titre);font-style:italic;font-size:clamp(22px,3vw,32px);color:var(--or-encre)}
+
+/* Avis */
+.score{display:flex;align-items:center;gap:18px;margin-bottom:34px}
+.score .gros{font-family:var(--titre);font-size:68px;font-weight:600;line-height:1;color:var(--or-encre)}
+.etoiles{color:var(--or);letter-spacing:3px;font-size:22px}
+.score small{display:block;color:var(--gris);font-size:15px;margin-top:2px}
+.mur{column-count:3;column-gap:20px}
+.mur blockquote{margin:0 0 20px;break-inside:avoid;background:var(--blanc);border:1px solid var(--trait);border-top:3px solid var(--or);padding:22px 24px}
+.mur .etoiles-av{color:var(--or);letter-spacing:2px;font-size:17px;margin-bottom:10px}
+.mur p{font-size:16.5px;line-height:1.6}
+.mur footer{margin-top:14px;font-weight:700;font-size:15px}
+.mur footer span{font-weight:500;color:var(--gris)}
+@media (max-width:980px){.mur{column-count:2}}
+@media (max-width:640px){.mur{column-count:1}}
+.avis-lien{margin-top:30px}
+.fondu{opacity:0;transition:opacity .9s ease}
+.fondu.vu{opacity:1}
+
+/* Contact */
+.contact-grille{display:grid;grid-template-columns:1fr 1.05fr;gap:50px;align-items:start}
+.coord{display:flex;flex-direction:column;gap:22px}
+.ligne{display:flex;gap:16px;align-items:flex-start}
+.ligne>svg{width:28px;height:28px;color:var(--or-clair);flex:none;margin-top:3px}
+.ligne b{display:block;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--or-clair);font-weight:700;margin-bottom:2px}
+.ligne div{font-size:18px;color:#fff;line-height:1.5}
+.ligne a{text-decoration:none;border-bottom:1px solid rgba(221,184,113,.5)}
+.ligne a:hover{border-color:var(--or-clair)}
+.horaires{display:grid;grid-template-columns:auto 1fr;gap:2px 22px}
+.horaires dt{font-weight:500;color:#E3D9C9}
+.horaires dd{margin:0;font-weight:700}
+.reseau-titre{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--or-clair);font-weight:700;margin:6px 0 -8px}
+.reseau{display:flex;flex-wrap:wrap;gap:10px}
+.reseau a{display:inline-flex;align-items:center;gap:9px;padding:11px 16px;border:1px solid rgba(221,184,113,.45);color:#fff;text-decoration:none;font-weight:600;font-size:15.5px;line-height:1.1}
+.reseau a:hover{background:rgba(255,255,255,.09)}
+.reseau svg{width:20px;height:20px;flex:none}
+.formulaire{background:var(--creme);color:var(--encre);padding:34px 32px 34px;position:relative}
+.formulaire h3{font-size:28px;margin-bottom:20px}
+.champs{display:flex;flex-direction:column;gap:16px}
+.deux{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.formulaire label{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:14.5px}
+.formulaire input,.formulaire select,.formulaire textarea{font:inherit;font-weight:500;font-size:16px;padding:13px 14px;border:1.5px solid var(--trait);background:#fff;color:var(--encre);border-radius:3px;width:100%}
+.formulaire textarea{min-height:120px;resize:vertical}
+.formulaire input:focus,.formulaire select:focus,.formulaire textarea:focus{outline:3px solid var(--or);outline-offset:0;border-color:var(--or)}
+.formulaire button[type=submit]{align-self:flex-start;margin-top:4px}
+.merci{display:none;background:var(--charbon);color:#fff;padding:22px;font-size:17px;line-height:1.5}
+.formulaire.envoye .champs,.formulaire.envoye h3{display:none}
+.formulaire.envoye .merci{display:block}
+@media (max-width:900px){.contact-grille{grid-template-columns:1fr;gap:36px}.deux{grid-template-columns:1fr}.formulaire{padding:26px 20px}}
+
+/* Pied */
+.pied{background:var(--charbon-2);color:#CFC5B5;padding-block:36px;border-top:2px solid var(--or)}
+.pied .enveloppe{display:flex;flex-wrap:wrap;gap:20px 36px;align-items:center;justify-content:space-between}
+.pied p{font-size:15px}
+.pied-ico{display:flex;gap:10px}
+.pied-ico a{width:44px;height:44px;border:1px solid rgba(221,184,113,.45);display:grid;place-items:center;color:#fff}
+.pied-ico a:hover{background:rgba(255,255,255,.1)}
+.pied-ico svg{width:21px;height:21px}
+#progres{position:fixed;left:0;top:0;height:3px;width:100%;background:var(--or);transform:scaleX(0);transform-origin:left;z-index:300;pointer-events:none}
+
+/* Téléphone : page plus courte */
+@media (max-width:700px){
+  section{padding-block:44px}
+  .tete{margin-bottom:28px}
+  body{font-size:16.5px}
+  .mur blockquote{padding:18px 18px}
+  .hide-m,.devise,#savoir-faire .chapo{display:none}
+  .pilier p{font-size:15.5px}
+  .piliers{gap:12px}
+  .info{padding:12px 0}
+}
+@media (prefers-reduced-motion:reduce){.fondu{opacity:1;transition:none}}
+</style>
+</head>
+<body>
+<div id="progres" aria-hidden="true"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-tel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-horloge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-coche" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-etoile" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 17.8 5.8 21l1.2-6.9-5-4.9 6.9-1z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+    <symbol id="i-croix" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+    <symbol id="i-fleche-g" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 5-7 7 7 7"/></symbol>
+    <symbol id="i-fleche-d" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22v-8.2h2.8l.5-3.3h-3.3V8.4c0-.9.4-1.7 1.8-1.7h1.6V3.9c-.3 0-1.3-.2-2.5-.2-2.6 0-4.3 1.6-4.3 4.4v2.4H7.2v3.3h2.9V22z"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor"/></symbol>
+    <symbol id="i-google" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 12.2c0-.7-.1-1.3-.2-1.9H12v3.6h5.5a4.7 4.7 0 0 1-2 3.1v2.6h3.3c1.9-1.8 3-4.4 3-7.4zM12 22c2.7 0 5-.9 6.7-2.4l-3.3-2.6c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3v2.6A10 10 0 0 0 12 22zM6.4 13.9a6 6 0 0 1 0-3.8V7.5H3a10 10 0 0 0 0 9zM12 6c1.5 0 2.8.5 3.8 1.5l2.9-2.9A10 10 0 0 0 3 7.5l3.4 2.6C7.2 7.8 9.4 6 12 6z"/></symbol>
+    <symbol id="i-plan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 19-9-9 19-2-8z"/></symbol>
+  </defs>
+</svg>
+
+<header class="entete">
+  <div class="enveloppe">
+    <a class="marque" href="#accueil" aria-label="Garraud Menuiserie et Services, accueil">
+      <span class="logo-g"><img src="img/logo-g.png" alt="" width="360" height="430"></span>
+      <span class="nom"><b>Garraud</b><small>Menuiserie et Services</small></span>
+    </a>
+    <nav class="nav" id="menu" aria-label="Menu principal">
+      <a href="#accueil">Accueil</a>
+      <a href="#savoir-faire">Savoir-faire</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#methode">Notre travail</a>
+      <a href="#avis">Avis clients</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-or appel-hdr" href="tel:+33631331112"><svg aria-hidden="true"><use href="#i-tel"/></svg><span class="num">06 31 33 11 12</span><span class="mot">Appeler</span></a>
+    <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><svg aria-hidden="true"><use href="#i-menu"/></svg></button>
+  </div>
+</header>
+
+<main>
+<section id="accueil" class="heros" style="padding:0">
+  <div class="enveloppe">
+    <div class="heros-texte">
+      <span class="etiquette">Menuiserie · Agencement · Aménagement</span>
+      <h1>Des solutions <span class="or">sur mesure</span> pour vos projets</h1>
+      <p class="sous">Agencements intérieurs, rangements, parquet, terrasses en bois et petits travaux au Mans et alentours. Nous fabriquons et posons avec précision, et vous parlez directement à celui qui travaille chez vous.</p>
+      <div class="actions">
+        <a class="btn btn-or" href="tel:+33631331112"><svg aria-hidden="true"><use href="#i-tel"/></svg>06 31 33 11 12</a>
+        <a class="btn btn-contour" href="#contact">Demander un devis</a>
+      </div>
+      <div class="preuves">
+        <span class="puce"><span class="etoiles" aria-hidden="true">★★★★★</span>5,0 · 16 avis Google</span>
+        <span class="puce"><svg aria-hidden="true"><use href="#i-horloge"/></svg>Du lundi au vendredi, 8h à 18h</span>
+      </div>
+    </div>
+    <div class="heros-photo">
+      <figure>
+        <div class="lattes" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cadre"><img src="img/carport-claustra-camion.jpg" alt="Claustra en bois que nous avons posé sous un abri de parking, à côté de notre camionnette" width="1200" height="1332"></div>
+        <figcaption>Claustra en bois sur un abri de parking</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<div class="infos">
+  <div class="enveloppe">
+    <div class="info"><svg aria-hidden="true"><use href="#i-tel"/></svg><div><b>Téléphone</b><a href="tel:+33631331112">06 31 33 11 12</a></div></div>
+    <div class="info"><svg aria-hidden="true"><use href="#i-horloge"/></svg><div><b>Horaires</b><span>Lundi au vendredi, 8h à 18h</span></div></div>
+    <div class="info"><svg aria-hidden="true"><use href="#i-pin"/></svg><div><b>Où nous trouver</b><span>Le Mans et alentours</span></div></div>
+  </div>
+</div>
+
+<section id="savoir-faire">
+  <div class="enveloppe">
+    <div class="tete">
+      <span class="etiquette">Savoir-faire</span>
+      <h2>Tout ce que nous réalisons <span class="or">pour votre intérieur</span> et vos extérieurs</h2>
+      <p class="chapo">Chaque ouvrage est pensé pour votre pièce, vos usages et vos envies. Nous vous conseillons, puis nous fabriquons et posons.</p>
+    </div>
+    <div class="cartes">
+      <article class="carte fondu">
+        <div class="photo"><img src="img/claustra-salon.jpg" alt="Claustra en chêne avec niches séparant un salon de l'entrée" loading="lazy" width="956" height="1061"></div>
+        <div class="corps"><span class="trait"></span><h3>Agencement intérieur</h3><p>Claustras, habillages muraux, séparations de pièces : nous redessinons vos espaces pour les rendre plus beaux et plus pratiques.</p></div>
+      </article>
+      <article class="carte fondu">
+        <div class="photo"><img src="img/placard-chambre.jpg" alt="Placard blanc sur mesure dans une chambre d'enfant" loading="lazy" width="896" height="1061"></div>
+        <div class="corps"><span class="trait"></span><h3>Rangements sur mesure</h3><p>Placards, dressings, meubles de télévision, buffets : des rangements ajustés au centimètre près à votre pièce.</p></div>
+      </article>
+      <article class="carte fondu">
+        <div class="photo"><img src="img/escalier-chene.jpg" alt="Escalier habillé de marches en bois" loading="lazy" width="956" height="1061"></div>
+        <div class="corps"><span class="trait"></span><h3>Parquet et escaliers</h3><p>Pose de parquet, rénovation de plancher, habillage de marches : un travail minutieux pour des sols qui durent.</p></div>
+      </article>
+      <article class="carte fondu">
+        <div class="photo"><img src="img/terrasse-bois.jpg" alt="Terrasse en bois avec salon de jardin" loading="lazy" width="956" height="1061"></div>
+        <div class="corps"><span class="trait"></span><h3>Terrasses bois</h3><p>Une terrasse en bois pour profiter de votre jardin ou de votre cour, posée proprement et dans les règles de l'art.</p></div>
+      </article>
+    </div>
+    <div class="services-plus fondu">
+      <h3>Petits travaux et services</h3>
+      <ul>
+        <li><svg aria-hidden="true"><use href="#i-coche"/></svg>Cuisines aménagées : pose et installation</li>
+        <li><svg aria-hidden="true"><use href="#i-coche"/></svg>Portes de placard et aménagements de placard</li>
+        <li><svg aria-hidden="true"><use href="#i-coche"/></svg>Meubles et tables sur mesure</li>
+        <li><svg aria-hidden="true"><use href="#i-coche"/></svg>Rénovation et agencement de commerces</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="realisations" class="sombre">
+  <div class="enveloppe">
+    <div class="tete">
+      <span class="etiquette">Réalisations</span>
+      <h2>Quelques ouvrages <span class="or">sortis de nos mains</span></h2>
+      <p class="chapo">Cliquez sur une photo pour l'agrandir et passer d'un ouvrage à l'autre.</p>
+    </div>
+    <div class="galerie" id="galerie">
+      <button type="button" aria-label="Claustra en bois sous un abri de parking"><img src="img/carport-claustra-ciel.jpg" alt="Claustra en bois sous un abri de parking" loading="lazy" width="956" height="1061"></button>
+      <button type="button" aria-label="Claustra en chêne avec niches et emplacement pour la télévision"><img src="img/claustra-salon.jpg" alt="Claustra en chêne avec niches et emplacement pour la télévision" loading="lazy" width="956" height="1061"></button>
+      <button type="button" aria-label="Meuble de télévision en bois suspendu"><img src="img/meuble-tv.jpg" alt="Meuble de télévision en bois suspendu" loading="lazy" width="1200" height="900"></button>
+      <button type="button" aria-label="Placard blanc sur mesure dans une chambre"><img src="img/placard-chambre.jpg" alt="Placard blanc sur mesure dans une chambre" loading="lazy" width="896" height="1061"></button>
+      <button type="button" aria-label="Terrasse en bois avec salon de jardin"><img src="img/terrasse-bois.jpg" alt="Terrasse en bois avec salon de jardin" loading="lazy" width="956" height="1061"></button>
+      <button type="button" aria-label="Buffet blanc avec plateau en chêne"><img src="img/buffet-blanc-chene.jpg" alt="Buffet blanc avec plateau en chêne" loading="lazy" width="1052" height="987"></button>
+      <button type="button" aria-label="Escalier habillé de marches en bois"><img src="img/escalier-chene.jpg" alt="Escalier habillé de marches en bois" loading="lazy" width="956" height="1061"></button>
+      <button type="button" aria-label="Table basse avec plateau en chêne et pied métallique"><img src="img/table-basse.jpg" alt="Table basse avec plateau en chêne et pied métallique" loading="lazy" width="1076" height="807"></button>
+      <button class="plus" type="button" aria-label="Claustra en bois à côté de notre camionnette"><img src="img/carport-claustra-camion.jpg" alt="Claustra en bois à côté de notre camionnette" loading="lazy" width="956" height="1061"></button>
+      <button class="plus" type="button" aria-label="Claustra en chêne dans une entrée"><img src="img/claustra-entree.jpg" alt="Claustra en chêne dans une entrée" loading="lazy" width="896" height="1061"></button>
+      <button class="plus" type="button" aria-label="Claustra en chêne avec niches décoratives"><img src="img/claustra-niches.jpg" alt="Claustra en chêne avec niches décoratives" loading="lazy" width="956" height="1061"></button>
+      <button class="plus" type="button" aria-label="Habillage mural en tasseaux de chêne"><img src="img/tasseaux-chene.jpg" alt="Habillage mural en tasseaux de chêne" loading="lazy" width="896" height="1061"></button>
+      <button class="plus" type="button" aria-label="Meuble de télévision dans un salon"><img src="img/meuble-tv-salon.jpg" alt="Meuble de télévision dans un salon" loading="lazy" width="1200" height="900"></button>
+      <button class="plus" type="button" aria-label="Détail d'un tiroir de meuble sur mesure"><img src="img/tiroir-meuble.jpg" alt="Détail d'un tiroir de meuble sur mesure" loading="lazy" width="1076" height="807"></button>
+      <button class="plus" type="button" aria-label="Aménagement intérieur d'un placard"><img src="img/placard-interieur.jpg" alt="Aménagement intérieur d'un placard" loading="lazy" width="896" height="1061"></button>
+      <button class="plus" type="button" aria-label="Chambre d'enfant avec placard et parquet"><img src="img/chambre-enfant.jpg" alt="Chambre d'enfant avec placard et parquet" loading="lazy" width="896" height="1061"></button>
+      <button class="plus" type="button" aria-label="Escalier en bois vu d'en haut"><img src="img/escalier-haut.jpg" alt="Escalier en bois vu d'en haut" loading="lazy" width="956" height="1061"></button>
+      <button class="plus" type="button" aria-label="Claustra en bois, vue de côté"><img src="img/carport-claustra.jpg" alt="Claustra en bois, vue de côté" loading="lazy" width="861" height="1001"></button>
+      <button class="plus p3" type="button" aria-label="Claustra en bois sur un parking"><img src="img/carport-claustra-parking.jpg" alt="Claustra en bois sur un parking" loading="lazy" width="956" height="1061"></button>
+      <button class="plus p3" type="button" aria-label="Table basse, détail du pied métallique croisé"><img src="img/table-basse-pied.jpg" alt="Table basse, détail du pied métallique croisé" loading="lazy" width="1200" height="899"></button>
+    </div>
+  </div>
+</section>
+
+<div class="visionneuse" id="visionneuse" role="dialog" aria-modal="true" aria-label="Photo agrandie">
+  <button class="fermer" id="v-fermer" type="button" aria-label="Fermer"><svg aria-hidden="true"><use href="#i-croix"/></svg></button>
+  <button class="prec" id="v-prec" type="button" aria-label="Photo précédente"><svg aria-hidden="true"><use href="#i-fleche-g"/></svg></button>
+  <figure><img id="v-img" alt="" width="956" height="1061"><figcaption id="v-compte"></figcaption></figure>
+  <button class="suiv" id="v-suiv" type="button" aria-label="Photo suivante"><svg aria-hidden="true"><use href="#i-fleche-d"/></svg></button>
+</div>
+
+<section id="methode" style="background:var(--creme-2)">
+  <div class="enveloppe">
+    <div class="tete">
+      <span class="etiquette">Notre travail</span>
+      <h2>Du conseil à la pose, <span class="or">le même interlocuteur</span></h2>
+    </div>
+    <div class="piliers" style="--x:0">
+      <div class="pilier fondu sombre">
+        <h3><span class="no">1.</span>Sur mesure</h3>
+        <p>Nous vous proposons des réalisations adaptées à vos besoins, avec des idées pour optimiser vos espaces et créer des aménagements qui vous ressemblent.</p>
+      </div>
+      <div class="pilier fondu sombre">
+        <h3><span class="no">2.</span>Pose soignée</h3>
+        <p>Un travail précis et de qualité, un chantier propre et des délais tenus, pour que vous soyez fiers de votre intérieur.</p>
+      </div>
+      <div class="pilier fondu sombre">
+        <h3><span class="no">3.</span>Fiabilité</h3>
+        <p>Nous vous écoutons, nous vous conseillons et nous vous accompagnons de façon personnalisée, de votre premier appel jusqu'à la fin des travaux.</p>
+      </div>
+    </div>
+    <p class="devise">Qualité, précision et savoir-faire.</p>
+  </div>
+</section>
+
+<section id="avis">
+  <div class="enveloppe">
+    <div class="tete">
+      <span class="etiquette">Avis clients</span>
+      <h2>Ce que disent nos clients <span class="or">sur Google</span></h2>
+    </div>
+    <div class="score"><span class="gros">5,0</span><span><span class="etoiles" aria-hidden="true">★★★★★</span><small>Note Google · 16 avis</small></span></div>
+    <div class="mur">
+      <blockquote class="fondu"><div class="etoiles-av" aria-label="5 étoiles">★★★★★</div><p>Très satisfaite du travail effectué par Mr Garraud, qui a participé à la rénovation de mon commerce. Propositions pertinentes pour optimiser les espaces, créer des aménagements. Travail soigné, délais tenus pour la livraison du chantier. Je recommande vivement ce professionnel !</p><footer>Pauline Dauphin <span>· il y a 2 mois</span></footer></blockquote>
+      <blockquote class="fondu"><div class="etoiles-av" aria-label="5 étoiles">★★★★★</div><p>Travail minutieux de très grande qualité très rapide propre d'une gentillesse exceptionnelle avec des tarifs raisonnables pose de parquet et pose d'une cuisine aménagée un vrai professionnel je vous le conseille vivement</p><footer>Thierry Blot <span>· il y a 5 mois</span></footer></blockquote>
+      <blockquote class="fondu"><div class="etoiles-av" aria-label="5 étoiles">★★★★★</div><p>Travail minutieux, délai respecté. Je vous recommande fortement cet artisan.</p><footer>Gregory Glotin <span>· il y a un an</span></footer></blockquote>
+      <blockquote class="fondu"><div class="etoiles-av" aria-label="5 étoiles">★★★★★</div><p>Mr Garraud c est le sens du travail bien fait.</p><footer>Lionel Schluck <span>· il y a un an</span></footer></blockquote>
+    </div>
+    <p class="avis-lien"><a class="btn btn-noir" href="https://www.google.com/maps/search/?api=1&query=Garraud%20Menuiserie%20et%20Services%20Sill%C3%A9-le-Philippe%20Sarthe" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-google"/></svg>Voir tous les avis sur Google</a></p>
+  </div>
+</section>
+
+<section id="contact" class="sombre">
+  <div class="enveloppe">
+    <div class="tete">
+      <span class="etiquette">Contact</span>
+      <h2>Parlons de <span class="or">votre projet</span></h2>
+      <p class="chapo">Un appel ou un message suffit : nous vous répondons et nous vous proposons des solutions sur mesure.</p>
+    </div>
+    <div class="contact-grille">
+      <div class="coord">
+        <div class="ligne"><svg aria-hidden="true"><use href="#i-tel"/></svg><div><b>Téléphone</b><a href="tel:+33631331112">06 31 33 11 12</a></div></div>
+        <div class="ligne"><svg aria-hidden="true"><use href="#i-mail"/></svg><div><b>E-mail</b><a href="mailto:garraud.mes@gmail.com">garraud.mes@gmail.com</a></div></div>
+        <div class="ligne"><svg aria-hidden="true"><use href="#i-pin"/></svg><div><b>Où nous trouver</b>Garraud Menuiserie et Services<br>Le Mans et alentours</div></div>
+        <div class="ligne"><svg aria-hidden="true"><use href="#i-horloge"/></svg><div><b>Horaires</b>
+          <dl class="horaires" style="margin:0"><dt>Lundi au vendredi</dt><dd>8h à 18h</dd><dt>Samedi et dimanche</dt><dd>Fermé</dd></dl></div></div>
+        <p class="reseau-titre">Retrouvez-nous</p>
+        <div class="reseau">
+          <a href="https://www.facebook.com/profile.php?id=61575852210098" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-fb"/></svg>Facebook</a>
+          <a href="https://www.instagram.com/garraud.menuiserie/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-ig"/></svg>Instagram</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Garraud%20Menuiserie%20et%20Services%20Sill%C3%A9-le-Philippe%20Sarthe" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-google"/></svg>Fiche Google</a>
+        </div>
+      </div>
+      <form class="formulaire" id="form" action="#" method="post">
+        <h3>Demander un devis</h3>
+        <div class="champs">
+          <div class="deux">
+            <label>Nom<input name="nom" type="text" autocomplete="name" required></label>
+            <label>Téléphone<input name="tel" type="tel" autocomplete="tel" required></label>
+          </div>
+          <label>E-mail<input name="mail" type="email" autocomplete="email"></label>
+          <label>Votre projet
+            <select name="projet"><option>Agencement intérieur</option><option>Rangement ou placard sur mesure</option><option>Parquet ou escalier</option><option>Terrasse bois</option><option>Petits travaux</option><option>Autre</option></select>
+          </label>
+          <label>Message<textarea name="message" placeholder="Décrivez votre projet en quelques mots"></textarea></label>
+          <button class="btn btn-noir" type="submit">Envoyer ma demande</button>
+        </div>
+        <div class="merci" role="status">Merci ! Sur votre vrai site, cette demande vous arrivera par e-mail.</div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="pied">
+  <div class="enveloppe">
+    <a class="marque" href="#accueil" aria-label="Retour en haut"><span class="logo-g"><img src="img/logo-g.png" alt="" width="360" height="430"></span><span class="nom"><b>Garraud</b><small>Menuiserie et Services</small></span></a>
+    <p>Le Mans et alentours · 06 31 33 11 12 · Lundi au vendredi, 8h à 18h</p>
+    <div class="pied-ico">
+      <a href="https://www.facebook.com/profile.php?id=61575852210098" target="_blank" rel="noopener" aria-label="Facebook"><svg aria-hidden="true"><use href="#i-fb"/></svg></a>
+      <a href="https://www.instagram.com/garraud.menuiserie/" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Garraud%20Menuiserie%20et%20Services%20Sill%C3%A9-le-Philippe%20Sarthe" target="_blank" rel="noopener" aria-label="Fiche Google"><svg aria-hidden="true"><use href="#i-google"/></svg></a>
+      <a href="tel:+33631331112" aria-label="Appeler"><svg aria-hidden="true"><use href="#i-tel"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script>
+(function(){
+  var hdr=document.querySelector('.entete');
+  function hh(){return hdr.getBoundingClientRect().height}
+  // Menu mobile
+  var burger=document.getElementById('burger'),menu=document.getElementById('menu');
+  burger.addEventListener('click',function(){var o=menu.classList.toggle('ouvert');burger.setAttribute('aria-expanded',o)});
+  // Ancres : arrivée exacte sous l'en-tête
+  var liens=[].slice.call(menu.querySelectorAll('a'));
+  var cibles=liens.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function aller(id,e){var el=document.querySelector(id);if(!el)return;if(e)e.preventDefault();
+    var y=el.getBoundingClientRect().top+window.pageYOffset-hh()+1;
+    if(id==='#accueil')y=0;
+    window.scrollTo({top:Math.max(0,y),behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});}
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id.length>1){menu.classList.remove('ouvert');burger.setAttribute('aria-expanded',false);aller(id,e)}})});
+  // Menu actif : seulement quand la section atteint le bas de l'en-tête
+  function spy(){var lim=hh()+2,cur=0;
+    cibles.forEach(function(c,i){if(c&&c.getBoundingClientRect().top<=lim)cur=i});
+    if(window.innerHeight+window.pageYOffset>=document.documentElement.scrollHeight-4)cur=cibles.length-1;
+    liens.forEach(function(a,i){a.classList.toggle('actif',i===cur)});
+    hdr.classList.toggle('ombre',window.pageYOffset>8)}
+  window.addEventListener('scroll',spy,{passive:true});window.addEventListener('resize',spy);spy();
+  // Fondu des cartes (aucun déplacement)
+  var f=document.querySelectorAll('.fondu');
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vu');io.unobserve(e.target)}})},{threshold:.08});
+    f.forEach(function(x){io.observe(x)});
+    setTimeout(function(){f.forEach(function(x){x.classList.add('vu')})},4000);
+  }else f.forEach(function(x){x.classList.add('vu')});
+  // Visionneuse (boutons seulement, la molette n'est jamais détournée)
+  var tous=[].slice.call(document.querySelectorAll('#galerie button')),gal=tous,vi=document.getElementById('visionneuse'),vimg=document.getElementById('v-img'),vc=document.getElementById('v-compte'),vp=document.getElementById('v-prec'),vs=document.getElementById('v-suiv'),k=0,dernier=null;
+  function montre(n){k=n;var img=gal[n].querySelector('img');vimg.src=img.getAttribute('src');vimg.alt=img.alt;vc.textContent=(n+1)+' / '+gal.length+' · '+img.alt;vp.disabled=n===0;vs.disabled=n===gal.length-1}
+  function ouvre(b){dernier=document.activeElement;gal=tous.filter(function(x){return x.offsetParent!==null});montre(gal.indexOf(b));vi.classList.add('ouvert');document.getElementById('v-fermer').focus()}
+  function ferme(){vi.classList.remove('ouvert');if(dernier)dernier.focus()}
+  tous.forEach(function(b){b.addEventListener('click',function(){ouvre(b)})});
+  vp.addEventListener('click',function(){if(k>0)montre(k-1)});vs.addEventListener('click',function(){if(k<gal.length-1)montre(k+1)});
+  document.getElementById('v-fermer').addEventListener('click',ferme);
+  vi.addEventListener('click',function(e){if(e.target===vi)ferme()});
+  document.addEventListener('keydown',function(e){if(!vi.classList.contains('ouvert'))return;if(e.key==='Escape')ferme();if(e.key==='ArrowLeft'&&k>0)montre(k-1);if(e.key==='ArrowRight'&&k<gal.length-1)montre(k+1)});
+
+  // Effets GSAP : titres lettre par lettre en 3D, lattes de claustra qui se dressent, photo du héros en parallaxe,
+  // titres de section, formulaire en cascade, barre de progression. Jamais sur le téléphone, l'adresse ni les horaires ;
+  // cartes en fondu seul (voir plus haut).
+  if(window.gsap&&window.ScrollTrigger&&window.SplitText){
+    gsap.registerPlugin(ScrollTrigger,SplitText);
+    var mm=gsap.matchMedia();
+    mm.add('(prefers-reduced-motion: no-preference)',function(){
+      var h1=document.querySelector('.heros h1');
+      SplitText.create(h1,{type:'lines,words,chars',linesClass:'split-ligne',autoSplit:true,onSplit:function(self){
+        return gsap.from(self.chars,{opacity:0,rotationX:90,rotationY:-50,yPercent:-40,duration:.9,ease:'power2.out',stagger:.022,clearProps:'opacity,transform'});
+      }});
+      gsap.from('.heros .etiquette,.heros .sous',{opacity:0,duration:.9,delay:.5,stagger:.12,ease:'power1.out',clearProps:'opacity'});
+      gsap.from('.lattes i',{scaleY:0,transformOrigin:'50% 100%',duration:1.1,delay:.35,stagger:.1,ease:'power3.out',clearProps:'transform'});
+      gsap.from('.heros-photo figure',{opacity:0,duration:1,delay:.2,ease:'power1.out',clearProps:'opacity'});
+      document.querySelectorAll('.tete h2').forEach(function(t){
+        SplitText.create(t,{type:'lines,words,chars',linesClass:'split-ligne',autoSplit:true,onSplit:function(self){
+          return gsap.from(self.chars,{opacity:0,rotationX:90,rotationY:-50,yPercent:-40,duration:.8,ease:'power2.out',stagger:.018,clearProps:'opacity,transform',
+            scrollTrigger:{trigger:t,start:'top 88%',toggleActions:'play none none none'}});
+        }});
+      });
+      gsap.utils.toArray('.etiquette').forEach(function(e){
+        gsap.from(e,{opacity:0,duration:.8,ease:'power1.out',clearProps:'opacity',scrollTrigger:{trigger:e,start:'top 92%',toggleActions:'play none none none'}});
+      });
+      gsap.to('.heros-photo img',{yPercent:6,ease:'none',scrollTrigger:{trigger:'.heros',start:'top top',end:'bottom top',scrub:.6}});
+      gsap.from('.formulaire .champs > *',{opacity:0,duration:.6,stagger:.1,ease:'power1.out',clearProps:'opacity',
+        scrollTrigger:{trigger:'.formulaire',start:'top 85%',toggleActions:'play none none none'}});
+      gsap.from('.devise',{opacity:0,duration:1.1,ease:'power1.out',clearProps:'opacity',scrollTrigger:{trigger:'.devise',start:'top 90%',toggleActions:'play none none none'}});
+      var barre=document.getElementById('progres');
+      ScrollTrigger.create({start:0,end:'max',onUpdate:function(self){barre.style.transform='scaleX('+self.progress+')'}});
+    });
+    window.addEventListener('load',function(){ScrollTrigger.refresh()});
+    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){ScrollTrigger.refresh()});
+  }
+  // Formulaire : message de remerciement
+  document.getElementById('form').addEventListener('submit',function(e){e.preventDefault();this.classList.add('envoye')});
+})();
+</script>
+
+</body>
+</html>
