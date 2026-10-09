@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pierre au Jardin · Entretien d'espaces verts à Savigné-l'Évêque</title>
+<meta name="description" content="Pierre au Jardin, paysagiste à Savigné-l'Évêque : entretien de jardins, taille de haies, remise en état de terrains, allées et terrasses.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --vert:#2f5a4a;--vert-fonce:#1f3d32;--vert-clair:#e4ece6;
+  --creme:#f7f4ec;--papier:#fffdf8;--encre:#1d2a24;--gris:#56635b;
+  --terre:#b4793a;--ligne:#d9d6c7;
+  --entete:76px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto}
+body{font-family:'Nunito Sans',system-ui,sans-serif;font-size:18px;line-height:1.6;color:var(--encre);background:var(--creme);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1.15;color:var(--vert-fonce)}
+.cadre{width:min(1160px,100% - 40px);margin-inline:auto}
+section{position:relative}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* En-tête */
+.entete{position:sticky;top:0;z-index:50;height:var(--entete);background:rgba(255,253,248,.96);backdrop-filter:blur(8px);border-bottom:1px solid transparent;transition:box-shadow .25s,border-color .25s}
+.entete.ombre{box-shadow:0 6px 24px rgba(31,61,50,.1);border-bottom-color:var(--ligne)}
+.entete .cadre{height:100%;display:flex;align-items:center;gap:22px}
+.marque{display:flex;align-items:center;gap:12px;text-decoration:none;flex:none}
+.marque img{width:54px;height:54px;border-radius:50%;background:#fff}
+.marque b{display:block;font-family:'Fraunces',serif;font-size:1.2rem;line-height:1.1;color:var(--vert-fonce)}
+.marque small{display:block;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gris)}
+nav{margin-left:auto}
+nav ul{display:flex;gap:6px;list-style:none}
+nav a{display:block;padding:8px 13px;border-radius:99px;text-decoration:none;font-weight:600;font-size:.98rem;color:var(--gris);transition:background .2s,color .2s}
+nav a:hover{background:var(--vert-clair);color:var(--vert-fonce)}
+nav a.actif{background:var(--vert);color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 24px;border-radius:99px;font-weight:700;font-size:1.02rem;text-decoration:none;border:2px solid var(--vert);background:var(--vert);color:#fff;cursor:pointer;font-family:inherit;transition:background .2s,color .2s}
+.btn:hover{background:var(--vert-fonce);border-color:var(--vert-fonce)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn.clair{background:transparent;color:var(--vert-fonce)}
+.btn.clair:hover{background:var(--vert-clair)}
+.btn.appel{padding:10px 20px;white-space:nowrap}
+.burger{display:none;margin-left:auto;width:46px;height:46px;border:1px solid var(--ligne);border-radius:12px;background:#fff;cursor:pointer;align-items:center;justify-content:center}
+.burger span,.burger span::before,.burger span::after{display:block;width:20px;height:2px;background:var(--vert-fonce);border-radius:2px;position:relative;content:""}
+.burger span::before{position:absolute;top:-6px}.burger span::after{position:absolute;top:6px}
+.progres{position:absolute;left:0;bottom:-1px;height:3px;width:100%;background:var(--terre);transform:scaleX(0);transform-origin:left}
+
+/* Héros */
+.heros{padding:48px 0 70px;background:radial-gradient(1000px 500px at 85% 0,#e9efe6 0,transparent 70%),var(--creme)}
+.heros .cadre{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.etiquette{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:.9rem;letter-spacing:.07em;text-transform:uppercase;color:var(--terre);margin-bottom:18px}
+.etiquette::before{content:"";width:34px;height:2px;background:var(--terre)}
+.heros h1{font-size:clamp(2.1rem,4.4vw,3.5rem);margin-bottom:22px}
+.heros h1 em{font-style:normal;color:var(--vert)}
+.sous{font-size:1.18rem;color:var(--gris);max-width:34em;margin-bottom:30px}
+.actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px}
+.points{display:flex;flex-wrap:wrap;gap:10px 22px;list-style:none;font-weight:600;font-size:.98rem;color:var(--vert-fonce)}
+.points li{display:flex;align-items:center;gap:8px}
+.points svg{width:18px;height:18px;color:var(--terre);flex:none}
+.visuel{position:relative;padding:0 0 46px 46px}
+.arche{border-radius:999px 999px 24px 24px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 24px 50px rgba(31,61,50,.2)}
+.arche img{width:100%;height:100%;object-fit:cover}
+.rond{position:absolute;left:0;bottom:0;width:44%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:7px solid var(--creme);box-shadow:0 14px 30px rgba(31,61,50,.2)}
+.rond img{width:100%;height:100%;object-fit:cover}
+.sceau{position:absolute;right:-8px;top:18%;background:var(--vert);color:#fff;border-radius:18px;padding:12px 16px;box-shadow:0 12px 26px rgba(31,61,50,.3);font-size:.88rem;line-height:1.3;max-width:170px}
+.sceau b{display:block;font-family:'Fraunces',serif;font-size:1.5rem;line-height:1}
+
+/* Bandeau */
+.bandeau{background:var(--vert-fonce);color:#fff}
+.bandeau .cadre{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.fait{padding:22px 24px;display:flex;align-items:center;gap:14px;border-left:1px solid rgba(255,255,255,.15)}
+.fait:first-child{border-left:0}
+.fait svg{width:30px;height:30px;color:#e8c58f;flex:none}
+.fait b{display:block;font-family:'Fraunces',serif;font-size:1.25rem;line-height:1.2}
+.fait span{font-size:.92rem;opacity:.85}
+
+/* Sections */
+.bloc{padding:92px 0}
+.tete{max-width:44em;margin-bottom:46px}
+.tete .etiquette{margin-bottom:12px}
+.tete h2{font-size:clamp(1.8rem,3.4vw,2.7rem);margin-bottom:14px}
+.tete p{color:var(--gris);font-size:1.1rem}
+
+/* Services */
+.grille-services{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.service{background:var(--papier);border:1px solid var(--ligne);border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
+.service .vignette{aspect-ratio:3/2;overflow:hidden}
+.service .vignette img{width:100%;height:100%;object-fit:cover}
+.service .corps{padding:22px 24px 26px}
+.titre-ligne{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.titre-ligne .ico{width:42px;height:42px;border-radius:12px;background:var(--vert-clair);color:var(--vert);display:flex;align-items:center;justify-content:center;flex:none}
+.titre-ligne .ico svg{width:24px;height:24px}
+.service h3{font-size:1.28rem}
+.service p{color:var(--gris);font-size:1rem}
+.credit{margin-top:34px;background:var(--vert);color:#fff;border-radius:22px;padding:26px 30px;display:flex;align-items:center;gap:22px}
+.credit .gros{font-family:'Fraunces',serif;font-size:3rem;line-height:1;color:#e8c58f;flex:none}
+.credit p{font-size:1.05rem}
+.credit small{display:block;opacity:.8;font-size:.86rem;margin-top:4px}
+
+/* Réalisations */
+.realisations{background:var(--papier);border-block:1px solid var(--ligne)}
+.tete-flex{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:34px}
+.tete-flex .tete{margin-bottom:0}
+.commandes{display:flex;align-items:center;gap:12px;flex:none}
+.commandes button{width:48px;height:48px;border-radius:50%;border:2px solid var(--vert);background:#fff;color:var(--vert);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s}
+.commandes button:hover:not(:disabled){background:var(--vert);color:#fff}
+.commandes button:disabled{opacity:.3;cursor:default}
+.commandes svg{width:22px;height:22px}
+#compteur{min-width:62px;text-align:center;font-weight:700;color:var(--vert-fonce)}
+.piste{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 0 8px;outline-offset:6px}
+.piste::-webkit-scrollbar{display:none}
+.carte{flex:0 0 min(380px,82vw);scroll-snap-align:start;background:var(--creme);border:1px solid var(--ligne);border-radius:20px;overflow:hidden}
+.carte img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.carte p{padding:14px 18px 16px;font-weight:600;color:var(--vert-fonce);font-size:1rem}
+
+/* Déroulement */
+.etapes{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.etape{background:var(--papier);border:1px solid var(--ligne);border-radius:22px;padding:28px}
+.etape h3{font-size:1.3rem;margin-bottom:10px}
+.etape h3 .n{color:var(--terre)}
+.etape p{color:var(--gris)}
+
+/* Avis */
+.avis-bloc{background:var(--vert-clair)}
+.note-google{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:34px}
+#gros-note{font-family:'Fraunces',serif;font-size:3.6rem;line-height:1;color:var(--vert-fonce)}
+.etoiles{color:#e1a21a;letter-spacing:2px;font-size:1.25rem}
+.note-google small{display:block;color:var(--gris)}
+.colonnes{column-count:3;column-gap:22px}
+.avis-carte{break-inside:avoid;background:#fff;border:1px solid var(--ligne);border-radius:18px;padding:22px;margin-bottom:22px}
+.avis-carte .etoiles{font-size:1rem;display:block;margin-bottom:8px}
+.avis-carte p{font-size:1rem;margin-bottom:12px}
+.avis-carte footer{font-size:.88rem;color:var(--gris);font-weight:600}
+
+/* Contact */
+.contact-grille{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.infos{display:grid;gap:18px}
+.info{display:flex;gap:14px;align-items:flex-start}
+.info .ico{width:44px;height:44px;border-radius:12px;background:var(--vert-clair);color:var(--vert);display:flex;align-items:center;justify-content:center;flex:none}
+.info .ico svg{width:23px;height:23px}
+.info b{display:block;color:var(--vert-fonce)}
+.info a{text-decoration:none;font-weight:700;font-size:1.2rem;color:var(--vert-fonce)}
+#tab-horaires{border-collapse:collapse;margin-top:4px;font-size:1rem}
+#tab-horaires td{padding:4px 18px 4px 0}
+#tab-horaires tr.auj td{font-weight:700;color:var(--vert-fonce)}
+#etat{display:inline-block;margin-top:6px;padding:3px 12px;border-radius:99px;font-size:.88rem;font-weight:700}
+#etat.ouvert{background:#d8efdd;color:#1d6a34}#etat.ferme{background:#f3dcd7;color:#9a3a2a}
+.reseaux{margin-top:6px}
+.reseaux b{display:block;margin-bottom:10px;color:var(--vert-fonce)}
+.pilules{display:flex;flex-wrap:wrap;gap:10px}
+.pilule{display:inline-flex;align-items:center;gap:9px;padding:9px 16px;border-radius:99px;border:1px solid var(--ligne);background:#fff;text-decoration:none;font-weight:700;font-size:.95rem;color:var(--vert-fonce);transition:background .2s}
+.pilule:hover{background:var(--vert-clair)}
+.pilule svg{width:20px;height:20px;flex:none}
+.formulaire{background:var(--papier);border:1px solid var(--ligne);border-radius:24px;padding:30px}
+.formulaire h3{font-size:1.5rem;margin-bottom:6px}
+.formulaire>p{color:var(--gris);margin-bottom:18px}
+.champ{margin-bottom:14px}
+.champ label{display:block;font-weight:700;font-size:.92rem;margin-bottom:5px;color:var(--vert-fonce)}
+.champ input,.champ textarea{width:100%;padding:13px 15px;border:1.5px solid var(--ligne);border-radius:12px;font:inherit;background:#fff;color:var(--encre)}
+.champ input:focus,.champ textarea:focus{outline:3px solid #b8d2c4;border-color:var(--vert)}
+.champ textarea{min-height:120px;resize:vertical}
+.formulaire .btn{width:100%;margin-top:6px}
+#merci{margin-top:16px;padding:16px 18px;border-radius:14px;background:var(--vert-clair);color:var(--vert-fonce);font-weight:600}
+
+/* Pied */
+footer.pied{background:var(--vert-fonce);color:#dfe8e2;padding:44px 0 90px}
+footer.pied .cadre{display:flex;flex-wrap:wrap;gap:24px 40px;align-items:center;justify-content:space-between}
+.pied .marque b{color:#fff}.pied .marque small{color:#b9c9bf}
+.ronds{display:flex;gap:10px}
+.ronds a{width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;color:#fff;transition:background .2s}
+.ronds a:hover{background:rgba(255,255,255,.14)}
+.ronds svg{width:21px;height:21px}
+.pied small.droit{flex-basis:100%;opacity:.7;font-size:.85rem}
+
+/* Barre d'appel téléphone */
+.barre-appel{display:none}
+
+/* Tablette et téléphone */
+@media (max-width:980px){
+  .heros .cadre{grid-template-columns:1fr;gap:40px}
+  .visuel{max-width:520px;margin-inline:auto}
+  .grille-services{grid-template-columns:repeat(2,1fr)}
+  .etapes{grid-template-columns:1fr}
+  .colonnes{column-count:2}
+  .contact-grille{grid-template-columns:1fr}
+}
+@media (max-width:1080px){
+  :root{--entete:68px}
+  .burger{display:flex}
+  .btn.appel{display:none}
+  nav{position:absolute;left:0;right:0;top:100%;margin:0;background:var(--papier);border-bottom:1px solid var(--ligne);box-shadow:0 18px 30px rgba(31,61,50,.14);display:none}
+  nav.ouvert{display:block}
+  nav ul{flex-direction:column;padding:12px 20px 18px;gap:2px}
+  nav a{padding:13px 14px;font-size:1.05rem;border-radius:12px}
+  .barre-appel{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 16px;background:rgba(255,253,248,.97);border-top:1px solid var(--ligne);box-shadow:0 -8px 24px rgba(31,61,50,.12)}
+  .barre-appel .btn{width:100%;padding:14px}
+}
+@media (max-width:620px){
+  body{font-size:17px}
+  .bloc{padding:64px 0}
+  .heros{padding:30px 0 52px}
+  .bandeau .cadre{grid-template-columns:1fr}
+  .fait{border-left:0;border-top:1px solid rgba(255,255,255,.15);padding:16px 4px}
+  .fait:first-child{border-top:0}
+  .grille-services{grid-template-columns:1fr}
+  .colonnes{column-count:1}
+  .tete-flex{flex-direction:column;align-items:flex-start}
+  .credit{flex-direction:column;align-items:flex-start;gap:8px}
+  .visuel{padding:0 0 34px 24px}
+  .sceau{right:0;top:10%}
+  .marque small{display:none}
+  .formulaire{padding:22px}
+  .actions .btn{flex:1 1 100%}
+}
+
+/* Visionneuse photos */
+.carte{cursor:zoom-in}
+.carte:focus-visible{outline:3px solid var(--terre);outline-offset:3px}
+.visio{position:fixed;inset:0;z-index:100;background:rgba(14,26,21,.94);display:none;flex-direction:column;align-items:center;justify-content:center;padding:64px 16px 24px}
+.visio.ouvert{display:flex}
+.visio img{max-width:min(1100px,100%);max-height:calc(100vh - 150px);max-height:calc(100dvh - 150px);object-fit:contain;border-radius:10px;background:#0e1a15}
+.visio p{color:#fff;margin-top:14px;font-weight:600;text-align:center}
+.visio small{color:#b9c9bf;font-weight:400;margin-left:8px}
+.visio button{position:absolute;border:0;cursor:pointer;color:#fff;background:rgba(255,255,255,.14);width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.visio button:hover{background:rgba(255,255,255,.28)}
+.visio button svg{width:26px;height:26px}
+.visio .ferme{top:14px;right:14px}
+.visio .vprec{left:14px;top:50%;transform:translateY(-50%)}
+.visio .vsuiv{right:14px;top:50%;transform:translateY(-50%)}
+@media (max-width:620px){
+  .visio .vprec,.visio .vsuiv{top:auto;bottom:18px;transform:none}
+  .visio .vprec{left:18px}.visio .vsuiv{right:18px}
+  .visio img{max-height:calc(100dvh - 200px)}
+  /* Version téléphone allégée */
+  .bandeau,#deroulement,.service .vignette,.avis-carte:nth-child(n+6),.credit small{display:none}
+  .nav-deroul{display:none}
+  .service .corps{padding:18px 20px 20px}
+  .grille-services{gap:14px}
+  .tete{margin-bottom:28px}
+  .bloc{padding:52px 0}
+  .tete p{display:none}
+  .note-google{margin-bottom:22px}
+  .avis-carte{margin-bottom:14px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="entete" id="entete">
+  <div class="cadre">
+    <a class="marque" href="#accueil" aria-label="Pierre au Jardin, accueil">
+      <img src="img/logo.jpg" alt="Logo Pierre au Jardin" width="54" height="54">
+      <span><b>Pierre au Jardin</b><small>Entretien espace vert</small></span>
+    </a>
+    <nav id="nav" aria-label="Menu principal">
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#realisations">Réalisations</a></li>
+        <li class="nav-deroul"><a href="#deroulement">Déroulement</a></li>
+        <li><a href="#avis">Avis</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn appel" href="tel:+33788556717"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Appeler 07 88 55 67 17</a>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav"><span></span></button>
+  </div>
+  <div class="progres" id="progres"></div>
+</header>
+
+<main>
+<section class="heros" id="accueil">
+  <div class="cadre">
+    <div class="texte">
+      <span class="etiquette">Paysagiste · Savigné-l'Évêque et alentours</span>
+      <h1>Un jardin soigné, des haies bien taillées, <em>un terrain remis en état.</em></h1>
+      <p class="sous">Nous nous occupons de l'entretien de vos espaces verts : tonte, taille de haies, débroussaillage, remise en état de terrains, allées et terrasses.</p>
+      <div class="actions">
+        <a class="btn" href="tel:+33788556717"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Appeler</a>
+        <a class="btn clair" href="#realisations">Voir les réalisations</a>
+      </div>
+      <ul class="points">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Tracteur et tondeuse autoportée</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Matériel professionnel</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Intervention chez vous</li>
+      </ul>
+    </div>
+    <div class="visuel">
+      <div class="arche"><img src="img/tonte.jpg" alt="Tonte d'une grande pelouse aux bandes régulières" width="896" height="1061"></div>
+      <div class="rond"><img src="img/prairie-fleurie.jpg" alt="Prairie fleurie" width="1236" height="554"></div>
+      <div class="sceau"><b>4,6 / 5</b>sur Google</div>
+    </div>
+  </div>
+</section>
+
+<div class="bandeau">
+  <div class="cadre">
+    <div class="fait"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><b>Savigné-l'Évêque</b><span>et les communes autour</span></div></div>
+    <div class="fait"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><div><b>4,6 sur 5</b><span>note de nos clients sur Google</span></div></div>
+    <div class="fait"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg><div><b>Toute l'année</b><span>tonte, taille, remise en état</span></div></div>
+  </div>
+</div>
+
+<section class="bloc" id="services">
+  <div class="cadre">
+    <div class="tete">
+      <span class="etiquette">Nos services</span>
+      <h2>Tout ce qu'il faut pour un extérieur propre et agréable</h2>
+      <p>Un seul interlocuteur pour entretenir, tailler, remettre en état ou aménager vos extérieurs.</p>
+    </div>
+    <div class="grille-services">
+      <article class="service">
+        <div class="vignette"><img src="img/tonte.jpg" alt="Tonte d'une pelouse" loading="lazy"></div>
+        <div class="corps">
+          <div class="titre-ligne"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V10M12 10c0-4 3-7 7-7 0 4-3 7-7 7zM12 14c0-3-2.5-5.500-6-5.500 0 3 2.500 5.500 6 5.500z"/></svg></span><h3>Entretien de jardins</h3></div>
+          <p>Tonte, débroussaillage et entretien régulier de vos pelouses et espaces verts, pour un résultat net toute l'année.</p>
+        </div>
+      </article>
+      <article class="service">
+        <div class="vignette"><img src="img/haie-1.jpg" alt="Haie taillée au cordeau" loading="lazy"></div>
+        <div class="corps">
+          <div class="titre-ligne"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V9h16v11M2 20h20M8 9V5M12 9V3M16 9V5"/></svg></span><h3>Taille de haies</h3></div>
+          <p>Taille de haies de toutes hauteurs, lignes bien droites et évacuation des déchets de coupe.</p>
+        </div>
+      </article>
+      <article class="service">
+        <div class="vignette"><img src="img/tracteur.jpg" alt="Tracteur équipé d'un broyeur pour débroussailler" loading="lazy"></div>
+        <div class="corps">
+          <div class="titre-ligne"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="17" r="4"/><circle cx="19" cy="18" r="2.500"/><path d="M7 13V7h8l2 6h2M3 13h12"/></svg></span><h3>Défrichage et broyage</h3></div>
+          <p>Débroussaillage et broyage au tracteur pour les terrains, talus, fossés et haies envahis.</p>
+        </div>
+      </article>
+      <article class="service">
+        <div class="vignette"><img src="img/terrain-apres.jpg" alt="Terrain nivelé prêt pour un aménagement" loading="lazy"></div>
+        <div class="corps">
+          <div class="titre-ligne"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18c4-6 7-6 9-3s5 2 9-4M3 21h18"/></svg></span><h3>Remise en état de terrains</h3></div>
+          <p>Nettoyage, abattage de ronces et d'arbustes, nivellement : votre terrain est prêt à être utilisé ou construit.</p>
+        </div>
+      </article>
+      <article class="service">
+        <div class="vignette"><img src="img/terrasse-dalles.jpg" alt="Terrasse en dalles devant une maison" loading="lazy"></div>
+        <div class="corps">
+          <div class="titre-ligne"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg></span><h3>Allées et terrasses</h3></div>
+          <p>Allées pavées, terrasses en dalles et finitions en gravier pour un extérieur aménagé et facile à vivre.</p>
+        </div>
+      </article>
+      <article class="service">
+        <div class="vignette"><img src="img/prairie-fleurie.jpg" alt="Prairie fleurie en été" loading="lazy"></div>
+        <div class="corps">
+          <div class="titre-ligne"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="3"/><path d="M12 6V3M12 12v9M9 9H6M18 9h-3M9.900 6.900 7.800 4.800M16.200 4.800l-2.100 2.100M12 15c-3 0-5 2-5 5M12 15c3 0 5 2 5 5"/></svg></span><h3>Clôtures et prairies fleuries</h3></div>
+          <p>Pose de clôtures et création de prairies fleuries pour un jardin vivant, qui demande peu d'entretien.</p>
+        </div>
+      </article>
+    </div>
+    <div class="credit">
+      <span class="gros">50 %</span>
+      <p>Particuliers : l'entretien de votre jardin peut ouvrir droit à une réduction ou un crédit d'impôt de 50 %, dans les conditions prévues par la loi.<small>Demandez conseil lors du devis.</small></p>
+    </div>
+  </div>
+</section>
+
+<section class="bloc realisations" id="realisations">
+  <div class="cadre">
+    <div class="tete-flex">
+      <div class="tete">
+        <span class="etiquette">Réalisations</span>
+        <h2>Quelques chantiers récents</h2>
+        <p>Des photos de vrais chantiers, prises sur le terrain.</p>
+      </div>
+      <div class="commandes">
+        <button id="prec" aria-label="Photo précédente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+        <span id="compteur" aria-live="polite">1 / 1</span>
+        <button id="suiv" aria-label="Photo suivante"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="piste" id="piste" tabindex="0" role="region" aria-label="Photos de réalisations">
+      <figure class="carte"><img src="img/haie-1.jpg" alt="Haie haute taillée" loading="lazy"><p>Taille d'une haie haute</p></figure>
+      <figure class="carte"><img src="img/terrain-avant.jpg" alt="Terrain avec bâtiments et bûches avant remise en état" loading="lazy"><p>Terrain après nettoyage et abattage</p></figure>
+      <figure class="carte"><img src="img/terrain-apres.jpg" alt="Terrain nivelé devant une maison" loading="lazy"><p>Terrain nivelé, prêt à aménager</p></figure>
+      <figure class="carte"><img src="img/allee-pave.jpg" alt="Allée pavée devant un portail" loading="lazy"><p>Allée pavée</p></figure>
+      <figure class="carte"><img src="img/haie-laurier.jpg" alt="Haie persistante taillée" loading="lazy"><p>Haie persistante taillée</p></figure>
+      <figure class="carte"><img src="img/terrasse-camion.jpg" alt="Terrasse en dalles nettoyée" loading="lazy"><p>Terrasse en dalles</p></figure>
+      <figure class="carte"><img src="img/tracteur.jpg" alt="Tracteur avec broyeur d'accotement" loading="lazy"><p>Broyage au tracteur</p></figure>
+      <figure class="carte"><img src="img/cloture.jpg" alt="Clôture grillagée le long d'un chemin" loading="lazy"><p>Pose de clôture</p></figure>
+      <figure class="carte"><img src="img/haie-2.jpg" alt="Longue haie taillée" loading="lazy"><p>Longue haie bien droite</p></figure>
+      <figure class="carte"><img src="img/jardin-remise-en-etat.jpg" alt="Jardin dégagé avec arbustes" loading="lazy"><p>Jardin dégagé et remis en état</p></figure>
+      <figure class="carte"><img src="img/terrasse-dalles.jpg" alt="Terrasse de dalles et gravier" loading="lazy"><p>Terrasse et gravier</p></figure>
+      <figure class="carte"><img src="img/haie-laurier-2.jpg" alt="Haie de lauriers taillée" loading="lazy"><p>Haie taillée au cordeau</p></figure>
+      <figure class="carte"><img src="img/fleurs.jpg" alt="Prairie fleurie" loading="lazy"><p>Prairie fleurie</p></figure>
+      <figure class="carte"><img src="img/prairie-fleurie.jpg" alt="Champ de fleurs bleues" loading="lazy"><p>Fleurs des champs</p></figure>
+    </div>
+  </div>
+</section>
+
+<section class="bloc" id="deroulement">
+  <div class="cadre">
+    <div class="tete">
+      <span class="etiquette">Déroulement</span>
+      <h2>Simple, du premier appel au chantier terminé</h2>
+    </div>
+    <div class="etapes">
+      <article class="etape"><h3><span class="n">1.</span> Vous appelez</h3><p>Expliquez-nous votre besoin : entretien, haies, terrain à remettre en état. Nous nous organisons avec vous.</p></article>
+      <article class="etape"><h3><span class="n">2.</span> Visite et devis</h3><p>Nous venons voir sur place, vous donnons un prix clair et nous fixons une date qui vous convient.</p></article>
+      <article class="etape"><h3><span class="n">3.</span> Le chantier</h3><p>Le travail est réalisé avec du matériel adapté, le site est laissé propre et les déchets sont évacués.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="bloc avis-bloc" id="avis">
+  <div class="cadre">
+    <div class="tete">
+      <span class="etiquette">Avis clients</span>
+      <h2>Ce que disent nos clients</h2>
+    </div>
+    <div class="note-google">
+      <span id="gros-note" data-v="4.6">4,6</span>
+      <div><span class="etoiles" aria-hidden="true">★★★★★</span><small>Note moyenne sur 5 · 10 avis Google</small></div>
+    </div>
+    <div class="colonnes">
+<article class="avis-carte"><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span><p>« Travail méticuleux et soigné. Je recommande M. Guitton chaleureusement, tant pour son professionnalisme que pour ses conseils et sa discrétion. Je referai appel à ses services à chaque fois que mon jardin en aura besoin ! Merci. »</p><footer>Dominique M. · Mars 2026</footer></article>
+<article class="avis-carte"><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span><p>« Travail sérieux, rapide et efficace pour un résultat superbe. Je recommande sans hésiter ! »</p><footer>Emmanuel G. · Février 2026</footer></article>
+<article class="avis-carte"><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span><p>« Société sérieuse. La taille de la haie est très bien faite. Débroussaillage et finition impeccable. De très bon conseils. Nous sommes satisfait et recommandons Pierre. »</p><footer>petite ce · Avril 2025</footer></article>
+<article class="avis-carte"><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span><p>« Travaux réalisés avec soin et professionnalisme, Pierre a été de bons conseils. Je ne manquerai pas de refaire appel à ses services. »</p><footer>Charly B. · Juin 2025</footer></article>
+<article class="avis-carte"><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span><p>« 2 eme fois que je fais appel à Pierre, très professionnel, au top, arrangeant , je recommande Pierre pour tous vos travaux dans votre jardin. »</p><footer>Virginie V. · Juillet 2025</footer></article>
+<article class="avis-carte"><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span><p>« Travaux efficaces et propres pour le nettoyage complet d'un terrain (nivellement, taille de haie, débroussaillage, évacuation…) Très satisfait du résultat. »</p><footer>Mathieu G. · Avril 2025</footer></article>
+<article class="avis-carte"><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span><p>« Travail soigné pas de surprise sur la facturation devis effectué et respecté je recommande fortement 👌🏻 »</p><footer>Sonia V. · Avril 2025</footer></article>
+<article class="avis-carte"><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span><p>« Travaux réalisés avec sérieux je recommande »</p><footer>Fabien P. · Mai 2025</footer></article>
+    </div>
+  </div>
+</section>
+
+<section class="bloc" id="contact" style="background:var(--papier);border-top:1px solid var(--ligne)">
+  <div class="cadre">
+    <div class="tete">
+      <span class="etiquette">Contact</span>
+      <h2>Parlons de votre jardin</h2>
+      <p>Un appel suffit. Vous pouvez aussi nous écrire, nous vous répondons dès que possible.</p>
+    </div>
+    <div class="contact-grille">
+      <div class="infos">
+        <div class="info"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span><div><b>Téléphone</b><a href="tel:+33788556717">07 88 55 67 17</a></div></div>
+        <div class="info"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><div><b>E-mail</b><a href="mailto:guittonpierre@orange.fr" style="font-size:1.05rem">guittonpierre@orange.fr</a></div></div>
+        <div class="info"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><b>Adresse</b>25 bis rue de la Division Leclerc<br>72460 Savigné-l'Évêque<br><span style="color:var(--gris);font-size:.95rem">Nous nous déplaçons chez vous, à Savigné-l'Évêque et aux alentours.</span></div></div>
+        <div class="info"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><b>Horaires d'ouverture</b><table id="tab-horaires"><tr data-j="1,2,3,4,5"><td>Lundi au vendredi</td><td>8h - 19h30</td></tr><tr data-j="6"><td>Samedi</td><td>8h - 12h</td></tr><tr data-j="0"><td>Dimanche</td><td>Fermé</td></tr></table><span id="etat"></span></div></div>
+        <div class="reseaux">
+          <b>Retrouvez-nous</b>
+          <div class="pilules">
+            <a class="pilule" href="https://www.facebook.com/profile.php?id=61570847422100" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.500 22v-8.200h2.800l.5-3.300h-3.300V8.400c0-.9.400-1.700 1.800-1.700h1.600V3.900c-.3 0-1.300-.2-2.500-.2-2.500 0-4.200 1.500-4.200 4.300v2.500H7.400v3.300h2.800V22z"/></svg>Facebook</a>
+            <a class="pilule" href="https://www.instagram.com/pierre_au_jardin/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.500" cy="6.500" r="1" fill="currentColor"/></svg>Instagram</a>
+            <a class="pilule" href="https://www.google.com/maps/search/?api=1&query=Pierre%20au%20Jardin%2025%20bis%20rue%20de%20la%20Division%20Leclerc%20Savign%C3%A9-l%27%C3%89v%C3%AAque%20Sarthe" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.200c0-.6 0-1.200-.2-1.800H12v3.500h5.100a4.400 4.400 0 0 1-1.900 2.900v2.400h3.100c1.800-1.700 2.700-4.100 2.700-7z"/><path d="M12 21c2.600 0 4.700-.9 6.300-2.300l-3.100-2.400c-.9.600-1.900.9-3.200.9-2.400 0-4.500-1.600-5.200-3.900H3.600v2.500A9.500 9.500 0 0 0 12 21z"/><path d="M6.800 13.300a5.700 5.700 0 0 1 0-3.600V7.200H3.600a9.500 9.500 0 0 0 0 8.600z"/><path d="M12 6.400c1.400 0 2.700.5 3.700 1.500l2.800-2.800A9.400 9.400 0 0 0 12 2.500 9.500 9.500 0 0 0 3.600 7.200l3.200 2.500C7.500 7.400 9.600 6.400 12 6.400z"/></svg>Fiche Google</a>
+            <a class="pilule" href="https://www.google.com/maps/dir/?api=1&destination=Pierre%20au%20Jardin%2025%20bis%20rue%20de%20la%20Division%20Leclerc%20Savign%C3%A9-l%27%C3%89v%C3%AAque%20Sarthe" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-8-8 18-2-8z"/></svg>Plan d'accès</a>
+          </div>
+        </div>
+      </div>
+      <form class="formulaire" id="formulaire" novalidate>
+        <h3>Demander un devis</h3>
+        <p>Décrivez votre besoin en quelques mots.</p>
+        <div class="champ"><label for="f-nom">Votre nom</label><input id="f-nom" name="nom" autocomplete="name" required></div>
+        <div class="champ"><label for="f-tel">Téléphone</label><input id="f-tel" name="telephone" type="tel" autocomplete="tel"></div>
+        <div class="champ"><label for="f-msg">Votre besoin</label><textarea id="f-msg" name="message" placeholder="Ex. : taille de 40 m de haie, entretien mensuel de la pelouse…"></textarea></div>
+        <button class="btn" type="submit">Envoyer ma demande</button>
+        <div id="merci" hidden>Merci ! Sur votre vrai site, cette demande vous arrivera par e-mail.</div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="pied">
+  <div class="cadre">
+    <a class="marque" href="#accueil"><img src="img/logo.jpg" alt="" width="54" height="54"><span><b>Pierre au Jardin</b><small>Entretien espace vert</small></span></a>
+    <div class="ronds">
+      <a href="https://www.facebook.com/profile.php?id=61570847422100" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.500 22v-8.200h2.800l.5-3.300h-3.300V8.400c0-.9.400-1.700 1.800-1.700h1.600V3.900c-.3 0-1.300-.2-2.500-.2-2.500 0-4.200 1.500-4.200 4.300v2.500H7.400v3.300h2.800V22z"/></svg></a>
+      <a href="https://www.instagram.com/pierre_au_jardin/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.500" cy="6.500" r="1" fill="currentColor"/></svg></a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Pierre%20au%20Jardin%2025%20bis%20rue%20de%20la%20Division%20Leclerc%20Savign%C3%A9-l%27%C3%89v%C3%AAque%20Sarthe" target="_blank" rel="noopener" aria-label="Fiche Google"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.200c0-.6 0-1.200-.2-1.800H12v3.500h5.100a4.400 4.400 0 0 1-1.900 2.900v2.400h3.100c1.800-1.700 2.700-4.100 2.700-7z"/><path d="M12 21c2.600 0 4.700-.9 6.300-2.300l-3.100-2.400c-.9.600-1.900.9-3.200.9-2.400 0-4.500-1.600-5.200-3.900H3.600v2.500A9.500 9.500 0 0 0 12 21z"/><path d="M6.800 13.300a5.700 5.700 0 0 1 0-3.600V7.200H3.600a9.500 9.500 0 0 0 0 8.600z"/><path d="M12 6.400c1.400 0 2.700.5 3.700 1.500l2.800-2.800A9.400 9.400 0 0 0 12 2.500 9.500 9.500 0 0 0 3.600 7.200l3.200 2.500C7.500 7.400 9.600 6.400 12 6.400z"/></svg></a>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Pierre%20au%20Jardin%2025%20bis%20rue%20de%20la%20Division%20Leclerc%20Savign%C3%A9-l%27%C3%89v%C3%AAque%20Sarthe" target="_blank" rel="noopener" aria-label="Plan d'accès"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-8-8 18-2-8z"/></svg></a>
+    </div>
+    <small class="droit">© Pierre au Jardin · 25 bis rue de la Division Leclerc, 72460 Savigné-l'Évêque · 07 88 55 67 17</small>
+  </div>
+</footer>
+
+<div class="visio" id="visio" role="dialog" aria-modal="true" aria-label="Photo agrandie">
+  <button class="ferme" id="vferme" aria-label="Fermer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <button class="vprec" id="vprec" aria-label="Photo précédente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+  <img id="vimg" alt="">
+  <p id="vleg"></p>
+  <button class="vsuiv" id="vsuiv" aria-label="Photo suivante"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+</div>
+
+<div class="barre-appel"><a class="btn" href="tel:+33788556717"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Appeler 07 88 55 67 17</a></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var burger=document.getElementById('burger'),nav=document.getElementById('nav');
+  burger.addEventListener('click',function(){var o=nav.classList.toggle('ouvert');burger.setAttribute('aria-expanded',o)});
+
+  var entete=document.getElementById('entete'),progres=document.getElementById('progres');
+  var liens=[].slice.call(nav.querySelectorAll('a'));
+  var sections=liens.map(function(l){return document.querySelector(l.getAttribute('href'))}).filter(Boolean);
+  function hauteurEntete(){return entete.getBoundingClientRect().height}
+  function majEntete(){
+    entete.classList.toggle('ombre',window.scrollY>10);
+    var total=document.documentElement.scrollHeight-window.innerHeight;
+    progres.style.transform='scaleX('+(total>0?Math.min(1,window.scrollY/total):0)+')';
+    var limite=hauteurEntete()+2,actif=null;
+    var vis=sections.filter(function(s){return s.offsetParent!==null});vis.forEach(function(s){if(s.getBoundingClientRect().top<=limite)actif=s});
+    if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-2)actif=vis[vis.length-1];
+    liens.forEach(function(l){l.classList.toggle('actif',!!actif&&l.getAttribute('href')==='#'+actif.id)});
+  }
+  window.addEventListener('scroll',function(){window.requestAnimationFrame(majEntete)},{passive:true});
+  window.addEventListener('resize',majEntete);majEntete();
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('href');
+      var cible=id==='#'?null:document.querySelector(id);
+      if(id!=='#'&&!cible)return;
+      e.preventDefault();
+      nav.classList.remove('ouvert');burger.setAttribute('aria-expanded','false');
+      var haut=cible&&cible.id!=='accueil'?cible.getBoundingClientRect().top+window.scrollY-hauteurEntete():0;
+      var doux=!window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({top:Math.max(0,Math.round(haut)),behavior:doux?'smooth':'auto'});
+    });
+  });
+
+  /* Réalisations : boutons seulement, compteur = positions atteignables */
+  var piste=document.getElementById('piste'),cartes=piste.querySelectorAll('.carte'),prec=document.getElementById('prec'),suiv=document.getElementById('suiv'),compteur=document.getElementById('compteur');
+  function pas(){return cartes[1].offsetLeft-cartes[0].offsetLeft}
+  function maj(){var der=cartes[cartes.length-1];var max=Math.max(0,der.offsetLeft+der.offsetWidth-cartes[0].offsetLeft-piste.clientWidth);var total=Math.round(max/pas())+1;var i=piste.scrollLeft>=max-4?total:Math.min(Math.round(piste.scrollLeft/pas())+1,total);compteur.textContent=i+' / '+total;prec.disabled=i<=1;suiv.disabled=i>=total}
+  prec.addEventListener('click',function(){piste.scrollBy({left:-pas(),behavior:'smooth'})});
+  suiv.addEventListener('click',function(){piste.scrollBy({left:pas(),behavior:'smooth'})});
+  piste.addEventListener('scroll',function(){window.requestAnimationFrame(maj)},{passive:true});
+  piste.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();suiv.click()}if(e.key==='ArrowLeft'){e.preventDefault();prec.click()}});
+  window.addEventListener('resize',maj);window.addEventListener('load',maj);if(document.fonts)document.fonts.ready.then(maj);maj();
+
+  /* Visionneuse : clic sur une photo, flèches, clavier, balayage */
+  var visio=document.getElementById('visio'),vimg=document.getElementById('vimg'),vleg=document.getElementById('vleg'),vi=0,dernier=null;
+  var liste=[].slice.call(cartes);
+  function montre(i){vi=(i+liste.length)%liste.length;var f=liste[vi],im=f.querySelector('img');vimg.src=im.currentSrc||im.src;vimg.alt=im.alt;vleg.innerHTML=f.querySelector('p').textContent+'<small>'+(vi+1)+' / '+liste.length+'</small>'}
+  function ouvre(i){dernier=document.activeElement;montre(i);visio.classList.add('ouvert');document.body.style.overflow='hidden';document.getElementById('vferme').focus()}
+  function ferme(){visio.classList.remove('ouvert');document.body.style.overflow='';if(dernier)dernier.focus()}
+  liste.forEach(function(f,i){f.setAttribute('tabindex','0');f.setAttribute('role','button');f.setAttribute('aria-label','Agrandir : '+f.querySelector('p').textContent);
+    f.addEventListener('click',function(){ouvre(i)});
+    f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();ouvre(i)}})});
+  document.getElementById('vferme').addEventListener('click',ferme);
+  document.getElementById('vprec').addEventListener('click',function(){montre(vi-1)});
+  document.getElementById('vsuiv').addEventListener('click',function(){montre(vi+1)});
+  visio.addEventListener('click',function(e){if(e.target===visio)ferme()});
+  document.addEventListener('keydown',function(e){if(!visio.classList.contains('ouvert'))return;if(e.key==='Escape')ferme();if(e.key==='ArrowLeft')montre(vi-1);if(e.key==='ArrowRight')montre(vi+1)});
+  var tx=null;
+  visio.addEventListener('touchstart',function(e){tx=e.touches[0].clientX},{passive:true});
+  visio.addEventListener('touchend',function(e){if(tx===null)return;var d=e.changedTouches[0].clientX-tx;tx=null;if(Math.abs(d)>50)montre(vi+(d<0?1:-1))},{passive:true});
+
+  /* Horaires : jour en cours et état ouvert / fermé (heure de Paris) */
+  try{
+    var p=new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date());
+    var jours={'dim.':0,'lun.':1,'mar.':2,'mer.':3,'jeu.':4,'ven.':5,'sam.':6};
+    var wd=jours[p.filter(function(x){return x.type==='weekday'})[0].value.toLowerCase()];
+    var h=+p.filter(function(x){return x.type==='hour'})[0].value+(+p.filter(function(x){return x.type==='minute'})[0].value)/60;
+    document.querySelectorAll('#tab-horaires tr').forEach(function(tr){tr.classList.toggle('auj',tr.getAttribute('data-j').split(',').indexOf(String(wd))>-1)});
+    var fin=wd>=1&&wd<=5?19.5:(wd===6?12:0),ouvert=fin>0&&h>=8&&h<fin;
+    var etat=document.getElementById('etat');
+    etat.textContent=ouvert?'Ouvert maintenant, jusqu\'à '+(fin===12?'12h':'19h30'):'Fermé actuellement';
+    etat.classList.add(ouvert?'ouvert':'ferme');
+  }catch(e){}
+
+  document.getElementById('formulaire').addEventListener('submit',function(e){e.preventDefault();document.getElementById('merci').hidden=false});
+
+  if(!window.gsap)return;
+  gsap.registerPlugin(ScrollTrigger);
+  var mm=gsap.matchMedia();
+  mm.add('(prefers-reduced-motion: no-preference)',function(){
+    gsap.from('.heros .etiquette, .heros h1, .heros .sous, .heros .actions, .heros .points',{y:22,opacity:0,duration:.9,ease:'power3.out',stagger:.12,delay:.1});
+    gsap.fromTo('.arche',{clipPath:'inset(0 0 100% 0)'},{clipPath:'inset(0 0 0% 0)',duration:1.2,ease:'power3.inOut',delay:.2});
+    gsap.fromTo('.arche img',{scale:1.18},{scale:1,duration:1.8,ease:'power2.out',delay:.2});
+    gsap.from('.rond',{scale:.6,opacity:0,duration:.8,ease:'back.out(1.6)',delay:1});
+    gsap.from('.sceau',{opacity:0,duration:.8,delay:1.2});
+    gsap.to('.arche img',{yPercent:6,ease:'none',scrollTrigger:{trigger:'.heros',start:'top top',end:'bottom top',scrub:true}});
+    document.querySelectorAll('.tete h2, .tete .etiquette').forEach(function(h){
+      gsap.from(h,{y:26,opacity:0,duration:.9,ease:'power3.out',scrollTrigger:{trigger:h,start:'top 90%',once:true}});
+    });
+    ['.fait','.service','.etape','.avis-carte','.credit'].forEach(function(s){
+      ScrollTrigger.batch(s,{start:'top 92%',once:true,onEnter:function(b){gsap.fromTo(b,{opacity:0},{opacity:1,duration:.7,ease:'power1.out',clearProps:'opacity'})}});
+    });
+    gsap.fromTo('.carte',{opacity:0},{opacity:1,duration:.8,ease:'power1.out',clearProps:'opacity',scrollTrigger:{trigger:'#piste',start:'top 88%',once:true}});
+    var gros=document.getElementById('gros-note');
+    if(gros){var compte={v:0};gsap.to(compte,{v:parseFloat(gros.getAttribute('data-v')),duration:1.2,ease:'power2.out',scrollTrigger:{trigger:gros,start:'top 90%',once:true},onUpdate:function(){gros.textContent=compte.v.toFixed(1).replace('.',',')}})}
+  });
+  window.addEventListener('load',function(){ScrollTrigger.refresh()});
+})();
+</script>
+</body>
+</html>
