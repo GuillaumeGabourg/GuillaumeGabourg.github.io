@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>M.R.ELEC Dépannages – Électricien et plombier au Mans</title>
+<meta name="description" content="M.R.ELEC Dépannages : électricité générale et plomberie sanitaire. Dépannage, rénovation, remplacement de tableau, salle de bain, cuisine.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--noir:#12171a;--teal:#118a90;--teal-d:#0a5d63;--teal-l:#e2f3f2;--teal-m:#bfe3e2;--jaune:#ffc400;--jaune-d:#e0a900;--fond:#fbfdfd;--gris:#4f5f66;--bord:#d3e4e3;--blanc:#fff;--h:72px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto}
+body{font-family:'Source Sans 3',system-ui,sans-serif;color:var(--noir);background:var(--fond);line-height:1.6;font-size:18px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:'Oswald',sans-serif;line-height:1.12;font-weight:600;letter-spacing:.2px}
+.cadre{width:min(1160px,100% - 40px);margin:0 auto}
+section{padding:90px 0}
+.sr{position:absolute;left:-9999px}
+
+/* En-tête */
+.entete{position:sticky;top:0;z-index:60;height:var(--h);background:rgba(255,255,255,.97);backdrop-filter:blur(6px);border-bottom:1px solid var(--bord)}
+.entete.ombre{box-shadow:0 6px 22px rgba(18,23,26,.12)}
+.entete .cadre{height:100%;display:flex;align-items:center;gap:20px}
+.marque{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto}
+.marque svg{width:46px;height:42px;flex:none}
+.marque b{font-family:'Oswald',sans-serif;font-size:1.5rem;letter-spacing:.8px;line-height:1;white-space:nowrap}
+.marque b small{display:block;font-size:.72rem;font-weight:500;letter-spacing:2.2px;color:var(--teal-d);margin-top:3px}
+.nav{display:flex;gap:4px}
+.nav a{text-decoration:none;font-weight:700;padding:8px 14px;border-radius:8px;position:relative}
+.nav a.actif{color:var(--teal-d)}
+.nav a.actif::after{content:"";position:absolute;left:14px;right:14px;bottom:1px;height:3px;border-radius:2px;background:var(--jaune)}
+.appel{display:inline-flex;align-items:center;gap:9px;background:var(--noir);color:#fff;font-weight:700;text-decoration:none;padding:11px 20px;border-radius:999px;white-space:nowrap}
+.appel:hover{background:var(--teal-d)}
+.appel svg{width:18px;height:18px;color:var(--jaune)}
+.burger{display:none;background:none;border:2px solid var(--noir);border-radius:10px;width:44px;height:44px;cursor:pointer;color:var(--noir);place-items:center}
+.burger svg{width:22px;height:22px}
+.progres{position:absolute;left:0;bottom:-1px;height:3px;width:100%;background:linear-gradient(90deg,var(--teal),var(--jaune));transform:scaleX(0);transform-origin:left}
+
+/* Héros */
+.heros{background:var(--teal-l);padding:70px 0 90px;position:relative;overflow:hidden}
+.heros .circuit{position:absolute;inset:0;width:100%;height:100%;opacity:.55;pointer-events:none}
+.heros .cadre{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:center}
+.etiquette{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:.92rem;letter-spacing:1.3px;text-transform:uppercase;color:var(--noir);background:var(--jaune);padding:6px 14px;border-radius:6px;margin-bottom:22px}
+.heros h1{font-size:clamp(2.4rem,5vw,4rem);margin-bottom:20px}
+.heros h1 em{font-style:normal;color:var(--teal-d);box-shadow:inset 0 -.22em 0 var(--jaune)}
+.sous{font-size:1.18rem;color:var(--gris);max-width:560px;margin-bottom:28px}
+.actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:24px}
+.bouton{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;padding:15px 26px;border-radius:999px;border:2px solid var(--noir);font-size:1.05rem}
+.bouton.plein{background:var(--noir);color:#fff}
+.bouton.plein:hover{background:var(--teal-d);border-color:var(--teal-d)}
+.bouton.plein svg{color:var(--jaune)}
+.bouton.vide{color:var(--noir)}
+.bouton.vide:hover{background:var(--noir);color:#fff}
+.bouton svg{width:20px;height:20px}
+.points{display:flex;flex-wrap:wrap;gap:8px 22px;color:var(--gris);font-size:1rem;font-weight:600}
+.points span::before{content:"✓ ";color:var(--teal);font-weight:700}
+.portrait{position:relative;justify-self:center;width:min(430px,100%)}
+.portrait::before{content:"";position:absolute;right:-16px;bottom:-16px;width:62%;height:62%;border-right:8px solid var(--jaune);border-bottom:8px solid var(--jaune);border-radius:0 0 26px 0}
+.portrait img{position:relative;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:26px;box-shadow:0 22px 60px rgba(10,93,99,.25);border:6px solid #fff}
+.badge{position:absolute;left:-14px;top:22px;background:#fff;border-radius:14px;padding:10px 16px;box-shadow:0 10px 30px rgba(18,23,26,.18);display:flex;align-items:center;gap:10px;font-weight:700;z-index:2}
+.badge b{font-family:'Oswald',sans-serif;font-size:1.9rem;line-height:1}
+.badge .e{color:#f5b301;letter-spacing:2px;font-size:1rem}
+.badge small{display:block;font-size:.8rem;color:var(--gris);font-weight:600}
+
+/* Titres de section */
+.tete{max-width:720px;margin-bottom:44px}
+.traits{display:flex;gap:6px;margin-bottom:16px}
+.traits i{display:block;height:5px;border-radius:3px}
+.traits i:nth-child(1){width:48px;background:var(--jaune)}
+.traits i:nth-child(2){width:24px;background:var(--teal)}
+.traits i:nth-child(3){width:10px;background:var(--teal-m)}
+.tete h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:12px}
+.tete p{color:var(--gris);font-size:1.1rem}
+
+/* Services */
+.services{background:var(--blanc)}
+.grille{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.service{background:var(--teal-l);border:1px solid var(--bord);border-radius:16px;padding:26px;display:grid;grid-template-columns:48px 1fr;column-gap:14px;align-items:center;align-content:start;position:relative;overflow:hidden}
+.service::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--jaune)}
+.service .pic{width:48px;height:48px;border-radius:12px;background:var(--noir);color:var(--jaune);display:grid;place-items:center}
+.service .pic svg{width:28px;height:28px}
+.service h3{font-size:1.45rem}
+.service p{grid-column:1/-1;margin-top:12px;color:var(--gris);font-size:1rem}
+
+/* Réalisations */
+.realisations{background:var(--noir);color:#fff}
+.realisations .tete p{color:#b9c9cc}
+.traits.clair i:nth-child(3){background:#35575a}
+.galerie{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.vignette{position:relative;border:0;padding:0;background:#000;border-radius:14px;overflow:hidden;cursor:pointer;aspect-ratio:4/5;display:block;width:100%;color:#fff;text-align:left}
+.vignette img{width:100%;height:100%;object-fit:cover}
+.vignette span{position:absolute;left:0;right:0;bottom:0;padding:34px 14px 12px;font-weight:700;font-size:.98rem;background:linear-gradient(transparent,rgba(0,0,0,.78))}
+.vignette:focus-visible{outline:3px solid var(--jaune)}
+.visio{position:fixed;inset:0;z-index:100;background:rgba(10,14,16,.94);display:none;align-items:center;justify-content:center;padding:20px}
+.visio.ouvert{display:flex}
+.visio figure{max-width:min(920px,100%);max-height:100%;display:flex;flex-direction:column;align-items:center;gap:12px}
+.visio img{max-height:calc(100vh - 150px);max-width:100%;width:auto;border-radius:12px}
+.visio figcaption{color:#fff;font-weight:600;text-align:center}
+.visio figcaption small{display:block;color:#9fb4b7;font-weight:400}
+.visio button{position:absolute;background:rgba(255,255,255,.14);border:0;color:#fff;width:50px;height:50px;border-radius:50%;cursor:pointer;display:grid;place-items:center}
+.visio button:hover{background:var(--jaune);color:var(--noir)}
+.visio button:disabled{opacity:.3;pointer-events:none}
+.visio svg{width:24px;height:24px}
+.visio .fermer{top:16px;right:16px}
+.visio .prec{left:14px;top:50%;margin-top:-25px}
+.visio .suiv{right:14px;top:50%;margin-top:-25px}
+
+/* Déroulement */
+.methode{background:var(--teal-l)}
+.etapes{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.etape{background:#fff;border:1px solid var(--bord);border-radius:16px;padding:26px 24px;border-top:6px solid var(--jaune)}
+.etape h3{font-size:1.5rem;margin-bottom:8px}
+.etape h3 b{color:var(--teal-d);margin-right:6px}
+.etape p{color:var(--gris);font-size:1rem}
+
+/* Avis */
+.avis{background:var(--blanc)}
+.bloc-note{display:flex;flex-wrap:wrap;align-items:center;gap:24px;background:var(--teal-l);border:1px solid var(--bord);border-radius:18px;padding:26px 30px;margin-bottom:28px}
+.bloc-note .gros{font-family:'Oswald',sans-serif;font-size:4.2rem;line-height:1;font-weight:600}
+.bloc-note .gros small{font-size:1.5rem;color:var(--gris)}
+.etoiles{color:#f5b301;font-size:1.4rem;letter-spacing:3px}
+.bloc-note p{color:var(--gris)}
+.bloc-note .btn-g{margin-left:auto}
+.btn-g{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;border:2px solid var(--noir);padding:12px 20px;border-radius:999px}
+.btn-g:hover{background:var(--noir);color:#fff}
+.btn-g svg{width:20px;height:20px}
+.mur{column-count:3;column-gap:20px}
+.carte-avis{break-inside:avoid;margin-bottom:20px;background:var(--fond);border:1px solid var(--bord);border-radius:16px;padding:22px}
+.carte-avis .etoiles{font-size:1.1rem;margin-bottom:8px}
+.carte-avis p{font-size:1rem;color:#2c3a40}
+.carte-avis footer{margin-top:12px;font-weight:700;font-size:.95rem}
+.carte-avis footer small{display:block;font-weight:400;color:var(--gris)}
+
+/* Contact */
+.contact{background:var(--noir);color:#fff}
+.contact .cadre{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.contact h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:14px}
+.contact .intro{color:#b9c9cc;margin-bottom:24px}
+.tel-gros{display:inline-flex;align-items:center;gap:14px;font-family:'Oswald',sans-serif;font-size:clamp(1.9rem,4vw,2.7rem);font-weight:600;text-decoration:none;color:var(--jaune);margin-bottom:6px}
+.tel-gros svg{width:32px;height:32px}
+.infos{list-style:none;display:grid;gap:12px;margin:18px 0 22px}
+.infos li{display:flex;gap:12px;align-items:flex-start}
+.infos svg{flex:0 0 22px;width:22px;height:22px;color:var(--jaune);margin-top:4px}
+.horaires{margin:8px 0 24px;border:1px solid #2f4448;border-radius:14px;padding:16px 20px}
+.horaires h3{font-size:1.2rem;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.horaires h3 svg{width:20px;height:20px;color:var(--jaune)}
+.horaires dl{display:grid;grid-template-columns:auto 1fr;gap:4px 24px}
+.horaires dt{font-weight:600}
+.horaires dd{color:#d6e2e4}
+.reseau-titre{font-weight:700;margin-bottom:10px}
+.reseau{display:flex;flex-wrap:wrap;gap:10px}
+.reseau a{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:.97rem;border:2px solid #3d5559;border-radius:999px;padding:9px 16px}
+.reseau a:hover{border-color:var(--jaune);color:var(--jaune)}
+.reseau svg{width:20px;height:20px}
+.formulaire{background:#fff;color:var(--noir);border-radius:20px;padding:30px}
+.formulaire h3{font-size:1.6rem;margin-bottom:16px}
+.formulaire label{display:block;font-weight:700;font-size:.95rem;margin-bottom:6px}
+.formulaire input,.formulaire textarea{width:100%;font:inherit;padding:12px 14px;border:2px solid var(--bord);border-radius:10px;margin-bottom:16px;background:var(--fond)}
+.formulaire input:focus,.formulaire textarea:focus{outline:none;border-color:var(--teal)}
+.formulaire textarea{min-height:120px;resize:vertical}
+.formulaire button{width:100%;background:var(--noir);color:#fff;font:inherit;font-weight:700;border:0;border-radius:999px;padding:15px 20px;cursor:pointer}
+.formulaire button:hover{background:var(--teal-d)}
+#merci{margin-top:16px;background:var(--teal-l);border-radius:10px;padding:12px 14px;font-weight:600}
+
+/* Pied de page */
+.pied{background:#0b0f11;color:#b9c9cc;padding:30px 0 40px;font-size:.95rem}
+.pied .cadre{display:flex;flex-wrap:wrap;align-items:center;gap:18px 30px}
+.pied .marque{margin-right:0;color:#fff}
+.pied .marque b small{color:var(--teal-m)}
+.pied p{margin-right:auto}
+.pied .ronds{display:flex;gap:10px}
+.pied .ronds a{width:42px;height:42px;border-radius:50%;border:2px solid #3d5559;display:grid;place-items:center;color:#fff}
+.pied .ronds a:hover{border-color:var(--jaune);color:var(--jaune)}
+.pied .ronds svg{width:20px;height:20px}
+
+/* Apparitions : fondu seul pour les cartes */
+.js .fx{opacity:0;transition:opacity .7s ease}
+.js .fx.vu{opacity:1}
+.js .mv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.js .mv.vu{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .fx,.js .mv{opacity:1;transform:none;transition:none}}
+
+/* Tablette et téléphone */
+@media (max-width:980px){
+  section{padding:70px 0}
+  .heros .cadre,.contact .cadre{grid-template-columns:1fr}
+  .heros{padding:50px 0 70px}
+  .portrait{max-width:380px}
+  .grille{grid-template-columns:repeat(2,1fr)}
+  .etapes{grid-template-columns:repeat(2,1fr)}
+  .galerie{grid-template-columns:repeat(3,1fr)}
+  .mur{column-count:2}
+  .burger{display:grid}
+  .nav{display:none;position:absolute;top:var(--h);left:0;right:0;background:#fff;border-bottom:1px solid var(--bord);flex-direction:column;padding:10px 20px 16px;box-shadow:0 14px 24px rgba(18,23,26,.12)}
+  .nav.ouvert{display:flex}
+  .nav a{padding:12px 6px;font-size:1.1rem}
+  .nav a.actif::after{left:6px;right:auto;width:46px}
+}
+@media (max-width:620px){
+  body{font-size:17px}
+  .grille,.etapes{grid-template-columns:1fr}
+  .galerie{grid-template-columns:repeat(2,1fr);gap:10px}
+  .mur{column-count:1}
+  .appel span{display:none}
+  .appel{padding:0;width:44px;height:44px;justify-content:center}
+  .marque b{font-size:1.25rem}
+  .marque svg{width:40px;height:37px}
+  .bloc-note .btn-g{margin-left:0}
+  .badge{left:6px;top:10px}
+  .portrait::before{right:-8px;bottom:-8px}
+  .formulaire{padding:22px}
+  .horaires dl{grid-template-columns:1fr;gap:0}
+  .horaires dd{margin-bottom:8px}
+  .visio .prec{left:6px}.visio .suiv{right:6px}
+  .bouton{width:100%;justify-content:center}
+}
+</style>
+<script>document.documentElement.className='js'</script>
+</head>
+<body>
+
+<header class="entete" id="haut">
+  <div class="cadre">
+    <a class="marque" href="#haut" aria-label="M.R.ELEC Dépannages, accueil">
+      <svg viewBox="0 0 64 58" aria-hidden="true"><path d="M32 4 60 53H4Z" fill="#ffc400" stroke="#12171a" stroke-width="5" stroke-linejoin="round"/><path d="M35 17 24 33h8l-4 13 13-18h-8Z" fill="#12171a"/></svg>
+      <b>M.R.ELEC<small>DÉPANNAGES</small></b>
+    </a>
+    <nav class="nav" id="nav" aria-label="Menu principal">
+      <a href="#services">Services</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#avis">Avis</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="appel" href="tel:+33670881882" aria-label="Appeler le 06 70 88 18 82"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1Z"/></svg><span>Appeler</span></a>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+  <div class="progres" id="progres"></div>
+</header>
+
+<main>
+<section class="heros" id="accueil">
+  <svg class="circuit" aria-hidden="true" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1200 600"><g fill="none" stroke="#9fd3d1" stroke-width="2"><path d="M0 120h260l30 30h210"/><path d="M0 470h180l40-40h300"/><path d="M700 40h200l30 30h270"/><path d="M820 560h140l40-40h200"/><path d="M500 150v-70h90"/></g><g fill="#9fd3d1"><circle cx="500" cy="150" r="6"/><circle cx="520" cy="430" r="6"/><circle cx="930" cy="70" r="6"/><circle cx="1000" cy="520" r="6"/></g></svg>
+  <div class="cadre">
+    <div>
+      <div class="etiquette mv">Électricité générale · Plomberie sanitaire</div>
+      <h1 class="mv">Électricité et plomberie&nbsp;: un seul artisan pour <em>dépanner et rénover</em> chez vous</h1>
+      <p class="sous mv">Dépannage, remplacement de tableau, mise en conformité, salle de bain, cuisine, WC. M.R.ELEC Dépannages intervient au Mans et en Sarthe.</p>
+      <div class="actions">
+        <a class="bouton plein" href="tel:+33670881882"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1Z"/></svg>06 70 88 18 82</a>
+        <a class="bouton vide" href="#realisations">Voir les réalisations</a>
+      </div>
+      <div class="points"><span>5,0 sur Google (23 avis)</span><span>Électricité + plomberie</span><span>Dépannage et rénovation</span></div>
+    </div>
+    <div class="portrait mv">
+      <div class="badge"><b>5,0</b><div><span class="e">★★★★★</span><small>23 avis Google</small></div></div>
+      <img src="img/patron-camionnette.jpg" alt="L'électricien devant sa camionnette M.R.ELEC Dépannages, câble sur l'épaule et appareil de mesure à la main" width="678" height="678">
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="cadre">
+    <div class="tete mv"><div class="traits"><i></i><i></i><i></i></div><h2>Ce que nous faisons chez vous</h2><p>De la panne qui n'attend pas à la rénovation complète d'une pièce : électricité et plomberie par le même artisan.</p></div>
+    <div class="grille">
+      <article class="service fx"><span class="pic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4 14h6l-1 8 9-12h-6Z"/></svg></span><h3>Dépannage électrique</h3><p>Panne de courant, disjoncteur qui saute, prise ou interrupteur qui ne fonctionne plus : on cherche l'origine et on remet votre installation en état.</p></article>
+      <article class="service fx"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h3M13 8h3M8 12h3M13 12h3M8 16h3M13 16h3"/></svg></span><h3>Remplacement de tableau</h3><p>Un tableau électrique ancien ou incomplet est remplacé par un tableau neuf, repéré et organisé par circuits.</p></article>
+      <article class="service fx"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.4 8 8 9 4.6-1 8-4 8-9V6Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></span><h3>Remise en conformité</h3><p>Mise aux normes de votre installation électrique, pour votre sécurité et pour la vente ou la location d'un logement.</p></article>
+      <article class="service fx"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l7-6 7 6v11"/><path d="M10 21v-6h4v6"/></svg></span><h3>Rénovation et extension</h3><p>Nouvelles prises, nouveaux circuits, extension de votre installation : on prépare l'électricité de vos travaux.</p></article>
+      <article class="service fx"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3C8 8.5 6 11.5 6 15a6 6 0 0 0 12 0c0-3.5-2-6.5-6-12Z"/></svg></span><h3>Réparation de fuite</h3><p>Fuite sur une arrivée d'eau ou une évacuation : réparation et remise en service de votre plomberie sanitaire.</p></article>
+      <article class="service fx"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18v3a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Zm3 0V6a2 2 0 0 1 4 0M6 20l-1 2M18 20l1 2"/></svg></span><h3>Salle de bain, cuisine, WC</h3><p>Installation de douche, vasque, WC et cuisine équipée, avec l'électricité et la plomberie qui vont avec.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="realisations" id="realisations">
+  <div class="cadre">
+    <div class="tete mv"><div class="traits clair"><i></i><i></i><i></i></div><h2>Quelques réalisations</h2><p>Des photos de chantiers et de pièces terminées, publiées par M.R.ELEC Dépannages. Cliquez sur une photo pour l'agrandir.</p></div>
+    <div class="galerie" id="galerie"></div>
+  </div>
+</section>
+
+<section class="methode" id="methode">
+  <div class="cadre">
+    <div class="tete mv"><div class="traits"><i></i><i></i><i></i></div><h2>Comment ça se passe</h2><p>Simple et sans surprise : vous savez à quoi vous attendre avant que l'on commence.</p></div>
+    <div class="etapes">
+      <div class="etape fx"><h3><b>1.</b>Vous appelez</h3><p>Vous décrivez la panne ou votre projet au téléphone.</p></div>
+      <div class="etape fx"><h3><b>2.</b>On regarde sur place</h3><p>On constate l'état de l'installation et on vous explique ce qu'il y a à faire.</p></div>
+      <div class="etape fx"><h3><b>3.</b>On intervient</h3><p>Dépannage ou travaux, avec une installation laissée propre.</p></div>
+      <div class="etape fx"><h3><b>4.</b>On vérifie</h3><p>Tout est testé avant de partir, pour que vous repreniez votre vie normalement.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="avis" id="avis">
+  <div class="cadre">
+    <div class="tete mv"><div class="traits"><i></i><i></i><i></i></div><h2>Ce que disent leurs clients</h2></div>
+    <div class="bloc-note fx">
+      <div class="gros">5,0<small> / 5</small></div>
+      <div><div class="etoiles" aria-label="5 étoiles sur 5">★★★★★</div><p>23 avis sur Google</p></div>
+      <a class="btn-g" href="https://www.google.com/maps/search/?api=1&query=M.R.ELEC%20D%C3%A9pannages%20Sarthe" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.35 11.1H12v2.9h5.35c-.5 2.4-2.55 3.6-5.35 3.6a6 6 0 1 1 0-12c1.45 0 2.75.5 3.75 1.4l2.1-2.1A9 9 0 1 0 12 21c5.2 0 9.6-3.6 9.6-9 0-.3 0-.6-.05-.9Z"/></svg>Voir tous les avis sur Google</a>
+    </div>
+    <div class="mur" id="mur"></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="cadre">
+    <div>
+      <h2 class="mv">Une panne ? Un projet ? Appelez-nous.</h2>
+      <p class="intro mv">Pour un dépannage comme pour des travaux de rénovation, le plus simple est de téléphoner.</p>
+      <a class="tel-gros" href="tel:+33670881882"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1Z"/></svg>06 70 88 18 82</a>
+      <ul class="infos">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><a href="mailto:mrelec72@hotmail.com">mrelec72@hotmail.com</a></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Interventions au Mans et en Sarthe</span></li>
+      </ul>
+      <div class="horaires">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Horaires d'ouverture</h3>
+        <dl id="horaires"></dl>
+      </div>
+      <p class="reseau-titre">Retrouvez-nous</p>
+      <div class="reseau">
+        <a href="https://www.facebook.com/mrelec72.fr" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.85.25-1.4 1.45-1.4h1.6V4.5c-.3 0-1.2-.1-2.3-.1-2.3 0-3.85 1.4-3.85 3.95v2.15H7.8v3h2.6V21Z"/></svg>Facebook</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=M.R.ELEC%20D%C3%A9pannages%20Sarthe" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.35 11.1H12v2.9h5.35c-.5 2.4-2.55 3.6-5.35 3.6a6 6 0 1 1 0-12c1.45 0 2.75.5 3.75 1.4l2.1-2.1A9 9 0 1 0 12 21c5.2 0 9.6-3.6 9.6-9 0-.3 0-.6-.05-.9Z"/></svg>Fiche Google</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=M.R.ELEC%20D%C3%A9pannages%20Sarthe" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Plan d'accès</a>
+      </div>
+    </div>
+    <form class="formulaire fx" id="formulaire">
+      <h3>Laissez-nous un message</h3>
+      <label for="nom">Votre nom</label><input id="nom" name="nom" autocomplete="name" required>
+      <label for="tel">Votre téléphone</label><input id="tel" name="tel" type="tel" autocomplete="tel" required>
+      <label for="msg">Votre demande</label><textarea id="msg" name="msg" placeholder="Par exemple : plus de courant dans la cuisine, ou projet de salle de bain…" required></textarea>
+      <button type="submit">Envoyer ma demande</button>
+      <p id="merci" hidden>Merci ! Sur votre vrai site, cette demande vous arrivera directement par e-mail.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="pied">
+  <div class="cadre">
+    <a class="marque" href="#haut" aria-label="Retour en haut">
+      <svg viewBox="0 0 64 58" aria-hidden="true"><path d="M32 4 60 53H4Z" fill="#ffc400" stroke="#12171a" stroke-width="5" stroke-linejoin="round"/><path d="M35 17 24 33h8l-4 13 13-18h-8Z" fill="#12171a"/></svg>
+      <b>M.R.ELEC<small>DÉPANNAGES</small></b>
+    </a>
+    <p>Électricité générale · Plomberie sanitaire · 06 70 88 18 82</p>
+    <div class="ronds">
+      <a href="https://www.facebook.com/mrelec72.fr" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.85.25-1.4 1.45-1.4h1.6V4.5c-.3 0-1.2-.1-2.3-.1-2.3 0-3.85 1.4-3.85 3.95v2.15H7.8v3h2.6V21Z"/></svg></a>
+      <a href="https://www.google.com/maps/search/?api=1&query=M.R.ELEC%20D%C3%A9pannages%20Sarthe" target="_blank" rel="noopener" aria-label="Fiche Google"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.35 11.1H12v2.9h5.35c-.5 2.4-2.55 3.6-5.35 3.6a6 6 0 1 1 0-12c1.45 0 2.75.5 3.75 1.4l2.1-2.1A9 9 0 1 0 12 21c5.2 0 9.6-3.6 9.6-9 0-.3 0-.6-.05-.9Z"/></svg></a>
+      <a href="https://www.google.com/maps/search/?api=1&query=M.R.ELEC%20D%C3%A9pannages%20Sarthe" target="_blank" rel="noopener" aria-label="Plan d'accès"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<div class="visio" id="visio" role="dialog" aria-modal="true" aria-label="Photo agrandie">
+  <button class="fermer" id="v-fermer" aria-label="Fermer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <button class="prec" id="v-prec" aria-label="Photo précédente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 5-7 7 7 7"/></svg></button>
+  <figure><img id="v-img" alt=""><figcaption id="v-leg"></figcaption></figure>
+  <button class="suiv" id="v-suiv" aria-label="Photo suivante"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></svg></button>
+</div>
+
+<script>
+(function(){
+  var H=72;
+  /* Données */
+  var PHOTOS=[
+    ['tableau.jpg','Tableau électrique'],
+    ['cuisine-bois.jpg','Cuisine équipée, plan de travail et plaque'],
+    ['cuisine-equipee.jpg','Cuisine équipée et lave-linge'],
+    ['mur-geometrique.jpg','Peinture géométrique d\'une pièce'],
+    ['douche-bois.jpg','Douche et meuble vasque'],
+    ['verriere.jpg','Verrière d\'atelier et plancher'],
+    ['vasque-grise.jpg','Salle d\'eau et vasque'],
+    ['salle-de-bain-combles.jpg','Salle d\'eau sous les combles'],
+    ['wc-seche-serviette.jpg','WC et sèche-serviettes'],
+    ['chantier-cloison.jpg','Chantier : dépose d\'une cloison'],
+    ['chantier-cuisine.jpg','Chantier : cuisine en cours d\'installation'],
+    ['avant-salle-de-bain.jpg','Salle de bain avant rénovation']
+  ];
+  var HORAIRES=[['Horaires','à confirmer']];
+  var AVIS=[];
+
+  /* Galerie */
+  var gal=document.getElementById('galerie');
+  PHOTOS.forEach(function(p,i){
+    var b=document.createElement('button');b.className='vignette fx';b.type='button';
+    b.innerHTML='<img src="img/'+p[0]+'" alt="'+p[1]+'" loading="lazy"><span>'+p[1]+'</span>';
+    b.addEventListener('click',function(){ouvre(i)});gal.appendChild(b);
+  });
+  var vis=document.getElementById('visio'),vi=document.getElementById('v-img'),vl=document.getElementById('v-leg'),cur=0;
+  function ouvre(i){cur=i;aff();vis.classList.add('ouvert');document.getElementById('v-fermer').focus()}
+  function aff(){var p=PHOTOS[cur];vi.src='img/'+p[0];vi.alt=p[1];vl.innerHTML=p[1]+'<small>'+(cur+1)+' / '+PHOTOS.length+'</small>';document.getElementById('v-prec').disabled=cur===0;document.getElementById('v-suiv').disabled=cur===PHOTOS.length-1}
+  function ferme(){vis.classList.remove('ouvert')}
+  document.getElementById('v-fermer').onclick=ferme;
+  document.getElementById('v-prec').onclick=function(){if(cur>0){cur--;aff()}};
+  document.getElementById('v-suiv').onclick=function(){if(cur<PHOTOS.length-1){cur++;aff()}};
+  vis.addEventListener('click',function(e){if(e.target===vis)ferme()});
+  document.addEventListener('keydown',function(e){if(!vis.classList.contains('ouvert'))return;if(e.key==='Escape')ferme();if(e.key==='ArrowLeft'&&cur>0){cur--;aff()}if(e.key==='ArrowRight'&&cur<PHOTOS.length-1){cur++;aff()}});
+
+  /* Horaires */
+  var hd=document.getElementById('horaires');
+  HORAIRES.forEach(function(h){hd.innerHTML+='<dt>'+h[0]+'</dt><dd>'+h[1]+'</dd>'});
+
+  /* Avis (jamais inventés : texte copié de la fiche Google) */
+  var mur=document.getElementById('mur');
+  AVIS.forEach(function(a){
+    var c=document.createElement('article');c.className='carte-avis fx';
+    var s='★★★★★'.slice(0,a.etoiles)+'☆☆☆☆☆'.slice(0,5-a.etoiles);
+    c.innerHTML='<div class="etoiles" aria-label="'+a.etoiles+' étoiles sur 5">'+s+'</div><p>« '+a.texte+' »</p><footer>'+a.nom+'<small>'+a.date+'</small></footer>';
+    mur.appendChild(c);
+  });
+  if(!AVIS.length)mur.style.display='none';
+
+  /* Menu : défilement exact sous l'en-tête */
+  var nav=document.getElementById('nav'),burger=document.getElementById('burger');
+  function va(id){var el=document.getElementById(id);if(!el)return;var top=id==='haut'?0:el.getBoundingClientRect().top+window.scrollY-H;window.scrollTo(0,top)}
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href').slice(1);if(!id)return;e.preventDefault();nav.classList.remove('ouvert');burger.setAttribute('aria-expanded','false');va(id)})});
+  burger.addEventListener('click',function(){var o=nav.classList.toggle('ouvert');burger.setAttribute('aria-expanded',o)});
+
+  /* Section active : seulement quand elle atteint l'en-tête */
+  var secs=['services','realisations','avis','contact'].map(function(id){return document.getElementById(id)});
+  var liens=nav.querySelectorAll('a'),pg=document.getElementById('progres'),ent=document.querySelector('.entete');
+  function maj(){
+    var y=window.scrollY,act=-1;
+    secs.forEach(function(s,i){if(s.getBoundingClientRect().top<=H+1)act=i});
+    var fin=window.innerHeight+y>=document.documentElement.scrollHeight-2;
+    liens.forEach(function(l,i){l.classList.toggle('actif',i===act)});
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    pg.style.transform='scaleX('+(h>0?Math.min(1,y/h):0)+')';
+    ent.classList.toggle('ombre',y>10);
+  }
+  window.addEventListener('scroll',maj,{passive:true});window.addEventListener('resize',maj);maj();
+
+  /* Apparitions */
+  var els=document.querySelectorAll('.fx,.mv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vu');io.unobserve(e.target)}})},{threshold:.08});
+    els.forEach(function(el){io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('vu')})}
+  setTimeout(function(){els.forEach(function(el){if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('vu')})},1500);
+
+  /* Formulaire (aperçu) */
+  document.getElementById('formulaire').addEventListener('submit',function(e){e.preventDefault();document.getElementById('merci').hidden=false});
+})();
+</script>
+</body>
+</html>
