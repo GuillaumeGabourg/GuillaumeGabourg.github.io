@@ -247,7 +247,7 @@ section{padding:90px 0}
   <div class="cadre">
     <div>
       <div class="etiquette mv">Électricité générale · Plomberie sanitaire</div>
-      <h1 class="mv">Électricité et plomberie&nbsp;: un seul artisan pour <em>dépanner et rénover</em> chez vous</h1>
+      <h1 class="mv">Électricité et plomberie, un seul artisan pour <em>dépanner et rénover</em> chez vous</h1>
       <p class="sous mv">Dépannage, remplacement de tableau, mise en conformité, salle de bain, cuisine, WC. M.R.ELEC Dépannages intervient au Mans et en Sarthe.</p>
       <div class="actions">
         <a class="bouton plein" href="tel:+33670881882"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1Z"/></svg>06 70 88 18 82</a>
@@ -362,6 +362,9 @@ section{padding:90px 0}
   <button class="suiv" id="v-suiv" aria-label="Photo suivante"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></svg></button>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
 <script>
 (function(){
   var H=72;
@@ -433,6 +436,27 @@ section{padding:90px 0}
     ent.classList.toggle('ombre',y>10);
   }
   window.addEventListener('scroll',maj,{passive:true});window.addEventListener('resize',maj);maj();
+
+  /* Effets GSAP : titres lettre par lettre en 3D, pictos, badge, décor, formulaire. Cartes : fondu seul (CSS). */
+  if(window.gsap&&window.ScrollTrigger&&window.SplitText){
+    gsap.registerPlugin(ScrollTrigger,SplitText);
+    var heads=document.querySelectorAll('.heros h1,.tete h2,.contact h2');
+    heads.forEach(function(h){h.classList.remove('mv')});
+    gsap.matchMedia().add('(prefers-reduced-motion: no-preference)',function(){
+      heads.forEach(function(h){
+        var sp=new SplitText(h,{type:'chars,words'});
+        gsap.set(h,{perspective:700});
+        gsap.from(sp.chars,{opacity:0,rotationX:-90,y:26,transformOrigin:'50% 50% -20px',duration:.7,ease:'back.out(1.4)',stagger:.016,scrollTrigger:{trigger:h,start:'top 90%',once:true}});
+      });
+      gsap.from('.badge',{scale:.5,opacity:0,duration:.8,delay:.7,ease:'back.out(2)'});
+      gsap.to('.circuit',{yPercent:12,ease:'none',scrollTrigger:{trigger:'.heros',start:'top top',end:'bottom top',scrub:true}});
+      var pics=document.querySelectorAll('.service .pic');
+      gsap.set(pics,{scale:.4,rotation:-25});
+      ScrollTrigger.batch(pics,{start:'top 92%',once:true,onEnter:function(b){gsap.to(b,{scale:1,rotation:0,duration:.7,ease:'back.out(2)',stagger:.09})}});
+      gsap.from('.formulaire > *',{y:18,opacity:0,duration:.5,stagger:.07,ease:'power2.out',scrollTrigger:{trigger:'.formulaire',start:'top 85%',once:true}});
+      gsap.from('.etape h3 b',{scale:0,duration:.6,ease:'back.out(3)',stagger:.12,scrollTrigger:{trigger:'.etapes',start:'top 85%',once:true}});
+    });
+  }
 
   /* Apparitions */
   var els=document.querySelectorAll('.fx,.mv');
