@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Top Service Santos</title>
+<meta name="description" content="Top Service Santos : plomberie, climatisation, chauffage et électricité à Mézières-sur-Ponthouin (Sarthe). Salles de bain, chauffe-eau, climatisation, dépannage.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--nuit:#0B2447;--nuit2:#071835;--azur:#1F8FE0;--azur2:#6CC3F5;--ciel:#EAF4FC;--eau:#F6FAFE;--orange:#F26A1B;--orange2:#FF8A3D;--texte:#16243A;--gris:#4A5A72;--hdr:78px}
+*{box-sizing:border-box}
+html{scroll-behavior:auto;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:'Nunito Sans',system-ui,sans-serif;font-size:19px;line-height:1.6;color:var(--texte);background:var(--eau)}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,.cond{font-family:'Barlow Condensed',system-ui,sans-serif}
+.enveloppe{width:min(1180px,100%);margin-inline:auto;padding-inline:28px}
+@media (max-width:600px){.enveloppe{padding-inline:18px}:root{--hdr:66px}}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+#progres{position:fixed;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--azur),var(--azur2),var(--orange));transform:scaleX(0);transform-origin:left;z-index:60}
+
+/* en-tête clair : le logo est sur fond blanc */
+.entete{position:sticky;top:0;z-index:50;background:#fff;height:var(--hdr);border-bottom:1px solid #DCE6F1}
+.entete.ombre{box-shadow:0 6px 22px rgba(11,36,71,.14)}
+.entete .enveloppe{display:flex;align-items:center;justify-content:space-between;height:100%;gap:18px}
+.logo{display:block;height:calc(var(--hdr) - 14px);flex:none}
+.logo img{height:100%;width:auto;mix-blend-mode:multiply}
+.nav{display:flex;gap:30px;align-items:center}
+.nav a{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:19px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--nuit);position:relative;padding:8px 0}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:3px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.nav a:hover::after,.nav a.actif::after{transform:scaleX(1)}
+.appel-hdr{display:inline-flex;align-items:center;gap:9px;background:var(--orange);color:#fff;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:21px;letter-spacing:.03em;padding:10px 18px;border-radius:6px;white-space:nowrap}
+.appel-hdr:hover{background:var(--orange2)}
+.appel-hdr svg{width:19px;height:19px;flex:none}
+.burger{display:none;width:44px;height:44px;border:2px solid var(--nuit);background:#fff;border-radius:6px;color:var(--nuit);cursor:pointer;place-items:center}
+.burger svg{width:24px;height:24px}
+.droite{display:flex;align-items:center;gap:20px}
+@media (min-width:1101px){.appel-hdr .mot{display:none}}
+@media (max-width:1100px){.nav{gap:20px}.nav a{font-size:17px}.appel-hdr .num{display:none}.appel-hdr{padding:11px 14px}}
+@media (max-width:960px){
+  .burger{display:grid}
+  .nav{position:absolute;left:0;right:0;top:var(--hdr);background:#fff;flex-direction:column;align-items:stretch;gap:0;padding:6px 18px 16px;display:none;border-bottom:1px solid #DCE6F1;box-shadow:0 14px 24px rgba(11,36,71,.14)}
+  .nav.ouvert{display:flex}
+  .nav a{padding:15px 4px;font-size:19px;border-bottom:1px solid #E3ECF5}
+  .nav a::after{display:none}
+  .nav a.actif{color:var(--orange)}
+  .droite{gap:10px}
+}
+@media (max-width:440px){.appel-hdr{padding:10px 12px;font-size:19px}.appel-hdr svg{width:17px;height:17px}}
+
+/* héros centré, photo de chantier */
+.heros{position:relative;min-height:calc(100svh - var(--hdr));min-height:calc(100vh - var(--hdr));display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden;background:var(--nuit2)}
+.heros-fond{position:absolute;inset:-6% 0;background:url(img/vasque-noire.jpg) center 55%/cover no-repeat}
+.heros::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,24,53,.72) 0%,rgba(11,36,71,.62) 50%,rgba(7,24,53,.86) 100%);z-index:1}
+.heros .enveloppe{position:relative;z-index:2;padding-block:70px}
+.heros-texte{max-width:880px;margin-inline:auto}
+.etiquette{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;letter-spacing:.22em;text-transform:uppercase;color:var(--azur2);margin:0 0 18px}
+.heros h1{font-size:clamp(42px,6.4vw,82px);line-height:1.02;font-weight:800;margin:0 0 24px;text-transform:uppercase;letter-spacing:.005em}
+.heros h1 em{font-style:normal;color:var(--orange2)}
+.heros .sous{font-size:clamp(19px,2.1vw,22px);max-width:680px;margin:0 auto 34px;color:#E3EEF9}
+.boutons{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;letter-spacing:.03em;padding:14px 28px;border-radius:6px;text-decoration:none;border:2px solid transparent;cursor:pointer}
+.btn svg{width:21px;height:21px;flex:none}
+.btn.plein{background:var(--orange);color:#fff}.btn.plein:hover{background:var(--orange2)}
+.btn.contour{border-color:rgba(255,255,255,.8);color:#fff;background:transparent}.btn.contour:hover{background:rgba(255,255,255,.16)}
+.btn.nuit{background:var(--nuit);color:#fff}.btn.nuit:hover{background:var(--azur)}
+.garanties{display:flex;gap:10px 30px;justify-content:center;flex-wrap:wrap;margin-top:36px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:19px;letter-spacing:.12em;text-transform:uppercase;color:#fff}
+.garanties span{display:inline-flex;align-items:center;gap:9px}
+.garanties svg{width:22px;height:22px;color:var(--azur2);flex:none}
+@media (max-width:760px){.heros .enveloppe{padding-block:48px}.etiquette{font-size:16px;letter-spacing:.14em}.garanties{font-size:16px;margin-top:28px}.btn{font-size:20px;padding:13px 22px}}
+
+/* bandeau défilant */
+.defile{background:var(--azur);color:#fff;overflow:hidden;white-space:nowrap}
+.defile-piste{display:inline-flex;padding:12px 0;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:21px;letter-spacing:.16em;text-transform:uppercase}
+.defile-piste span{padding-inline:26px}
+.defile-piste span::after{content:"●";margin-left:52px;color:var(--nuit);font-size:13px;vertical-align:middle}
+
+/* infos */
+.infos{background:var(--nuit);color:#fff}
+.infos .enveloppe{display:grid;grid-template-columns:repeat(3,1fr)}
+.info{padding:24px 26px;border-left:1px solid rgba(255,255,255,.2);display:flex;gap:16px;align-items:flex-start}
+.info:first-child{border-left:0;padding-left:0}
+.info svg{width:30px;height:30px;flex:none;margin-top:3px;color:var(--azur2)}
+.info b{display:block;font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--azur2)}
+.info span{display:block;font-size:19px;line-height:1.4}
+.info a{text-decoration:none;font-weight:700}
+@media (max-width:820px){.infos .enveloppe{grid-template-columns:1fr}.info{border-left:0;border-top:1px solid rgba(255,255,255,.2);padding:16px 0}.info:first-child{border-top:0}}
+
+/* sections */
+section{padding:92px 0}
+@media (max-width:700px){section{padding:56px 0}}
+.tete{max-width:780px;margin:0 auto 48px;text-align:center}
+.sur{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:19px;letter-spacing:.2em;text-transform:uppercase;color:var(--azur);margin:0 0 8px;display:block}
+h2{font-size:clamp(34px,4.6vw,56px);line-height:1.05;font-weight:800;margin:0 0 16px;color:var(--nuit);text-transform:uppercase}
+.tete p{margin:0;font-size:20px;color:var(--gris)}
+.trait{display:block;width:84px;height:5px;margin:18px auto 0;background:linear-gradient(90deg,var(--azur),var(--orange));border-radius:3px;transform-origin:center}
+@media (max-width:700px){.tete{margin-bottom:30px}}
+
+/* services */
+.metiers{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+.metier{background:#fff;border:1px solid #DCE6F1;border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.metier-photo{aspect-ratio:16/10;overflow:hidden;background:var(--nuit2)}
+.metier-photo img{width:100%;height:100%;object-fit:cover}
+.metier-texte{padding:26px 30px 30px;flex:1}
+.metier h3{font-size:clamp(28px,2.8vw,34px);line-height:1.1;font-weight:800;margin:0 0 12px;color:var(--nuit);text-transform:uppercase}
+.metier h3 .n{color:var(--orange);margin-right:8px}
+.metier p{margin:0 0 14px;color:var(--gris)}
+.metier ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.metier li{display:flex;gap:12px;align-items:flex-start;font-weight:700}
+.metier li::before{content:"";flex:none;width:12px;height:12px;margin-top:9px;background:var(--azur);border-radius:50% 50% 50% 0;transform:rotate(-45deg)}
+@media (max-width:900px){.metiers{grid-template-columns:1fr}.metier{display:grid;grid-template-columns:40% 1fr}.metier-photo{aspect-ratio:auto;height:100%;min-height:200px}.metier-texte{padding:22px}}
+@media (max-width:700px){.metier{display:flex}.metier-photo{aspect-ratio:16/10;height:auto;min-height:0}.metier-texte{padding:22px 20px 24px}.metier ul li:nth-child(n+3){display:none}.metiers .metier:nth-child(4){display:none}}
+
+/* avant / après */
+.avap{background:var(--nuit);color:#fff}
+.avap .sur{color:var(--azur2)}
+.avap h2{color:#fff}
+.avap .tete p{color:#CFE0F2}
+.avap-grille{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:860px;margin-inline:auto}
+.avap-grille figure{margin:0}
+.avap-grille button{padding:0;border:0;background:#000;cursor:zoom-in;border-radius:8px;overflow:hidden;aspect-ratio:4/5;position:relative;display:block;width:100%}
+.avap-grille img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.avap-grille button:hover img{transform:scale(1.04)}
+.avap-grille figcaption{margin-top:10px;text-align:center;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:26px;letter-spacing:.14em;text-transform:uppercase}
+.avap-grille figure:last-child figcaption{color:var(--orange2)}
+@media (max-width:560px){.avap-grille{gap:10px}.avap-grille figcaption{font-size:21px}}
+
+/* réalisations */
+.realisations{background:#fff}
+.galerie{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.galerie button{padding:0;border:0;background:#000;cursor:zoom-in;border-radius:8px;overflow:hidden;aspect-ratio:1/1;position:relative;display:block}
+.galerie button img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.galerie button:hover img{transform:scale(1.05)}
+.galerie button::after,.avap-grille button::after{content:"";position:absolute;right:10px;bottom:10px;width:34px;height:34px;border-radius:50%;background:rgba(11,36,71,.8) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='6'/%3E%3Cpath d='M20 20l-4-4M11 8v6M8 11h6'/%3E%3C/svg%3E") center/20px no-repeat}
+@media (max-width:900px){.galerie{grid-template-columns:repeat(3,1fr);gap:10px}}
+@media (max-width:560px){.galerie{grid-template-columns:repeat(2,1fr);gap:8px}.galerie .plus{display:none}}
+.visionneuse{position:fixed;inset:0;z-index:100;background:rgba(4,12,28,.96);display:none;align-items:center;justify-content:center;padding:18px}
+.visionneuse.ouvert{display:flex}
+.visionneuse figure{margin:0;max-width:min(92vw,980px);max-height:88vh;display:flex;flex-direction:column;align-items:center;gap:12px}
+.visionneuse img{max-width:100%;max-height:78vh;object-fit:contain;border-radius:6px}
+.visionneuse figcaption{color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;letter-spacing:.06em;text-align:center}
+.visionneuse .nav-v,.visionneuse .fermer{position:absolute;width:52px;height:52px;border-radius:50%;border:2px solid rgba(255,255,255,.6);background:rgba(11,36,71,.85);color:#fff;cursor:pointer;display:grid;place-items:center}
+.visionneuse .nav-v{top:50%;transform:translateY(-50%)}
+.visionneuse .nav-v:disabled{opacity:.3;cursor:default}
+.visionneuse svg{width:24px;height:24px}
+.visionneuse .prec{left:14px}.visionneuse .suiv{right:14px}
+.visionneuse .fermer{top:14px;right:14px;width:48px;height:48px}
+@media (max-width:600px){.visionneuse .nav-v{top:auto;bottom:18px;transform:none}.visionneuse .prec{left:calc(50% - 64px)}.visionneuse .suiv{right:calc(50% - 64px)}.visionneuse figure{margin-bottom:60px}}
+
+/* avis */
+.avis{background:var(--ciel)}
+.avis-bande{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:34px}
+.note-g{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.note-g .grand{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:68px;line-height:1;color:var(--nuit)}
+.etoiles{color:#E8A400;font-size:26px;letter-spacing:3px;line-height:1}
+.note-g small{display:block;font-size:17px;color:var(--gris)}
+.mur{column-count:3;column-gap:20px}
+.carte{break-inside:avoid;margin:0 0 20px;background:#fff;border:1px solid #CFE0F0;border-radius:10px;padding:24px 24px 22px}
+.carte .etoiles{font-size:19px;margin-bottom:10px}
+.carte p{margin:0 0 14px;font-size:17.5px}
+.carte footer{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:700;letter-spacing:.03em;color:var(--gris)}
+@media (max-width:980px){.mur{column-count:2}}
+@media (max-width:620px){.mur{column-count:1}.carte:nth-child(n+6){display:none}.note-g .grand{font-size:54px}}
+
+/* contact */
+.contact{background:var(--nuit);color:#fff}
+.contact .sur{color:var(--azur2)}
+.contact h2{color:#fff}
+.contact .tete p{color:#CFE0F2}
+.contact-grille{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.coord{display:grid;gap:22px}
+.coord .ligne{display:flex;gap:16px;align-items:flex-start}
+.coord .ligne svg{width:28px;height:28px;flex:none;margin-top:3px;color:var(--azur2)}
+.coord b{display:block;font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--azur2)}
+.coord a{text-decoration:none;font-weight:700}
+.coord .tel{font-family:'Barlow Condensed',sans-serif;font-size:42px;font-weight:800;line-height:1.1}
+.coord .horaires{display:grid;gap:3px;margin-top:2px}
+.reseau{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.reseau a{display:inline-flex;align-items:center;gap:9px;padding:10px 15px;border:2px solid rgba(255,255,255,.55);border-radius:40px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.04em;text-decoration:none;color:#fff}
+.reseau a:hover{background:rgba(255,255,255,.16)}
+.reseau svg{width:20px;height:20px;flex:none}
+.formulaire{background:#fff;color:var(--texte);border-radius:10px;padding:34px}
+.formulaire h3{font-size:32px;font-weight:800;margin:0 0 6px;color:var(--nuit);text-transform:uppercase}
+.formulaire>p{margin:0 0 20px;font-size:17px;color:var(--gris)}
+.champs{display:grid;gap:14px}
+.deux{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.04em;margin-bottom:5px}
+input,textarea{width:100%;font:inherit;font-size:17px;padding:13px 14px;border:2px solid #C5D3E3;border-radius:6px;background:#fff;color:var(--texte)}
+textarea{min-height:130px;resize:vertical}
+input:focus,textarea:focus{outline:none;border-color:var(--azur)}
+.formulaire button[type=submit]{justify-self:start}
+.merci{display:none;padding:22px;border-radius:6px;background:#E3F3E6;color:#1B4426;font-weight:700}
+.formulaire.envoye .champs,.formulaire.envoye>p,.formulaire.envoye>h3{display:none}
+.formulaire.envoye .merci{display:block}
+@media (max-width:900px){.contact-grille{grid-template-columns:1fr;gap:34px}}
+@media (max-width:520px){.deux{grid-template-columns:1fr}.formulaire{padding:24px 20px}.coord .tel{font-size:34px}}
+
+/* pied */
+footer.pied{background:var(--nuit2);color:#BFD0E4;padding:34px 0 40px;font-size:16px}
+.pied .enveloppe{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.pied-icones{display:flex;gap:10px}
+.pied-icones a{width:42px;height:42px;border-radius:50%;border:2px solid rgba(255,255,255,.45);display:grid;place-items:center;color:#fff}
+.pied-icones a:hover{background:rgba(255,255,255,.16)}
+.pied-icones svg{width:20px;height:20px}
+@media (max-width:600px){.pied .enveloppe{justify-content:center;text-align:center}}
+
+/* effets : cartes en fondu seul, jamais de déplacement */
+.fondu{opacity:0;transition:opacity .8s ease}
+.fondu.vu{opacity:1}
+.split-ligne{overflow:visible}
+@media (prefers-reduced-motion:reduce){.fondu{opacity:1;transition:none}.galerie img,.avap-grille img,.nav a::after{transition:none}.defile-piste{transform:none!important}}
+</style>
+</head>
+<body>
+<div id="progres" aria-hidden="true"></div>
+
+<header class="entete">
+  <div class="enveloppe">
+    <a class="logo" href="#accueil" aria-label="Top Service Santos, plomberie et climatisation"><img src="img/logo.jpg" alt="Top Service Santos, plomberie, climatisation"></a>
+    <nav class="nav" id="menu" aria-label="Menu principal">
+      <a href="#accueil">Accueil</a>
+      <a href="#savoir-faire">Services</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#avis">Avis</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="droite">
+      <a class="appel-hdr" href="tel:+33627035256"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span class="num">06 27 03 52 56</span><span class="mot">Appeler</span></a>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="heros" id="accueil" style="padding:0">
+  <div class="heros-fond" role="img" aria-label="Salle de bain que nous avons équipée : vasque posée sur meuble suspendu"></div>
+  <div class="enveloppe">
+    <div class="heros-texte">
+      <p class="etiquette">Plomberie · Climatisation · Chauffage · Électricité</p>
+      <h1>Votre confort, <em>notre priorité.</em></h1>
+      <p class="sous">Nous installons, entretenons et dépannons chez les particuliers et les professionnels : salle de bain, chauffe-eau, climatisation, tableau électrique.</p>
+      <div class="boutons">
+        <a class="btn plein" href="tel:+33627035256"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Appeler le 06 27 03 52 56</a>
+        <a class="btn contour" href="#contact">Demander un devis</a>
+      </div>
+      <div class="garanties">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v5c0 4.6 3 8 7 10 4-2 7-5.4 7-10V6z"/><path d="m9 12 2 2 4-4"/></svg>Travail soigné</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 1.5M9 3h6"/></svg>Dépannage rapide</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 11V5.5a1.5 1.5 0 0 1 3 0V11m0 0 6.2.5c1 .1 1.8 1 1.6 2L17 18.5a2 2 0 0 1-2 1.5H9a2 2 0 0 1-2-2z"/></svg>Conseils personnalisés</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="defile" aria-hidden="true"><div class="defile-piste" id="defile"><span>Plomberie</span><span>Climatisation</span><span>Chauffage</span><span>Électricité</span><span>Salles de bain</span><span>Dépannage</span><span>Plomberie</span><span>Climatisation</span><span>Chauffage</span><span>Électricité</span><span>Salles de bain</span><span>Dépannage</span><span>Plomberie</span><span>Climatisation</span><span>Chauffage</span><span>Électricité</span><span>Salles de bain</span><span>Dépannage</span></div></div>
+
+<div class="infos">
+  <div class="enveloppe">
+    <div class="info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6"/></svg><div><b>Secteur</b><span>Mézières-sur-Ponthouin et communes alentour</span></div></div>
+    <div class="info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg><div><b>Horaires</b><span>Ouvert 7j/7, 24h/24</span></div></div>
+    <div class="info"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><div><b>Téléphone</b><span><a href="tel:+33627035256">06 27 03 52 56</a></span></div></div>
+  </div>
+</div>
+
+<section id="savoir-faire">
+  <div class="enveloppe">
+    <div class="tete">
+      <span class="sur">Nos services</span>
+      <h2>Quatre métiers, un seul interlocuteur</h2>
+      <p>Pour une installation ou un dépannage, nous venons chez vous, nous vous conseillons selon votre budget et nous laissons un chantier propre.</p>
+      <span class="trait" aria-hidden="true"></span>
+    </div>
+    <div class="metiers">
+      <article class="metier fondu">
+        <div class="metier-photo"><img src="img/sdb-marbre-douche.jpg" alt="Douche à l’italienne avec faïence effet marbre" loading="lazy"></div>
+        <div class="metier-texte">
+          <h3><span class="n">1.</span>Plomberie et salle de bain</h3>
+          <p>Nous refaisons votre salle de bain ou nous intervenons sur vos canalisations, de la dépose jusqu’à la dernière finition.</p>
+          <ul><li>Douches, baignoires, vasques et meubles</li><li>Sèche-serviettes</li><li>Collecteurs et canalisations</li><li>Recherche et réparation de fuites</li></ul>
+        </div>
+      </article>
+      <article class="metier fondu">
+        <div class="metier-photo"><img src="img/clim-exterieur.jpg" alt="Unité extérieure de climatisation posée sur support" loading="lazy"></div>
+        <div class="metier-texte">
+          <h3><span class="n">2.</span>Climatisation</h3>
+          <p>Nous installons, entretenons et dépannons votre climatisation pour votre confort été comme hiver, chez les particuliers et les professionnels.</p>
+          <ul><li>Installation sur mesure</li><li>Entretien et maintenance</li><li>Dépannage rapide</li><li>Unités murales et groupes extérieurs</li></ul>
+        </div>
+      </article>
+      <article class="metier fondu">
+        <div class="metier-photo"><img src="img/chauffe-eau.jpg" alt="Chauffe-eau installé dans un garage" loading="lazy"></div>
+        <div class="metier-texte">
+          <h3><span class="n">3.</span>Chauffage et eau chaude</h3>
+          <p>Chauffe-eau, chaudière : nous posons et remplaçons votre production d’eau chaude et de chauffage.</p>
+          <ul><li>Chauffe-eau</li><li>Chaudières</li><li>Remplacement et mise en service</li></ul>
+        </div>
+      </article>
+      <article class="metier fondu">
+        <div class="metier-photo"><img src="img/collecteur.jpg" alt="Collecteur de plomberie posé et raccordé" loading="lazy"></div>
+        <div class="metier-texte">
+          <h3><span class="n">4.</span>Électricité</h3>
+          <p>Nous intervenons sur votre installation électrique, en complément de la plomberie et de la salle de bain.</p>
+          <ul><li>Tableaux électriques</li><li>Mise aux normes</li><li>Dépannage</li></ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="avap" id="avant-apres">
+  <div class="enveloppe">
+    <div class="tete">
+      <span class="sur">Avant, après</span>
+      <h2>La différence se voit tout de suite</h2>
+      <p>La même salle de bain, vue du même endroit, avant et après notre passage. Touchez une photo pour l’agrandir.</p>
+      <span class="trait" aria-hidden="true"></span>
+    </div>
+    <div class="avap-grille">
+      <figure><button type="button"><img src="img/avant-apres-avant.jpg" alt="Avant : salle de bain en cours de rénovation, plaques vertes et meuble vasque" loading="lazy"></button><figcaption>Avant</figcaption></figure>
+      <figure><button type="button"><img src="img/avant-apres-apres.jpg" alt="Après : douche carrelée avec bandeau de mosaïque et fenêtre" loading="lazy"></button><figcaption>Après</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="realisations" id="realisations">
+  <div class="enveloppe">
+    <div class="tete">
+      <span class="sur">Nos réalisations</span>
+      <h2>Des chantiers que nous avons menés</h2>
+      <p>Touchez une photo pour l’agrandir et faire défiler les chantiers.</p>
+      <span class="trait" aria-hidden="true"></span>
+    </div>
+    <div class="galerie" id="galerie">
+      <button type="button"><img src="img/vasque-ronde.jpg" alt="Vasque posée sur meuble suspendu et miroir rond" loading="lazy"></button>
+      <button type="button"><img src="img/douche-verre.jpg" alt="Douche en verre avec faïence effet marbre et sèche-serviettes" loading="lazy"></button>
+      <button type="button"><img src="img/clim-chambre.jpg" alt="Climatisation murale posée dans une chambre" loading="lazy"></button>
+      <button type="button"><img src="img/douche-carrelage.jpg" alt="Douche carrelée avec bandeau de mosaïque" loading="lazy"></button>
+      <button type="button"><img src="img/chaudiere.jpg" alt="Chaudière murale posée et raccordée" loading="lazy"></button>
+      <button type="button"><img src="img/douche-plan-vasque.jpg" alt="Douche en verre et plan vasque en bois" loading="lazy"></button>
+      <button type="button" class="plus"><img src="img/sdb-marbre-fenetre.jpg" alt="Salle de bain avec douche en verre et grande fenêtre" loading="lazy"></button>
+      <button type="button" class="plus"><img src="img/douche-seche-serviette.jpg" alt="Douche à porte pivotante et sèche-serviettes blanc" loading="lazy"></button>
+      <button type="button" class="plus"><img src="img/soudure.jpg" alt="Brasure d’un raccord en cuivre" loading="lazy"></button>
+      <button type="button" class="plus"><img src="img/chauffe-eau.jpg" alt="Chauffe-eau posé dans un garage" loading="lazy"></button>
+      <button type="button" class="plus"><img src="img/collecteur.jpg" alt="Collecteur et canalisations" loading="lazy"></button>
+      <button type="button" class="plus"><img src="img/clim-exterieur.jpg" alt="Groupe extérieur de climatisation" loading="lazy"></button>
+    </div>
+  </div>
+</section>
+
+<section class="avis" id="avis">
+  <div class="enveloppe">
+    <div class="avis-bande">
+      <div class="note-g"><span class="grand">4,5</span><div><span class="etoiles" aria-label="4,5 sur 5">★★★★★</span><small>sur 5, d’après 16 avis Google de nos clients</small></div></div>
+      <a class="btn nuit" href="https://www.google.com/maps/search/?api=1&query=Top%20Service%20Santos%20Le%20Grand%20Fourniquet%20M%C3%A9zi%C3%A8res-sur-Ponthouin%20Sarthe" target="_blank" rel="noopener">Voir les avis sur Google</a>
+    </div>
+    <div class="tete" style="margin-bottom:34px"><span class="sur">Ce que disent nos clients</span></div>
+    <div class="mur">
+      <article class="carte fondu"><div class="etoiles" aria-label="5 sur 5">★★★★★</div><p>« Je recommande les yeux fermés, personne très professionnel et disponible rapidement il saura trouver le problème et le régler rapidement sans attente. »</p><footer>Allyson D. · avis Google, juillet 2026</footer></article>
+      <article class="carte fondu"><div class="etoiles" aria-label="5 sur 5">★★★★★</div><p>« Travail professionnel et réactif appeler à 12h mon chauffe-eau c est mis à fuir changement du chauffe eau à 20h »</p><footer>Valentin R. · avis Google, novembre 2025</footer></article>
+      <article class="carte fondu"><div class="etoiles" aria-label="5 sur 5">★★★★★</div><p>« a été disponible rapidement et a trouvé la solution pour déboucher mon évier efficacement. Professionnel et avec de bonnes explications. Je recommande sans hésiter ! »</p><footer>Laure D. · avis Google, octobre 2025</footer></article>
+      <article class="carte fondu"><div class="etoiles" aria-label="5 sur 5">★★★★★</div><p>« Personne professionnelle, entretien de chauffe-eau impeccable Propre et sérieux »</p><footer>Anais A. · avis Google, octobre 2024</footer></article>
+      <article class="carte fondu"><div class="etoiles" aria-label="5 sur 5">★★★★★</div><p>« Très rapide et efficace. Merci beaucoup »</p><footer>Axl G. · avis Google, juin 2026</footer></article>
+      <article class="carte fondu"><div class="etoiles" aria-label="5 sur 5">★★★★★</div><p>« Parfait. Super travail, je recommande ! »</p><footer>David · avis Google, mars 2026</footer></article>
+      <article class="carte fondu"><div class="etoiles" aria-label="5 sur 5">★★★★★</div><p>« Très bon plombier je recommande fortement »</p><footer>Tom B. · avis Google, il y a un an</footer></article>
+      <article class="carte fondu"><div class="etoiles" aria-label="5 sur 5">★★★★★</div><p>« Travail parfait »</p><footer>Maria D. · avis Google, avril 2025</footer></article>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="enveloppe">
+    <div class="tete">
+      <span class="sur">Contact</span>
+      <h2>Parlons de votre projet</h2>
+      <p>Un appel ou un message suffit, nous revenons vers vous pour votre devis.</p>
+      <span class="trait" aria-hidden="true"></span>
+    </div>
+    <div class="contact-grille">
+      <div class="coord">
+        <div class="ligne"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><div><b>Téléphone</b><a class="tel" href="tel:+33627035256">06 27 03 52 56</a></div></div>
+        <div class="ligne"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><div><b>E-mail</b><a href="mailto:topservicesantosrui@gmail.com">topservicesantosrui@gmail.com</a></div></div>
+        <div class="ligne"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6"/></svg><div><b>Adresse</b>Le Grand Fourniquet<br>72290 Mézières-sur-Ponthouin</div></div>
+        <div class="ligne"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg><div><b>Horaires</b><div class="horaires"><span>Tous les jours, 24h/24</span></div></div></div>
+        <div class="ligne"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg><div><b>Retrouvez-nous</b>
+          <div class="reseau">
+            <a href="https://www.facebook.com/profile.php?id=100075739755618" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21z"/></svg>Facebook</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Top%20Service%20Santos%20Le%20Grand%20Fourniquet%20M%C3%A9zi%C3%A8res-sur-Ponthouin%20Sarthe" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><text x="12" y="18" text-anchor="middle" font-family="Barlow Condensed,Arial,sans-serif" font-weight="800" font-size="20" fill="currentColor">G</text></svg>Fiche Google</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Le%20Grand%20Fourniquet%2072290%20M%C3%A9zi%C3%A8res-sur-Ponthouin" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6"/></svg>Plan d’accès</a>
+          </div></div></div>
+      </div>
+      <form class="formulaire" id="form" novalidate>
+        <h3>Demander un devis</h3>
+        <p>Décrivez votre projet en quelques mots, nous vous rappelons.</p>
+        <div class="champs">
+          <div class="deux"><div><label for="nom">Votre nom</label><input id="nom" name="nom" autocomplete="name"></div><div><label for="tel">Téléphone</label><input id="tel" name="tel" type="tel" autocomplete="tel"></div></div>
+          <div><label for="msg">Votre projet</label><textarea id="msg" name="msg" placeholder="Salle de bain, chauffe-eau, climatisation, dépannage…"></textarea></div>
+          <button class="btn plein" type="submit">Envoyer ma demande</button>
+        </div>
+        <div class="merci" role="status">Merci ! Sur votre vrai site, cette demande vous arrivera par e-mail.</div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="pied">
+  <div class="enveloppe">
+    <div>© Top Service Santos · Plomberie, climatisation, chauffage, électricité · Mézières-sur-Ponthouin (72)</div>
+    <div class="pied-icones">
+      <a href="https://www.facebook.com/profile.php?id=100075739755618" target="_blank" rel="noopener" aria-label="Notre page Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21z"/></svg></a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Top%20Service%20Santos%20Le%20Grand%20Fourniquet%20M%C3%A9zi%C3%A8res-sur-Ponthouin%20Sarthe" target="_blank" rel="noopener" aria-label="Notre fiche Google"><svg viewBox="0 0 24 24" aria-hidden="true"><text x="12" y="18" text-anchor="middle" font-family="Barlow Condensed,Arial,sans-serif" font-weight="800" font-size="20" fill="currentColor">G</text></svg></a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Le%20Grand%20Fourniquet%2072290%20M%C3%A9zi%C3%A8res-sur-Ponthouin" target="_blank" rel="noopener" aria-label="Plan d’accès"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<div class="visionneuse" id="visionneuse" role="dialog" aria-modal="true" aria-label="Photo agrandie">
+  <button class="fermer" id="v-fermer" type="button" aria-label="Fermer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <button class="nav-v prec" id="v-prec" type="button" aria-label="Photo précédente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 5-7 7 7 7"/></svg></button>
+  <figure><img id="v-img" src="" alt=""><figcaption id="v-compte"></figcaption></figure>
+  <button class="nav-v suiv" id="v-suiv" type="button" aria-label="Photo suivante"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></svg></button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script>
+(function(){
+  var hdr=document.querySelector('.entete');
+  function hh(){return hdr.getBoundingClientRect().height}
+  var burger=document.getElementById('burger'),menu=document.getElementById('menu');
+  burger.addEventListener('click',function(){var o=menu.classList.toggle('ouvert');burger.setAttribute('aria-expanded',o)});
+  var liens=[].slice.call(menu.querySelectorAll('a'));
+  var cibles=liens.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function aller(id,e){var el=document.querySelector(id);if(!el)return;if(e)e.preventDefault();
+    var y=id==='#accueil'?0:el.getBoundingClientRect().top+window.pageYOffset-hh()+1;
+    window.scrollTo({top:Math.max(0,y),behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});}
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id.length>1){menu.classList.remove('ouvert');burger.setAttribute('aria-expanded',false);aller(id,e)}})});
+  function spy(){var lim=hh()+2,cur=0;
+    cibles.forEach(function(c,i){if(c&&c.getBoundingClientRect().top<=lim)cur=i});
+    if(window.innerHeight+window.pageYOffset>=document.documentElement.scrollHeight-4)cur=cibles.length-1;
+    liens.forEach(function(a,i){a.classList.toggle('actif',i===cur)});
+    hdr.classList.toggle('ombre',window.pageYOffset>8)}
+  window.addEventListener('scroll',spy,{passive:true});window.addEventListener('resize',spy);spy();
+  var f=document.querySelectorAll('.fondu');
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vu');io.unobserve(e.target)}})},{threshold:.08});
+    f.forEach(function(x){io.observe(x)});
+    setTimeout(function(){f.forEach(function(x){x.classList.add('vu')})},4000);
+  }else f.forEach(function(x){x.classList.add('vu')});
+  // Visionneuse : boutons seulement, la molette n'est jamais détournée
+  var tous=[].slice.call(document.querySelectorAll('.avap-grille button,#galerie button')),gal=tous,vi=document.getElementById('visionneuse'),vimg=document.getElementById('v-img'),vc=document.getElementById('v-compte'),vp=document.getElementById('v-prec'),vs=document.getElementById('v-suiv'),k=0,dernier=null;
+  function montre(n){k=n;var img=gal[n].querySelector('img');vimg.src=img.getAttribute('src');vimg.alt=img.alt;vc.textContent=(n+1)+' / '+gal.length+' · '+img.alt;vp.disabled=n===0;vs.disabled=n===gal.length-1}
+  function ouvre(b){dernier=document.activeElement;gal=[].slice.call(b.closest('.avap-grille,#galerie').querySelectorAll('button')).filter(function(x){return x.offsetParent!==null});montre(gal.indexOf(b));vi.classList.add('ouvert');document.getElementById('v-fermer').focus()}
+  function ferme(){vi.classList.remove('ouvert');if(dernier)dernier.focus()}
+  tous.forEach(function(b){b.addEventListener('click',function(){ouvre(b)})});
+  vp.addEventListener('click',function(){if(k>0)montre(k-1)});vs.addEventListener('click',function(){if(k<gal.length-1)montre(k+1)});
+  document.getElementById('v-fermer').addEventListener('click',ferme);
+  vi.addEventListener('click',function(e){if(e.target===vi)ferme()});
+  document.addEventListener('keydown',function(e){if(!vi.classList.contains('ouvert'))return;if(e.key==='Escape')ferme();if(e.key==='ArrowLeft'&&k>0)montre(k-1);if(e.key==='ArrowRight'&&k<gal.length-1)montre(k+1)});
+
+  // Effets GSAP : titres lettre par lettre, fond du héros en parallaxe, bandeau qui défile, traits qui se dessinent, photos qui se dévoilent, barre de progression.
+  // Jamais sur le téléphone, l'adresse ni les horaires ; cartes en fondu seul.
+  if(window.gsap&&window.ScrollTrigger&&window.SplitText){
+    gsap.registerPlugin(ScrollTrigger,SplitText);
+    var mm=gsap.matchMedia();
+    mm.add('(prefers-reduced-motion: no-preference)',function(){
+      var h1=document.querySelector('.heros h1');
+      SplitText.create(h1,{type:'lines,words,chars',linesClass:'split-ligne',autoSplit:true,onSplit:function(self){
+        return gsap.from(self.chars,{opacity:0,rotationX:90,yPercent:-40,duration:.9,ease:'power2.out',stagger:.02,clearProps:'opacity,transform'});
+      }});
+      gsap.from('.heros .etiquette,.heros .sous,.heros .boutons,.heros .garanties',{opacity:0,duration:.9,delay:.5,stagger:.14,ease:'power1.out',clearProps:'opacity'});
+      document.querySelectorAll('section h2').forEach(function(t){
+        SplitText.create(t,{type:'lines,words,chars',linesClass:'split-ligne',autoSplit:true,onSplit:function(self){
+          return gsap.from(self.chars,{opacity:0,rotationX:90,yPercent:-40,duration:.8,ease:'power2.out',stagger:.014,clearProps:'opacity,transform',
+            scrollTrigger:{trigger:t,start:'top 88%',toggleActions:'play none none none'}});
+        }});
+      });
+      gsap.to('.heros-fond',{yPercent:8,ease:'none',scrollTrigger:{trigger:'.heros',start:'top top',end:'bottom top',scrub:.6}});
+      document.querySelectorAll('.trait').forEach(function(t){gsap.fromTo(t,{scaleX:0},{scaleX:1,duration:.9,ease:'power2.out',clearProps:'transform',scrollTrigger:{trigger:t,start:'top 90%'}})});
+      document.querySelectorAll('.metier-photo img').forEach(function(im){gsap.fromTo(im,{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0% 0 0)',duration:1.1,ease:'power2.inOut',clearProps:'clipPath',scrollTrigger:{trigger:im,start:'top 88%'}})});
+      gsap.from('.sur',{opacity:0,duration:.7,ease:'power1.out',clearProps:'opacity',scrollTrigger:{trigger:'#savoir-faire',start:'top 85%'}});
+      var p=document.getElementById('defile');
+      gsap.to(p,{x:function(){return -p.scrollWidth/3},duration:28,ease:'none',repeat:-1});
+      gsap.from('.formulaire .champs > *',{opacity:0,duration:.6,stagger:.1,ease:'power1.out',clearProps:'opacity',
+        scrollTrigger:{trigger:'.formulaire',start:'top 85%',toggleActions:'play none none none'}});
+      var barre=document.getElementById('progres');
+      ScrollTrigger.create({start:0,end:'max',onUpdate:function(self){barre.style.transform='scaleX('+self.progress+')'}});
+    });
+    window.addEventListener('load',function(){ScrollTrigger.refresh()});
+    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){ScrollTrigger.refresh()});
+  }
+  document.getElementById('form').addEventListener('submit',function(e){e.preventDefault();this.classList.add('envoye')});
+})();
+</script>
+</body>
+</html>
