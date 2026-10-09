@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Idée Déco</title>
+<meta name="description" content="Idée Déco, peintre en bâtiment à La Quinte : façades, peinture intérieure, papier peint et revêtements de sols, dans le secteur du Mans et de la Sarthe.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Nunito+Sans:wght@400;600;700;800&display=swap">
+<style>
+/* Style : bordeaux et orange de la bulle « iD », anthracite du lettrage, fonds clairs chauds */
+:root{
+  --bordeaux:#8C1E2E;
+  --bordeaux-nuit:#6A1523;
+  --orange:#C94E12;
+  --orange-vif:#F07A2E;
+  --encre:#2B2423;
+  --anthracite:#352C2B;
+  --anthracite-2:#271F1E;
+  --creme:#FCF8F3;
+  --sable:#F3E9DF;
+  --craie:#FFFFFF;
+  --gris:#645953;
+  --trait:#E8DACB;
+  --titre:'Poppins','Segoe UI',system-ui,sans-serif;
+  --texte:'Nunito Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --hdr:76px;
+  --large:1180px;
+  color-scheme:light;
+}
+@media (max-width:860px){:root{--hdr:66px}}
+html{scroll-padding-top:var(--hdr);background:var(--anthracite-2)}
+body{background:var(--creme);color:var(--encre);font-family:var(--texte);font-size:17.5px;line-height:1.62;margin:0}
+*,*::before,*::after{box-sizing:border-box}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.enveloppe{width:100%;max-width:var(--large);margin-inline:auto;padding-inline:24px}
+@media (max-width:600px){.enveloppe{padding-inline:18px}}
+h1,h2,h3{font-family:var(--titre);font-weight:700;line-height:1.14;margin:0;text-wrap:balance}
+h2{font-size:clamp(29px,4.2vw,45px)}
+h3{font-size:21px}
+p{margin:0}
+.etiquette{display:inline-flex;align-items:center;gap:12px;font-family:var(--titre);font-weight:700;font-size:13.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--bordeaux)}
+.etiquette::before{content:"";width:34px;height:6px;border-radius:3px;background:linear-gradient(90deg,var(--bordeaux),var(--orange));flex:none;transform-origin:left;transform:scaleX(var(--x,1))}
+.sombre .etiquette,.heros .etiquette{color:#FFB98A}
+.sombre .etiquette::before,.heros .etiquette::before{background:linear-gradient(90deg,#F4A06B,var(--orange-vif))}
+.chapo{max-width:62ch;color:var(--gris);font-size:18.5px}
+.sombre .chapo{color:#E3D4C7}
+
+/* Boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--titre);font-weight:700;font-size:16.5px;text-decoration:none;padding:14px 26px;border-radius:999px;border:2px solid transparent;cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-orange{background:var(--orange);color:#fff}
+.btn-orange:hover{background:var(--bordeaux)}
+.btn-noir{background:var(--encre);color:#fff}
+.btn-noir:hover{background:var(--bordeaux)}
+.btn-contour{border-color:var(--encre);color:var(--encre);background:transparent}
+.btn-contour:hover{background:var(--encre);color:#fff}
+.heros .btn-contour,.sombre .btn-contour{border-color:rgba(255,255,255,.7);color:#fff}
+.heros .btn-contour:hover,.sombre .btn-contour:hover{background:rgba(255,255,255,.16)}
+
+/* En-tête */
+.entete{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;height:var(--hdr);background:var(--craie);border-bottom:1px solid var(--trait);transition:box-shadow .3s}
+.entete.ombre{box-shadow:0 8px 24px rgba(60,25,20,.14)}
+.entete .enveloppe{height:100%;display:flex;align-items:center;gap:22px}
+.marque{display:flex;align-items:center;gap:12px;flex:none;text-decoration:none;color:var(--encre)}
+.marque img{width:auto;height:48px;flex:none}
+.marque .nom{display:flex;flex-direction:column;line-height:1.05}
+.marque .nom b{font-family:var(--titre);font-size:21px;font-weight:700;color:var(--anthracite)}
+.marque .nom small{font-family:var(--titre);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--bordeaux);margin-top:5px}
+.nav{display:flex;gap:26px;margin-left:auto}
+.nav a{font-family:var(--titre);font-weight:600;font-size:15px;text-decoration:none;padding:6px 0;position:relative;color:var(--gris)}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:4px;border-radius:2px;background:linear-gradient(90deg,var(--bordeaux),var(--orange));transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.nav a:hover::after,.nav a.actif::after{transform:scaleX(1)}
+.nav a.actif,.nav a:hover{color:var(--encre)}
+.appel-hdr{padding:10px 20px;font-size:15.5px;flex:none}
+.burger{display:none;margin-left:auto;background:none;border:2px solid var(--trait);border-radius:12px;width:46px;height:46px;cursor:pointer;color:var(--encre)}
+.burger svg{width:22px;height:22px;margin:auto}
+@media (max-width:1100px){.nav{gap:18px}.nav a{font-size:14.5px}.appel-hdr .num{display:none}}
+@media (max-width:960px){
+  .burger{display:grid;place-items:center}
+  .appel-hdr{margin-left:auto}
+  .burger{margin-left:0}
+  .nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--craie);border-bottom:1px solid var(--trait);box-shadow:0 14px 24px rgba(60,25,20,.14);padding:6px 18px 14px;margin:0;display:none}
+  .nav.ouvert{display:flex}
+  .nav a{font-size:19px;padding:14px 0;border-bottom:1px solid var(--trait)}
+  .nav a::after{display:none}
+}
+@media (max-width:560px){.etiquette{letter-spacing:.12em;font-size:12.5px}}
+@media (max-width:440px){.marque .nom small{display:none}.marque .nom b{font-size:18px}.marque img{height:40px}.marque{gap:9px}.appel-hdr{padding:8px 13px;font-size:14px;gap:6px}.appel-hdr svg{width:17px;height:17px}.burger{width:42px;height:42px}.entete .enveloppe{gap:10px}}
+
+/* Héros : grande photo de chantier, texte centré */
+.heros{position:relative;background:var(--anthracite-2);color:#fff;overflow:hidden;isolation:isolate}
+.heros-photo{position:absolute;inset:0;z-index:-2;margin:0}
+.heros-photo img{width:100%;height:112%;object-fit:cover;object-position:center 40%}
+.heros::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(39,31,30,.55) 0%,rgba(39,31,30,.72) 55%,rgba(39,31,30,.86) 100%)}
+.heros .enveloppe{display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px;padding-block:clamp(70px,11vw,140px) clamp(64px,9vw,120px)}
+.heros h1{font-size:clamp(34px,5.6vw,68px);font-weight:700;line-height:1.08;max-width:17ch}
+.heros h1 em{font-style:normal;color:#FFB98A}
+.heros .sous{font-size:clamp(17px,1.9vw,21px);max-width:52ch;color:#F1E5DA}
+.heros .actions{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:6px}
+.note{display:inline-flex;align-items:center;gap:12px;font-size:16px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:8px 20px;backdrop-filter:blur(4px)}
+.note .etoiles{color:#FFB98A;letter-spacing:2px;font-size:18px}
+@media (max-width:700px){.heros .enveloppe{gap:18px;padding-block:54px 52px}.heros .sous{font-size:17px}}
+
+/* Bande d'infos (jamais animée) */
+.infos{background:var(--bordeaux);color:#fff}
+.infos .enveloppe{display:grid;grid-template-columns:repeat(3,1fr)}
+.info{display:flex;gap:14px;align-items:center;padding:22px 20px;border-left:1px solid rgba(255,255,255,.22);min-width:0}
+.info:first-child{border-left:0;padding-left:0}
+.info svg{width:32px;height:32px;flex:none;color:#FFB98A}
+.info b{display:block;font-family:var(--titre);font-size:19px;font-weight:600;line-height:1.15}
+.info small{font-size:15.5px;color:#F4DCD8;display:block}
+.info a{text-decoration:none}
+@media (max-width:820px){.infos .enveloppe{grid-template-columns:1fr}.info{border-left:0;border-top:1px solid rgba(255,255,255,.22);padding:14px 0}.info:first-child{border-top:0}}
+
+main{overflow-x:clip}
+section{padding-block:clamp(64px,9vw,108px)}
+.tete{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;margin-bottom:clamp(32px,5vw,54px)}
+.tete h2{max-width:22ch}
+.sombre{background:var(--anthracite);color:#fff}
+.sombre h2,.sombre h3{color:#fff}
+
+/* Savoir-faire */
+.services{background:var(--craie)}
+.grille-services{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.carte{background:var(--creme);border:1px solid var(--trait);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.carte .photo{aspect-ratio:4/3;overflow:hidden;background:var(--sable)}
+.carte .photo img{width:100%;height:100%;object-fit:cover}
+.carte .corps{padding:20px 20px 24px;display:grid;gap:9px;align-content:start}
+.carte .titre{display:flex;align-items:center;gap:12px}
+.carte .titre svg{width:30px;height:30px;flex:none;color:var(--orange)}
+.carte h3{font-size:19px}
+.carte p{color:var(--gris);font-size:16.5px}
+@media (max-width:1050px){.grille-services{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.grille-services{grid-template-columns:1fr}}
+.aussi-titre{margin-top:46px;text-align:center;font-family:var(--titre);font-size:22px;font-weight:700}
+.aussi{margin-top:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.aussi div{display:flex;align-items:center;gap:12px;background:var(--sable);border-radius:14px;padding:16px 18px;font-weight:700}
+.aussi svg{width:28px;height:28px;flex:none;color:var(--bordeaux)}
+@media (max-width:760px){.aussi{grid-template-columns:1fr}}
+
+/* Réalisations */
+.realisations{background:var(--anthracite);color:#fff}
+.galerie{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.galerie button{all:unset;cursor:zoom-in;display:block;aspect-ratio:4/5;overflow:hidden;border-radius:14px;background:var(--anthracite-2);position:relative}
+.galerie button:focus-visible{outline:3px solid var(--orange-vif);outline-offset:3px}
+.galerie img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.galerie button:hover img{transform:scale(1.05)}
+@media (max-width:900px){.galerie{grid-template-columns:repeat(3,1fr);gap:10px}}
+@media (max-width:700px){.galerie{grid-template-columns:repeat(2,1fr);gap:8px}}
+.visionneuse{position:fixed;inset:0;z-index:100;background:rgba(25,18,17,.94);display:none;align-items:center;justify-content:center;padding:18px}
+.visionneuse.ouvert{display:flex}
+.visionneuse figure{margin:0;max-width:min(92vw,900px);max-height:86vh;display:flex;flex-direction:column;align-items:center;gap:12px}
+.visionneuse img{max-width:100%;max-height:78vh;object-fit:contain;border-radius:10px}
+.visionneuse figcaption{color:#F1E3D6;font-weight:700;font-size:15px;text-align:center}
+.visionneuse .nav-v{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;border:2px solid rgba(255,255,255,.5);background:rgba(43,36,35,.78);color:#fff;cursor:pointer;display:grid;place-items:center}
+.visionneuse .nav-v:disabled{opacity:.3;cursor:default}
+.visionneuse .nav-v svg{width:24px;height:24px}
+.visionneuse .prec{left:14px}.visionneuse .suiv{right:14px}
+.visionneuse .fermer{position:absolute;top:14px;right:14px;width:48px;height:48px;border-radius:50%;border:2px solid rgba(255,255,255,.5);background:rgba(43,36,35,.78);color:#fff;cursor:pointer;display:grid;place-items:center}
+.visionneuse .fermer svg{width:22px;height:22px}
+@media (max-width:600px){.visionneuse .nav-v{top:auto;bottom:18px;transform:none}.visionneuse .prec{left:calc(50% - 64px)}.visionneuse .suiv{right:calc(50% - 64px)}.visionneuse figure{margin-bottom:60px}}
+
+/* Engagements */
+.methode{background:var(--creme)}
+.methode-grille{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,64px);align-items:center}
+.methode-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.methode-photos figure{margin:0;border-radius:18px;overflow:hidden;aspect-ratio:3/4;background:var(--sable);position:relative}
+.methode-photos figure:nth-child(2){margin-top:34px}
+.methode-photos img{width:100%;height:100%;object-fit:cover}
+.methode-photos figcaption{position:absolute;left:10px;bottom:10px;background:#fff;color:var(--encre);font-family:var(--titre);font-weight:600;font-size:14.5px;line-height:1;padding:8px 14px;border-radius:999px}
+.methode-texte{display:grid;gap:18px;justify-items:start}
+.methode-texte h2{max-width:17ch}
+.etapes{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:18px}
+.etapes li{display:block}
+.etapes h3{font-size:20px;color:var(--encre)}
+.etapes h3 .n{color:var(--orange)}
+.etapes p{color:var(--gris);font-size:16.5px;margin-top:4px}
+@media (max-width:900px){.methode-grille{grid-template-columns:1fr}}
+
+/* Avis */
+.avis{background:var(--sable)}
+.score{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+.score .gros{font-family:var(--titre);font-size:54px;font-weight:700;line-height:1}
+.score .etoiles{color:var(--orange);font-size:26px;letter-spacing:3px}
+.score small{font-size:15.5px;color:var(--gris)}
+.mur{column-count:3;column-gap:20px}
+.mur blockquote{break-inside:avoid;margin:0 0 20px;background:var(--craie);border:1px solid var(--trait);border-radius:18px;padding:22px 24px}
+.mur .etoiles-av{color:var(--orange);letter-spacing:2px;font-size:17px}
+.mur p{margin-top:8px;font-size:16.5px}
+.mur footer{margin-top:12px;font-weight:800;font-size:15px}
+.mur footer span{font-weight:600;color:var(--gris)}
+@media (max-width:980px){.mur{column-count:2}}
+@media (max-width:620px){.mur{column-count:1}}
+.avis-lien{text-align:center;margin-top:30px}
+
+/* Contact */
+.contact{background:var(--craie)}
+.contact-grille{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,60px);align-items:start}
+.coord{display:grid;gap:22px}
+.coord .ligne{display:flex;gap:14px;align-items:flex-start}
+.coord .ligne svg{width:28px;height:28px;flex:none;color:var(--orange);margin-top:2px}
+.coord b{display:block;font-family:var(--titre);font-size:19px;font-weight:600;line-height:1.2}
+.coord a{text-decoration:none;font-weight:700}
+.coord a:hover{color:var(--bordeaux)}
+.horaires{display:grid;gap:4px;margin-top:4px;font-size:16.5px}
+.horaires div{display:flex;justify-content:space-between;gap:16px;max-width:380px;border-bottom:1px dashed var(--trait);padding:3px 0}
+.horaires span:last-child{font-weight:700}
+.reseau-titre{font-family:var(--titre);font-size:19px;font-weight:600;margin:2px 0 -6px}
+.reseau{display:flex;flex-wrap:wrap;gap:10px}
+.reseau a{display:inline-flex;align-items:center;gap:9px;padding:10px 18px;border-radius:999px;border:2px solid var(--encre);font-family:var(--titre);font-weight:600;font-size:14.5px;text-decoration:none;color:var(--encre);background:transparent;transition:background .25s,color .25s}
+.reseau a:hover{background:var(--encre);color:#fff}
+.reseau svg{width:20px;height:20px;flex:none}
+.formulaire{background:var(--creme);border:1px solid var(--trait);border-radius:22px;padding:clamp(22px,3vw,34px);display:grid;gap:16px}
+.formulaire h3{font-size:24px}
+.formulaire label{display:grid;gap:6px;font-weight:700;font-size:15.5px}
+.formulaire input,.formulaire textarea,.formulaire select{font:inherit;font-weight:400;color:var(--encre);background:var(--craie);border:2px solid var(--trait);border-radius:12px;padding:12px 14px;width:100%}
+.formulaire textarea{min-height:130px;resize:vertical}
+.formulaire input:focus,.formulaire textarea:focus,.formulaire select:focus{outline:none;border-color:var(--orange)}
+.deux{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:520px){.deux{grid-template-columns:1fr}}
+.formulaire .btn{justify-self:start}
+.merci{display:none;background:var(--anthracite);color:#fff;border-radius:12px;padding:18px 20px;font-weight:600}
+.formulaire.envoye .merci{display:block}
+.champs{display:grid;gap:16px}
+.formulaire.envoye .champs{display:none}
+@media (max-width:900px){.contact-grille{grid-template-columns:1fr}}
+
+/* Pied */
+footer.pied{background:var(--anthracite-2);color:#E3D4C7;padding:34px 0 38px}
+.pied .enveloppe{display:flex;flex-wrap:wrap;gap:18px 30px;align-items:center;justify-content:space-between}
+.pied .marque{color:#fff}
+.pied .marque img{background:#fff;border-radius:10px;padding:4px 6px;height:46px}
+.pied .marque .nom b{color:#fff}
+.pied .marque .nom small{color:#FFB98A}
+.pied p{font-size:15px}
+.pied-ico{display:flex;gap:10px}
+.pied-ico a{width:44px;height:44px;border-radius:50%;border:2px solid #5d4d4a;display:grid;place-items:center;color:#fff;transition:background .25s}
+.pied-ico a:hover{background:var(--bordeaux)}
+.pied-ico svg{width:20px;height:20px}
+
+.split-ligne{perspective:600px}
+.progres{position:absolute;left:0;bottom:-1px;height:4px;width:100%;background:linear-gradient(90deg,var(--bordeaux),var(--orange));transform:scaleX(0);transform-origin:left;pointer-events:none}
+
+/* Version téléphone allégée : moins de contenu à faire défiler (le PC ne change pas) */
+@media (max-width:700px){
+  section{padding-block:46px}
+  .tete{margin-bottom:26px;gap:10px}
+  .tete .chapo{display:none}
+  .grille-services{grid-template-columns:1fr 1fr;gap:12px}
+  .carte .photo{aspect-ratio:1/1}
+  .carte .corps{padding:12px 12px 14px}
+  .carte .corps p{display:none}
+  .carte .titre{gap:8px}
+  .carte .titre svg{width:22px;height:22px}
+  .carte h3{font-size:15.5px}
+  .aussi-titre{margin-top:30px;font-size:20px}
+  .aussi div:nth-child(n+4){display:none}
+  .galerie button:nth-child(n+9){display:none}
+  .mur blockquote:nth-child(n+6){display:none}
+  .score{margin-bottom:22px}
+  .methode-photos{grid-template-columns:1fr}
+  .methode-photos figure:nth-child(2){display:none}
+  .methode-photos figure{aspect-ratio:4/3}
+  .formulaire .opt{display:none}
+  .coord{gap:16px}
+}
+/* Apparition : fondu seul sur les cartes, aucun déplacement */
+.fondu{opacity:0;transition:opacity .7s ease}
+.fondu.vu{opacity:1}
+@media (prefers-reduced-motion:reduce){.fondu{opacity:1;transition:none}.galerie img,.nav a::after{transition:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-tel" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.6 21 3 13.4 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+    <symbol id="i-horloge" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm.8 5v5.2l4 2.4-.8 1.3-4.9-2.9V7z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path fill="currentColor" d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4.4 7H4v.5l8 5.6 8-5.6V7h-.4z"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 22v-8.2h2.8l.4-3.3h-3.2V8.4c0-.95.27-1.6 1.62-1.6h1.7V3.85c-.3-.04-1.3-.13-2.5-.13-2.5 0-4.2 1.5-4.2 4.3v2.5H7.3v3.3h2.8V22z"/></symbol>
+    <symbol id="i-google" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="M20 12.2H12.2M19.2 8A8.500 8.500 0 1 0 20.400 13A5.200 5.200 0 0 1 12.100 18"/></symbol>
+    <symbol id="i-plan" viewBox="0 0 24 24"><path fill="currentColor" d="M15 4.5 9 2.4 3.4 4.5a1 1 0 0 0-.6.9v14.100a.8.8 0 0 0 1.100.7L9 18.300l6 2.100 5.600-2.100a1 1 0 0 0 .6-.9V3.800a.8.8 0 0 0-1.100-.7zM9.800 4.200l4.400 1.500v14.100l-4.400-1.500z"/></symbol>
+    <symbol id="i-fleche-d" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M9 4l8 8-8 8"/></symbol>
+    <symbol id="i-fleche-g" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M15 4l-8 8 8 8"/></symbol>
+    <symbol id="i-croix" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M5 5l14 14M19 5L5 19"/></symbol>
+    <symbol id="i-rouleau" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" d="M5 5h20a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zM26 8.500h2.500v7H16v4M14 19.500h4V28h-4z"/></symbol>
+    <symbol id="i-spatule" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" d="M4 12h24l-3 9H7zM16 21v8M12 29h8"/></symbol>
+    <symbol id="i-poutre" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" d="M2 8h28M2 15h28M2 22h28M7 5v20M25 5v20"/></symbol>
+    <symbol id="i-sol" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" d="M3 10h26v16H3zM3 18h26M11 10v8M19 18v8M23 10v8M7 18v8"/></symbol>
+    <symbol id="i-bain" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" d="M3 16h26v3a6 6 0 0 1-6 6H9a6 6 0 0 1-6-6zM7 16V8a3 3 0 0 1 6 0M8 25l-2 3M24 25l2 3"/></symbol>
+    <symbol id="i-pinceau" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" d="M26 4L13 17l3 3L29 7zM13 17c-4 0-6 2-6 5s-2 4-3 5c4 1 9 0 11-3 1-2 1-5-2-7z"/></symbol>
+    <symbol id="i-maison" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" d="M3 15L16 4l13 11M6 13v15h20V13M13 28v-8h6v8"/></symbol>
+  </defs>
+</svg>
+
+<header class="entete" id="haut">
+  <div class="enveloppe">
+    <a class="marque" href="#accueil" aria-label="Idée Déco, accueil">
+      <img src="img/logo-mark.png" alt="" width="371" height="400">
+      <span class="nom"><b>Idée Déco</b><small>Peinture · La Quinte</small></span>
+    </a>
+    <nav class="nav" id="menu" aria-label="Menu principal">
+      <a href="#accueil">Accueil</a>
+      <a href="#savoir-faire">Savoir-faire</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#engagements">Engagements</a>
+      <a href="#avis">Avis</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-orange appel-hdr" href="tel:+33670128710"><svg aria-hidden="true"><use href="#i-tel"/></svg><span>Appeler<span class="num"> le 06 70 12 87 10</span></span></a>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><svg aria-hidden="true" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+  <div class="progres" id="progres"></div>
+</header>
+
+<main>
+<section id="accueil" style="padding:0">
+  <div class="heros">
+    <figure class="heros-photo"><img src="img/facade-creme-volets-verts.jpg" alt="Façade d'une maison ravalée, crépi crème et volets verts" width="1236" height="926"></figure>
+    <div class="enveloppe">
+      <span class="etiquette">Peintre en bâtiment · La Quinte</span>
+      <h1>Façades, murs et sols <em>remis à neuf</em> avec sérieux</h1>
+      <p class="sous">Nous peignons vos façades et vos pièces, posons papier peint et revêtements de sols, à La Quinte et dans tout le secteur du Mans.</p>
+      <div class="actions">
+        <a class="btn btn-orange" href="tel:+33670128710"><svg aria-hidden="true"><use href="#i-tel"/></svg>06 70 12 87 10</a>
+        <a class="btn btn-contour" href="#contact">Demander un devis</a>
+      </div>
+      <span class="note"><span class="etoiles" aria-hidden="true">★★★★★</span><span><b>5,0</b> sur Google · 21 avis</span></span>
+    </div>
+  </div>
+</section>
+<div class="infos">
+  <div class="enveloppe">
+    <div class="info"><svg aria-hidden="true"><use href="#i-tel"/></svg><div><b><a href="tel:+33670128710">06 70 12 87 10</a></b><small>Appelez, nous vous répondons</small></div></div>
+    <div class="info"><svg aria-hidden="true"><use href="#i-pin"/></svg><div><b>20 route des Grands Bois</b><small>72550 La Quinte</small></div></div>
+    <div class="info"><svg aria-hidden="true"><use href="#i-horloge"/></svg><div><b>Lundi au vendredi</b><small>De 8h à 19h</small></div></div>
+  </div>
+</div>
+
+<section class="services" id="savoir-faire">
+  <div class="enveloppe">
+    <div class="tete">
+      <span class="etiquette">Savoir-faire</span>
+      <h2>Une peinture qui tient commence par un chantier bien préparé</h2>
+      <p class="chapo">Du support à la finition, nous prenons soin de chaque étape, sans gêne pour votre quotidien.</p>
+    </div>
+    <div class="grille-services">
+      <article class="carte fondu"><div class="photo"><img src="img/facade-creme-toit-ardoise.jpg" alt="Maison au crépi neuf et volets verts" loading="lazy" width="1236" height="926"></div><div class="corps"><div class="titre"><svg aria-hidden="true"><use href="#i-maison"/></svg><h3>Façades et ravalement</h3></div><p>Nous rénovons et repeignons vos façades pour protéger et embellir votre maison.</p></div></article>
+      <article class="carte fondu"><div class="photo"><img src="img/sol-souple-grande-piece.jpg" alt="Grande pièce aux murs blancs et mur bleu-vert" loading="lazy" width="896" height="1061"></div><div class="corps"><div class="titre"><svg aria-hidden="true"><use href="#i-rouleau"/></svg><h3>Peinture intérieure</h3></div><p>Murs, plafonds, cuisines, escaliers : nous reprenons les supports puis nous peignons proprement.</p></div></article>
+      <article class="carte fondu"><div class="photo"><img src="img/chambre-papier-peint.jpg" alt="Chambre avec papier peint fleuri et murs roses" loading="lazy" width="896" height="1061"></div><div class="corps"><div class="titre"><svg aria-hidden="true"><use href="#i-pinceau"/></svg><h3>Papier peint et décoration</h3></div><p>Nous posons votre papier peint et choisissons les teintes avec vous.</p></div></article>
+      <article class="carte fondu"><div class="photo"><img src="img/pose-sol-carreaux.jpg" alt="Pose d'un revêtement de sol sur un ancien carrelage" loading="lazy" width="896" height="1061"></div><div class="corps"><div class="titre"><svg aria-hidden="true"><use href="#i-sol"/></svg><h3>Revêtements de sols</h3></div><p>Nous préparons le sol et posons votre revêtement pour une pièce comme neuve.</p></div></article>
+    </div>
+    <p class="aussi-titre">Et aussi</p>
+    <div class="aussi">
+      <div><svg aria-hidden="true"><use href="#i-spatule"/></svg>Reprise des murs avant peinture</div>
+      <div><svg aria-hidden="true"><use href="#i-poutre"/></svg>Ponçage et lasure de carport et de bois extérieurs</div>
+      <div><svg aria-hidden="true"><use href="#i-maison"/></svg>Rénovation complète d'une maison, intérieur et façade</div>
+    </div>
+  </div>
+</section>
+
+<section class="realisations sombre" id="realisations">
+  <div class="enveloppe">
+    <div class="tete">
+      <span class="etiquette">Réalisations</span>
+      <h2>Quelques chantiers que nous avons réalisés</h2>
+      <p class="chapo">Cliquez sur une photo pour l'agrandir.</p>
+    </div>
+    <div class="galerie" id="galerie">
+      <button type="button" aria-label="Façade crème aux volets verts"><img src="img/facade-creme-volets-verts.jpg" alt="Façade crème aux volets verts" loading="lazy" width="1236" height="926"></button>
+      <button type="button" aria-label="Maison au crépi neuf sous un toit d'ardoise"><img src="img/facade-creme-toit-ardoise.jpg" alt="Maison au crépi neuf sous un toit d'ardoise" loading="lazy" width="1236" height="926"></button>
+      <button type="button" aria-label="Maison grise aux volets repeints"><img src="img/maison-grise-volets.jpg" alt="Maison grise aux volets repeints" loading="lazy" width="732" height="961"></button>
+      <button type="button" aria-label="Façade grise et terrasse en bois"><img src="img/maison-grise-terrasse.jpg" alt="Façade grise et terrasse en bois" loading="lazy" width="1236" height="926"></button>
+      <button type="button" aria-label="Ravalement de façade sur échafaudage"><img src="img/facade-echafaudage.jpg" alt="Ravalement de façade sur échafaudage" loading="lazy" width="1236" height="926"></button>
+      <button type="button" aria-label="Façade blanche d'une maison contemporaine"><img src="img/maison-contemporaine.jpg" alt="Façade blanche d'une maison contemporaine" loading="lazy" width="1236" height="926"></button>
+      <button type="button" aria-label="Entrée d'une maison contemporaine"><img src="img/entree-contemporaine.jpg" alt="Entrée d'une maison contemporaine" loading="lazy" width="1236" height="926"></button>
+      <button type="button" aria-label="Baie vitrée et façade blanche"><img src="img/baie-vitree.jpg" alt="Baie vitrée et façade blanche" loading="lazy" width="732" height="961"></button>
+      <button type="button" aria-label="Peinture de façade en cours"><img src="img/facade-chantier.jpg" alt="Peinture de façade en cours" loading="lazy" width="1236" height="926"></button>
+      <button type="button" aria-label="Escalier aux murs rafraîchis et papier peint"><img src="img/escalier-papier-peint.jpg" alt="Escalier aux murs rafraîchis et papier peint" loading="lazy" width="732" height="961"></button>
+      <button type="button" aria-label="Escalier en bois et métal"><img src="img/escalier-bois-noir.jpg" alt="Escalier en bois et métal" loading="lazy" width="896" height="1061"></button>
+      <button type="button" aria-label="Grande pièce aux murs repeints"><img src="img/sol-souple-grande-piece.jpg" alt="Grande pièce aux murs repeints" loading="lazy" width="896" height="1061"></button>
+      <button type="button" aria-label="Pose d'un sol sur ancien carrelage"><img src="img/pose-sol-carreaux.jpg" alt="Pose d'un sol sur ancien carrelage" loading="lazy" width="896" height="1061"></button>
+      <button type="button" aria-label="Pose d'un revêtement de sol en rouleau"><img src="img/pose-sol-rouleau.jpg" alt="Pose d'un revêtement de sol en rouleau" loading="lazy" width="896" height="1061"></button>
+      <button type="button" aria-label="Chambre avec papier peint fleuri"><img src="img/chambre-papier-peint.jpg" alt="Chambre avec papier peint fleuri" loading="lazy" width="896" height="1061"></button>
+    </div>
+  </div>
+</section>
+
+<div class="visionneuse" id="visionneuse" role="dialog" aria-modal="true" aria-label="Photo agrandie">
+  <button class="fermer" id="v-fermer" aria-label="Fermer"><svg aria-hidden="true"><use href="#i-croix"/></svg></button>
+  <button class="nav-v prec" id="v-prec" aria-label="Photo précédente"><svg aria-hidden="true"><use href="#i-fleche-g"/></svg></button>
+  <figure><img id="v-img" alt="" width="1236" height="926"><figcaption id="v-compte"></figcaption></figure>
+  <button class="nav-v suiv" id="v-suiv" aria-label="Photo suivante"><svg aria-hidden="true"><use href="#i-fleche-d"/></svg></button>
+</div>
+
+<section class="methode" id="engagements">
+  <div class="enveloppe methode-grille">
+    <div class="methode-photos">
+      <figure class="fondu"><img src="img/facade-chantier.jpg" alt="Notre équipe au travail sur l'échafaudage" loading="lazy" width="1236" height="926"><figcaption>Sur le chantier</figcaption></figure>
+      <figure class="fondu"><img src="img/facade-creme-toit-ardoise.jpg" alt="Façade terminée" loading="lazy" width="1236" height="926"><figcaption>Façade terminée</figcaption></figure>
+    </div>
+    <div class="methode-texte">
+      <span class="etiquette">Nos engagements</span>
+      <h2>Un chantier propre, suivi de près et dans les délais</h2>
+      <ol class="etapes">
+        <li><h3><span class="n">1.</span> Un chantier propre et discret</h3><p>Nous protégeons vos lieux et travaillons sans gêne pour votre quotidien.</p></li>
+        <li><h3><span class="n">2.</span> Des délais tenus</h3><p>Nous annonçons une date au devis et nous nous y tenons.</p></li>
+        <li><h3><span class="n">3.</span> Un suivi du début à la fin</h3><p>Nous restons joignables et faisons le point avec vous jusqu'à la dernière touche, pour un tarif juste.</p></li>
+      </ol>
+      <a class="btn btn-noir" href="#contact">Parler de votre projet</a>
+    </div>
+  </div>
+</section>
+
+<section class="avis" id="avis">
+  <div class="enveloppe">
+    <div class="tete">
+      <span class="etiquette">Avis clients</span>
+      <h2>Ce que disent nos clients sur Google</h2>
+    </div>
+    <div class="score"><span class="gros">5,0</span><span><span class="etoiles" aria-hidden="true">★★★★★</span><small style="display:block">Note Google · 21 avis</small></span></div>
+    <div class="mur">
+      <blockquote class="fondu"><div class="etoiles-av" aria-label="5 étoiles">★★★★★</div><p>Une entreprise sérieuse, avec un bon rapport qualité-prix et un vrai suivi. Nous recommandons vivement Idée Déco. Nous avons fait appel à Idée Déco à La Quinte pour le ponçage et la lasure de notre carport, et nous sommes très satisfaits du résultat. Les deux personnes qui sont intervenues ont été très professionnelles, courtoises et discrètes. Le chantier s'est fait sans gêne au quotidien et le travail a été réalisé proprement. Le patron est également un vrai plus : réactif, disponible, sympathique et surtout très sérieux dans le suivi du chantier. Il est clairement soucieux de la satisfaction de ses clients et ça se ressent dans sa façon de travailler. Enfin, le tarif était vraiment très correct au vu du travail réalisé. Nous referons appel à Idée Déco pour nos prochains travaux 👌</p><footer>Duvauchel Marcelline <span>· il y a 1 mois</span></footer></blockquote>
+      <blockquote class="fondu"><div class="etoiles-av" aria-label="5 étoiles">★★★★★</div><p>Nous sommes ravis de la peinture de notre cuisine. L'employée a vraiment été très bien et le patron très sympathique. Nous ne manquerons de faire appel à cette entreprise pour nos prochains travaux. Nous recommandons vivement</p><footer>Arielle Delaplanche <span>· il y a 10 mois</span></footer></blockquote>
+      <blockquote class="fondu"><div class="etoiles-av" aria-label="5 étoiles">★★★★★</div><p>Monsieur BAPTISTE et son équipe féminine sont au top. À l'écoute des besoins et un très professionnel. Respect des délais et travail de qualité. Je recommande vivement.</p><footer>Bertrand Lemonnier <span>· il y a 1 an</span></footer></blockquote>
+      <blockquote class="fondu"><div class="etoiles-av" aria-label="5 étoiles">★★★★★</div><p>Une équipe sérieuse, agréable et respectueuse des lieux ! Un travail de qualité ! Merci pour le temps accordé à notre maison pour la peinture intérieure et la façade ☺️</p><footer>Maxime Goutiere <span>· il y a 1 an</span></footer></blockquote>
+      <blockquote class="fondu"><div class="etoiles-av" aria-label="5 étoiles">★★★★★</div><p>Parfait. Entreprise sérieuse. Travail soigné. Réfection d'un escalier qui avait été massacré par pseudo artisan. Malgré l'ampleur de la tâche, le résultat est magnifique. Encore merci</p><footer>fréédéric daine <span>· il y a 2 ans</span></footer></blockquote>
+      <blockquote class="fondu"><div class="etoiles-av" aria-label="5 étoiles">★★★★★</div><p>Travail sérieux et de qualité effectué dans les délais convenus. Nous recommandons M Baptiste et son équipe si vous souhaitez réaliser de jolis travaux.</p><footer>Julia Pilfert <span>· il y a 1 an</span></footer></blockquote>
+      <blockquote class="fondu"><div class="etoiles-av" aria-label="5 étoiles">★★★★★</div><p>Nous recommandons fortement l'entreprise de M BAPTISTE et son équipe. Travail de très bonne qualité, sérieux et de bons conseils. Nous n'hésiterons pas pour nos prochains travaux à faire appel à M BAPTISTE</p><footer>jocelyne greffier <span>· il y a 9 mois</span></footer></blockquote>
+      <blockquote class="fondu"><div class="etoiles-av" aria-label="5 étoiles">★★★★★</div><p>Entreprise très sérieuse et personnel d'une grande discrétion. Travail méticuleux, propre, chantier impeccable à la finition. Travaux réalisés dans les délais. N'hésitez pas à faire appel à cette entreprise.</p><footer>Francoise Blanchard <span>· il y a 3 ans</span></footer></blockquote>
+    </div>
+    <p class="avis-lien"><a class="btn btn-contour" href="https://www.google.com/maps/search/?api=1&query=Id%C3%A9e+D%C3%A9co+20+route+des+Grands+Bois+La+Quinte" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-google"/></svg>Voir tous les avis sur Google</a></p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="enveloppe">
+    <div class="tete">
+      <span class="etiquette">Contact</span>
+      <h2>Parlons de vos travaux de peinture</h2>
+      <p class="chapo">Un appel ou un message suffit : nous vous répondons et nous vous proposons un devis.</p>
+    </div>
+    <div class="contact-grille">
+      <div class="coord">
+        <div class="ligne"><svg aria-hidden="true"><use href="#i-tel"/></svg><div><b>Téléphone</b><a href="tel:+33670128710">06 70 12 87 10</a></div></div>
+        <div class="ligne"><svg aria-hidden="true"><use href="#i-mail"/></svg><div><b>E-mail</b><a href="mailto:idee.deco72@gmail.com">idee.deco72@gmail.com</a></div></div>
+        <div class="ligne"><svg aria-hidden="true"><use href="#i-pin"/></svg><div><b>Adresse</b>Idée Déco<br>20 route des Grands Bois, 72550&nbsp;La&nbsp;Quinte</div></div>
+        <div class="ligne"><svg aria-hidden="true"><use href="#i-horloge"/></svg><div><b>Horaires</b>
+          <div class="horaires"><div><span>Lundi au vendredi</span><span>8h à 19h</span></div><div><span>Samedi et dimanche</span><span>Fermé</span></div></div></div></div>
+        <p class="reseau-titre">Retrouvez-nous</p>
+        <div class="reseau">
+          <a href="https://www.facebook.com/p/ID%C3%89E-D%C3%89CO-Sarthe-100073045176633/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-fb"/></svg>Facebook</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Id%C3%A9e+D%C3%A9co+20+route+des+Grands+Bois+La+Quinte" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-google"/></svg>Fiche Google</a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Id%C3%A9e+D%C3%A9co+20+route+des+Grands+Bois+La+Quinte" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-plan"/></svg>Plan d'accès</a>
+        </div>
+      </div>
+      <form class="formulaire" id="form" action="#" method="post">
+        <h3>Demander un devis</h3>
+        <div class="champs">
+          <div class="deux">
+            <label>Nom<input name="nom" type="text" autocomplete="name" required></label>
+            <label>Téléphone<input name="tel" type="tel" autocomplete="tel" required></label>
+          </div>
+          <label class="opt">E-mail<input name="mail" type="email" autocomplete="email"></label>
+          <label class="opt">Votre projet
+            <select name="projet"><option>Façade et ravalement</option><option>Peinture intérieure</option><option>Papier peint</option><option>Revêtement de sol</option><option>Escalier, cuisine, boiseries</option><option>Rénovation complète</option><option>Autre</option></select>
+          </label>
+          <label>Message<textarea name="message" placeholder="Décrivez votre projet en quelques mots"></textarea></label>
+          <button class="btn btn-orange" type="submit">Envoyer ma demande</button>
+        </div>
+        <div class="merci" role="status">Merci ! Sur votre vrai site, cette demande vous arrivera par e-mail.</div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="pied">
+  <div class="enveloppe">
+    <a class="marque" href="#accueil" aria-label="Retour en haut"><img src="img/logo-mark.png" alt="" width="371" height="400"><span class="nom"><b>Idée Déco</b><small>Peinture · La Quinte</small></span></a>
+    <p>20 route des Grands Bois, 72550&nbsp;La&nbsp;Quinte · <span style="white-space:nowrap">06 70 12 87 10</span></p>
+    <div class="pied-ico">
+      <a href="https://www.facebook.com/p/ID%C3%89E-D%C3%89CO-Sarthe-100073045176633/" target="_blank" rel="noopener" aria-label="Facebook"><svg aria-hidden="true"><use href="#i-fb"/></svg></a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Id%C3%A9e+D%C3%A9co+20+route+des+Grands+Bois+La+Quinte" target="_blank" rel="noopener" aria-label="Fiche Google"><svg aria-hidden="true"><use href="#i-google"/></svg></a>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Id%C3%A9e+D%C3%A9co+20+route+des+Grands+Bois+La+Quinte" target="_blank" rel="noopener" aria-label="Plan d'accès"><svg aria-hidden="true"><use href="#i-plan"/></svg></a>
+      <a href="tel:+33670128710" aria-label="Appeler"><svg aria-hidden="true"><use href="#i-tel"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script>
+(function(){
+  var hdr=document.querySelector('.entete');
+  function hh(){return hdr.getBoundingClientRect().height}
+  // Menu mobile
+  var burger=document.getElementById('burger'),menu=document.getElementById('menu');
+  burger.addEventListener('click',function(){var o=menu.classList.toggle('ouvert');burger.setAttribute('aria-expanded',o)});
+  // Ancres : arrivée exacte sous l'en-tête
+  var liens=[].slice.call(menu.querySelectorAll('a'));
+  var cibles=liens.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function aller(id,e){var el=document.querySelector(id);if(!el)return;if(e)e.preventDefault();
+    var y=el.getBoundingClientRect().top+window.pageYOffset-hh()+1;
+    window.scrollTo({top:Math.max(0,y),behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});}
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id.length>1){menu.classList.remove('ouvert');burger.setAttribute('aria-expanded',false);aller(id,e)}})});
+  // Menu actif : seulement quand la section atteint le bas de l'en-tête
+  function spy(){var lim=hh()+2,cur=0;
+    cibles.forEach(function(c,i){if(c&&c.getBoundingClientRect().top<=lim)cur=i});
+    if(window.innerHeight+window.pageYOffset>=document.documentElement.scrollHeight-4)cur=cibles.length-1;
+    liens.forEach(function(a,i){a.classList.toggle('actif',i===cur)});
+    hdr.classList.toggle('ombre',window.pageYOffset>8)}
+  window.addEventListener('scroll',spy,{passive:true});window.addEventListener('resize',spy);spy();
+  // Fondu des cartes (aucun déplacement)
+  var f=document.querySelectorAll('.fondu');
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vu');io.unobserve(e.target)}})},{threshold:.08});
+    f.forEach(function(x){io.observe(x)});
+    setTimeout(function(){f.forEach(function(x){x.classList.add('vu')})},4000);
+  }else f.forEach(function(x){x.classList.add('vu')});
+  // Visionneuse (boutons seulement, la molette n'est jamais détournée)
+  var tous=[].slice.call(document.querySelectorAll('#galerie button')),gal=tous,vi=document.getElementById('visionneuse'),vimg=document.getElementById('v-img'),vc=document.getElementById('v-compte'),vp=document.getElementById('v-prec'),vs=document.getElementById('v-suiv'),k=0,dernier=null;
+  function montre(n){k=n;var img=gal[n].querySelector('img');vimg.src=img.getAttribute('src');vimg.alt=img.alt;vc.textContent=(n+1)+' / '+gal.length+' · '+img.alt;vp.disabled=n===0;vs.disabled=n===gal.length-1}
+  function ouvre(b){dernier=document.activeElement;gal=tous.filter(function(x){return x.offsetParent!==null});montre(gal.indexOf(b));vi.classList.add('ouvert');document.getElementById('v-fermer').focus()}
+  function ferme(){vi.classList.remove('ouvert');if(dernier)dernier.focus()}
+  tous.forEach(function(b){b.addEventListener('click',function(){ouvre(b)})});
+  vp.addEventListener('click',function(){if(k>0)montre(k-1)});vs.addEventListener('click',function(){if(k<gal.length-1)montre(k+1)});
+  document.getElementById('v-fermer').addEventListener('click',ferme);
+  vi.addEventListener('click',function(e){if(e.target===vi)ferme()});
+  document.addEventListener('keydown',function(e){if(!vi.classList.contains('ouvert'))return;if(e.key==='Escape')ferme();if(e.key==='ArrowLeft'&&k>0)montre(k-1);if(e.key==='ArrowRight'&&k<gal.length-1)montre(k+1)});
+
+  // Effets GSAP : titres lettre par lettre en 3D, trait de couleur sous les étiquettes, photo du héros en parallaxe,
+  // formulaire en cascade, barre de progression. Jamais sur le téléphone, l'adresse ni les horaires ; cartes en fondu seul.
+  if(window.gsap&&window.ScrollTrigger&&window.SplitText){
+    gsap.registerPlugin(ScrollTrigger,SplitText);
+    var mm=gsap.matchMedia();
+    mm.add('(prefers-reduced-motion: no-preference)',function(){
+      var h1=document.querySelector('.heros h1');
+      SplitText.create(h1,{type:'lines,words,chars',linesClass:'split-ligne',autoSplit:true,onSplit:function(self){
+        return gsap.from(self.chars,{opacity:0,rotationX:90,rotationY:-50,yPercent:-40,duration:.9,ease:'power2.out',stagger:.02,clearProps:'opacity,transform'});
+      }});
+      gsap.from('.heros .etiquette,.heros .sous',{opacity:0,duration:.9,delay:.5,stagger:.12,ease:'power1.out',clearProps:'opacity'});
+      gsap.from('.heros .actions,.heros .note',{opacity:0,duration:.8,delay:.9,stagger:.15,ease:'power1.out',clearProps:'opacity'});
+      document.querySelectorAll('.tete h2,.methode-texte h2').forEach(function(t){
+        SplitText.create(t,{type:'lines,words,chars',linesClass:'split-ligne',autoSplit:true,onSplit:function(self){
+          return gsap.from(self.chars,{opacity:0,rotationX:90,rotationY:-50,yPercent:-40,duration:.8,ease:'power2.out',stagger:.018,clearProps:'opacity,transform',
+            scrollTrigger:{trigger:t,start:'top 88%',toggleActions:'play none none none'}});
+        }});
+      });
+      document.querySelectorAll('.etiquette').forEach(function(e){
+        gsap.fromTo(e,{'--x':0},{'--x':1,duration:.8,ease:'power2.out',clearProps:'--x',scrollTrigger:{trigger:e,start:'top 92%',toggleActions:'play none none none'}});
+      });
+      gsap.to('.heros-photo img',{yPercent:-8,ease:'none',scrollTrigger:{trigger:'.heros',start:'top top',end:'bottom top',scrub:.6}});
+      gsap.from('.formulaire .champs > *',{opacity:0,duration:.6,stagger:.1,ease:'power1.out',clearProps:'opacity',
+        scrollTrigger:{trigger:'.formulaire',start:'top 85%',toggleActions:'play none none none'}});
+      var barre=document.getElementById('progres');
+      ScrollTrigger.create({start:0,end:'max',onUpdate:function(self){barre.style.transform='scaleX('+self.progress+')'}});
+    });
+    window.addEventListener('load',function(){ScrollTrigger.refresh()});
+    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){ScrollTrigger.refresh()});
+  }
+  // Formulaire : message de remerciement
+  document.getElementById('form').addEventListener('submit',function(e){e.preventDefault();this.classList.add('envoye')});
+})();
+</script>
+
+</body>
+</html>
