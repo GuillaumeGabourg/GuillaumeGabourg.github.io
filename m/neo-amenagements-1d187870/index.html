@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Néo Aménagements · Paysagiste à Changé</title>
+<meta name="description" content="Néo Aménagements à Changé : terrasses en bois, clôtures, dallage et pavage, maçonnerie paysagère, plantations et aménagements intérieurs, autour du Mans.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bordeaux:#6e1128;--bordeaux-fonce:#4a0b1b;--rose:#f3e3e3;
+  --sable:#f7f1e7;--papier:#fffaf3;--encre:#251f1d;--gris:#5f5753;
+  --bois:#bd8442;--bois-clair:#e9c999;--ligne:#e5d9c9;--vert:#5a7249;
+  --entete:76px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto}
+body{font-family:'DM Sans',system-ui,sans-serif;font-size:18px;line-height:1.6;color:var(--encre);background:var(--sable);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:'DM Serif Display',Georgia,serif;font-weight:400;line-height:1.12;color:var(--bordeaux-fonce)}
+.cadre{width:min(1160px,100% - 40px);margin-inline:auto}
+section{position:relative}
+
+/* En-tête */
+.entete{position:sticky;top:0;z-index:50;height:var(--entete);background:rgba(255,250,243,.96);backdrop-filter:blur(8px);border-bottom:1px solid transparent;transition:box-shadow .25s,border-color .25s}
+.entete.ombre{box-shadow:0 6px 24px rgba(74,11,27,.12);border-bottom-color:var(--ligne)}
+.entete .cadre{height:100%;display:flex;align-items:center;gap:22px}
+.marque{display:flex;align-items:center;gap:12px;text-decoration:none;flex:none}
+.marque img{width:54px;height:54px;border-radius:12px}
+.marque b{display:block;font-family:'DM Serif Display',serif;font-weight:400;font-size:1.3rem;line-height:1.05;color:var(--bordeaux)}
+.marque small{display:block;font-size:.74rem;letter-spacing:.07em;text-transform:uppercase;color:var(--gris);margin-top:2px}
+nav{margin-left:auto}
+nav ul{display:flex;gap:4px;list-style:none}
+nav a{white-space:nowrap;display:block;padding:8px 14px;border-radius:99px;text-decoration:none;font-weight:500;font-size:.98rem;color:var(--gris);transition:background .2s,color .2s}
+nav a:hover{background:var(--rose);color:var(--bordeaux)}
+nav a.actif{background:var(--bordeaux);color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 24px;border-radius:99px;font-weight:700;font-size:1.02rem;text-decoration:none;border:2px solid var(--bordeaux);background:var(--bordeaux);color:#fff;cursor:pointer;font-family:inherit;transition:background .2s,color .2s,border-color .2s}
+.btn:hover{background:var(--bordeaux-fonce);border-color:var(--bordeaux-fonce)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn.clair{background:transparent;color:var(--bordeaux)}
+.btn.clair:hover{background:var(--rose)}
+.btn.bois{background:var(--bois);border-color:var(--bois);color:#2a1a08}
+.btn.bois:hover{background:var(--bois-clair);border-color:var(--bois-clair)}
+.btn.contour{background:transparent;border-color:rgba(255,255,255,.7);color:#fff}
+.btn.contour:hover{background:rgba(255,255,255,.16);border-color:#fff}
+.btn.appel{padding:10px 20px;white-space:nowrap}
+.burger{display:none;margin-left:auto;width:46px;height:46px;border:1px solid var(--ligne);border-radius:12px;background:#fff;cursor:pointer;align-items:center;justify-content:center}
+.burger span,.burger span::before,.burger span::after{display:block;width:20px;height:2px;background:var(--bordeaux);border-radius:2px;position:relative;content:""}
+.burger span::before{position:absolute;top:-6px}.burger span::after{position:absolute;top:6px}
+.progres{position:absolute;left:0;bottom:-1px;height:3px;width:100%;background:var(--bois);transform:scaleX(0);transform-origin:left}
+
+/* Héros : photo plein cadre */
+.heros{position:relative;min-height:min(86vh,760px);display:flex;align-items:center;color:#fff;overflow:hidden;background:var(--bordeaux-fonce)}
+.heros .fond{position:absolute;inset:-4% 0;z-index:0}
+.heros .fond img{width:100%;height:100%;object-fit:cover;object-position:center 60%}
+.heros::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(95deg,rgba(74,11,27,.92) 0,rgba(74,11,27,.78) 38%,rgba(74,11,27,.18) 78%,rgba(74,11,27,.05) 100%)}
+.heros .cadre{position:relative;z-index:2;padding:80px 0 90px}
+.heros .texte{max-width:640px}
+.etiquette{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:.86rem;letter-spacing:.09em;text-transform:uppercase;color:var(--bois);margin-bottom:18px}
+.etiquette::before{content:"";width:34px;height:2px;background:currentColor}
+.heros .etiquette{color:var(--bois-clair)}
+.heros h1{color:#fff;font-size:clamp(2.2rem,4.8vw,3.9rem);margin-bottom:22px}
+.heros h1 em{font-style:normal;color:var(--bois-clair)}
+.sous{font-size:1.18rem;color:rgba(255,255,255,.9);max-width:34em;margin-bottom:30px}
+.actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px}
+.points{display:flex;flex-wrap:wrap;gap:10px 24px;list-style:none;font-weight:500;font-size:.98rem}
+.points li{display:flex;align-items:center;gap:8px}
+.points svg{width:18px;height:18px;color:var(--bois-clair);flex:none}
+.sceau{position:absolute;z-index:2;right:max(20px,calc((100% - 1160px)/2));bottom:34px;background:rgba(255,250,243,.96);color:var(--bordeaux-fonce);border-radius:18px;padding:14px 20px;box-shadow:0 16px 34px rgba(0,0,0,.3);display:flex;align-items:center;gap:14px}
+.sceau b{font-family:'DM Serif Display',serif;font-weight:400;font-size:2.2rem;line-height:1;color:var(--bordeaux)}
+.sceau span{font-size:.9rem;line-height:1.3}
+.sceau .etoiles{display:block;color:#e1a21a;letter-spacing:2px;font-size:.95rem}
+
+/* Bandeau défilant */
+.defile{background:var(--bordeaux);color:#f3e3e3;overflow:hidden;white-space:nowrap;padding:15px 0;border-block:1px solid var(--bordeaux-fonce)}
+.defile .rail{display:inline-flex;gap:0;will-change:transform}
+.defile span{display:inline-flex;align-items:center;font-weight:700;font-size:.95rem;letter-spacing:.1em;text-transform:uppercase;padding:0 22px}
+.defile span::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--bois);margin-left:44px}
+
+/* Sections */
+.bloc{padding:92px 0}
+.tete{max-width:44em;margin-bottom:46px}
+.tete .etiquette{margin-bottom:12px}
+.tete h2{font-size:clamp(1.9rem,3.6vw,2.8rem);margin-bottom:14px}
+.tete p{color:var(--gris);font-size:1.1rem}
+
+/* Services */
+.grille-services{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.service{background:var(--papier);border:1px solid var(--ligne);border-radius:20px;padding:28px 28px 30px;border-top:4px solid var(--bordeaux)}
+.service:nth-child(even){border-top-color:var(--bois)}
+.titre-ligne{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.titre-ligne .ico{width:48px;height:48px;border-radius:14px;background:var(--rose);color:var(--bordeaux);display:flex;align-items:center;justify-content:center;flex:none}
+.service:nth-child(even) .ico{background:#f6e7cf;color:#8a5a1d}
+.titre-ligne .ico svg{width:26px;height:26px}
+.service h3{font-size:1.4rem}
+.service p{color:var(--gris);font-size:1rem}
+
+/* Réalisations : grille de photos cliquables */
+.realisations{background:var(--papier);border-block:1px solid var(--ligne)}
+.galerie{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-flow:dense;gap:14px}
+.photo{position:relative;display:block;padding:0;border:0;background:#e9dfd0;border-radius:16px;overflow:hidden;cursor:zoom-in;aspect-ratio:4/3;font:inherit}
+.photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.photo:hover img{transform:scale(1.04)}
+.photo.grand{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+.photo:focus-visible{outline:3px solid var(--bois);outline-offset:3px}
+.photo .loupe{position:absolute;right:12px;bottom:12px;width:38px;height:38px;border-radius:50%;background:rgba(255,250,243,.94);color:var(--bordeaux);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+.photo .loupe svg{width:20px;height:20px}
+.note-galerie{margin-top:20px;color:var(--gris);font-size:.98rem}
+
+/* Avant / après */
+.paires{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.paire{background:var(--papier);border:1px solid var(--ligne);border-radius:20px;padding:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.paire .photo{aspect-ratio:3/4;border-radius:12px}
+.paire .etq{position:absolute;left:10px;top:10px;padding:3px 11px;border-radius:99px;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:rgba(37,31,29,.82);color:#fff}
+.paire .etq.apres{background:var(--bordeaux)}
+.paire .moitie{position:relative}
+.paire p{grid-column:1/-1;padding:4px 6px 4px;font-weight:700;color:var(--bordeaux-fonce);font-size:1rem}
+
+/* Méthode */
+.etapes{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.etape{background:var(--papier);border:1px solid var(--ligne);border-radius:20px;padding:28px}
+.etape h3{font-size:1.4rem;margin-bottom:10px}
+.etape h3 .n{color:var(--bois)}
+.etape p{color:var(--gris)}
+
+/* Avis */
+.avis-bloc{background:var(--rose)}
+.note-google{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:34px}
+#gros-note{font-family:'DM Serif Display',serif;font-size:3.8rem;line-height:1;color:var(--bordeaux)}
+.etoiles{color:#e1a21a;letter-spacing:2px;font-size:1.25rem}
+.note-google small{display:block;color:var(--gris)}
+.colonnes{column-count:3;column-gap:22px}
+.avis-carte{break-inside:avoid;background:#fff;border:1px solid #ead3d3;border-radius:18px;padding:22px;margin-bottom:22px}
+.avis-carte .etoiles{font-size:1rem;display:block;margin-bottom:8px}
+.avis-carte p{font-size:1rem;margin-bottom:12px}
+.avis-carte footer{font-size:.88rem;color:var(--gris);font-weight:700}
+
+/* Contact */
+.contact-grille{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.infos{display:grid;gap:18px}
+.info{display:flex;gap:14px;align-items:flex-start}
+.info .ico{width:44px;height:44px;border-radius:12px;background:var(--rose);color:var(--bordeaux);display:flex;align-items:center;justify-content:center;flex:none}
+.info .ico svg{width:23px;height:23px}
+.info b{display:block;color:var(--bordeaux-fonce)}
+.info a{text-decoration:none;font-weight:700;font-size:1.2rem;color:var(--bordeaux)}
+#tab-horaires{border-collapse:collapse;margin-top:4px;font-size:1rem}
+#tab-horaires td{padding:4px 18px 4px 0}
+#tab-horaires tr.auj td{font-weight:700;color:var(--bordeaux)}
+#etat{display:inline-block;margin-top:6px;padding:3px 12px;border-radius:99px;font-size:.88rem;font-weight:700}
+#etat.ouvert{background:#d8efdd;color:#1d6a34}#etat.ferme{background:#f3dcd7;color:#9a3a2a}
+.reseaux{margin-top:6px}
+.reseaux b{display:block;margin-bottom:10px;color:var(--bordeaux-fonce)}
+.pilules{display:flex;flex-wrap:wrap;gap:10px}
+.pilule{display:inline-flex;align-items:center;gap:9px;padding:9px 16px;border-radius:99px;border:1px solid var(--ligne);background:#fff;text-decoration:none;font-weight:700;font-size:.95rem;color:var(--bordeaux);transition:background .2s}
+.pilule:hover{background:var(--rose)}
+.pilule svg{width:20px;height:20px;flex:none}
+.formulaire{background:var(--papier);border:1px solid var(--ligne);border-radius:24px;padding:30px}
+.formulaire h3{font-size:1.6rem;margin-bottom:6px}
+.formulaire>p{color:var(--gris);margin-bottom:18px}
+.champ{margin-bottom:14px}
+.champ label{display:block;font-weight:700;font-size:.92rem;margin-bottom:5px;color:var(--bordeaux-fonce)}
+.champ input,.champ textarea{width:100%;padding:13px 15px;border:1.5px solid var(--ligne);border-radius:12px;font:inherit;background:#fff;color:var(--encre)}
+.champ input:focus,.champ textarea:focus{outline:3px solid #e0b8c0;border-color:var(--bordeaux)}
+.champ textarea{min-height:120px;resize:vertical}
+.formulaire .btn{width:100%;margin-top:6px}
+#merci{margin-top:16px;padding:16px 18px;border-radius:14px;background:var(--rose);color:var(--bordeaux-fonce);font-weight:700}
+
+/* Pied */
+footer.pied{background:var(--bordeaux-fonce);color:#ecd8d8;padding:44px 0 90px}
+footer.pied .cadre{display:flex;flex-wrap:wrap;gap:24px 40px;align-items:center;justify-content:space-between}
+.pied .marque b{color:#fff}.pied .marque small{color:#d9b9bf}
+.ronds{display:flex;gap:10px}
+.ronds a{width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;color:#fff;transition:background .2s}
+.ronds a:hover{background:rgba(255,255,255,.14)}
+.ronds svg{width:21px;height:21px}
+.pied small.droit{flex-basis:100%;opacity:.75;font-size:.85rem}
+
+.barre-appel{display:none}
+
+/* Visionneuse photos */
+.visio{position:fixed;inset:0;z-index:100;background:rgba(26,6,12,.95);display:none;flex-direction:column;align-items:center;justify-content:center;padding:64px 16px 24px}
+.visio.ouvert{display:flex}
+.visio img{max-width:min(1100px,100%);max-height:calc(100vh - 150px);max-height:calc(100dvh - 150px);object-fit:contain;border-radius:10px;background:#1a060c}
+.visio p{color:#fff;margin-top:14px;font-weight:700;text-align:center}
+.visio small{color:#d9b9bf;font-weight:400;margin-left:8px}
+.visio button{position:absolute;border:0;cursor:pointer;color:#fff;background:rgba(255,255,255,.14);width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.visio button:hover{background:rgba(255,255,255,.28)}
+.visio button svg{width:26px;height:26px}
+.visio .ferme{top:14px;right:14px}
+.visio .vprec{left:14px;top:50%;transform:translateY(-50%)}
+.visio .vsuiv{right:14px;top:50%;transform:translateY(-50%)}
+
+/* Tablette */
+@media (max-width:980px){
+  .grille-services{grid-template-columns:repeat(2,1fr)}
+  .etapes,.paires{grid-template-columns:1fr}
+  .colonnes{column-count:2}
+  .contact-grille{grid-template-columns:1fr}
+  .galerie{grid-template-columns:repeat(2,1fr)}
+  .photo.grand{grid-column:auto;grid-row:auto;aspect-ratio:4/3}
+  .heros::before{background:linear-gradient(180deg,rgba(74,11,27,.6) 0,rgba(74,11,27,.9) 100%)}
+  .sceau{position:static;margin:0 0 34px max(20px,calc((100% - 1160px)/2));align-self:flex-start;width:max-content}
+  .heros{flex-direction:column;align-items:stretch;justify-content:center}
+  .heros .cadre{padding:60px 0 34px}
+}
+@media (max-width:1080px){
+  :root{--entete:68px}
+  .burger{display:flex}
+  .btn.appel{display:none}
+  nav{position:absolute;left:0;right:0;top:100%;margin:0;background:var(--papier);border-bottom:1px solid var(--ligne);box-shadow:0 18px 30px rgba(74,11,27,.14);display:none}
+  nav.ouvert{display:block}
+  nav ul{flex-direction:column;padding:12px 20px 18px;gap:2px}
+  nav a{padding:13px 14px;font-size:1.05rem;border-radius:12px}
+  .barre-appel{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 16px;background:rgba(255,250,243,.97);border-top:1px solid var(--ligne);box-shadow:0 -8px 24px rgba(74,11,27,.12)}
+  .barre-appel .btn{width:100%;padding:14px}
+}
+/* Téléphone : page allégée */
+@media (max-width:620px){
+  body{font-size:17px}
+  .bloc{padding:52px 0}
+  .heros{min-height:0}
+  .heros .cadre{padding:40px 0 22px}
+  .heros .fond img{object-position:70% 70%}
+  .heros::before{background:linear-gradient(180deg,rgba(74,11,27,.55) 0,rgba(74,11,27,.9) 70%)}
+  .sous{font-size:1.05rem}
+  .grille-services{grid-template-columns:1fr;gap:14px}
+  .service{padding:20px 22px 22px}
+  .service p{display:none}
+  .colonnes{column-count:1}
+  .avis-carte{margin-bottom:14px}
+  .avis-carte:nth-child(n+6){display:none}
+  .tete{margin-bottom:28px}
+  .tete p{display:none}
+  .galerie{gap:10px}
+  .galerie .photo:nth-child(n+9){display:none}
+  .paire:nth-child(n+3),#methode,.note-galerie,.nav-methode{display:none}
+  .paire .photo{aspect-ratio:1}
+  .note-google{margin-bottom:22px}
+  .marque small{display:none}
+  .formulaire{padding:22px}
+  .actions .btn{flex:1 1 100%}
+  .sceau{padding:11px 16px}
+  .visio .vprec,.visio .vsuiv{top:auto;bottom:18px;transform:none}
+  .visio .vprec{left:18px}.visio .vsuiv{right:18px}
+  .visio img{max-height:calc(100dvh - 200px)}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="entete" id="entete">
+  <div class="cadre">
+    <a class="marque" href="#accueil" aria-label="Néo Aménagements, accueil">
+      <img src="img/logo.jpg" alt="Logo Néo Aménagements" width="54" height="54">
+      <span><b>Néo Aménagements</b><small>Intérieurs &amp; extérieurs</small></span>
+    </a>
+    <nav id="nav" aria-label="Menu principal">
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#realisations">Réalisations</a></li>
+        <li><a href="#avant-apres">Avant / après</a></li>
+        <li class="nav-methode"><a href="#methode">Méthode</a></li>
+        <li><a href="#avis">Avis</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn appel" href="tel:+33630853035"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Appeler 06 30 85 30 35</a>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav"><span></span></button>
+  </div>
+  <div class="progres" id="progres"></div>
+</header>
+
+<main>
+<section class="heros" id="accueil">
+  <div class="fond"><img src="img/hero.jpg" alt="Pergola et terrasse en bois réalisées dans un jardin" width="1200" height="1200"></div>
+  <div class="cadre">
+    <div class="texte">
+      <span class="etiquette">Paysagiste · Changé et alentours</span>
+      <h1>Des terrasses, des clôtures et des jardins <em>faits pour durer.</em></h1>
+      <p class="sous">Nous aménageons vos extérieurs : terrasses en bois, dallage et pavage, clôtures, maçonnerie paysagère et plantations. Nous intervenons aussi à l'intérieur de votre maison.</p>
+      <div class="actions">
+        <a class="btn bois" href="tel:+33630853035"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Appeler</a>
+        <a class="btn contour" href="#realisations">Voir nos réalisations</a>
+      </div>
+      <ul class="points">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Terrasses bois et composite</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Pavage et maçonnerie paysagère</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Intérieur et extérieur</li>
+      </ul>
+    </div>
+  </div>
+  <div class="sceau"><b id="sceau-note">5,0</b><span><span class="etoiles" aria-hidden="true">★★★★★</span>sur Google · 9 avis</span></div>
+</section>
+
+<div class="defile" aria-hidden="true"><div class="rail" id="rail">
+  <span>Terrasses bois</span><span>Clôtures</span><span>Dallage et pavage</span><span>Maçonnerie paysagère</span><span>Plantations</span><span>Aménagements intérieurs</span>
+  <span>Terrasses bois</span><span>Clôtures</span><span>Dallage et pavage</span><span>Maçonnerie paysagère</span><span>Plantations</span><span>Aménagements intérieurs</span>
+</div></div>
+
+<section class="bloc" id="services">
+  <div class="cadre">
+    <div class="tete">
+      <span class="etiquette">Nos services</span>
+      <h2>Tout pour aménager votre maison, dedans comme dehors</h2>
+      <p>Un seul interlocuteur du projet jusqu'à la dernière finition.</p>
+    </div>
+    <div class="grille-services">
+      <article class="service">
+        <div class="titre-ligne"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h18M3 14h18M3 18h18M6 6h12l3 4H3z"/></svg></span><h3>Terrasses en bois</h3></div>
+        <p>Terrasses en bois exotique, pin ou composite, avec escaliers, coffres et finitions soignées, posées sur une structure solide.</p>
+      </article>
+      <article class="service">
+        <div class="titre-ligne"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V7l2-3 2 3v14M10 21V7l2-3 2 3v14M16 21V7l2-3 2 3v14M2 12h20M2 17h20"/></svg></span><h3>Clôtures</h3></div>
+        <p>Clôtures rigides, claustras et brise-vue, pour délimiter votre terrain avec une belle allure et sans entretien compliqué.</p>
+      </article>
+      <article class="service">
+        <div class="titre-ligne"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg></span><h3>Dallage et pavage</h3></div>
+        <p>Allées, terrasses et cours en dalles, pavés ou gravier, avec une pose soignée et un résultat qui dure.</p>
+      </article>
+      <article class="service">
+        <div class="titre-ligne"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M5 20V9l7-5 7 5v11M9 20v-6h6v6"/></svg></span><h3>Maçonnerie paysagère</h3></div>
+        <p>Murets, bordures, soubassements et petits ouvrages en pierre ou en béton pour structurer votre jardin.</p>
+      </article>
+      <article class="service">
+        <div class="titre-ligne"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V10M12 10c0-4 3-7 7-7 0 4-3 7-7 7zM12 14c0-3-2.5-5.500-6-5.500 0 3 2.500 5.500 6 5.500z"/></svg></span><h3>Plantations et pelouse</h3></div>
+        <p>Plantations, engazonnement et gazon synthétique pour un jardin vivant, facile à vivre toute l'année.</p>
+      </article>
+      <article class="service">
+        <div class="titre-ligne"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4zM4 14h16M9 14v6"/></svg></span><h3>Aménagements intérieurs</h3></div>
+        <p>Peinture et remise à neuf de vos pièces, pour que l'intérieur soit aussi réussi que l'extérieur.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="bloc realisations" id="realisations">
+  <div class="cadre">
+    <div class="tete">
+      <span class="etiquette">Nos réalisations</span>
+      <h2>Des chantiers terminés, chez des clients de la région</h2>
+      <p>Cliquez sur une photo pour l'agrandir et passer d'une réalisation à l'autre.</p>
+    </div>
+    <div class="galerie" id="galerie">
+      <button type="button" class="photo grand" data-leg="Jardin avec allée et pelouse"><img src="img/jardin-allee.jpg" alt="Jardin avec allée et pelouse" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5M11 8v6M8 11h6"/></svg></span></button>
+      <button type="button" class="photo" data-leg="Terrasse en bois et dallage"><img src="img/terrasse-bois-dallage.jpg" alt="Terrasse en bois et dallage" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5M11 8v6M8 11h6"/></svg></span></button>
+      <button type="button" class="photo" data-leg="Terrasse composite et escalier devant la maison"><img src="img/terrasse-composite.jpg" alt="Terrasse composite et escalier devant la maison" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5M11 8v6M8 11h6"/></svg></span></button>
+      <button type="button" class="photo" data-leg="Escalier et brise-vue en composite"><img src="img/escalier-brise-vue.jpg" alt="Escalier et brise-vue en composite" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5M11 8v6M8 11h6"/></svg></span></button>
+      <button type="button" class="photo" data-leg="Terrasse en bois et pelouse"><img src="img/terrasse-bois-pelouse.jpg" alt="Terrasse en bois et pelouse" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5M11 8v6M8 11h6"/></svg></span></button>
+      <button type="button" class="photo" data-leg="Terrasse en bois avec spa"><img src="img/terrasse-spa.jpg" alt="Terrasse en bois avec spa" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5M11 8v6M8 11h6"/></svg></span></button>
+      <button type="button" class="photo" data-leg="Terrasse en bois exotique et gazon"><img src="img/terrasse-gazon.jpg" alt="Terrasse en bois exotique et gazon" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5M11 8v6M8 11h6"/></svg></span></button>
+      <button type="button" class="photo grand" data-leg="Pergola sur terrasse en bois"><img src="img/pergola.jpg" alt="Pergola sur terrasse en bois" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5M11 8v6M8 11h6"/></svg></span></button>
+      <button type="button" class="photo" data-leg="Terrasse et allée de gravier"><img src="img/terrasse-gravier.jpg" alt="Terrasse et allée de gravier" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5M11 8v6M8 11h6"/></svg></span></button>
+      <button type="button" class="photo" data-leg="Terrasse en bois exotique et clôture"><img src="img/terrasse-exotique.jpg" alt="Terrasse en bois exotique et clôture" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5M11 8v6M8 11h6"/></svg></span></button>
+      <button type="button" class="photo" data-leg="Terrasse en bois devant un commerce"><img src="img/terrasse-commerce.jpg" alt="Terrasse en bois devant un commerce" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5M11 8v6M8 11h6"/></svg></span></button>
+      <button type="button" class="photo" data-leg="Jardin éclairé et terrasse"><img src="img/jardin-eclaire.jpg" alt="Jardin éclairé et terrasse" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5M11 8v6M8 11h6"/></svg></span></button>
+      <button type="button" class="photo" data-leg="Chemin de jardin et plantations"><img src="img/chemin-jardin.jpg" alt="Chemin de jardin et plantations" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5M11 8v6M8 11h6"/></svg></span></button>
+      <button type="button" class="photo" data-leg="Terrasse avec coffre de rangement"><img src="img/coffre-terrasse.jpg" alt="Terrasse avec coffre de rangement" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5M11 8v6M8 11h6"/></svg></span></button>
+    </div>
+    <p class="note-galerie">Plus de réalisations sur notre page Facebook.</p>
+  </div>
+</section>
+
+<section class="bloc" id="avant-apres">
+  <div class="cadre">
+    <div class="tete">
+      <span class="etiquette">Avant / après</span>
+      <h2>La différence se voit dès la fin du chantier</h2>
+      <p>Un terrain nu, un patio fatigué, une pièce à rafraîchir : nous les transformons.</p>
+    </div>
+    <div class="paires">
+      <article class="paire"><div class="moitie"><button type="button" class="photo" data-leg="Avant : Du terrain nu à la pelouse et à la terrasse"><img src="img/terrain-avant.jpg" alt="Avant : Du terrain nu à la pelouse et à la terrasse" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5M11 8v6M8 11h6"/></svg></span></button><span class="etq">Avant</span></div><div class="moitie"><button type="button" class="photo" data-leg="Après : Du terrain nu à la pelouse et à la terrasse"><img src="img/terrain-apres.jpg" alt="Après : Du terrain nu à la pelouse et à la terrasse" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5M11 8v6M8 11h6"/></svg></span></button><span class="etq apres">Après</span></div><p>Du terrain nu à la pelouse et à la terrasse</p></article>
+      <article class="paire"><div class="moitie"><button type="button" class="photo" data-leg="Avant : Un patio refait en dallage et terrasse en bois"><img src="img/patio-avant.jpg" alt="Avant : Un patio refait en dallage et terrasse en bois" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5M11 8v6M8 11h6"/></svg></span></button><span class="etq">Avant</span></div><div class="moitie"><button type="button" class="photo" data-leg="Après : Un patio refait en dallage et terrasse en bois"><img src="img/patio-apres.jpg" alt="Après : Un patio refait en dallage et terrasse en bois" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5M11 8v6M8 11h6"/></svg></span></button><span class="etq apres">Après</span></div><p>Un patio refait en dallage et terrasse en bois</p></article>
+      <article class="paire"><div class="moitie"><button type="button" class="photo" data-leg="Avant : Une pièce remise à neuf et repeinte"><img src="img/piece-avant.jpg" alt="Avant : Une pièce remise à neuf et repeinte" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5M11 8v6M8 11h6"/></svg></span></button><span class="etq">Avant</span></div><div class="moitie"><button type="button" class="photo" data-leg="Après : Une pièce remise à neuf et repeinte"><img src="img/piece-apres.jpg" alt="Après : Une pièce remise à neuf et repeinte" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5M11 8v6M8 11h6"/></svg></span></button><span class="etq apres">Après</span></div><p>Une pièce remise à neuf et repeinte</p></article>
+      
+    </div>
+  </div>
+</section>
+
+<section class="bloc realisations" id="methode">
+  <div class="cadre">
+    <div class="tete">
+      <span class="etiquette">Notre méthode</span>
+      <h2>Simple, du premier appel au chantier terminé</h2>
+    </div>
+    <div class="etapes">
+      <article class="etape"><h3><span class="n">1.</span> Vous appelez</h3><p>Expliquez-nous votre projet : terrasse, clôture, allée, jardin ou pièce à refaire. Nous prenons le temps de vous écouter.</p></article>
+      <article class="etape"><h3><span class="n">2.</span> Visite et devis</h3><p>Nous venons sur place, prenons les mesures, vous conseillons sur les matériaux et vous remettons un devis clair.</p></article>
+      <article class="etape"><h3><span class="n">3.</span> Le chantier</h3><p>Nous réalisons les travaux avec soin et laissons le chantier propre à la fin.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="bloc avis-bloc" id="avis">
+  <div class="cadre">
+    <div class="tete">
+      <span class="etiquette">Avis clients</span>
+      <h2>Ce que disent nos clients</h2>
+    </div>
+    <div class="note-google">
+      <span id="gros-note" data-v="5.0">5,0</span>
+      <div><span class="etoiles" aria-hidden="true">★★★★★</span><small>Note moyenne sur 5 · 9 avis Google</small></div>
+    </div>
+    <div class="colonnes">
+<article class="avis-carte"><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span><p>« J'ai confié les travaux de creation d'une terrasse en bois à Neo Aménagements. Il n'y a rien à redire, le travail est de qualité, les délais sont respectés et la communication est très facile, c'est important aussi ! Je recommande ! »</p><footer>Céline B. · Octobre 2025</footer></article>
+<article class="avis-carte"><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span><p>« M. Fauvel a fait la réalisation de la terrasse en béton et de la clôture ainsi que la pose du portillon. Il est resté à l'écoute de mes modifications et a pu me donner quelques conseils également. Le planning a été respecté compte tenu des travaux voisins. »</p><footer>Béatrice P. · Novembre 2024</footer></article>
+<article class="avis-carte"><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span><p>« Artisant à recommander ! Nous avons réalisé nos travaux d'extérieurs avec l'entreprise Neo. Évacuation de l'existant, remise à niveau du terrain, pose arbre (palmier, Olivier), pose pelouse en rouleau et aménagement d'une terrasse en composite avec coffrage de notre jacuzzi ! Yohan a su nous conseiller sur les matériaux et végétaux et le résultat est parfait ! Encore merci pour la disponibilité, la gentillesse et les conseils ! »</p><footer>Alexandre R. · Juin 2022</footer></article>
+<article class="avis-carte"><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span><p>« Mr Fauvel a réalisé notre projet de terrasse et de brise vue en septembre 2023 en tenant compte de nos souhaits. Le planning des travaux a été respecté. Nous avons apprécié ses conseils et son adaptation aux exigences de dernières minutes. Le résultat correspond à nos attentes.N ous conseillons cette entreprise. »</p><footer>Anne P. · Mars 2024</footer></article>
+<article class="avis-carte"><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span><p>« Proximité, disponibilité, efficacité ! Merci a Yohan qui a su nous conseiller et mettre en oeuvre notre projet d'aménagement exterieur cours et jardin. »</p><footer>Jérémy B. · Janvier 2024</footer></article>
+<article class="avis-carte"><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span><p>« Je recommande ce paysagiste! Merci pour tes conseils et ta disponibilité pour l'aménagement de notre extérieur sur Changé. »</p><footer>Julien L. · Janvier 2024</footer></article>
+<article class="avis-carte"><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span><p>« Professionnel compétant, sérieux et à l'écoute. Merci pour le travail réalisé ! »</p><footer>Kevin D. · Janvier 2024</footer></article>
+<article class="avis-carte"><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span><p>« Professionnel donne de très bon conseil et travaille soigneusement je recommande fortement »</p><footer>Mathieu N. · Janvier 2024</footer></article>
+    </div>
+  </div>
+</section>
+
+<section class="bloc" id="contact" style="background:var(--papier);border-top:1px solid var(--ligne)">
+  <div class="cadre">
+    <div class="tete">
+      <span class="etiquette">Contact</span>
+      <h2>Parlons de votre projet</h2>
+      <p>Un appel suffit. Vous pouvez aussi nous écrire, nous vous répondons dès que possible.</p>
+    </div>
+    <div class="contact-grille">
+      <div class="infos">
+        <div class="info"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span><div><b>Téléphone</b><a href="tel:+33630853035">06 30 85 30 35</a></div></div>
+        <div class="info"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><div><b>E-mail</b><a href="mailto:neo.amenagements@gmail.com" style="font-size:1.05rem">neo.amenagements@gmail.com</a></div></div>
+        <div class="info"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><b>Adresse</b>73 bis route des Courpins<br>72560 Changé<br><span style="color:var(--gris);font-size:.95rem">Nous nous déplaçons chez vous, à Changé, au Mans et dans les communes autour.</span></div></div>
+        <div class="info"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><b>Horaires d'ouverture</b><table id="tab-horaires"><tr data-j="1,2,3,4,5" data-h="8-18" data-fin="18h"><td>Lundi au vendredi</td><td>8h - 18h</td></tr><tr data-j="0,6"><td>Samedi et dimanche</td><td>Fermé</td></tr></table><span id="etat"></span></div></div>
+        <div class="reseaux">
+          <b>Retrouvez-nous</b>
+          <div class="pilules">
+            <a class="pilule" href="https://www.facebook.com/yohan.fauvel.neo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.500 22v-8.200h2.800l.5-3.300h-3.300V8.400c0-.9.400-1.700 1.800-1.700h1.600V3.900c-.3 0-1.300-.2-2.500-.2-2.500 0-4.200 1.500-4.200 4.300v2.500H7.400v3.300h2.800V22z"/></svg>Facebook</a>
+            <a class="pilule" href="https://www.google.com/maps/search/?api=1&amp;query=N%C3%A9o%20Am%C3%A9nagements%2073%20bis%20route%20des%20Courpins%20Chang%C3%A9%20Sarthe" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.200c0-.6 0-1.200-.2-1.800H12v3.500h5.100a4.400 4.400 0 0 1-1.900 2.900v2.400h3.100c1.800-1.700 2.700-4.100 2.700-7z"/><path d="M12 21c2.600 0 4.700-.9 6.300-2.300l-3.100-2.400c-.9.600-1.900.9-3.200.9-2.400 0-4.500-1.600-5.200-3.900H3.600v2.500A9.500 9.500 0 0 0 12 21z"/><path d="M6.800 13.300a5.700 5.700 0 0 1 0-3.600V7.200H3.600a9.500 9.500 0 0 0 0 8.600z"/><path d="M12 6.400c1.400 0 2.700.5 3.700 1.500l2.800-2.800A9.400 9.400 0 0 0 12 2.500 9.500 9.500 0 0 0 3.600 7.200l3.200 2.500C7.500 7.400 9.600 6.400 12 6.400z"/></svg>Fiche Google</a>
+            <a class="pilule" href="https://www.google.com/maps/dir/?api=1&amp;destination=N%C3%A9o%20Am%C3%A9nagements%2073%20bis%20route%20des%20Courpins%20Chang%C3%A9%20Sarthe" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-8-8 18-2-8z"/></svg>Plan d'accès</a>
+          </div>
+        </div>
+      </div>
+      <form class="formulaire" id="formulaire" novalidate>
+        <h3>Demander un devis</h3>
+        <p>Décrivez votre projet en quelques mots.</p>
+        <div class="champ"><label for="f-nom">Votre nom</label><input id="f-nom" name="nom" autocomplete="name" required></div>
+        <div class="champ"><label for="f-tel">Téléphone</label><input id="f-tel" name="telephone" type="tel" autocomplete="tel"></div>
+        <div class="champ"><label for="f-msg">Votre projet</label><textarea id="f-msg" name="message" placeholder="Ex. : terrasse en bois de 25 m², clôture sur 30 m, allée en pavés…"></textarea></div>
+        <button class="btn" type="submit">Envoyer ma demande</button>
+        <div id="merci" hidden>Merci ! Sur votre vrai site, cette demande vous arrivera par e-mail.</div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="pied">
+  <div class="cadre">
+    <a class="marque" href="#accueil"><img src="img/logo.jpg" alt="" width="54" height="54"><span><b>Néo Aménagements</b><small>Intérieurs &amp; extérieurs</small></span></a>
+    <div class="ronds">
+      <a href="https://www.facebook.com/yohan.fauvel.neo" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.500 22v-8.200h2.800l.5-3.300h-3.300V8.400c0-.9.400-1.700 1.800-1.700h1.600V3.900c-.3 0-1.300-.2-2.500-.2-2.500 0-4.200 1.500-4.200 4.300v2.500H7.400v3.300h2.800V22z"/></svg></a>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=N%C3%A9o%20Am%C3%A9nagements%2073%20bis%20route%20des%20Courpins%20Chang%C3%A9%20Sarthe" target="_blank" rel="noopener" aria-label="Fiche Google"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.200c0-.6 0-1.200-.2-1.800H12v3.500h5.100a4.400 4.400 0 0 1-1.900 2.900v2.400h3.100c1.800-1.700 2.700-4.100 2.700-7z"/><path d="M12 21c2.600 0 4.700-.9 6.300-2.300l-3.100-2.400c-.9.600-1.900.9-3.200.9-2.400 0-4.500-1.600-5.200-3.900H3.600v2.500A9.500 9.500 0 0 0 12 21z"/><path d="M6.800 13.300a5.700 5.700 0 0 1 0-3.600V7.200H3.600a9.500 9.500 0 0 0 0 8.600z"/><path d="M12 6.400c1.400 0 2.700.5 3.700 1.500l2.800-2.800A9.400 9.400 0 0 0 12 2.500 9.500 9.500 0 0 0 3.600 7.200l3.200 2.500C7.500 7.400 9.600 6.400 12 6.400z"/></svg></a>
+      <a href="https://www.google.com/maps/dir/?api=1&amp;destination=N%C3%A9o%20Am%C3%A9nagements%2073%20bis%20route%20des%20Courpins%20Chang%C3%A9%20Sarthe" target="_blank" rel="noopener" aria-label="Plan d'accès"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-8-8 18-2-8z"/></svg></a>
+    </div>
+    <small class="droit">© Néo Aménagements · 73 bis route des Courpins, 72560 Changé · 06 30 85 30 35</small>
+  </div>
+</footer>
+
+<div class="visio" id="visio" role="dialog" aria-modal="true" aria-label="Photo agrandie">
+  <button class="ferme" id="vferme" aria-label="Fermer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <button class="vprec" id="vprec" aria-label="Photo précédente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+  <img id="vimg" alt="">
+  <p id="vleg"></p>
+  <button class="vsuiv" id="vsuiv" aria-label="Photo suivante"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+</div>
+
+<div class="barre-appel"><a class="btn" href="tel:+33630853035"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Appeler 06 30 85 30 35</a></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var burger=document.getElementById('burger'),nav=document.getElementById('nav');
+  burger.addEventListener('click',function(){var o=nav.classList.toggle('ouvert');burger.setAttribute('aria-expanded',o)});
+
+  var entete=document.getElementById('entete'),progres=document.getElementById('progres');
+  var liens=[].slice.call(nav.querySelectorAll('a'));
+  var sections=liens.map(function(l){return document.querySelector(l.getAttribute('href'))}).filter(Boolean);
+  function hauteurEntete(){return entete.getBoundingClientRect().height}
+  function majEntete(){
+    entete.classList.toggle('ombre',window.scrollY>10);
+    var total=document.documentElement.scrollHeight-window.innerHeight;
+    progres.style.transform='scaleX('+(total>0?Math.min(1,window.scrollY/total):0)+')';
+    var limite=hauteurEntete()+2,actif=null;
+    var vis=sections.filter(function(s){return s.offsetParent!==null});vis.forEach(function(s){if(s.getBoundingClientRect().top<=limite)actif=s});
+    if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-2)actif=vis[vis.length-1];
+    liens.forEach(function(l){l.classList.toggle('actif',!!actif&&l.getAttribute('href')==='#'+actif.id)});
+  }
+  window.addEventListener('scroll',function(){window.requestAnimationFrame(majEntete)},{passive:true});
+  window.addEventListener('resize',majEntete);majEntete();
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('href');
+      var cible=id==='#'?null:document.querySelector(id);
+      if(id!=='#'&&!cible)return;
+      e.preventDefault();
+      nav.classList.remove('ouvert');burger.setAttribute('aria-expanded','false');
+      var haut=cible&&cible.id!=='accueil'?cible.getBoundingClientRect().top+window.scrollY-hauteurEntete():0;
+      var doux=!window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({top:Math.max(0,Math.round(haut)),behavior:doux?'smooth':'auto'});
+    });
+  });
+
+  /* Visionneuse : clic sur une photo, flèches, clavier, balayage (photos visibles seulement) */
+  var visio=document.getElementById('visio'),vimg=document.getElementById('vimg'),vleg=document.getElementById('vleg'),vi=0,dernier=null,liste=[];
+  function visibles(){return [].slice.call(document.querySelectorAll('.photo')).filter(function(f){return f.offsetParent!==null})}
+  function montre(i){vi=(i+liste.length)%liste.length;var f=liste[vi],im=f.querySelector('img');vimg.src=f.getAttribute('data-grand')||im.currentSrc||im.src;vimg.alt=im.alt;vleg.innerHTML=(f.getAttribute('data-leg')||im.alt)+'<small>'+(vi+1)+' / '+liste.length+'</small>'}
+  function ouvre(f){liste=visibles();dernier=document.activeElement;montre(liste.indexOf(f));visio.classList.add('ouvert');document.body.style.overflow='hidden';document.getElementById('vferme').focus()}
+  function ferme(){visio.classList.remove('ouvert');document.body.style.overflow='';if(dernier)dernier.focus()}
+  document.querySelectorAll('.photo').forEach(function(f){
+    f.setAttribute('aria-label','Agrandir : '+(f.getAttribute('data-leg')||f.querySelector('img').alt));
+    f.addEventListener('click',function(){ouvre(f)});
+  });
+  document.getElementById('vferme').addEventListener('click',ferme);
+  document.getElementById('vprec').addEventListener('click',function(){montre(vi-1)});
+  document.getElementById('vsuiv').addEventListener('click',function(){montre(vi+1)});
+  visio.addEventListener('click',function(e){if(e.target===visio)ferme()});
+  document.addEventListener('keydown',function(e){if(!visio.classList.contains('ouvert'))return;if(e.key==='Escape')ferme();if(e.key==='ArrowLeft')montre(vi-1);if(e.key==='ArrowRight')montre(vi+1)});
+  var tx=null;
+  visio.addEventListener('touchstart',function(e){tx=e.touches[0].clientX},{passive:true});
+  visio.addEventListener('touchend',function(e){if(tx===null)return;var d=e.changedTouches[0].clientX-tx;tx=null;if(Math.abs(d)>50)montre(vi+(d<0?1:-1))},{passive:true});
+
+  /* Horaires : jour en cours et état ouvert / fermé (heure de Paris) */
+  try{
+    var p=new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date());
+    var jours={'dim.':0,'lun.':1,'mar.':2,'mer.':3,'jeu.':4,'ven.':5,'sam.':6};
+    var wd=jours[p.filter(function(x){return x.type==='weekday'})[0].value.toLowerCase()];
+    var h=+p.filter(function(x){return x.type==='hour'})[0].value+(+p.filter(function(x){return x.type==='minute'})[0].value)/60;
+    document.querySelectorAll('#tab-horaires tr').forEach(function(tr){tr.classList.toggle('auj',tr.getAttribute('data-j').split(',').indexOf(String(wd))>-1)});
+    var ligne=document.querySelector('#tab-horaires tr.auj'),ouvert=false,texte='Fermé actuellement';
+    if(ligne&&ligne.getAttribute('data-h')){var pl=ligne.getAttribute('data-h').split('-'),d0=+pl[0],d1=+pl[1];if(h>=d0&&h<d1){ouvert=true;texte='Ouvert maintenant, jusqu’à '+ligne.getAttribute('data-fin')}}
+    var etat=document.getElementById('etat');etat.textContent=texte;etat.classList.add(ouvert?'ouvert':'ferme');
+  }catch(e){}
+
+  document.getElementById('formulaire').addEventListener('submit',function(e){e.preventDefault();document.getElementById('merci').hidden=false});
+
+  if(!window.gsap)return;
+  gsap.registerPlugin(ScrollTrigger);
+  var mm=gsap.matchMedia();
+  mm.add('(prefers-reduced-motion: no-preference)',function(){
+    gsap.from('.heros .etiquette, .heros h1, .heros .sous, .heros .actions, .heros .points',{y:24,opacity:0,duration:.9,ease:'power3.out',stagger:.12,delay:.1});
+    gsap.fromTo('.heros .fond img',{scale:1.18},{scale:1,duration:2,ease:'power2.out'});
+    gsap.to('.heros .fond',{yPercent:8,ease:'none',scrollTrigger:{trigger:'.heros',start:'top top',end:'bottom top',scrub:true}});
+    gsap.from('.sceau',{opacity:0,y:20,duration:.8,delay:1});
+    /* bandeau défilant */
+    var rail=document.getElementById('rail');
+    if(rail){var moitie=rail.scrollWidth/2;gsap.fromTo(rail,{x:0},{x:-moitie,duration:34,ease:'none',repeat:-1})}
+    document.querySelectorAll('.tete h2, .tete .etiquette').forEach(function(h){
+      gsap.from(h,{y:26,opacity:0,duration:.9,ease:'power3.out',scrollTrigger:{trigger:h,start:'top 90%',once:true}});
+    });
+    ['.service','.photo','.paire','.etape','.avis-carte'].forEach(function(s){
+      ScrollTrigger.batch(s,{start:'top 92%',once:true,onEnter:function(b){gsap.fromTo(b,{opacity:0},{opacity:1,duration:.7,ease:'power1.out',clearProps:'opacity'})}});
+    });
+    var gros=document.getElementById('gros-note'),sc=document.getElementById('sceau-note');
+    [gros,sc].forEach(function(el){
+      if(!el)return;var v=parseFloat(gros.getAttribute('data-v')),compte={v:0};
+      gsap.to(compte,{v:v,duration:1.4,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 95%',once:true},onUpdate:function(){el.textContent=compte.v.toFixed(1).replace('.',',')}});
+    });
+  });
+  window.addEventListener('load',function(){ScrollTrigger.refresh()});
+})();
+</script>
+</body>
+</html>
