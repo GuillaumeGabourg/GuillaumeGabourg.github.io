@@ -57,6 +57,7 @@ p{margin:0}
 
 /* En-tête */
 .entete{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;height:var(--hdr);background:var(--noir);border-bottom:4px solid var(--jaune);transition:box-shadow .3s}
+.progres{position:absolute;left:0;bottom:-4px;height:4px;width:100%;background:var(--blanc);transform:scaleX(0);transform-origin:left;pointer-events:none}
 .entete.ombre{box-shadow:0 8px 26px rgba(0,0,0,.35)}
 .entete .enveloppe{height:100%;display:flex;align-items:center;gap:24px}
 .marque{display:flex;align-items:center;flex:none}
@@ -235,6 +236,7 @@ form .btn{justify-self:start}
   .appel-flottant{display:flex;position:fixed;left:14px;right:14px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:60;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.4);font-size:24px}
   .pied{padding-bottom:96px}
 }
+h2 .split-line{perspective:600px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -261,6 +263,7 @@ form .btn{justify-self:start}
       <span>Appeler</span><span class="num">&nbsp;06 11 61 30 46</span>
     </a>
   </div>
+  <div class="progres" id="progres" aria-hidden="true"></div>
 </header>
 
 <main>
@@ -495,8 +498,9 @@ form .btn{justify-self:start}
   Appeler 06 11 61 30 46
 </a>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
 <script>
 (function(){
   /* Menu téléphone */
@@ -505,12 +509,13 @@ form .btn{justify-self:start}
   nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('ouvert');burger.setAttribute('aria-expanded','false')})});
 
   /* En-tête : ombre, lien actif (quand la section touche l'en-tête), ancres calées sous l'en-tête */
-  var entete=document.getElementById('entete');
+  var entete=document.getElementById('entete'),progres=document.getElementById('progres');
   var liens=[].slice.call(nav.querySelectorAll('a'));
   var sections=liens.map(function(l){return document.querySelector(l.getAttribute('href'))}).filter(Boolean);
   function hauteurEntete(){return entete.getBoundingClientRect().height}
   function majEntete(){
     entete.classList.toggle('ombre',window.scrollY>10);
+    var tot=document.documentElement.scrollHeight-window.innerHeight;progres.style.transform='scaleX('+(tot>0?Math.min(1,window.scrollY/tot):0)+')';
     var limite=hauteurEntete()+2,actif=null;
     sections.forEach(function(s){if(s.getBoundingClientRect().top<=limite)actif=s});
     if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-2)actif=sections[sections.length-1];
@@ -553,9 +558,21 @@ form .btn{justify-self:start}
   mm.add('(prefers-reduced-motion: no-preference)',function(){
     gsap.fromTo('.heros .etiquette, .heros h1, .heros .sous',{opacity:0},{opacity:1,duration:.8,ease:'power1.out',stagger:.1,clearProps:'opacity'});
     gsap.fromTo('#cadre-heros img',{scale:1.12},{scale:1,duration:1.6,ease:'power2.out',clearProps:'transform'});
-    gsap.utils.toArray('.tete').forEach(function(t){
-      gsap.fromTo(t,{opacity:0},{opacity:1,duration:.7,ease:'power1.out',clearProps:'opacity',scrollTrigger:{trigger:t,start:'top 88%',once:true}});
+    /* Titres de section : lettres qui pivotent en 3D, suivent la molette */
+    if(window.SplitText){gsap.registerPlugin(SplitText);
+      gsap.utils.toArray('.tete h2, .urgence h2, .social h3').forEach(function(t){
+        SplitText.create(t,{type:'lines,chars',linesClass:'split-line',autoSplit:true,onSplit:function(self){
+          return gsap.from(self.chars,{opacity:0,rotationX:100,rotationY:-60,yPercent:-40,ease:'power1.inOut',stagger:{each:.03},
+            scrollTrigger:{trigger:t,start:'top 92%',end:'bottom 62%',scrub:.8}});
+        }});
+      });
+    }
+    gsap.utils.toArray('.tete .etiquette, .tete .chapo').forEach(function(t){
+      gsap.fromTo(t,{opacity:0},{opacity:1,duration:.7,ease:'power1.out',clearProps:'opacity',scrollTrigger:{trigger:t,start:'top 90%',once:true}});
     });
+    /* Formulaire : champs en fondu, un par un */
+    gsap.fromTo('#formulaire>*',{opacity:0},{opacity:1,duration:.5,stagger:.1,ease:'power1.out',clearProps:'opacity',scrollTrigger:{trigger:'#formulaire',start:'top 85%',once:true}});
+    /* Boutons de galerie et téléphone : jamais retardés */
     ['.grille-services','.etapes','.liste-avis'].forEach(function(g){
       var el=document.querySelector(g);if(!el)return;
       gsap.fromTo(el.children,{opacity:0},{opacity:1,duration:.6,ease:'power1.out',clearProps:'opacity',scrollTrigger:{trigger:el,start:'top 88%',once:true}});
