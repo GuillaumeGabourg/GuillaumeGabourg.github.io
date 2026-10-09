@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Menuiserie Rousseau Damien · Escaliers, cuisines et agencements à Cérans-Foulletourte</title>
+<meta name="description" content="SARL Rousseau Damien, menuiserie générale à Cérans-Foulletourte : escaliers, cuisines, dressings, fenêtres, portes d'entrée, portails et portes de garage, fabriqués et posés sur mesure.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Nunito+Sans:wght@400;600;700;800&display=swap">
+<style>
+/* Style : brun-bordeaux et cuivre du logo « Rd », fond parchemin comme son affiche, vert sapin en accent */
+:root{
+  --bordeaux:#4A1712;
+  --bordeaux-2:#33100C;
+  --brun:#6E2B1D;
+  --cuivre:#B87344;
+  --cuivre-clair:#D79B66;
+  --cuivre-encre:#8A4E27;
+  --parchemin:#F5ECDC;
+  --parchemin-2:#EBDDC4;
+  --sapin:#25402F;
+  --sapin-2:#1B3023;
+  --blanc:#FFFDF8;
+  --encre:#2A1A15;
+  --gris:#6B5A52;
+  --trait:#DCCBAE;
+  --titre:'Zilla Slab',Georgia,'Times New Roman',serif;
+  --texte:'Nunito Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --hdr:74px;
+  --large:1180px;
+  color-scheme:light;
+}
+@media (max-width:860px){:root{--hdr:64px}}
+html{scroll-padding-top:var(--hdr);background:var(--bordeaux)}
+body{background:var(--parchemin);color:var(--encre);font-family:var(--texte);font-size:17.5px;line-height:1.62;margin:0}
+*,*::before,*::after{box-sizing:border-box}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cuivre);outline-offset:3px}
+.enveloppe{width:100%;max-width:var(--large);margin-inline:auto;padding-inline:24px}
+@media (max-width:600px){.enveloppe{padding-inline:18px}}
+h1,h2,h3{font-family:var(--titre);font-weight:700;line-height:1.1;margin:0;text-wrap:balance}
+h2{font-size:clamp(32px,4.6vw,50px)}
+h3{font-size:23px}
+p{margin:0}
+.etiquette{display:inline-flex;align-items:center;gap:12px;font-weight:800;font-size:14.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--cuivre-encre)}
+.etiquette::before,.etiquette::after{content:"";width:28px;height:2px;background:var(--cuivre);flex:none}
+.sombre .etiquette,.heros .etiquette{color:var(--cuivre-clair)}
+.chapo{max-width:62ch;color:var(--gris);font-size:18.5px}
+.sombre .chapo{color:#E3CDB8}
+
+/* Boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--texte);font-weight:800;font-size:17px;text-decoration:none;padding:14px 26px;border-radius:999px;border:2px solid transparent;cursor:pointer;transition:background .25s,color .25s,border-color .25s;line-height:1.1}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-cuivre{background:var(--cuivre);color:#fff}
+.btn-cuivre:hover{background:var(--cuivre-clair);color:var(--bordeaux-2)}
+.btn-clair{background:var(--blanc);color:var(--bordeaux)}
+.btn-clair:hover{background:var(--parchemin-2)}
+.btn-contour{border-color:rgba(255,255,255,.6);color:#fff;background:transparent}
+.btn-contour:hover{background:rgba(255,255,255,.14)}
+.btn-brun{background:var(--bordeaux);color:#fff}
+.btn-brun:hover{background:var(--brun)}
+
+/* En-tête */
+.entete{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;height:var(--hdr);background:var(--bordeaux);border-bottom:3px solid var(--cuivre);transition:box-shadow .3s}
+.entete.ombre{box-shadow:0 10px 28px rgba(30,8,5,.4)}
+.entete .enveloppe{height:100%;display:flex;align-items:center;gap:22px}
+.marque{display:flex;align-items:center;gap:12px;flex:none;text-decoration:none;color:#fff}
+.logo-rd{width:46px;height:46px;flex:none;display:block}
+.marque .nom{display:flex;flex-direction:column;line-height:1.05}
+.marque .nom b{font-family:var(--titre);font-size:21px;font-weight:700;letter-spacing:.01em}
+.marque .nom small{font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--cuivre-clair);margin-top:3px}
+.nav{display:flex;gap:26px;margin-left:auto}
+.nav a{font-weight:700;font-size:16px;text-decoration:none;padding:6px 0;position:relative;color:#E8D6C4}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:3px;border-radius:2px;background:var(--cuivre);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.nav a:hover::after,.nav a.actif::after{transform:scaleX(1)}
+.nav a.actif{color:#fff}
+.appel-hdr{padding:10px 20px;font-size:16px;flex:none}
+.burger{display:none;margin-left:auto;background:none;border:2px solid #7A4A3E;border-radius:10px;width:46px;height:46px;cursor:pointer;color:#fff}
+.burger svg{width:22px;height:22px;margin:auto}
+@media (max-width:1100px){.nav{gap:18px}.nav a{font-size:15px}.appel-hdr .num{display:none}}
+@media (max-width:960px){
+  .burger{display:grid;place-items:center}
+  .appel-hdr{margin-left:auto}
+  .burger{margin-left:0}
+  .nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--bordeaux-2);border-bottom:3px solid var(--cuivre);padding:6px 18px 14px;margin:0;display:none}
+  .nav.ouvert{display:flex}
+  .nav a{font-size:20px;padding:14px 0;border-bottom:1px solid #5A2A22}
+  .nav a::after{display:none}
+}
+@media (max-width:560px){.etiquette{letter-spacing:.12em;font-size:13px;text-align:center}.etiquette::before,.etiquette::after{display:none}}
+@media (max-width:440px){.marque .nom small{display:none}.marque .nom b{font-size:17px}.logo-rd{width:38px;height:38px}.marque{gap:9px}.appel-hdr{padding:8px 12px;font-size:14.5px;gap:6px}.appel-hdr svg{width:17px;height:17px}.burger{width:42px;height:42px}.entete .enveloppe{gap:8px}}
+
+/* Héros */
+.heros{position:relative;background:var(--bordeaux-2);color:#fff;text-align:center;padding-block:clamp(54px,8vw,104px) clamp(180px,22vw,270px)}
+.heros-cadre{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.heros-fond{position:absolute;left:0;right:0;top:-12%;bottom:-12%;background:url(img/p58.jpg) center 55%/cover;opacity:.28}
+.heros::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(51,16,12,.78),rgba(51,16,12,.94));pointer-events:none}
+.heros .enveloppe{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:22px}
+.heros h1{font-size:clamp(36px,6vw,74px);font-weight:700;line-height:1.04;max-width:19ch;color:#fff}
+.heros h1 em{font-style:italic;font-weight:600;color:var(--cuivre-clair)}
+.heros .sous{font-size:clamp(17px,1.9vw,21px);max-width:54ch;color:#EBDACB}
+.heros .actions{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:6px}
+.note{display:inline-flex;align-items:center;gap:12px;font-size:16px;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:8px 18px}
+.note .etoiles{color:var(--cuivre-clair);letter-spacing:2px;font-size:18px}
+.bandeau{position:absolute;left:0;right:0;bottom:0;z-index:3;transform:translateY(46%);pointer-events:none}
+.bandeau .enveloppe{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;pointer-events:auto}
+.bandeau figure{margin:0;aspect-ratio:3/4;overflow:hidden;border-radius:14px;border:5px solid var(--parchemin);background:var(--parchemin-2);box-shadow:0 18px 38px rgba(30,8,5,.35)}
+.bandeau img{width:100%;height:100%;object-fit:cover}
+@media (max-width:700px){.bandeau .enveloppe{grid-template-columns:repeat(2,1fr)}.bandeau figure:nth-child(n+3){display:none}.bandeau figure{aspect-ratio:4/5}}
+.apres-heros{height:clamp(110px,15vw,200px);background:var(--parchemin)}
+@media (max-width:700px){.apres-heros{height:130px}}
+
+/* Bande d'infos (jamais animée) */
+.infos{background:var(--sapin);color:#fff}
+.infos .enveloppe{display:grid;grid-template-columns:repeat(3,1fr)}
+.info{display:flex;gap:14px;align-items:center;padding:22px 20px;border-left:1px solid rgba(255,255,255,.2);min-width:0}
+.info:first-child{border-left:0;padding-left:0}
+.info svg{width:32px;height:32px;flex:none;color:var(--cuivre-clair)}
+.info b{display:block;font-family:var(--titre);font-size:22px;font-weight:700;line-height:1.1}
+.info small{font-size:15.5px;color:#D7E2D9;display:block}
+.info a{text-decoration:none}
+@media (max-width:820px){.infos .enveloppe{grid-template-columns:1fr}.info{border-left:0;border-top:1px solid rgba(255,255,255,.2);padding:14px 0}.info:first-child{border-top:0}}
+
+main{overflow-x:clip}
+section{padding-block:clamp(64px,9vw,108px)}
+.tete{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;margin-bottom:clamp(32px,5vw,54px)}
+.tete h2{max-width:22ch}
+.sombre{background:var(--bordeaux);color:#fff}
+.sombre h2,.sombre h3{color:#fff}
+
+/* Savoir-faire */
+.services{background:var(--parchemin)}
+.grille-services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.carte{background:var(--blanc);border:1px solid var(--trait);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.carte .photo{aspect-ratio:4/3;overflow:hidden;background:var(--parchemin-2)}
+.carte .photo img{width:100%;height:100%;object-fit:cover}
+.carte .corps{padding:20px 22px 24px;display:grid;gap:9px;align-content:start}
+.carte .titre{display:flex;align-items:center;gap:12px}
+.carte .titre svg{width:30px;height:30px;flex:none;color:var(--cuivre)}
+.carte p{color:var(--gris);font-size:16.5px}
+@media (max-width:980px){.grille-services{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.grille-services{grid-template-columns:1fr}}
+.aussi{margin-top:34px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.aussi div{display:flex;align-items:center;gap:12px;background:var(--parchemin-2);border-radius:12px;padding:16px 18px;font-weight:700;color:var(--bordeaux)}
+.aussi svg{width:28px;height:28px;flex:none;color:var(--cuivre-encre)}
+.aussi-titre{margin-top:46px;text-align:center;font-family:var(--titre);font-size:24px;font-weight:600;color:var(--bordeaux)}
+@media (max-width:900px){.aussi{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:420px){.aussi{grid-template-columns:1fr}}
+
+/* Réalisations */
+.realisations{background:var(--sapin);color:#fff}
+.realisations h2{color:#fff}
+.realisations .etiquette{color:var(--cuivre-clair)}
+.realisations .chapo{color:#D1DED4}
+.galerie{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.galerie button{all:unset;cursor:zoom-in;display:block;aspect-ratio:4/5;overflow:hidden;border-radius:12px;background:var(--sapin-2);position:relative}
+.galerie button:focus-visible{outline:3px solid var(--cuivre-clair);outline-offset:3px}
+.galerie img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.galerie button:hover img{transform:scale(1.05)}
+@media (max-width:900px){.galerie{grid-template-columns:repeat(3,1fr);gap:10px}}
+@media (max-width:560px){.galerie{grid-template-columns:repeat(2,1fr);gap:8px}}
+.visionneuse{position:fixed;inset:0;z-index:100;background:rgba(20,6,4,.94);display:none;align-items:center;justify-content:center;padding:18px}
+.visionneuse.ouvert{display:flex}
+.visionneuse figure{margin:0;max-width:min(92vw,900px);max-height:86vh;display:flex;flex-direction:column;align-items:center;gap:12px}
+.visionneuse img{max-width:100%;max-height:78vh;object-fit:contain;border-radius:10px}
+.visionneuse figcaption{color:#EBDACB;font-weight:700;font-size:15px}
+.visionneuse .nav-v{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;border:2px solid rgba(255,255,255,.5);background:rgba(51,16,12,.7);color:#fff;cursor:pointer;display:grid;place-items:center}
+.visionneuse .nav-v:disabled{opacity:.3;cursor:default}
+.visionneuse .nav-v svg{width:24px;height:24px}
+.visionneuse .prec{left:14px}.visionneuse .suiv{right:14px}
+.visionneuse .fermer{position:absolute;top:14px;right:14px;width:48px;height:48px;border-radius:50%;border:2px solid rgba(255,255,255,.5);background:rgba(51,16,12,.7);color:#fff;cursor:pointer;display:grid;place-items:center}
+.visionneuse .fermer svg{width:22px;height:22px}
+@media (max-width:600px){.visionneuse .nav-v{top:auto;bottom:18px;transform:none}.visionneuse .prec{left:calc(50% - 64px)}.visionneuse .suiv{right:calc(50% - 64px)}.visionneuse figure{margin-bottom:60px}}
+
+/* Atelier */
+.atelier{background:var(--parchemin)}
+.atelier-grille{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,64px);align-items:center}
+.atelier-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.atelier-photos figure{margin:0;border-radius:14px;overflow:hidden;aspect-ratio:3/4;background:var(--parchemin-2)}
+.atelier-photos figure:nth-child(2){margin-top:34px}
+.atelier-photos img{width:100%;height:100%;object-fit:cover}
+.atelier-texte{display:grid;gap:18px;justify-items:start}
+.atelier-texte h2{max-width:16ch}
+.points{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:12px}
+.points li{display:flex;align-items:flex-start;gap:12px;font-weight:600}
+.points svg{width:24px;height:24px;flex:none;color:var(--cuivre);margin-top:2px}
+@media (max-width:900px){.atelier-grille{grid-template-columns:1fr}}
+
+/* Avis */
+.avis{background:var(--bordeaux);color:#fff}
+.avis .etiquette{color:var(--cuivre-clair)}
+.score{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+.score .gros{font-family:var(--titre);font-size:54px;font-weight:700;line-height:1;color:#fff}
+.score .etoiles{color:var(--cuivre-clair);font-size:26px;letter-spacing:3px}
+.score small{font-size:15.5px;color:#E3CDB8}
+.mur{column-count:3;column-gap:20px}
+.mur blockquote{break-inside:avoid;margin:0 0 20px;background:var(--parchemin);color:var(--encre);border-radius:16px;padding:22px 24px}
+.mur .etoiles-av{color:var(--cuivre);letter-spacing:2px;font-size:17px}
+.mur p{margin-top:8px;font-size:16.5px}
+.mur footer{margin-top:12px;font-weight:800;font-size:15px;color:var(--bordeaux)}
+.mur footer span{font-weight:600;color:var(--gris)}
+@media (max-width:980px){.mur{column-count:2}}
+@media (max-width:620px){.mur{column-count:1}}
+.avis-lien{text-align:center;margin-top:30px}
+
+/* Contact */
+.contact{background:var(--parchemin)}
+.contact-grille{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,60px);align-items:start}
+.coord{display:grid;gap:22px}
+.coord .ligne{display:flex;gap:14px;align-items:flex-start}
+.coord .ligne svg{width:28px;height:28px;flex:none;color:var(--cuivre);margin-top:2px}
+.coord b{display:block;font-family:var(--titre);font-size:21px;line-height:1.2;color:var(--bordeaux)}
+.coord a{text-decoration:none;font-weight:700;color:var(--encre)}
+.coord a:hover{color:var(--brun)}
+.horaires{display:grid;gap:4px;margin-top:4px;font-size:16.5px}
+.horaires div{display:flex;justify-content:space-between;gap:16px;max-width:360px;border-bottom:1px dashed var(--trait);padding:3px 0}
+.horaires span:last-child{font-weight:700}
+.reseau-titre{font-family:var(--titre);font-size:21px;font-weight:600;color:var(--bordeaux);margin:2px 0 -6px}
+.reseau{display:flex;flex-wrap:wrap;gap:10px}
+.reseau a{display:inline-flex;align-items:center;gap:9px;padding:10px 18px;border-radius:999px;border:2px solid var(--bordeaux);font-weight:800;font-size:15.5px;text-decoration:none;color:var(--bordeaux);background:transparent;transition:background .25s,color .25s}
+.reseau a:hover{background:var(--bordeaux);color:#fff}
+.reseau svg{width:20px;height:20px;flex:none}
+.formulaire{background:var(--blanc);border:1px solid var(--trait);border-radius:18px;padding:clamp(22px,3vw,34px);display:grid;gap:16px}
+.formulaire h3{font-size:26px;color:var(--bordeaux)}
+.formulaire label{display:grid;gap:6px;font-weight:700;font-size:15.5px;color:var(--bordeaux)}
+.formulaire input,.formulaire textarea,.formulaire select{font:inherit;font-weight:400;color:var(--encre);background:var(--parchemin);border:2px solid var(--trait);border-radius:10px;padding:12px 14px;width:100%}
+.formulaire textarea{min-height:130px;resize:vertical}
+.formulaire input:focus,.formulaire textarea:focus,.formulaire select:focus{outline:none;border-color:var(--cuivre)}
+.deux{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:520px){.deux{grid-template-columns:1fr}}
+.formulaire .btn{justify-self:start}
+.merci{display:none;background:var(--sapin);color:#fff;border-radius:12px;padding:18px 20px;font-weight:600}
+.formulaire.envoye .merci{display:block}
+.champs{display:grid;gap:16px}
+.formulaire.envoye .champs{display:none}
+@media (max-width:900px){.contact-grille{grid-template-columns:1fr}}
+
+/* Pied */
+footer.pied{background:var(--bordeaux-2);color:#E3CDB8;padding:34px 0 38px}
+.pied .enveloppe{display:flex;flex-wrap:wrap;gap:18px 30px;align-items:center;justify-content:space-between}
+.pied .marque .nom small{display:block}
+.pied p{font-size:15px}
+.pied-ico{display:flex;gap:10px}
+.pied-ico a{width:44px;height:44px;border-radius:50%;border:2px solid #7A4A3E;display:grid;place-items:center;color:#fff;transition:background .25s}
+.pied-ico a:hover{background:var(--brun)}
+.pied-ico svg{width:20px;height:20px}
+
+.split-ligne{perspective:600px}
+.progres{position:absolute;left:0;bottom:-3px;height:3px;width:100%;background:var(--cuivre-clair);transform:scaleX(0);transform-origin:left;pointer-events:none}
+
+/* Version téléphone allégée : moins de contenu à faire défiler (le PC ne change pas) */
+@media (max-width:700px){
+  section{padding-block:46px}
+  .tete{margin-bottom:26px;gap:10px}
+  .tete .chapo{display:none}
+  .grille-services{grid-template-columns:1fr 1fr;gap:12px}
+  .carte .photo{aspect-ratio:1/1}
+  .carte .corps{padding:12px 12px 14px}
+  .carte .corps p{display:none}
+  .carte .titre{gap:8px}
+  .carte .titre svg{width:22px;height:22px}
+  .carte h3{font-size:17px}
+  .aussi-titre{margin-top:30px;font-size:21px}
+  .galerie button:nth-child(n+9){display:none}
+  .mur blockquote:nth-child(n+6){display:none}
+  .score{margin-bottom:22px}
+  .atelier-photos{grid-template-columns:1fr}
+  .atelier-photos figure:nth-child(2){display:none}
+  .atelier-photos figure{aspect-ratio:4/3}
+  .points li:nth-child(3){display:none}
+  .formulaire .opt{display:none}
+  .contact .tete .chapo{display:none}
+  .coord{gap:16px}
+}
+/* Apparition : fondu seul sur les cartes, aucun déplacement */
+.fondu{opacity:0;transition:opacity .7s ease}
+.fondu.vu{opacity:1}
+@media (prefers-reduced-motion:reduce){.fondu{opacity:1;transition:none}.galerie img,.nav a::after{transition:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-tel" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.6 21 3 13.4 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+    <symbol id="i-horloge" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm.8 5v5.2l4 2.4-.8 1.3-4.9-2.9V7z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path fill="currentColor" d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4.4 7H4v.5l8 5.6 8-5.6V7h-.4z"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 22v-8.2h2.8l.4-3.3h-3.2V8.4c0-.95.27-1.6 1.62-1.6h1.7V3.85c-.3-.04-1.3-.13-2.5-.13-2.5 0-4.2 1.5-4.2 4.3v2.5H7.3v3.3h2.8V22z"/></symbol>
+    <symbol id="i-google" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="M20 12.2H12.2M19.2 8A8.500 8.500 0 1 0 20.400 13A5.200 5.200 0 0 1 12.100 18"/></symbol>
+    <symbol id="i-plan" viewBox="0 0 24 24"><path fill="currentColor" d="M15 4.5 9 2.4 3.4 4.5a1 1 0 0 0-.6.9v14.100a.8.8 0 0 0 1.100.7L9 18.300l6 2.100 5.600-2.100a1 1 0 0 0 .6-.9V3.800a.8.8 0 0 0-1.100-.7zM9.800 4.200l4.400 1.500v14.100l-4.400-1.500z"/></symbol>
+    <symbol id="i-fleche-d" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M9 4l8 8-8 8"/></symbol>
+    <symbol id="i-fleche-g" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M15 4l-8 8 8 8"/></symbol>
+    <symbol id="i-croix" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M5 5l14 14M19 5L5 19"/></symbol>
+    <symbol id="i-coche" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="M4 12.500l5 5L20 6.500"/></symbol>
+    <symbol id="i-escalier" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" d="M3 28h7v-6h7v-6h7v-6h5M3 28h26"/></symbol>
+    <symbol id="i-cuisine" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" d="M4 14h24v14H4zM4 14V8h24v6M11 21h10M16 14v14"/></symbol>
+    <symbol id="i-dressing" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" d="M6 4h20v24H6zM16 4v24M13 15v3M19 15v3"/></symbol>
+    <symbol id="i-table" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" d="M3 11h26v4H3zM7 15v13M25 15v13"/></symbol>
+    <symbol id="i-parquet" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" d="M4 8h24v16H4zM4 16h24M12 8v8M20 16v8"/></symbol>
+    <symbol id="i-pergola" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" d="M3 8h26M6 8v20M26 8v20M3 8l3-4h20l3 4M12 8v4M16 8v4M20 8v4"/></symbol>
+    <symbol id="i-fenetre" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" d="M6 4h20v24H6zM16 4v24M6 16h20"/></symbol>
+    <symbol id="i-porte" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" d="M8 28V4h16v24M4 28h24M20 17v2"/></symbol>
+    <symbol id="i-portail" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" d="M3 6v22M29 6v22M3 12h13V28H3M16 12h13v16H16M7 16v8M11 16v8M20 16v8M24 16v8"/></symbol>
+    <symbol id="i-garage" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" d="M3 12l13-8 13 8v16H3zM8 28V16h16v12M8 20h16M8 24h16"/></symbol>
+    <symbol id="logo-rd" viewBox="0 0 100 100">
+      <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D79B66"/><stop offset="1" stop-color="#A8683F"/></linearGradient></defs>
+      <rect width="100" height="100" rx="20" fill="url(#lg)"/>
+      <text x="22" y="72" font-family="Zilla Slab,Georgia,serif" font-weight="700" font-size="74" fill="#4A1712">R</text>
+      <text x="52" y="76" font-family="Zilla Slab,Georgia,serif" font-weight="600" font-style="italic" font-size="66" fill="#4A1712">d</text>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="entete" id="haut">
+  <div class="enveloppe">
+    <a class="marque" href="#accueil" aria-label="Menuiserie Rousseau Damien, accueil">
+      <svg class="logo-rd" aria-hidden="true"><use href="#logo-rd"/></svg>
+      <span class="nom"><b>Rousseau Damien</b><small>Menuiserie générale</small></span>
+    </a>
+    <nav class="nav" id="menu" aria-label="Menu principal">
+      <a href="#accueil">Accueil</a>
+      <a href="#savoir-faire">Savoir-faire</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#atelier">Atelier</a>
+      <a href="#avis">Avis</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-cuivre appel-hdr" href="tel:+33243571988"><svg aria-hidden="true"><use href="#i-tel"/></svg><span>Appeler<span class="num"> le 02 43 57 19 88</span></span></a>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><svg aria-hidden="true" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+  <div class="progres" id="progres"></div>
+</header>
+
+<main>
+<section id="accueil" style="padding:0">
+  <div class="heros">
+    <div class="heros-cadre" aria-hidden="true"><div class="heros-fond"></div></div>
+    <div class="enveloppe">
+      <span class="etiquette">Cérans-Foulletourte · Sarthe</span>
+      <h1>Escaliers, cuisines et menuiseries <em>faits sur mesure</em> par votre menuisier</h1>
+      <p class="sous">Nous fabriquons et posons escaliers, cuisines, dressings, fenêtres, portes d'entrée, portails et portes de garage, pour les particuliers comme pour les professionnels.</p>
+      <div class="actions">
+        <a class="btn btn-cuivre" href="tel:+33243571988"><svg aria-hidden="true"><use href="#i-tel"/></svg>02 43 57 19 88</a>
+        <a class="btn btn-contour" href="#contact">Demander un devis</a>
+      </div>
+      <span class="note"><span class="etoiles" aria-hidden="true">★★★★★</span><span><b>5,0</b> sur Google · 12 avis</span></span>
+    </div>
+    <div class="bandeau">
+      <div class="enveloppe">
+        <figure><img src="img/p05.jpg" alt="Escalier ancien en bois à balustres" width="896" height="1061"></figure>
+        <figure><img src="img/p44.jpg" alt="Cuisine sur mesure avec îlot" width="896" height="1061"></figure>
+        <figure><img src="img/p28.jpg" alt="Table en chêne et résine bleue" width="896" height="1061"></figure>
+        <figure><img src="img/p54.jpg" alt="Parquet en chêne posé dans un salon" width="896" height="1061"></figure>
+      </div>
+    </div>
+  </div>
+  <div class="apres-heros" aria-hidden="true"></div>
+</section>
+<div class="infos">
+  <div class="enveloppe">
+    <div class="info"><svg aria-hidden="true"><use href="#i-tel"/></svg><div><b><a href="tel:+33243571988">02 43 57 19 88</a></b><small>Appelez, on vous répond</small></div></div>
+    <div class="info"><svg aria-hidden="true"><use href="#i-pin"/></svg><div><b>9 place de l'Église</b><small>72330 Cérans-Foulletourte</small></div></div>
+    <div class="info"><svg aria-hidden="true"><use href="#i-horloge"/></svg><div><b>Pose et dépannage</b><small>Portails, portes de garage, huisseries</small></div></div>
+  </div>
+</div>
+
+<section class="services" id="savoir-faire">
+  <div class="enveloppe">
+    <div class="tete">
+      <span class="etiquette">Savoir-faire</span>
+      <h2>De la conception à la pose, tout est fabriqué pour votre intérieur</h2>
+      <p class="chapo">Chaque ouvrage est dessiné à vos mesures, fabriqué dans notre atelier puis posé chez vous.</p>
+    </div>
+    <div class="grille-services">
+      <article class="carte fondu"><div class="photo"><img src="img/p06.jpg" alt="Escalier tournant ancien à balustres" loading="lazy" width="896" height="1061"></div><div class="corps"><div class="titre"><svg aria-hidden="true"><use href="#i-escalier"/></svg><h3>Escaliers</h3></div><p>Escaliers en bois sur mesure, avec rampes et balustres, pour du neuf comme pour de l'ancien.</p></div></article>
+      <article class="carte fondu"><div class="photo"><img src="img/p44.jpg" alt="Cuisine sur mesure avec îlot et plan de travail" loading="lazy" width="896" height="1061"></div><div class="corps"><div class="titre"><svg aria-hidden="true"><use href="#i-cuisine"/></svg><h3>Cuisines</h3></div><p>Meubles, plans de travail et rangements dessinés pour votre pièce, du plus simple au plus soigné.</p></div></article>
+      <article class="carte fondu"><div class="photo"><img src="img/p38.jpg" alt="Grand placard blanc avec niches en bois foncé" loading="lazy" width="1236" height="926"></div><div class="corps"><div class="titre"><svg aria-hidden="true"><use href="#i-dressing"/></svg><h3>Dressings et placards</h3></div><p>Placards, bibliothèques et agencements intégrés qui exploitent chaque recoin.</p></div></article>
+      <article class="carte fondu"><div class="photo"><img src="img/p28.jpg" alt="Table en chêne massif avec résine bleue" loading="lazy" width="896" height="1061"></div><div class="corps"><div class="titre"><svg aria-hidden="true"><use href="#i-table"/></svg><h3>Tables et meubles</h3></div><p>Tables en bois massif, résine et pièces uniques pour la maison ou le commerce.</p></div></article>
+      <article class="carte fondu"><div class="photo"><img src="img/p54.jpg" alt="Parquet en chêne posé dans un salon" loading="lazy" width="896" height="1061"></div><div class="corps"><div class="titre"><svg aria-hidden="true"><use href="#i-parquet"/></svg><h3>Parquets</h3></div><p>Pose de parquet en chêne, y compris en raccord avec un carrelage existant.</p></div></article>
+      <article class="carte fondu"><div class="photo"><img src="img/p60.jpg" alt="Pergola en aluminium sur une allée" loading="lazy" width="896" height="1061"></div><div class="corps"><div class="titre"><svg aria-hidden="true"><use href="#i-pergola"/></svg><h3>Aménagements extérieurs</h3></div><p>Pergolas, abris et terrasses pour profiter de votre extérieur toute l'année.</p></div></article>
+    </div>
+    <p class="aussi-titre">Et aussi, fabriqués et posés sur mesure</p>
+    <div class="aussi" style="margin-top:18px">
+      <div><svg aria-hidden="true"><use href="#i-fenetre"/></svg>Fenêtres</div>
+      <div><svg aria-hidden="true"><use href="#i-porte"/></svg>Portes d'entrée</div>
+      <div><svg aria-hidden="true"><use href="#i-portail"/></svg>Portails</div>
+      <div><svg aria-hidden="true"><use href="#i-garage"/></svg>Portes de garage</div>
+    </div>
+  </div>
+</section>
+
+<section class="realisations" id="realisations">
+  <div class="enveloppe">
+    <div class="tete">
+      <span class="etiquette">Réalisations</span>
+      <h2>Quelques ouvrages sortis de notre atelier</h2>
+      <p class="chapo">Cliquez sur une photo pour l'agrandir.</p>
+    </div>
+    <div class="galerie" id="galerie">
+      <button type="button" aria-label="Escalier ancien en bois à balustres"><img src="img/p05.jpg" alt="Escalier ancien en bois à balustres" loading="lazy" width="896" height="1061"></button>
+      <button type="button" aria-label="Escalier ancien aux marches en bois"><img src="img/p10.jpg" alt="Escalier ancien aux marches en bois" loading="lazy" width="896" height="1061"></button>
+      <button type="button" aria-label="Escalier ancien et sa rampe à balustres"><img src="img/p12.jpg" alt="Escalier ancien et sa rampe à balustres" loading="lazy" width="896" height="1061"></button>
+      <button type="button" aria-label="Salle de bains avec placards en bois sur mesure"><img src="img/p03.jpg" alt="Salle de bains avec placards en bois sur mesure" loading="lazy" width="896" height="1061"></button>
+      <button type="button" aria-label="Cuisine avec plan de travail en bois et façades vert sapin"><img src="img/p22.jpg" alt="Cuisine avec plan de travail en bois et façades vert sapin" loading="lazy" width="896" height="1061"></button>
+      <button type="button" aria-label="Placard vert sapin avec niche en bois"><img src="img/p24.jpg" alt="Placard vert sapin avec niche en bois" loading="lazy" width="896" height="1061"></button>
+      <button type="button" aria-label="Rangement blanc avec niches en bois foncé"><img src="img/p36.jpg" alt="Rangement blanc avec niches en bois foncé" loading="lazy" width="896" height="1061"></button>
+      <button type="button" aria-label="Cuisine bois clair et plan de travail en marbre"><img src="img/p42.jpg" alt="Cuisine bois clair et plan de travail en marbre" loading="lazy" width="896" height="1061"></button>
+      <button type="button" aria-label="Table en chêne et résine bleue"><img src="img/p33.jpg" alt="Table en chêne et résine bleue" loading="lazy" width="896" height="1061"></button>
+      <button type="button" aria-label="Meuble bleu à panneaux moulurés"><img src="img/p47.jpg" alt="Meuble bleu à panneaux moulurés" loading="lazy" width="896" height="1061"></button>
+      <button type="button" aria-label="Parquet en chêne en raccord avec un carrelage"><img src="img/p53.jpg" alt="Parquet en chêne en raccord avec un carrelage" loading="lazy" width="896" height="1061"></button>
+      <button type="button" aria-label="Terrasse en bois devant une maison"><img src="img/p20.jpg" alt="Terrasse en bois devant une maison" loading="lazy" width="896" height="1061"></button>
+    </div>
+  </div>
+</section>
+
+<div class="visionneuse" id="visionneuse" role="dialog" aria-modal="true" aria-label="Photo agrandie">
+  <button class="fermer" id="v-fermer" aria-label="Fermer"><svg aria-hidden="true"><use href="#i-croix"/></svg></button>
+  <button class="nav-v prec" id="v-prec" aria-label="Photo précédente"><svg aria-hidden="true"><use href="#i-fleche-g"/></svg></button>
+  <figure><img id="v-img" alt="" width="896" height="1061"><figcaption id="v-compte"></figcaption></figure>
+  <button class="nav-v suiv" id="v-suiv" aria-label="Photo suivante"><svg aria-hidden="true"><use href="#i-fleche-d"/></svg></button>
+</div>
+
+<section class="atelier" id="atelier">
+  <div class="enveloppe atelier-grille">
+    <div class="atelier-photos">
+      <figure class="fondu"><img src="img/p30.jpg" alt="Notre atelier de menuiserie, établi et machines" loading="lazy" width="896" height="1061"></figure>
+      <figure class="fondu"><img src="img/p16.jpg" alt="Notre stand sur un comice" loading="lazy" width="1236" height="926"></figure>
+    </div>
+    <div class="atelier-texte">
+      <span class="etiquette">L'atelier</span>
+      <h2>Un menuisier de proximité, installé à Cérans-Foulletourte</h2>
+      <p>Nous travaillons dans notre atelier au cœur du village : le bois y est coupé, assemblé et fini avant d'être posé chez vous. Vous parlez directement à celui qui fabrique.</p>
+      <ul class="points">
+        <li><svg aria-hidden="true"><use href="#i-coche"/></svg>Fabrication et pose sur mesure, pour les particuliers et les professionnels</li>
+        <li><svg aria-hidden="true"><use href="#i-coche"/></svg>Menuiserie générale : un seul interlocuteur pour tous vos ouvrages en bois</li>
+        <li><svg aria-hidden="true"><use href="#i-coche"/></svg>Retrouvez-nous aussi sur les comices et marchés artisanaux de la région</li>
+      </ul>
+      <a class="btn btn-brun" href="#contact">Parler de votre projet</a>
+    </div>
+  </div>
+</section>
+
+<section class="avis" id="avis">
+  <div class="enveloppe">
+    <div class="tete">
+      <span class="etiquette">Avis clients</span>
+      <h2>Ce que disent nos clients sur Google</h2>
+    </div>
+    <div class="score"><span class="gros">5,0</span><span><span class="etoiles" aria-hidden="true">★★★★★</span><small style="display:block">Note Google · 12 avis</small></span></div>
+    <div class="mur">
+      <blockquote class="fondu"><div class="etoiles-av" aria-label="5 étoiles">★★★★★</div><p>Merci a l entreprise rousseau pour sa disponibilite et sa reactivite . Nous avons fait appel a cette entreprise pour plusieurs depannages sur notre portail et notre porte de garage , nous recommandons vivement mr rousseau et ses employes au plus proche du client</p><footer>Laurent B. <span>· il y a 4 mois</span></footer></blockquote>
+      <blockquote class="fondu"><div class="etoiles-av" aria-label="5 étoiles">★★★★★</div><p>Si comme moi vous désirez changer votre porte, n'hésitez pas à faire appel à cette entreprise. Les deux jeunes qui sont intervenus chez moi la semaine dernière ont fait un très bon travail, la pose est soignée et ce qui ne gâte rien, ils sont très polis.</p><footer>France M. <span>· il y a 11 mois</span></footer></blockquote>
+      <blockquote class="fondu"><div class="etoiles-av" aria-label="5 étoiles">★★★★★</div><p>Très bon menuisier. Très bon travail très sérieux. Venu à mon domicile pour dépose et repose de cuisine aménagée. Je recommande.</p><footer>Frederic <span>· il y a 3 ans</span></footer></blockquote>
+      <blockquote class="fondu"><div class="etoiles-av" aria-label="5 étoiles">★★★★★</div><p>Très satisfait du travail effectué ( changement complet d’une porte d’entrée ) je recommande cette entreprise bien évidemment !</p><footer>Antoine C. <span>· il y a 2 ans</span></footer></blockquote>
+      <blockquote class="fondu"><div class="etoiles-av" aria-label="5 étoiles">★★★★★</div><p>Très bonne équipe pour la dépose et la pose de nouvelles huisseries. Je recommande si vous cherchez un travail de qualité et une communication avec l'équipe.</p><footer>Emma B. <span>· il y a 2 ans</span></footer></blockquote>
+      <blockquote class="fondu"><div class="etoiles-av" aria-label="5 étoiles">★★★★★</div><p>Très bon menuisier dommage que les délais soient longs Conscientieux et accueillant</p><footer>Marylene M. <span>· il y a 7 ans</span></footer></blockquote>
+      <blockquote class="fondu"><div class="etoiles-av" aria-label="5 étoiles">★★★★★</div><p>Très bon professionnel et très gentil.</p><footer>Benoit B. <span>· il y a 3 ans</span></footer></blockquote>
+      
+    </div>
+    <p class="avis-lien"><a class="btn btn-contour" href="https://www.google.com/maps/search/?api=1&query=Menuiserie+Rousseau+Damien+9+Place+de+l%27%C3%89glise+C%C3%A9rans-Foulletourte" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-google"/></svg>Voir tous les avis sur Google</a></p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="enveloppe">
+    <div class="tete">
+      <span class="etiquette">Contact</span>
+      <h2>Parlons de votre projet</h2>
+      <p class="chapo">Un appel ou un message suffit : nous vous répondons et vous proposons un devis.</p>
+    </div>
+    <div class="contact-grille">
+      <div class="coord">
+        <div class="ligne"><svg aria-hidden="true"><use href="#i-tel"/></svg><div><b>Téléphone</b><a href="tel:+33243571988">02 43 57 19 88</a> · <a href="tel:+33633969469">06 33 96 94 69</a></div></div>
+        <div class="ligne"><svg aria-hidden="true"><use href="#i-mail"/></svg><div><b>E-mail</b><a href="mailto:damien.rousseau922@orange.fr">damien.rousseau922@orange.fr</a></div></div>
+        <div class="ligne"><svg aria-hidden="true"><use href="#i-pin"/></svg><div><b>Adresse</b>SARL Rousseau Damien<br>9 place de l'Église, 72330 Cérans-Foulletourte</div></div>
+        <div class="ligne"><svg aria-hidden="true"><use href="#i-horloge"/></svg><div><b>Horaires</b>Appelez le <a href="tel:+33243571988">02 43 57 19 88</a> pour convenir d'un rendez-vous.</div></div>
+        <p class="reseau-titre">Retrouvez-nous</p>
+        <div class="reseau">
+          <a href="https://www.facebook.com/sarlrousseaudamien" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-fb"/></svg>Facebook</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Menuiserie+Rousseau+Damien+9+Place+de+l%27%C3%89glise+C%C3%A9rans-Foulletourte" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-google"/></svg>Fiche Google</a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Menuiserie+Rousseau+Damien+9+Place+de+l%27%C3%89glise+C%C3%A9rans-Foulletourte" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-plan"/></svg>Plan d'accès</a>
+        </div>
+      </div>
+      <form class="formulaire" id="form" action="#" method="post">
+        <h3>Demander un devis</h3>
+        <div class="champs">
+          <div class="deux">
+            <label>Nom<input name="nom" type="text" autocomplete="name" required></label>
+            <label>Téléphone<input name="tel" type="tel" autocomplete="tel" required></label>
+          </div>
+          <label class="opt">E-mail<input name="mail" type="email" autocomplete="email"></label>
+          <label class="opt">Votre projet
+            <select name="projet"><option>Escalier</option><option>Cuisine</option><option>Dressing ou placard</option><option>Fenêtres ou portes</option><option>Portail ou porte de garage</option><option>Autre</option></select>
+          </label>
+          <label>Message<textarea name="message" placeholder="Décrivez votre projet en quelques mots"></textarea></label>
+          <button class="btn btn-cuivre" type="submit">Envoyer ma demande</button>
+        </div>
+        <div class="merci" role="status">Merci ! Sur votre vrai site, cette demande vous arrivera par e-mail.</div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="pied">
+  <div class="enveloppe">
+    <a class="marque" href="#accueil" aria-label="Retour en haut"><svg class="logo-rd" aria-hidden="true"><use href="#logo-rd"/></svg><span class="nom"><b>Rousseau Damien</b><small>Menuiserie générale</small></span></a>
+    <p>9 place de l'Église, 72330 Cérans-Foulletourte · 02 43 57 19 88</p>
+    <div class="pied-ico">
+      <a href="https://www.facebook.com/sarlrousseaudamien" target="_blank" rel="noopener" aria-label="Facebook"><svg aria-hidden="true"><use href="#i-fb"/></svg></a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Menuiserie+Rousseau+Damien+9+Place+de+l%27%C3%89glise+C%C3%A9rans-Foulletourte" target="_blank" rel="noopener" aria-label="Fiche Google"><svg aria-hidden="true"><use href="#i-google"/></svg></a>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Menuiserie+Rousseau+Damien+9+Place+de+l%27%C3%89glise+C%C3%A9rans-Foulletourte" target="_blank" rel="noopener" aria-label="Plan d'accès"><svg aria-hidden="true"><use href="#i-plan"/></svg></a>
+      <a href="tel:+33243571988" aria-label="Appeler"><svg aria-hidden="true"><use href="#i-tel"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script>
+(function(){
+  var hdr=document.querySelector('.entete');
+  function hh(){return hdr.getBoundingClientRect().height}
+  // Menu mobile
+  var burger=document.getElementById('burger'),menu=document.getElementById('menu');
+  burger.addEventListener('click',function(){var o=menu.classList.toggle('ouvert');burger.setAttribute('aria-expanded',o)});
+  // Ancres : arrivée exacte sous l'en-tête
+  var liens=[].slice.call(menu.querySelectorAll('a'));
+  var cibles=liens.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function aller(id,e){var el=document.querySelector(id);if(!el)return;if(e)e.preventDefault();
+    var y=el.getBoundingClientRect().top+window.pageYOffset-hh()+1;
+    window.scrollTo({top:Math.max(0,y),behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});}
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id.length>1){menu.classList.remove('ouvert');burger.setAttribute('aria-expanded',false);aller(id,e)}})});
+  // Menu actif : seulement quand la section atteint le bas de l'en-tête
+  function spy(){var lim=hh()+2,cur=0;
+    cibles.forEach(function(c,i){if(c&&c.getBoundingClientRect().top<=lim)cur=i});
+    if(window.innerHeight+window.pageYOffset>=document.documentElement.scrollHeight-4)cur=cibles.length-1;
+    liens.forEach(function(a,i){a.classList.toggle('actif',i===cur)});
+    hdr.classList.toggle('ombre',window.pageYOffset>8)}
+  window.addEventListener('scroll',spy,{passive:true});window.addEventListener('resize',spy);spy();
+  // Fondu des cartes (aucun déplacement)
+  var f=document.querySelectorAll('.fondu');
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vu');io.unobserve(e.target)}})},{threshold:.08});
+    f.forEach(function(x){io.observe(x)});
+    setTimeout(function(){f.forEach(function(x){x.classList.add('vu')})},4000);
+  }else f.forEach(function(x){x.classList.add('vu')});
+  // Visionneuse (boutons seulement, la molette n'est jamais détournée)
+  var tous=[].slice.call(document.querySelectorAll('#galerie button')),gal=tous,vi=document.getElementById('visionneuse'),vimg=document.getElementById('v-img'),vc=document.getElementById('v-compte'),vp=document.getElementById('v-prec'),vs=document.getElementById('v-suiv'),k=0,dernier=null;
+  function montre(n){k=n;var img=gal[n].querySelector('img');vimg.src=img.getAttribute('src');vimg.alt=img.alt;vc.textContent=(n+1)+' / '+gal.length+' · '+img.alt;vp.disabled=n===0;vs.disabled=n===gal.length-1}
+  function ouvre(b){dernier=document.activeElement;gal=tous.filter(function(x){return x.offsetParent!==null});montre(gal.indexOf(b));vi.classList.add('ouvert');document.getElementById('v-fermer').focus()}
+  function ferme(){vi.classList.remove('ouvert');if(dernier)dernier.focus()}
+  tous.forEach(function(b){b.addEventListener('click',function(){ouvre(b)})});
+  vp.addEventListener('click',function(){if(k>0)montre(k-1)});vs.addEventListener('click',function(){if(k<gal.length-1)montre(k+1)});
+  document.getElementById('v-fermer').addEventListener('click',ferme);
+  vi.addEventListener('click',function(e){if(e.target===vi)ferme()});
+  document.addEventListener('keydown',function(e){if(!vi.classList.contains('ouvert'))return;if(e.key==='Escape')ferme();if(e.key==='ArrowLeft'&&k>0)montre(k-1);if(e.key==='ArrowRight'&&k<gal.length-1)montre(k+1)});
+
+  // Effets GSAP : titres lettre par lettre en 3D, fond du héros en parallaxe, formulaire en cascade, barre de progression.
+  // Jamais sur le téléphone, l'adresse ni les horaires ; cartes en fondu seul (voir plus haut).
+  if(window.gsap&&window.ScrollTrigger&&window.SplitText){
+    gsap.registerPlugin(ScrollTrigger,SplitText);
+    var mm=gsap.matchMedia();
+    mm.add('(prefers-reduced-motion: no-preference)',function(){
+      var h1=document.querySelector('.heros h1');
+      SplitText.create(h1,{type:'lines,words,chars',linesClass:'split-ligne',autoSplit:true,onSplit:function(self){
+        return gsap.from(self.chars,{opacity:0,rotationX:90,rotationY:-50,yPercent:-40,duration:.9,ease:'power2.out',stagger:.025,clearProps:'opacity,transform'});
+      }});
+      gsap.from('.heros .etiquette,.heros .sous',{opacity:0,duration:.9,delay:.5,stagger:.12,ease:'power1.out',clearProps:'opacity'});
+      document.querySelectorAll('.tete h2,.atelier-texte h2').forEach(function(t){
+        SplitText.create(t,{type:'lines,words,chars',linesClass:'split-ligne',autoSplit:true,onSplit:function(self){
+          return gsap.from(self.chars,{opacity:0,rotationX:90,rotationY:-50,yPercent:-40,duration:.8,ease:'power2.out',stagger:.02,clearProps:'opacity,transform',
+            scrollTrigger:{trigger:t,start:'top 88%',toggleActions:'play none none none'}});
+        }});
+      });
+      gsap.to('.heros-fond',{yPercent:8,ease:'none',scrollTrigger:{trigger:'.heros',start:'top top',end:'bottom top',scrub:.6}});
+      gsap.from('.formulaire .champs > *',{opacity:0,duration:.6,stagger:.1,ease:'power1.out',clearProps:'opacity',
+        scrollTrigger:{trigger:'.formulaire',start:'top 85%',toggleActions:'play none none none'}});
+      var barre=document.getElementById('progres');
+      ScrollTrigger.create({start:0,end:'max',onUpdate:function(self){barre.style.transform='scaleX('+self.progress+')'}});
+    });
+    window.addEventListener('load',function(){ScrollTrigger.refresh()});
+    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){ScrollTrigger.refresh()});
+  }
+  // Formulaire : message de remerciement
+  document.getElementById('form').addEventListener('submit',function(e){e.preventDefault();this.classList.add('envoye')});
+})();
+</script>
+
+</body>
+</html>
