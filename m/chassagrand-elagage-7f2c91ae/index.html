@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Chassagrand Élagage · Élagage et abattage en Sarthe</title>
+<meta name="description" content="Chassagrand Élagage : élagage, abattage et entretien de vos arbres au Mans et dans toute la Sarthe. Devis sur simple appel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--vert:#2f6b2c;--vert-f:#12301a;--vert-m:#1d4a22;--creme:#f6f3ea;--sable:#ebe5d4;--orange:#f06414;--orange-f:#c94e08;--texte:#1d2a20;--gris:#5b6a5f;--hdr:76px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto}
+body{font-family:'Nunito Sans',system-ui,sans-serif;font-size:18px;line-height:1.6;color:var(--texte);background:var(--creme);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:'Bitter',Georgia,serif;line-height:1.18;letter-spacing:-.01em}
+.enveloppe{width:min(1180px,100% - 48px);margin-inline:auto}
+section{padding:92px 0}
+.split-ligne{overflow:hidden;padding-bottom:.08em}
+/* barre de progression */
+#progres{position:fixed;top:0;left:0;right:0;height:4px;background:var(--orange);transform-origin:0 50%;transform:scaleX(0);z-index:120}
+/* en-tête */
+.entete{position:sticky;top:0;z-index:90;background:#fff;height:var(--hdr);border-bottom:1px solid rgba(18,48,26,.1)}
+.entete.ombre{box-shadow:0 6px 24px rgba(18,48,26,.12)}
+.entete .enveloppe{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo img{width:52px;height:52px;border-radius:50%}
+.logo b{font-family:'Bitter',serif;font-size:22px;color:var(--vert-f);line-height:1.05;display:block}
+.logo i{font-style:normal;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--vert);font-weight:800;display:block}
+.droite{display:flex;align-items:center;gap:26px}
+.nav{display:flex;gap:26px}
+.nav a{text-decoration:none;font-weight:700;font-size:16px;color:var(--vert-f);padding:6px 0;position:relative}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--orange);transform:scaleX(0);transition:transform .25s}
+.nav a.actif::after{transform:scaleX(1)}
+.appel-hdr{display:inline-flex;align-items:center;gap:10px;background:var(--orange);color:#fff;text-decoration:none;font-weight:800;font-size:17px;padding:12px 20px;border-radius:999px}
+.appel-hdr:hover{background:var(--orange-f)}
+.appel-hdr svg{width:19px;height:19px;flex:none}
+.burger{display:none;width:48px;height:48px;border:2px solid var(--vert-f);background:#fff;border-radius:10px;cursor:pointer;align-items:center;justify-content:center;color:var(--vert-f)}
+.burger svg{width:24px;height:24px}
+@media (max-width:1100px){.nav{gap:18px}.nav a{font-size:15px}.appel-hdr .num{display:none}.appel-hdr{padding:12px 14px}}
+@media (max-width:900px){
+ .burger{display:inline-flex}
+ .nav{position:absolute;top:var(--hdr);left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:6px 24px 14px;border-bottom:1px solid rgba(18,48,26,.15);box-shadow:0 14px 24px rgba(18,48,26,.14);display:none}
+ .nav.ouvert{display:flex}
+ .nav a{padding:15px 0;border-bottom:1px solid rgba(18,48,26,.1);font-size:18px}
+ .nav a::after{display:none}.nav a.actif{color:var(--orange-f)}
+ .droite{gap:12px}
+}
+@media (max-width:600px){.enveloppe{width:calc(100% - 36px)}:root{--hdr:66px}.logo img{width:44px;height:44px}.logo b{font-size:18px}.logo i{font-size:11px;letter-spacing:.1em}}
+@media (max-width:400px){.logo i{display:none}.appel-hdr{font-size:15px;padding:11px 12px}}
+/* héros */
+.heros{position:relative;color:#fff;text-align:center;overflow:hidden;background:var(--vert-f)}
+.heros-fond{position:absolute;inset:-6% 0;background:url(img/pin-cordes.jpg) center 42%/cover;z-index:0}
+.heros::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,30,14,.78),rgba(10,30,14,.62) 55%,rgba(10,30,14,.86));z-index:1}
+.heros .enveloppe{position:relative;z-index:2;padding-block:112px 100px;display:flex;flex-direction:column;align-items:center}
+.etiquette{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:#ffd0b0;margin-bottom:22px}
+.etiquette::before,.etiquette::after{content:"";width:34px;height:2px;background:var(--orange)}
+.heros h1{font-size:clamp(34px,5.6vw,66px);max-width:960px;font-weight:800}
+.heros .sous{font-size:clamp(18px,2vw,22px);max-width:720px;margin-top:24px;color:#eef3ea}
+.boutons{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:36px}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:18px;text-decoration:none;padding:15px 28px;border-radius:999px;border:2px solid transparent;cursor:pointer;font-family:inherit}
+.btn svg{width:20px;height:20px;flex:none}
+.btn.plein{background:var(--orange);color:#fff}.btn.plein:hover{background:var(--orange-f)}
+.btn.contour{border-color:#fff;color:#fff;background:rgba(255,255,255,.06)}.btn.contour:hover{background:#fff;color:var(--vert-f)}
+.badge{display:inline-flex;align-items:center;gap:14px;margin-top:42px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:12px 24px;backdrop-filter:blur(4px)}
+.badge .etoiles{color:#ffc247;letter-spacing:2px;font-size:20px}
+.badge span{font-weight:700;font-size:16px}
+@media (max-width:760px){.heros .enveloppe{padding-block:60px 56px}.etiquette{font-size:12px;letter-spacing:.12em}.etiquette::before,.etiquette::after{width:18px}.badge{margin-top:30px;padding:11px 18px}.badge span{font-size:14.5px}.btn{font-size:17px;padding:14px 22px}}
+/* bande d'infos */
+.infos{background:var(--vert);color:#fff}
+.infos .enveloppe{display:grid;grid-template-columns:repeat(3,1fr)}
+.info{display:flex;align-items:center;gap:14px;padding:22px 24px;border-left:1px solid rgba(255,255,255,.22)}
+.info:first-child{border-left:0;padding-left:0}
+.info svg{width:30px;height:30px;flex:none;color:#ffd0b0}
+.info b{display:block;font-family:'Bitter',serif;font-size:18px}
+.info span{font-size:16px;color:#e4efe0}
+.info a{text-decoration:none;font-weight:800;font-size:21px}
+@media (max-width:820px){.infos .enveloppe{grid-template-columns:1fr}.info{border-left:0;border-top:1px solid rgba(255,255,255,.22);padding:16px 0}.info:first-child{border-top:0}}
+/* titres */
+.tete{text-align:center;max-width:760px;margin:0 auto 52px}
+.tete .sur{font-weight:800;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--orange-f);display:block;margin-bottom:12px}
+.tete h2{font-size:clamp(28px,3.8vw,44px);color:var(--vert-f)}
+.tete p{margin-top:16px;color:var(--gris);font-size:19px}
+.trait{display:block;width:84px;height:4px;background:var(--orange);margin:22px auto 0;transform-origin:50% 50%;border-radius:2px}
+@media (max-width:700px){section{padding:58px 0}.tete{margin-bottom:32px}}
+/* savoir-faire */
+.metiers{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.metier{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 14px rgba(18,48,26,.08);display:flex;flex-direction:column}
+.metier-photo{aspect-ratio:4/3;overflow:hidden;background:var(--sable)}
+.metier-photo img{width:100%;height:100%;object-fit:cover}
+.metier-texte{padding:22px 22px 26px}
+.metier h3{display:flex;align-items:center;gap:10px;font-size:21px;color:var(--vert-f);margin-bottom:10px}
+.metier h3 svg{width:26px;height:26px;color:var(--vert);flex:none}
+.metier p{font-size:16.5px;color:var(--gris)}
+@media (max-width:1050px){.metiers{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.metiers{grid-template-columns:1fr;gap:18px}.metier-photo{aspect-ratio:16/9}.metier-texte{padding:20px}}
+/* pourquoi */
+.pourquoi{background:var(--vert-f);color:#fff}
+.pourquoi .tete h2{color:#fff}.pourquoi .tete p{color:#cfe0cb}.pourquoi .tete .sur{color:#ffb98a}
+.raisons{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.raison{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:24px 22px}
+.raison h3{display:flex;align-items:center;gap:10px;font-size:19.5px;margin-bottom:8px}
+.raison h3 svg{width:26px;height:26px;color:#ffb98a;flex:none}
+.raison p{font-size:16.5px;color:#d7e6d3}
+@media (max-width:1000px){.raisons{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.raisons{grid-template-columns:1fr;gap:12px}.raison{padding:18px}.raison p{font-size:16px}.raisons .raison:nth-child(n+4){display:none}}
+/* réalisations */
+.galerie{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.galerie button{border:0;padding:0;background:var(--sable);cursor:pointer;border-radius:12px;overflow:hidden;aspect-ratio:1/1;position:relative;display:block}
+.galerie img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.galerie button:hover img,.galerie button:focus-visible img{transform:scale(1.05)}
+.galerie button:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+.galerie .loupe{position:absolute;right:10px;bottom:10px;width:38px;height:38px;border-radius:50%;background:rgba(18,48,26,.78);color:#fff;display:grid;place-items:center}
+.galerie .loupe svg{width:19px;height:19px}
+.note-gal{text-align:center;margin-top:22px;color:var(--gris);font-size:16px}
+@media (max-width:900px){.galerie{grid-template-columns:repeat(3,1fr);gap:10px}}
+@media (max-width:560px){.galerie{grid-template-columns:repeat(2,1fr);gap:8px}.galerie button:nth-child(n+9){display:none}.galerie .loupe{width:32px;height:32px}}
+/* visionneuse */
+.visionneuse{position:fixed;inset:0;z-index:130;background:rgba(6,18,10,.96);display:none;align-items:center;justify-content:center;padding:18px}
+.visionneuse.ouvert{display:flex}
+.visionneuse figure{margin:0;max-width:min(92vw,980px);max-height:88vh;display:flex;flex-direction:column;align-items:center;gap:12px}
+.visionneuse img{max-width:100%;max-height:78vh;object-fit:contain;border-radius:6px}
+.visionneuse figcaption{color:#fff;font-family:'Bitter',serif;font-weight:600;font-size:15px;text-align:center}
+.visionneuse .nav-v,.visionneuse .fermer{position:absolute;width:52px;height:52px;border-radius:50%;border:2px solid rgba(255,255,255,.55);background:rgba(18,48,26,.85);color:#fff;cursor:pointer;display:grid;place-items:center}
+.visionneuse .nav-v{top:50%;transform:translateY(-50%)}
+.visionneuse .nav-v:disabled{opacity:.3;cursor:default}
+.visionneuse svg{width:24px;height:24px}
+.visionneuse .prec{left:14px}.visionneuse .suiv{right:14px}
+.visionneuse .fermer{top:14px;right:14px;width:48px;height:48px}
+@media (max-width:600px){.visionneuse .nav-v{top:auto;bottom:18px;transform:none}.visionneuse .prec{left:calc(50% - 64px)}.visionneuse .suiv{right:calc(50% - 64px)}.visionneuse figure{margin-bottom:60px}}
+/* avis */
+.avis{background:var(--sable)}
+.note-g{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;margin-bottom:40px;text-align:left}
+.note-g .grand{font-family:'Bitter',serif;font-weight:800;font-size:60px;color:var(--vert-f);line-height:1}
+.note-g .etoiles{color:#f5a300;font-size:24px;letter-spacing:2px;line-height:1}
+.note-g small{display:block;font-size:16px;color:var(--gris);margin-top:4px}
+.note-g a{font-weight:800;color:var(--vert);font-size:16px}
+.mur{column-count:3;column-gap:20px}
+.carte{break-inside:avoid;margin-bottom:20px;background:#fff;border-radius:14px;padding:22px 22px 20px;box-shadow:0 2px 12px rgba(18,48,26,.08);opacity:0;transition:opacity .7s}
+.carte.vu{opacity:1}
+.carte .etoiles{color:#f5a300;letter-spacing:2px;font-size:18px}
+.carte p{margin:10px 0 14px;font-size:16.5px}
+.carte footer{display:flex;align-items:center;gap:10px;font-size:14.5px;color:var(--gris)}
+.carte footer b{color:var(--texte);font-size:15.5px}
+.carte .g{width:26px;height:26px;border-radius:50%;background:var(--vert);color:#fff;display:grid;place-items:center;font-weight:800;font-size:14px;flex:none}
+@media (max-width:980px){.mur{column-count:2}}
+@media (max-width:620px){.mur{column-count:1}.carte:nth-child(n+6){display:none}.note-g .grand{font-size:46px}}
+/* zone */
+.zone .enveloppe{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.zone h2{font-size:clamp(28px,3.6vw,42px);color:var(--vert-f);margin-bottom:16px}
+.zone p{color:var(--gris);margin-bottom:14px}
+.villes{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.villes span{background:#fff;border:2px solid var(--vert);color:var(--vert-f);font-weight:700;font-size:16px;padding:7px 16px;border-radius:999px}
+.zone-photo{border-radius:16px;overflow:hidden;aspect-ratio:4/3}
+.zone-photo img{width:100%;height:100%;object-fit:cover}
+@media (max-width:900px){.zone .enveloppe{grid-template-columns:1fr;gap:28px}.zone-photo{display:none}}
+/* contact */
+.contact{background:var(--vert-m);color:#fff}
+.contact .tete h2{color:#fff}.contact .tete p{color:#d2e3cd}.contact .tete .sur{color:#ffb98a}
+.contact-grille{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.coord{display:flex;flex-direction:column;gap:22px}
+.ligne{display:flex;gap:16px;align-items:flex-start}
+.ligne>svg{width:30px;height:30px;flex:none;color:#ffb98a;margin-top:2px}
+.ligne b{display:block;font-family:'Bitter',serif;font-size:18px;margin-bottom:2px}
+.ligne a{color:#fff}
+.coord .tel{font-weight:800;font-size:31px;text-decoration:none;font-family:'Bitter',serif}
+.reseau{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.reseau a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:15.5px;border:2px solid rgba(255,255,255,.55);border-radius:999px;padding:9px 16px;color:#fff}
+.reseau a:hover{background:#fff;color:var(--vert-f)}
+.reseau svg{width:20px;height:20px}
+.formulaire{background:#fff;color:var(--texte);border-radius:16px;padding:32px}
+.formulaire h3{font-size:25px;color:var(--vert-f)}
+.formulaire>p{color:var(--gris);margin:6px 0 20px;font-size:16.5px}
+.champs{display:grid;gap:16px}
+.deux{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:block;font-weight:700;font-size:15.5px;margin-bottom:5px}
+input,textarea{width:100%;font:inherit;font-size:17px;padding:13px 14px;border:2px solid #cfd8cc;border-radius:10px;background:#fbfcfa;color:var(--texte)}
+input:focus,textarea:focus{outline:none;border-color:var(--vert)}
+textarea{min-height:120px;resize:vertical}
+.formulaire .btn{justify-content:center;width:100%}
+.merci{display:none;margin-top:18px;background:#e7f3e3;border:2px solid var(--vert);color:var(--vert-f);padding:16px;border-radius:10px;font-weight:700}
+.formulaire.envoye .merci{display:block}
+.formulaire.envoye .champs{display:none}
+.horaires span{display:block}
+@media (max-width:900px){.contact-grille{grid-template-columns:1fr;gap:34px}}
+@media (max-width:520px){.deux{grid-template-columns:1fr}.formulaire{padding:24px 20px}.coord .tel{font-size:27px}}
+@media (max-width:700px){.zone{display:none}.metier-photo{aspect-ratio:16/8}.metiers .metier:nth-child(4){display:none}.metier p{font-size:16px}.coord .ligne:nth-child(3){display:none}.pourquoi .tete{margin-bottom:24px}}
+/* pied */
+.pied{background:#0b2012;color:#cfe0cb;padding:26px 0;font-size:15px}
+.pied .enveloppe{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.pied-icones{display:flex;gap:10px}
+.pied-icones a{width:42px;height:42px;border-radius:50%;border:2px solid rgba(255,255,255,.4);display:grid;place-items:center;color:#fff}
+.pied-icones a:hover{background:#fff;color:var(--vert-f)}
+.pied-icones svg{width:20px;height:20px}
+@media (max-width:600px){.pied .enveloppe{justify-content:center;text-align:center}}
+.fondu{opacity:0;transition:opacity .7s}.fondu.vu{opacity:1}
+@media (prefers-reduced-motion:reduce){.fondu,.carte{opacity:1;transition:none}.galerie img,.nav a::after{transition:none}}
+</style>
+</head>
+<body>
+<div id="progres" aria-hidden="true"></div>
+<header class="entete">
+  <div class="enveloppe">
+    <a class="logo" href="#accueil" aria-label="Chassagrand Élagage, accueil"><img src="img/logo.jpg" alt=""><span><b>Chassagrand</b><i>Élagage</i></span></a>
+    <div class="droite">
+      <nav class="nav" id="menu" aria-label="Menu principal">
+        <a href="#accueil">Accueil</a>
+        <a href="#savoir-faire">Nos métiers</a>
+        <a href="#realisations">Réalisations</a>
+        <a href="#avis">Avis clients</a>
+        <a href="#zone">Où nous trouver</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="appel-hdr" href="tel:+33641284928"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>Appeler<span class="num"> · 06 41 28 49 28</span></span></a>
+      <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="heros" id="accueil" style="padding:0">
+  <div class="heros-fond" role="img" aria-label="Notre grimpeur monte dans un pin"></div>
+  <div class="enveloppe">
+    <span class="etiquette">Élagage · Abattage · Sarthe</span>
+    <h1>Vos arbres entretenus avec soin, en toute sécurité.</h1>
+    <p class="sous">Élagage, abattage et entretien de vos arbres au Mans et partout en Sarthe. Nous intervenons rapidement, nous travaillons proprement et nous vous remettons un devis clair.</p>
+    <div class="boutons">
+      <a class="btn plein" href="tel:+33641284928"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Appeler : 06 41 28 49 28</a>
+      <a class="btn contour" href="#contact">Demander un devis</a>
+    </div>
+    <div class="badge"><span class="etoiles" aria-hidden="true">★★★★★</span><span>4,8 sur 5 · 60 avis Google</span></div>
+  </div>
+</section>
+
+<div class="infos">
+  <div class="enveloppe">
+    <div class="info"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><div><b>Téléphone</b><a href="tel:+33641284928">06 41 28 49 28</a></div></div>
+    <div class="info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6"/></svg><div><b>Zone d’intervention</b><span>Le Mans et toute la Sarthe</span></div></div>
+    <div class="info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg><div><b>Horaires</b><span>Samedi : dès 8 h · Devis sur appel</span></div></div>
+  </div>
+</div>
+
+<section id="savoir-faire">
+  <div class="enveloppe">
+    <div class="tete">
+      <span class="sur">Nos métiers</span>
+      <h2>Tout ce que nous faisons pour vos arbres</h2>
+      <p>De la taille d’entretien à l’abattage le plus délicat, nous nous occupons de tout et nous laissons le chantier propre.</p>
+      <span class="trait" aria-hidden="true"></span>
+    </div>
+    <div class="metiers">
+      <article class="metier fondu">
+        <div class="metier-photo"><img src="img/grimpe-cedre.jpg" alt="Notre grimpeur dans un arbre" loading="lazy" style="object-position:center 30%"></div>
+        <div class="metier-texte"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22v-7M12 15c-4 0-7-3-7-6.5S8 3 12 2c4 1 7 3 7 6.5S16 15 12 15z"/></svg>Élagage et taille</h3><p>Nous grimpons dans vos arbres pour les tailler, les alléger et les garder en bonne santé, sans les abîmer.</p></div>
+      </article>
+      <article class="metier fondu">
+        <div class="metier-photo"><img src="img/abattage.jpg" alt="Abattage d’un arbre" loading="lazy"></div>
+        <div class="metier-texte"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18M7 20 17 4M14 8l4 2"/></svg>Abattage</h3><p>Un arbre dangereux, malade ou gênant : nous l’abattons en sécurité, même dans un jardin étroit.</p></div>
+      </article>
+      <article class="metier fondu">
+        <div class="metier-photo"><img src="img/broyage.jpg" alt="Broyage des branches" loading="lazy"></div>
+        <div class="metier-texte"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h10l3 4v5H4zM8 17v3M16 17v3M17 12h3"/></svg>Broyage et remise en état</h3><p>Nous broyons les branches sur place et nous remettons votre terrain en ordre avant de partir.</p></div>
+      </article>
+      <article class="metier fondu">
+        <div class="metier-photo"><img src="img/terrasse-pelouse.jpg" alt="Terrasse bois et pelouse" loading="lazy"></div>
+        <div class="metier-texte"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18h18M5 18v-5h14v5M8 13V9M12 13V9M16 13V9"/></svg>Terrasse bois et pelouse</h3><p>Nous créons aussi des terrasses en bois et nous refaisons des pelouses pour que votre jardin soit réussi.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="pourquoi" id="pourquoi">
+  <div class="enveloppe">
+    <div class="tete">
+      <span class="sur">Notre façon de travailler</span>
+      <h2>Ce que nos clients retrouvent à chaque chantier</h2>
+      <span class="trait" aria-hidden="true"></span>
+    </div>
+    <div class="raisons">
+      <div class="raison fondu"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.4 8 8 9 4.6-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>La sécurité d’abord</h3><p>Nous travaillons équipés et nous sécurisons le chantier, pour vous comme pour nous.</p></div>
+      <div class="raison fondu"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Un chantier propre</h3><p>Nous ramassons et nous nettoyons : à la fin de l’intervention, votre jardin est net.</p></div>
+      <div class="raison fondu"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.5 7.2L4 20l1-4.2A8 8 0 1 1 21 12z"/></svg>À votre écoute</h3><p>Nous cherchons la bonne solution avec vous, selon votre arbre et votre jardin.</p></div>
+      <div class="raison fondu"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h14v16l-3-2-2 2-2-2-2 2-2-2-3 2z"/><path d="M9 9h6M9 13h6"/></svg>Un prix clair</h3><p>Nous vous remettons un devis avant de commencer, à un prix juste.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="realisations">
+  <div class="enveloppe">
+    <div class="tete">
+      <span class="sur">Réalisations</span>
+      <h2>Nos chantiers en images</h2>
+      <p>Cliquez sur une photo pour l’agrandir.</p>
+      <span class="trait" aria-hidden="true"></span>
+    </div>
+    <div class="galerie" id="galerie">
+      <button type="button"><img src="img/perche-elagage.jpg" alt="Taille en hauteur avec une perche d’élagage" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="m20 20-4-4"/></svg></span></button>
+      <button type="button"><img src="img/taille-tetard.jpg" alt="Taille d’un arbre têtard en grimpe" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="m20 20-4-4"/></svg></span></button>
+      <button type="button"><img src="img/abattage.jpg" alt="Abattage d’un arbre" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="m20 20-4-4"/></svg></span></button>
+      <button type="button"><img src="img/terrasse-pelouse.jpg" alt="Terrasse bois et pelouse terminées" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="m20 20-4-4"/></svg></span></button>
+      <button type="button"><img src="img/pin-cordes.jpg" alt="Montée dans un pin avec cordes" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="m20 20-4-4"/></svg></span></button>
+      <button type="button"><img src="img/pose-terrasse.jpg" alt="Pose d’une terrasse bois sur plots" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="m20 20-4-4"/></svg></span></button>
+      <button type="button"><img src="img/broyage.jpg" alt="Broyage des branches sur place" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="m20 20-4-4"/></svg></span></button>
+      <button type="button"><img src="img/coupe-arbre.jpg" alt="Coupe d’un arbre à la tronçonneuse" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="m20 20-4-4"/></svg></span></button>
+      <button type="button"><img src="img/grimpe-cedre.jpg" alt="Notre grimpeur au travail dans un arbre" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="m20 20-4-4"/></svg></span></button>
+      <button type="button"><img src="img/pelouse.jpg" alt="Pelouse refaite" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="m20 20-4-4"/></svg></span></button>
+      <button type="button"><img src="img/coin-abattage.jpg" alt="Abattage contrôlé du tronc" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="m20 20-4-4"/></svg></span></button>
+      <button type="button"><img src="img/terrasse-chantier.jpg" alt="Terrasse bois en cours de chantier" loading="lazy"><span class="loupe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="m20 20-4-4"/></svg></span></button>
+    </div>
+  </div>
+</section>
+
+<section class="avis" id="avis">
+  <div class="enveloppe">
+    <div class="tete">
+      <span class="sur">Avis clients</span>
+      <h2>Ce que disent nos clients</h2>
+      <span class="trait" aria-hidden="true"></span>
+    </div>
+    <div class="note-g">
+      <span class="grand">4,8</span>
+      <div><span class="etoiles" aria-hidden="true">★★★★★</span><small>60 avis sur Google</small></div>
+      <a href="https://www.google.com/maps/search/?api=1&query=Chassagrand%20%C3%89lagage%20Sarthe" target="_blank" rel="noopener">Lire tous les avis sur Google</a>
+    </div>
+    <div class="mur">
+      <article class="carte"><div class="etoiles" aria-label="5 étoiles">★★★★★</div><p>« Entreprise très sérieuse personne à l'écoute des clients et trouve tjrs des solutions pour l'intervention je recommande vivement cette société quand j'aurai d'autres arbres à abattre je les reprendrai »</p><footer><span class="g">L</span><div><b>lavi 2002</b><br>il y a un an</div></footer></article>
+      <article class="carte"><div class="etoiles" aria-label="5 étoiles">★★★★★</div><p>« Je suis très satisfaite de leur intervention. Mon chat était coincé dans un arbre, ils ont tout de suite répondu présent et sont venu rapidement pour le sortir de l'arbre. Je n'ai rien à redire sur la qualité de leur intervention, personnes très professionnelles. »</p><footer><span class="g">L</span><div><b>Laurène Gaboriau</b> · Local Guide<br>il y a un an</div></footer></article>
+      <article class="carte"><div class="etoiles" aria-label="5 étoiles">★★★★★</div><p>« L'équipe est très professionnelle et arrangeante.Travail en toute sécurité dans un temps réduit , fin de chantier propre. Je recommande l'équipe Chassagrand qui fait du bon travail à un prix compétitif. »</p><footer><span class="g">D</span><div><b>Didier Poirier</b><br>il y a 10 mois</div></footer></article>
+      <article class="carte"><div class="etoiles" aria-label="5 étoiles">★★★★★</div><p>« Très compétent et d'une grande gentillesse Travail rapide et soigné A recommander en toute confiance »</p><footer><span class="g">C</span><div><b>Chantal Coycault</b><br>il y a 6 mois</div></footer></article>
+      <article class="carte"><div class="etoiles" aria-label="5 étoiles">★★★★★</div><p>« Très bon contact, travail soigné et très efficace. Je recommande vivement cette équipe ! »</p><footer><span class="g">V</span><div><b>Valérie Fraysse</b><br>il y a 7 mois</div></footer></article>
+      <article class="carte"><div class="etoiles" aria-label="5 étoiles">★★★★★</div><p>« Une équipe très jeune mais très respectueux ponctuelle dû très bon travail. Je les recommande à 100%. »</p><footer><span class="g">O</span><div><b>Olivier FAGAULT</b><br>il y a un an</div></footer></article>
+      <article class="carte"><div class="etoiles" aria-label="5 étoiles">★★★★★</div><p>« 2 jeunes motivés ..malgré le froid Très agréable et professionnel dans leur métier. Travail soigné A l'écoute et très proche du client Je recommande cette entreprise »</p><footer><span class="g">S</span><div><b>seb cpk</b><br>il y a 3 ans</div></footer></article>
+      <article class="carte"><div class="etoiles" aria-label="5 étoiles">★★★★★</div><p>« Deux jeunes entrepreneurs sérieux, aimant leur travail et le faisant bien. N'hésitez pas à faire appel à eux »</p><footer><span class="g">A</span><div><b>annie levassor</b><br>il y a 3 ans</div></footer></article>
+    </div>
+  </div>
+</section>
+
+<section class="zone" id="zone">
+  <div class="enveloppe">
+    <div>
+      <h2>Nous intervenons partout en Sarthe</h2>
+      <p>Depuis Le Mans, nous nous déplaçons chez vous dans tout le département, que vous soyez en ville ou à la campagne.</p>
+      <p>Un appel suffit pour que nous convenions d’une visite et d’un devis.</p>
+      <div class="villes"><span>Le Mans</span><span>Alençon</span><span>Mamers</span><span>La Flèche</span><span>Sablé-sur-Sarthe</span><span>La Ferté-Bernard</span></div>
+    </div>
+    <div class="zone-photo"><img src="img/perche-elagage.jpg" alt="Notre équipe au travail dans un jardin" loading="lazy"></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="enveloppe">
+    <div class="tete">
+      <span class="sur">Contact</span>
+      <h2>Parlons de vos arbres</h2>
+      <p>Un appel ou un message suffit, nous revenons vers vous pour votre devis.</p>
+      <span class="trait" aria-hidden="true"></span>
+    </div>
+    <div class="contact-grille">
+      <div class="coord">
+        <div class="ligne"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><div><b>Téléphone</b><a class="tel" href="tel:+33641284928">06 41 28 49 28</a></div></div>
+        <div class="ligne"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><div><b>E-mail</b><a href="mailto:chassagrand78@gmail.com">chassagrand78@gmail.com</a></div></div>
+        <div class="ligne"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6"/></svg><div><b>Zone d’intervention</b>Le Mans et toute la Sarthe</div></div>
+        <div class="ligne"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg><div><b>Horaires</b><div class="horaires"><span>Samedi : à partir de 8 h</span><span>Autres jours : appelez-nous pour convenir d’un créneau.</span></div></div></div>
+        <div class="ligne"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg><div><b>Retrouvez-nous</b>
+          <div class="reseau">
+            <a href="https://www.facebook.com/profile.php?id=100063744648244" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21z"/></svg>Facebook</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Chassagrand%20%C3%89lagage%20Sarthe" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><text x="12" y="18" text-anchor="middle" font-family="Bitter,Arial,sans-serif" font-weight="800" font-size="19" fill="currentColor">G</text></svg>Fiche Google</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Chassagrand%20%C3%89lagage%20Sarthe" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6"/></svg>Plan d’accès</a>
+          </div></div></div>
+      </div>
+      <form class="formulaire" id="form" novalidate>
+        <h3>Demander un devis</h3>
+        <p>Décrivez votre arbre ou votre projet en quelques mots, nous vous rappelons.</p>
+        <div class="champs">
+          <div class="deux"><div><label for="nom">Votre nom</label><input id="nom" name="nom" autocomplete="name"></div><div><label for="tel">Téléphone</label><input id="tel" name="tel" type="tel" autocomplete="tel"></div></div>
+          <div><label for="msg">Votre demande</label><textarea id="msg" name="msg" placeholder="Taille, abattage, broyage, terrasse…"></textarea></div>
+          <button class="btn plein" type="submit">Envoyer ma demande</button>
+        </div>
+        <div class="merci" role="status">Merci ! Sur votre vrai site, cette demande vous arrivera par e-mail.</div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="pied">
+  <div class="enveloppe">
+    <div>© Chassagrand Élagage · Élagage et abattage · Le Mans et Sarthe (72)</div>
+    <div class="pied-icones">
+      <a href="https://www.facebook.com/profile.php?id=100063744648244" target="_blank" rel="noopener" aria-label="Notre page Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21z"/></svg></a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Chassagrand%20%C3%89lagage%20Sarthe" target="_blank" rel="noopener" aria-label="Notre fiche Google"><svg viewBox="0 0 24 24" aria-hidden="true"><text x="12" y="18" text-anchor="middle" font-family="Bitter,Arial,sans-serif" font-weight="800" font-size="19" fill="currentColor">G</text></svg></a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Chassagrand%20%C3%89lagage%20Sarthe" target="_blank" rel="noopener" aria-label="Plan d’accès"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<div class="visionneuse" id="visionneuse" role="dialog" aria-modal="true" aria-label="Photo agrandie">
+  <button class="fermer" id="v-fermer" type="button" aria-label="Fermer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <button class="nav-v prec" id="v-prec" type="button" aria-label="Photo précédente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 5-7 7 7 7"/></svg></button>
+  <figure><img id="v-img" src="" alt=""><figcaption id="v-compte"></figcaption></figure>
+  <button class="nav-v suiv" id="v-suiv" type="button" aria-label="Photo suivante"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></svg></button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script>
+(function(){
+  var hdr=document.querySelector('.entete');
+  function hh(){return hdr.getBoundingClientRect().height}
+  var burger=document.getElementById('burger'),menu=document.getElementById('menu');
+  burger.addEventListener('click',function(){var o=menu.classList.toggle('ouvert');burger.setAttribute('aria-expanded',o)});
+  var liens=[].slice.call(menu.querySelectorAll('a'));
+  var cibles=liens.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function aller(id,e){var el=document.querySelector(id);if(!el)return;if(e)e.preventDefault();
+    var y=id==='#accueil'?0:el.getBoundingClientRect().top+window.pageYOffset-hh()+1;
+    window.scrollTo({top:Math.max(0,y),behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});}
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id.length>1){menu.classList.remove('ouvert');burger.setAttribute('aria-expanded',false);aller(id,e)}})});
+  function spy(){var lim=hh()+2,cur=0;
+    cibles.forEach(function(c,i){if(c&&c.getBoundingClientRect().top<=lim)cur=i});
+    if(window.innerHeight+window.pageYOffset>=document.documentElement.scrollHeight-4)cur=cibles.length-1;
+    liens.forEach(function(a,i){a.classList.toggle('actif',i===cur)});
+    hdr.classList.toggle('ombre',window.pageYOffset>8)}
+  window.addEventListener('scroll',spy,{passive:true});window.addEventListener('resize',spy);spy();
+  // Fondu des cartes (aucun déplacement)
+  var f=document.querySelectorAll('.fondu,.carte');
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vu');io.unobserve(e.target)}})},{threshold:.08});
+    f.forEach(function(x){io.observe(x)});
+    setTimeout(function(){f.forEach(function(x){x.classList.add('vu')})},4000);
+  }else f.forEach(function(x){x.classList.add('vu')});
+  // Visionneuse : boutons seulement, la molette n'est jamais détournée
+  var tous=[].slice.call(document.querySelectorAll('#galerie button')),gal=tous,vi=document.getElementById('visionneuse'),vimg=document.getElementById('v-img'),vc=document.getElementById('v-compte'),vp=document.getElementById('v-prec'),vs=document.getElementById('v-suiv'),k=0,dernier=null;
+  function montre(n){k=n;var img=gal[n].querySelector('img');vimg.src=img.getAttribute('src');vimg.alt=img.alt;vc.textContent=(n+1)+' / '+gal.length+' · '+img.alt;vp.disabled=n===0;vs.disabled=n===gal.length-1}
+  function ouvre(b){dernier=document.activeElement;gal=[].slice.call(b.parentNode.querySelectorAll('button')).filter(function(x){return x.offsetParent!==null});montre(gal.indexOf(b));vi.classList.add('ouvert');document.getElementById('v-fermer').focus()}
+  function ferme(){vi.classList.remove('ouvert');if(dernier)dernier.focus()}
+  tous.forEach(function(b){b.addEventListener('click',function(){ouvre(b)})});
+  vp.addEventListener('click',function(){if(k>0)montre(k-1)});vs.addEventListener('click',function(){if(k<gal.length-1)montre(k+1)});
+  document.getElementById('v-fermer').addEventListener('click',ferme);
+  vi.addEventListener('click',function(e){if(e.target===vi)ferme()});
+  document.addEventListener('keydown',function(e){if(!vi.classList.contains('ouvert'))return;if(e.key==='Escape')ferme();if(e.key==='ArrowLeft'&&k>0)montre(k-1);if(e.key==='ArrowRight'&&k<gal.length-1)montre(k+1)});
+
+  // Effets GSAP : titres lettre par lettre, fond du héros en parallaxe, traits qui se dessinent, photos qui se dévoilent, barre de progression.
+  // Jamais sur le téléphone, la zone ni les horaires ; cartes en fondu seul.
+  if(window.gsap&&window.ScrollTrigger&&window.SplitText){
+    gsap.registerPlugin(ScrollTrigger,SplitText);
+    var mm=gsap.matchMedia();
+    mm.add('(prefers-reduced-motion: no-preference)',function(){
+      var h1=document.querySelector('.heros h1');
+      SplitText.create(h1,{type:'lines,words,chars',linesClass:'split-ligne',autoSplit:true,onSplit:function(self){
+        return gsap.from(self.chars,{opacity:0,rotationX:90,yPercent:-40,duration:.9,ease:'power2.out',stagger:.02,clearProps:'opacity,transform'});
+      }});
+      gsap.from('.heros .etiquette,.heros .sous,.heros .boutons,.heros .badge',{opacity:0,duration:.9,delay:.5,stagger:.14,ease:'power1.out',clearProps:'opacity'});
+      document.querySelectorAll('section h2').forEach(function(t){
+        SplitText.create(t,{type:'lines,words,chars',linesClass:'split-ligne',autoSplit:true,onSplit:function(self){
+          return gsap.from(self.chars,{opacity:0,rotationX:90,yPercent:-40,duration:.8,ease:'power2.out',stagger:.014,clearProps:'opacity,transform',
+            scrollTrigger:{trigger:t,start:'top 88%',toggleActions:'play none none none'}});
+        }});
+      });
+      gsap.to('.heros-fond',{yPercent:8,ease:'none',scrollTrigger:{trigger:'.heros',start:'top top',end:'bottom top',scrub:.6}});
+      document.querySelectorAll('.trait').forEach(function(t){gsap.fromTo(t,{scaleX:0},{scaleX:1,duration:.9,ease:'power2.out',clearProps:'transform',scrollTrigger:{trigger:t,start:'top 90%'}})});
+      document.querySelectorAll('.metier-photo img,.zone-photo img').forEach(function(im){gsap.fromTo(im,{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0% 0 0)',duration:1.1,ease:'power2.inOut',clearProps:'clipPath',scrollTrigger:{trigger:im,start:'top 88%'}})});
+      gsap.from('.sur',{opacity:0,duration:.7,ease:'power1.out',clearProps:'opacity',scrollTrigger:{trigger:'#savoir-faire',start:'top 85%'}});
+      gsap.from('.formulaire .champs > *',{opacity:0,duration:.6,stagger:.1,ease:'power1.out',clearProps:'opacity',scrollTrigger:{trigger:'.formulaire',start:'top 85%',toggleActions:'play none none none'}});
+      var barre=document.getElementById('progres');
+      ScrollTrigger.create({start:0,end:'max',onUpdate:function(self){barre.style.transform='scaleX('+self.progress+')'}});
+    });
+    window.addEventListener('load',function(){ScrollTrigger.refresh()});
+    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){ScrollTrigger.refresh()});
+  }
+  document.getElementById('form').addEventListener('submit',function(e){e.preventDefault();this.classList.add('envoye')});
+})();
+</script>
+</body>
+</html>
