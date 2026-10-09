@@ -237,6 +237,55 @@ form .btn{justify-self:start}
   .pied{padding-bottom:96px}
 }
 h2 .split-line{perspective:600px}
+
+/* Visionneuse photos */
+.carte .cadre{cursor:zoom-in;position:relative}
+.carte .cadre::after{content:"";position:absolute;right:10px;bottom:10px;width:38px;height:38px;border-radius:50%;background:var(--noir) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FFE600' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='10.5' cy='10.5' r='6'/%3E%3Cpath d='M15 15l5 5M10.5 8v5M8 10.5h5'/%3E%3C/svg%3E") center/22px no-repeat}
+.visio{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;padding:56px 16px 72px}
+.visio.ouvert{display:flex}
+.visio figure{margin:0;max-width:min(1100px,100%);max-height:100%;display:flex;flex-direction:column;align-items:center;gap:12px;min-height:0}
+.visio img{max-width:100%;max-height:calc(100vh - 190px);object-fit:contain;border-radius:6px;border:3px solid var(--jaune)}
+.visio figcaption{color:#fff;font-family:var(--display);font-weight:700;font-size:24px;letter-spacing:.04em;text-transform:uppercase;text-align:center}
+.visio figcaption small{display:block;font-family:var(--texte);font-weight:400;font-size:15px;color:#cfcdc2;text-transform:none;letter-spacing:0}
+.visio button{position:absolute;width:52px;height:52px;border-radius:8px;border:3px solid var(--noir);background:var(--jaune);color:var(--noir);display:grid;place-items:center;cursor:pointer}
+.visio button:hover{background:#fff}
+.visio button svg{width:24px;height:24px}
+.visio .v-fermer{top:calc(10px + env(safe-area-inset-top,0px));right:12px}
+.visio .v-prec{left:12px;top:50%;margin-top:-26px}
+.visio .v-suiv{right:12px;top:50%;margin-top:-26px}
+.visio .v-num{pointer-events:none;position:absolute;bottom:calc(16px + env(safe-area-inset-bottom,0px));left:0;right:0;text-align:center;color:#fff;font-family:var(--display);font-weight:700;font-size:24px;font-variant-numeric:tabular-nums}
+@media (max-width:700px){.visio .v-prec,.visio .v-suiv{top:auto;bottom:calc(10px + env(safe-area-inset-bottom,0px));margin:0}.visio .v-prec{left:16px}.visio .v-suiv{right:16px}.visio img{max-height:calc(100vh - 250px)}}
+
+/* Version téléphone allégée (le PC reste identique) */
+@media (max-width:700px){
+  section{padding-block:44px}
+  .tete{margin-bottom:22px;gap:10px}
+  h2{font-size:34px}
+  .chapo,.metiers,.social,.urgence .vue,.heros .sous{display:none}
+  .grille-services{gap:18px}
+  .service{box-shadow:5px 5px 0 var(--jaune)}
+  .service figure{aspect-ratio:16/8}
+  .service .corps{padding:14px 18px 18px}
+  .service p{font-size:15.5px}
+  .service .corps{padding:12px 16px 14px}
+  .urgence .texte{padding-block:36px}
+  .avis-grille{grid-template-columns:1fr}
+  .bloc-note{padding:22px}
+  .bloc-note .gros{font-size:64px}
+  .avis-carte:nth-child(n+6){display:none}
+  .etape{padding:16px 18px}
+  .etape p{display:none}
+  .heros{padding-block:32px 40px}
+  .info{padding:10px 0}.info b{font-size:22px}.info svg{width:28px;height:28px}
+  .avis-carte{padding:14px 16px;margin-bottom:12px;gap:6px}.avis-carte blockquote{font-size:15.5px}
+  .avis-carte figcaption{font-size:18px}
+  .urgence .texte{gap:12px}
+  .urgence p{display:none}
+  #commune,label[for=commune]{display:none}
+  textarea{min-height:90px}
+  .pied{padding-bottom:92px}
+  .heros-photo{margin-bottom:12px}
+}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -292,7 +341,7 @@ h2 .split-line{perspective:600px}
   <div class="enveloppe">
     <div class="info">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
-      <div><b>06 11 61 30 46</b><small>André, plombier</small></div>
+      <div><b>06 11 61 30 46</b><small>Appelez-nous</small></div>
     </div>
     <div class="info">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
@@ -402,18 +451,18 @@ h2 .split-line{perspective:600px}
   <div class="enveloppe">
     <div class="tete">
       <p class="etiquette">Avis clients</p>
-      <h2>Ce que disent ses clients.</h2>
+      <h2>Ce que disent nos clients.</h2>
     </div>
     <div class="avis-grille">
       <div class="bloc-note">
         <div class="gros">4,1<small> / 5</small></div>
         <div class="etoiles" aria-label="4,1 étoiles sur 5">★★★★☆</div>
-        <p>Note moyenne sur 19 avis Google</p>
+        <p>Notre note moyenne sur 19 avis Google</p>
         <a href="https://www.google.com/maps/search/?api=1&query=Allo%20D%C3%A9d%C3%A9%20Le%20Plombier%2019%20rue%20des%20Mara%C3%AEchers%2072100%20Le%20Mans" target="_blank" rel="noopener">Voir les avis sur Google</a>
       </div>
       <div class="social">
-        <h3>Ses chantiers, sur Facebook.</h3>
-        <p>Plomberie, sanitaires, peinture : la page montre son travail et ses interventions, avec des recommandations de clients.</p>
+        <h3>Nos chantiers, sur Facebook.</h3>
+        <p>Plomberie, sanitaires, peinture : notre page montre nos chantiers et nos interventions, avec des recommandations de clients.</p>
         <a class="btn btn-noir" href="https://www.facebook.com/p/Allo-dede-le-Plombier-le-mans-100054878875381" target="_blank" rel="noopener">Voir la page Facebook</a>
       </div>
     </div>
@@ -493,7 +542,13 @@ h2 .split-line{perspective:600px}
   </div>
 </footer>
 
-<a class="btn btn-jaune appel-flottant" href="tel:+33611613046">
+<div class="visio" id="visio" role="dialog" aria-modal="true" aria-label="Photos des réalisations" hidden>
+  <figure><img id="v-img" src="" alt=""><figcaption id="v-leg"></figcaption></figure>
+  <button class="v-fermer" id="v-fermer" aria-label="Fermer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button class="v-prec" id="v-prec" aria-label="Photo précédente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <button class="v-suiv" id="v-suiv" aria-label="Photo suivante"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+  <div class="v-num" id="v-num" aria-live="polite"></div>
+</div><a class="btn btn-jaune appel-flottant" href="tel:+33611613046">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
   Appeler 06 11 61 30 46
 </a>
@@ -545,6 +600,21 @@ h2 .split-line{perspective:600px}
   piste.addEventListener('scroll',function(){window.requestAnimationFrame(maj)},{passive:true});
   piste.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();suiv.click()}if(e.key==='ArrowLeft'){e.preventDefault();prec.click()}});
   window.addEventListener('resize',maj);window.addEventListener('load',maj);if(document.fonts)document.fonts.ready.then(maj);maj();
+
+  /* Visionneuse : clic sur une photo, flèches, clavier, balayage */
+  var visio=document.getElementById('visio'),vImg=document.getElementById('v-img'),vLeg=document.getElementById('v-leg'),vNum=document.getElementById('v-num'),vi=0,dernier=null;
+  var photos=[].slice.call(cartes).map(function(c){var im=c.querySelector('img'),fc=c.querySelector('figcaption');return{src:im.getAttribute('src'),alt:im.alt,titre:fc.childNodes[0].textContent,sous:fc.querySelector('small').textContent}});
+  function montre(i){vi=(i+photos.length)%photos.length;var p=photos[vi];vImg.src=p.src;vImg.alt=p.alt;vLeg.innerHTML='';vLeg.appendChild(document.createTextNode(p.titre));var sm=document.createElement('small');sm.textContent=p.sous;vLeg.appendChild(sm);vNum.textContent=(vi+1)+' / '+photos.length}
+  function ouvre(i){dernier=document.activeElement;visio.hidden=false;visio.classList.add('ouvert');document.body.style.overflow='hidden';montre(i);document.getElementById('v-fermer').focus()}
+  function ferme(){visio.classList.remove('ouvert');visio.hidden=true;document.body.style.overflow='';if(dernier)dernier.focus()}
+  [].forEach.call(cartes,function(c,i){var f=c.querySelector('.cadre');f.setAttribute('role','button');f.setAttribute('tabindex','0');f.setAttribute('aria-label','Agrandir : '+photos[i].titre);f.addEventListener('click',function(){ouvre(i)});f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();ouvre(i)}})});
+  document.getElementById('v-fermer').addEventListener('click',ferme);
+  document.getElementById('v-prec').addEventListener('click',function(){montre(vi-1)});
+  document.getElementById('v-suiv').addEventListener('click',function(){montre(vi+1)});
+  visio.addEventListener('click',function(e){if(e.target===visio||e.target.tagName==='FIGURE')ferme()});
+  document.addEventListener('keydown',function(e){if(visio.hidden)return;if(e.key==='Escape')ferme();if(e.key==='ArrowLeft')montre(vi-1);if(e.key==='ArrowRight')montre(vi+1)});
+  var tx=null;visio.addEventListener('touchstart',function(e){tx=e.touches[0].clientX},{passive:true});
+  visio.addEventListener('touchend',function(e){if(tx===null)return;var d=e.changedTouches[0].clientX-tx;tx=null;if(Math.abs(d)>50)montre(vi+(d<0?1:-1))},{passive:true});
 
   /* Formulaire de démonstration : message de remerciement */
   document.getElementById('formulaire').addEventListener('submit',function(e){
