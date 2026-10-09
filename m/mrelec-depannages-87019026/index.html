@@ -202,6 +202,9 @@ section{padding:90px 0}
 }
 @media (max-width:620px){
   body{font-size:17px}
+  section{padding:48px 0}
+  .methode{display:none}
+  .tete{margin-bottom:28px}
   .grille,.etapes{grid-template-columns:1fr}
   .galerie{grid-template-columns:repeat(2,1fr);gap:10px}
   .mur{column-count:1}
@@ -383,6 +386,8 @@ section{padding:90px 0}
     ['chantier-cuisine.jpg','Chantier : cuisine en cours d\'installation'],
     ['avant-salle-de-bain.jpg','Salle de bain avant rénovation']
   ];
+  var MOBILE=window.matchMedia&&window.matchMedia('(max-width:620px)').matches;
+  if(MOBILE)PHOTOS=PHOTOS.slice(0,8);
   var HORAIRES=[['Lundi au vendredi','8h – 18h'],['Samedi et dimanche','Fermé']];
   var AVIS=[{etoiles:5,nom:"Louise Jinjolet",date:"Il y a 7 mois",texte:"Je recommande vivement cet artisan disponible, à l'écoute et très compétent. M MATHIEU est intervenu très rapidement et a fourni un travail de qualité. Je referais appel à lui sans hésiter si de nouveaux travaux sont nécessaires. N'hésitez plus !"},{etoiles:5,nom:"Jacko Hua",date:"Il y a 5 mois",texte:"Je recommande vivement M. Mathieu pour son efficacité et sa rapidité d'intervention. Merci encore !"},{etoiles:5,nom:"Martine Gannieux",date:"Septembre 2025",texte:"Je remercie beaucoup Monsieur R. Mathieu qui est venu aujourd'hui pour changer complètement mes toilettes très bon travail, très professionnel je le recommande vivement, travail fait très proprement"},{etoiles:5,nom:"Mr DESBOIS Robin",date:"Janvier",texte:"Professionnel et méticuleux , le travail est sérieux , propre. Mr Mathieu est d'une patience à toute épreuve .merci à lui"},{etoiles:5,nom:"romaric Chausse",date:"Mai 2025",texte:"Nous avons fait appel aux services de M MATHIEU pour remise aux normes électriques et divers travaux de plomberie dans notre maison . Un professionnel disponible et compétent. Nous recommandons vivement ."},{etoiles:5,nom:"j2lhui",date:"Septembre 2024",texte:"J'ai fait appel à Mathieu pour un problème au tableau électrique. Il a été très réactif, a répondu rapidement à ma demande et a réalisé un travail soigné, le tout à des tarifs tout à fait convenables. Je recommande vivement !"},{etoiles:5,nom:"Anais Veron",date:"Juillet 2025",texte:"Cela fait plusieurs fois que nous faisons appel à cette entreprise pour nos travaux de rénovation électrique. Disponible, tarifs cohérents avec le travail. Nous recommandons !"},{etoiles:5,nom:"cedric boignet",date:"Septembre 2025",texte:"Très satisfait du travail de Monsieur Mathieu ! Il est a l'écoute et exécute un travail soigné,sans abuser sur les tarifs ! Je recommande +++"},{etoiles:5,nom:"Eve-Anne Lesage",date:"Février 2024",texte:"Un artisan de confiance ! Nous avions un gros problème électrique, il nous a tout refait à neuf, et sans abuser sur les tarifs et sur les délais - On recommande à 100% !"},{etoiles:5,nom:"Annie LAMBALLE",date:"Décembre 2025",texte:"Rapide, efficace, clair dans ses explications... et sympa ! Artisan à recommander."},{etoiles:5,nom:"Alain Lesieur",date:"Septembre 2025",texte:"je suis trés content du travail de M.R.ELEC DEPANNAGES travaille soigné est trés consencieux ,personne trés agréable ,je recommande monsieur rodolphe mathieu pour sons savoir faire .je le reprendrait sens soucie ."},{etoiles:5,nom:"André MANCEAU",date:"Septembre 2025",texte:"Très content du travail de Mr Rodolphe MATHIEU, il est sérieux les prix bien calculés. Je vous le recommande. A.M"}];
 
@@ -409,6 +414,7 @@ section{padding:90px 0}
 
   /* Avis (jamais inventés : texte copié de la fiche Google) */
   var mur=document.getElementById('mur');
+  if(MOBILE)AVIS=AVIS.slice(0,5);
   AVIS.forEach(function(a){
     var c=document.createElement('article');c.className='carte-avis fx';
     var s='★★★★★'.slice(0,a.etoiles)+'☆☆☆☆☆'.slice(0,5-a.etoiles);
