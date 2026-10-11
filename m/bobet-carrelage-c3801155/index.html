@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Bobet Carrelage · Carrelage et faïence à Torcé-en-Vallée</title>
+<meta name="description" content="Bobet Carrelage, à Torcé-en-Vallée : carrelage, faïence, chape liquide, pierres naturelles et dalles sur plot pour vos sols, salles de bain et terrasses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500;1,600&display=swap">
+<style>
+/* Parti pris : le LOSANGE du logo devient la trame de toute la page (mosaïque de losanges, damier, joints dorés).
+   Couleurs : vert canard profond du logo, crème de faïence, travertin, or du losange de la camionnette. */
+:root{
+  --canard:#1E4A4C;
+  --canard-2:#153638;
+  --canard-3:#0E2527;
+  --canard-clair:#2A5A5C;
+  --creme:#F5EFE4;
+  --creme-2:#EAE0CD;
+  --travertin:#D8C29B;
+  --or:#D9B66A;
+  --or-fonce:#8E6A22;
+  --encre:#12292B;
+  --texte:#2B3C3D;
+  --blanc:#fff;
+  --joint:6px;
+  --haut-header:72px;
+  --max:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto;-webkit-text-size-adjust:100%}
+body{font-family:'Outfit',system-ui,sans-serif;font-weight:400;font-size:17px;line-height:1.65;color:var(--texte);background:var(--creme);overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--or);outline-offset:3px}
+.cache{position:absolute;left:-9999px}
+.wrap{width:min(var(--max),100% - 40px);margin-inline:auto}
+.serif{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:500}
+
+/* ===== En-tête ===== */
+.header{position:sticky;top:0;z-index:50;height:var(--haut-header);background:var(--canard-2);border-bottom:1px solid rgba(217,182,106,.35);display:flex;align-items:center}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.marque{display:flex;align-items:center;text-decoration:none}
+.marque img{height:48px;width:auto;border-radius:4px}
+.menu{display:flex;gap:6px;list-style:none}
+.menu a{display:block;padding:10px 14px;color:#DCE8E6;text-decoration:none;font-weight:500;font-size:15.5px;letter-spacing:.02em;border-radius:6px;position:relative}
+.menu a::after{content:"";position:absolute;left:14px;right:14px;bottom:4px;height:2px;background:var(--or);transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+.menu a.actif{color:#fff}
+.menu a.actif::after{transform:scaleX(1)}
+.menu a:hover{color:#fff}
+.btn-appel{display:inline-flex;align-items:center;gap:10px;background:var(--or);color:var(--canard-3);text-decoration:none;font-weight:600;padding:12px 20px;border-radius:999px;font-size:16px;white-space:nowrap;border:2px solid var(--or);transition:background .2s}
+.btn-appel:hover{background:#E8C982}
+.btn-appel svg{width:18px;height:18px;flex:none}
+.burger{display:none;width:48px;height:48px;border:2px solid rgba(217,182,106,.6);border-radius:10px;background:transparent;color:#fff;place-items:center}
+.burger svg{width:24px;height:24px}
+
+/* ===== Boutons ===== */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:999px;font-weight:600;text-decoration:none;font-size:17px;border:2px solid transparent;transition:background .2s,color .2s,border-color .2s}
+.btn svg{width:19px;height:19px;flex:none}
+.btn-or{background:var(--or);color:var(--canard-3)}
+.btn-or:hover{background:#E8C982}
+.btn-contour{border-color:rgba(255,255,255,.55);color:#fff}
+.btn-contour:hover{background:rgba(255,255,255,.12)}
+
+/* ===== Bandeau damier (séparateur) ===== */
+.damier{height:36px;background:
+  conic-gradient(var(--canard) 25%,var(--creme) 0 50%,var(--canard) 0 75%,var(--creme) 0) 0 0/36px 36px;
+  background-position:0 0}
+.damier.or{background:conic-gradient(var(--or) 25%,var(--canard-2) 0 50%,var(--or) 0 75%,var(--canard-2) 0) 0 0/36px 36px}
+
+/* ===== Hero ===== */
+.hero{position:relative;background:var(--canard);color:#fff;overflow:hidden;padding:64px 0 76px}
+.hero::before{content:"";position:absolute;inset:0;opacity:.5;
+  background:
+   linear-gradient(45deg,transparent 49.4%,rgba(217,182,106,.22) 49.7% 50.3%,transparent 50.6%) 0 0/84px 84px,
+   linear-gradient(-45deg,transparent 49.4%,rgba(217,182,106,.22) 49.7% 50.3%,transparent 50.6%) 0 0/84px 84px}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 20% 40%,rgba(21,54,56,.0),var(--canard-2) 90%);opacity:.55}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
+.hero-lieu{display:inline-flex;align-items:center;gap:10px;font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:var(--or);font-weight:500}
+.hero-lieu i{width:34px;height:1px;background:var(--or);display:block}
+.hero h1{font-weight:200;font-size:clamp(38px,4.5vw,66px);line-height:1.06;letter-spacing:-.025em;margin:20px 0 6px}
+.hero h1 .ligne{display:block;overflow:hidden;padding-bottom:.08em}
+.hero h1 .ligne>span{display:block}
+.hero h1 b{font-weight:600}
+.hero h1 em{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.02em;color:var(--or)}
+.hero-trait{height:2px;width:min(280px,60%);background:var(--or);transform-origin:left;margin:22px 0 26px}
+.hero p.accroche{font-size:clamp(18px,1.9vw,21px);max-width:34em;color:#D3E2E0;font-weight:300}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin:34px 0 34px}
+.hero-points{display:flex;flex-wrap:wrap;gap:12px 28px;list-style:none;color:#E5EEEC;font-size:16px}
+.hero-points li{display:flex;align-items:center;gap:10px}
+.hero-points li svg{width:20px;height:20px;color:var(--or);flex:none}
+
+/* Mosaïque de losanges */
+.mosaique{position:relative;width:min(560px,100%);aspect-ratio:1;margin-inline:auto}
+.dia{position:absolute;width:48.4%;height:48.4%;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);background:var(--canard-3)}
+.dia img{width:100%;height:100%;object-fit:cover}
+.dia.c{left:25.8%;top:25.8%}
+.dia.hg{left:.8%;top:.8%}
+.dia.hd{left:50.8%;top:.8%}
+.dia.bg{left:.8%;top:50.8%}
+.dia.bd{left:50.8%;top:50.8%}
+.cadre-or{position:absolute;inset:-2%;width:104%;height:104%;pointer-events:none;overflow:visible}
+.cadre-or polygon{fill:none;stroke:var(--or);stroke-width:1.6;vector-effect:non-scaling-stroke}
+
+/* ===== Sections ===== */
+section{position:relative}
+.sec{padding:96px 0}
+.etiquette{display:inline-flex;align-items:center;gap:12px;font-size:14.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;color:var(--or-fonce)}
+.etiquette i{width:30px;height:1px;background:currentColor;display:block}
+.sombre .etiquette{color:var(--or)}
+h2{font-weight:200;font-size:clamp(32px,4vw,54px);line-height:1.12;letter-spacing:-.02em;color:var(--encre);margin:16px 0 18px;max-width:24em;text-wrap:balance}
+h2 b{font-weight:600}
+h2 em{font-family:'Cormorant Garamond',serif;font-weight:500;color:var(--or-fonce)}
+.sombre{background:var(--canard);color:#E5EEEC}
+.sombre h2{color:#fff}
+.sombre h2 em{color:var(--or)}
+.intro{font-size:19px;max-width:38em;font-weight:300}
+.sombre .intro{color:#D3E2E0}
+
+/* ===== Savoir-faire ===== */
+.savoir{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;margin-top:10px}
+.savoir-gauche{position:sticky;top:calc(var(--haut-header) + 28px);align-self:start}
+.savoir-gauche .photo{margin-top:30px;aspect-ratio:4/5;overflow:hidden;clip-path:polygon(50% 0,100% 12%,100% 100%,0 100%,0 12%)}
+.savoir-gauche .photo img{width:100%;height:100%;object-fit:cover}
+.tuiles{display:grid;grid-template-columns:1fr 1fr;gap:var(--joint);background:var(--creme-2);padding:var(--joint);border:1px solid var(--travertin)}
+.tuile{background:var(--blanc);padding:30px 26px 32px;min-height:230px;position:relative}
+.tuile h3{font-size:22px;font-weight:600;color:var(--encre);line-height:1.25;display:flex;align-items:baseline;gap:10px;margin-bottom:12px}
+.tuile h3 .n{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;color:var(--or-fonce);font-size:30px;line-height:1}
+.tuile p{font-size:16.5px}
+.tuile .losange{position:absolute;right:16px;top:16px;width:22px;height:22px;color:var(--or)}
+
+/* ===== Réalisations ===== */
+#realisations{background:var(--canard-2);color:#E5EEEC}
+.galerie{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--joint);margin-top:38px;background:var(--or);padding:var(--joint)}
+.galerie button{position:relative;aspect-ratio:1;border:0;padding:0;overflow:hidden;background:var(--canard-3);display:block}
+.galerie img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.galerie button:hover img{transform:scale(1.06)}
+.galerie .loupe{position:absolute;right:10px;bottom:10px;width:38px;height:38px;border-radius:50%;background:rgba(14,37,39,.82);color:#fff;display:grid;place-items:center;border:1px solid rgba(217,182,106,.7)}
+.galerie .loupe svg{width:18px;height:18px}
+.lien-fb{margin-top:26px;color:#D3E2E0}
+.lien-fb a{color:var(--or);font-weight:500}
+
+/* ===== Méthode ===== */
+.etapes{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:64px}
+.ligne-or{position:absolute;left:calc(12.5%);right:calc(12.5%);top:30px;height:2px;background:var(--travertin);transform-origin:left}
+.ligne-or span{display:block;height:100%;background:var(--or-fonce);transform-origin:left}
+.etape{position:relative;text-align:center;padding:0 6px}
+.etape .pastille{width:62px;height:62px;margin:0 auto 22px;position:relative;display:grid;place-items:center;color:var(--canard-3);font-weight:600;font-size:21px}
+.etape .pastille::before{content:"";position:absolute;inset:0;background:var(--or);clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
+.etape .pastille span{position:relative}
+.etape h3{font-size:21px;font-weight:600;color:var(--encre);margin-bottom:8px}
+.etape p{font-size:16.5px}
+
+/* ===== Avis ===== */
+#avis{background:var(--creme-2)}
+.avis-tete{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px}
+.note-g{display:flex;align-items:center;gap:16px;background:var(--blanc);padding:16px 22px;border:1px solid var(--travertin)}
+.note-g .gros{font-size:44px;font-weight:200;color:var(--encre);line-height:1}
+.note-g .et{color:#B88A1E;letter-spacing:3px;font-size:20px}
+.note-g small{display:block;font-size:15px;color:var(--texte)}
+.avis-colonnes{column-count:3;column-gap:var(--joint);margin-top:36px}
+.avis-colonnes blockquote{break-inside:avoid;margin:0 0 var(--joint);background:var(--blanc);padding:26px 26px 22px;border-top:3px solid var(--or)}
+.avis-colonnes .et{color:#B88A1E;letter-spacing:3px;font-size:17px;margin-bottom:10px}
+.avis-colonnes p{font-size:17px;line-height:1.6}
+.avis-colonnes footer{margin-top:14px;font-weight:600;color:var(--encre);font-size:15.5px}
+.avis-colonnes footer span{font-weight:400;color:#5B6B6C}
+.btn-fiche{margin-top:30px;display:inline-flex;align-items:center;gap:10px;color:var(--canard);font-weight:600;text-decoration:underline;text-underline-offset:4px}
+
+/* ===== Contact ===== */
+#contact{background:var(--canard);color:#E5EEEC}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:20px}
+.coordonnees{list-style:none;display:grid;gap:16px;margin:26px 0}
+.coordonnees li{display:flex;gap:14px;align-items:center;font-size:18px}
+.coordonnees svg{width:22px;height:22px;color:var(--or);flex:none}
+.coordonnees a{text-decoration:none;font-weight:500}
+.coordonnees a:hover{text-decoration:underline}
+.tel-gros{display:inline-flex;align-items:center;gap:14px;font-size:clamp(28px,4vw,40px);font-weight:300;color:#fff;text-decoration:none;letter-spacing:.01em}
+.tel-gros svg{width:30px;height:30px;color:var(--or)}
+.horaires{margin-top:26px;border:1px solid rgba(217,182,106,.45);padding:22px 24px}
+.horaires h3{font-size:15px;letter-spacing:.2em;text-transform:uppercase;color:var(--or);font-weight:500;margin-bottom:10px}
+.horaires dl{display:grid;grid-template-columns:1fr auto;gap:6px 24px;font-size:17px}
+.horaires dd{text-align:right;font-weight:500;color:#fff}
+.reseaux{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.reseaux a{display:inline-flex;align-items:center;gap:10px;padding:11px 18px;border:1px solid rgba(217,182,106,.6);border-radius:999px;text-decoration:none;color:#fff;font-weight:500;font-size:15.5px;transition:background .2s}
+.reseaux a:hover{background:rgba(217,182,106,.16)}
+.reseaux svg{width:20px;height:20px;color:var(--or);flex:none}
+.formulaire{background:var(--creme);color:var(--texte);padding:34px 32px;position:relative}
+.formulaire h3{font-size:26px;font-weight:600;color:var(--encre);line-height:1.2;margin-bottom:6px}
+.formulaire .sous{font-size:16px;margin-bottom:20px}
+.champ{margin-bottom:16px}
+.champ label{display:block;font-weight:600;font-size:15.5px;color:var(--encre);margin-bottom:6px}
+.champ input,.champ select,.champ textarea{width:100%;font:inherit;font-size:17px;padding:13px 14px;border:1.5px solid #B9AE97;background:#fff;border-radius:4px;color:var(--encre)}
+.champ textarea{min-height:120px;resize:vertical}
+.champ input:focus,.champ select:focus,.champ textarea:focus{outline:3px solid var(--or);outline-offset:1px;border-color:var(--canard)}
+.deux{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.formulaire button[type=submit]{width:100%;justify-content:center;background:var(--canard);color:#fff;border:0;padding:16px;font-size:18px;border-radius:999px;font-weight:600;display:flex;align-items:center;gap:10px}
+.formulaire button[type=submit]:hover{background:var(--canard-clair)}
+.merci{display:none;background:var(--canard);color:#fff;padding:20px 22px;font-weight:500;margin-top:16px}
+.formulaire.envoye .merci{display:block}
+
+/* ===== Pied ===== */
+footer.pied{background:var(--canard-3);color:#B9CBC9;padding:42px 0 100px;font-size:15.5px}
+.pied .wrap{display:flex;flex-wrap:wrap;gap:28px 48px;align-items:center;justify-content:space-between}
+.pied img{height:56px;width:auto;border-radius:4px}
+.pied a{color:#fff}
+.pied .reseaux{margin:0}
+
+/* ===== Visionneuse ===== */
+.visionneuse{position:fixed;inset:0;z-index:100;background:rgba(8,22,24,.95);display:none;align-items:center;justify-content:center;padding:18px}
+.visionneuse.ouvert{display:flex}
+.visionneuse figure{margin:0;max-width:min(92vw,1000px);max-height:88vh;display:flex;flex-direction:column;align-items:center;gap:12px}
+.visionneuse img{max-width:100%;max-height:78vh;object-fit:contain}
+.visionneuse figcaption{color:#DCE8E6;font-weight:500;font-size:16px;letter-spacing:.04em}
+.nav-v,.fermer{position:absolute;width:54px;height:54px;border-radius:50%;border:2px solid rgba(217,182,106,.7);background:rgba(14,37,39,.85);color:#fff;display:grid;place-items:center}
+.nav-v{top:50%;transform:translateY(-50%)}
+.nav-v:disabled{opacity:.3;cursor:default}
+.nav-v svg,.fermer svg{width:24px;height:24px}
+.prec{left:16px}.suiv{right:16px}
+.fermer{top:14px;right:14px}
+
+/* ===== Barre mobile ===== */
+.barre-mob{display:none}
+
+/* ===== Tablette ===== */
+@media (max-width:1000px){
+  .menu{display:none}
+  .burger{display:grid}
+  .menu.ouvert{display:flex;position:absolute;top:var(--haut-header);left:0;right:0;flex-direction:column;background:var(--canard-2);padding:12px 20px 20px;border-bottom:2px solid var(--or)}
+  .hero .wrap{grid-template-columns:1fr}
+  .mosaique{width:min(480px,92%)}
+  .savoir{grid-template-columns:1fr}
+  .savoir-gauche{position:static}
+  .savoir-gauche .photo{display:none}
+  .galerie{grid-template-columns:repeat(3,1fr)}
+  .etapes{grid-template-columns:1fr 1fr;gap:40px 20px}
+  .ligne-or{display:none}
+  .avis-colonnes{column-count:2}
+  .contact{grid-template-columns:1fr}
+}
+/* ===== Mobile : page plus légère ===== */
+@media (max-width:700px){
+  body{font-size:16.5px}
+  .sec{padding:60px 0}
+  .btn-appel span.txt-long{display:none}
+  .header .btn-appel{padding:10px 14px}
+  .hero{padding:40px 0 54px}
+  .hero p.accroche,.hero-points{display:none}
+  .hero-actions{margin:26px 0 30px}
+  #methode .intro{display:none}
+  .mosaique{width:92%}
+  .tuiles{grid-template-columns:1fr}
+  .tuile{min-height:0;padding:24px 22px}
+  .tuile.sec-mob{display:none}
+  .galerie{grid-template-columns:repeat(2,1fr)}
+  .galerie button.plus{display:none}
+  .etapes{grid-template-columns:1fr;gap:30px}
+  .etape{display:grid;grid-template-columns:62px 1fr;gap:0 18px;text-align:left;align-items:start}
+  .etape .pastille{grid-row:span 2;margin:0}
+  .avis-colonnes{column-count:1}
+  .avis-colonnes blockquote.plus{display:none}
+  .deux{grid-template-columns:1fr}
+  .formulaire{padding:26px 20px}
+  .damier{height:24px;background-size:24px 24px}
+  .barre-mob{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:var(--canard-3);border-top:1px solid rgba(217,182,106,.5)}
+  .barre-mob a{display:flex;align-items:center;justify-content:center;gap:8px;padding:13px;border-radius:999px;text-decoration:none;font-weight:600;font-size:16.5px}
+  .barre-mob a svg{width:19px;height:19px}
+  .barre-mob .a1{background:var(--or);color:var(--canard-3)}
+  .barre-mob .a2{border:2px solid rgba(255,255,255,.55);color:#fff}
+  .nav-v{top:auto;bottom:18px;transform:none}
+  .prec{left:calc(50% - 68px)}.suiv{right:calc(50% - 68px)}
+  .visionneuse figure{margin-bottom:64px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+  .galerie button:hover img{transform:none}
+}
+</style>
+</head>
+<body>
+<a class="cache" href="#contenu">Aller au contenu</a>
+
+<header class="header" id="haut">
+  <div class="wrap">
+    <a class="marque" href="#accueil" aria-label="Bobet Carrelage, accueil"><img src="img/logo-titre.jpg" alt="Bobet Carrelage, carrelage et faïence" width="150" height="48"></a>
+    <nav aria-label="Menu principal">
+      <ul class="menu" id="menu">
+        <li><a href="#savoir-faire">Savoir-faire</a></li>
+        <li><a href="#realisations">Réalisations</a></li>
+        <li><a href="#methode">Méthode</a></li>
+        <li><a href="#avis">Avis</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn-appel" href="tel:+33626314612" aria-label="Appeler Bobet Carrelage au 06 26 31 46 12"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span><span class="txt-long">Appeler le </span>06 26 31 46 12</span></a>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+
+<main id="contenu">
+
+<!-- ===== ACCUEIL ===== -->
+<section class="hero" id="accueil">
+  <div class="wrap">
+    <div class="hero-texte">
+      <span class="hero-lieu"><i></i>Torcé-en-Vallée · Sarthe</span>
+      <h1 aria-label="Des sols et des murs posés avec soin, du carrelage à la pierre naturelle.">
+        <span class="ligne"><span>Des sols et des murs</span></span>
+        <span class="ligne"><span><b>posés avec soin</b>,</span></span>
+        <span class="ligne"><span><em>du carrelage à la pierre.</em></span></span>
+      </h1>
+      <div class="hero-trait" id="hero-trait"></div>
+      <p class="accroche">Nous posons carrelage, faïence, pierres naturelles et dalles sur plot, après une chape liquide bien plane. Salles de bain, escaliers, intérieurs et terrasses : chaque carreau est tiré au cordeau.</p>
+      <div class="hero-actions">
+        <a class="btn btn-or" href="tel:+33626314612"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Appeler le 06 26 31 46 12</a>
+        <a class="btn btn-contour" href="#contact">Demander un devis</a>
+      </div>
+      <ul class="hero-points">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>À Torcé-en-Vallée et dans les environs</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Devis détaillé et sans engagement</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3 6.5 7 .9-5.1 4.9 1.3 7L12 17.8 5.8 21.3l1.3-7L2 9.4l7-.9z"/></svg>Noté 5,0 sur 5 par nos clients sur Google</li>
+      </ul>
+    </div>
+    <div class="mosaique" id="mosaique" role="img" aria-label="Cinq réalisations de Bobet Carrelage assemblées en losanges : terrasse en pierre, sol en hexagones, couloir en carreaux, escalier et cour en travertin">
+      <div class="dia hg"><img src="img/sol-joints.jpg" alt="" width="1100" height="824" loading="eager"></div>
+      <div class="dia hd"><img src="img/couloir-carreaux.jpg" alt="" width="956" height="1061"></div>
+      <div class="dia bg"><img src="img/escalier.jpg" alt="" width="896" height="1061"></div>
+      <div class="dia bd"><img src="img/cour-travertin.jpg" alt="" width="1100" height="830"></div>
+      <div class="dia c"><img src="img/terrasse-pierre-bleue.jpg" alt="" width="1100" height="983"></div>
+      <svg class="cadre-or" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><polygon points="50,0 100,50 50,100 0,50"/></svg>
+    </div>
+  </div>
+</section>
+<div class="damier" id="damier-1" aria-hidden="true"></div>
+
+<!-- ===== SAVOIR-FAIRE ===== -->
+<section class="sec" id="savoir-faire">
+  <div class="wrap">
+    <span class="etiquette"><i></i>Savoir-faire</span>
+    <h2>Un support plan, des joints nets : <em>c'est là que tout se joue.</em></h2>
+    <div class="savoir">
+      <div class="savoir-gauche">
+        <p class="intro">Un beau carrelage commence sous le carrelage. Nous préparons le sol, choisissons la bonne méthode de pose pour chaque matériau, puis soignons les calepinages, les coupes et les joints.</p>
+        <div class="photo"><img src="img/hexagones.jpg" alt="Sol en hexagones noirs, blancs et bois posé dans un séjour" width="896" height="672" loading="lazy"></div>
+      </div>
+      <div class="tuiles" id="tuiles">
+        <article class="tuile">
+          <svg class="losange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2 22 12 12 22 2 12z"/></svg>
+          <h3><span class="n">1.</span>Chape liquide</h3>
+          <p>Une chape bien plane et d'aplomb, prête à recevoir le carrelage. C'est la base d'une pose durable, surtout en grand format.</p>
+        </article>
+        <article class="tuile">
+          <svg class="losange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2 22 12 12 22 2 12z"/></svg>
+          <h3><span class="n">2.</span>Faïence</h3>
+          <p>Murs de salle de bain, douches à l'italienne, crédences : des alignements nets et des joints propres jusque dans les angles.</p>
+        </article>
+        <article class="tuile">
+          <svg class="losange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2 22 12 12 22 2 12z"/></svg>
+          <h3><span class="n">3.</span>Pierres naturelles</h3>
+          <p>Travertin, dalles de pierre, ardoise : nous les posons en opus ou en calepinage régulier, pour des terrasses et des intérieurs qui ont du caractère.</p>
+        </article>
+        <article class="tuile">
+          <svg class="losange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2 22 12 12 22 2 12z"/></svg>
+          <h3><span class="n">4.</span>Dalle sur plot</h3>
+          <p>Pour vos terrasses : une dalle posée sur plots, bien de niveau, qui laisse l'eau s'écouler et se démonte au besoin.</p>
+        </article>
+        <article class="tuile sec-mob">
+          <svg class="losange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2 22 12 12 22 2 12z"/></svg>
+          <h3><span class="n">5.</span>Sols et escaliers</h3>
+          <p>Couloirs, séjours, cuisines, marches d'escalier : carrelage grand format, effet bois, carreaux à motifs ou damier.</p>
+        </article>
+        <article class="tuile sec-mob">
+          <svg class="losange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2 22 12 12 22 2 12z"/></svg>
+          <h3><span class="n">6.</span>Salle de bain clé en main</h3>
+          <p>De la dépose de l'ancien carrelage jusqu'à la finition : nous refaisons votre salle de bain de A à Z.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="damier or" id="damier-2" aria-hidden="true"></div>
+
+<!-- ===== RÉALISATIONS ===== -->
+<section class="sec sombre" id="realisations">
+  <div class="wrap">
+    <span class="etiquette"><i></i>Réalisations</span>
+    <h2>Nos chantiers, <em>carreau après carreau.</em></h2>
+    <p class="intro">Terrasses, salles de bain, couloirs, escaliers : voici quelques-uns de nos chantiers récents. Touchez une photo pour l'agrandir.</p>
+    <div class="galerie" id="galerie">
+      <button type="button" data-legende="Terrasse en grand format devant une maison" aria-label="Agrandir : terrasse en grand format"><img src="img/terrasse-gres.jpg" alt="Terrasse en grand format devant une maison" width="1100" height="822" loading="lazy"><span class="loupe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg></span></button>
+      <button type="button" data-legende="Salle de bain avec vasque, miroir rond et douche" aria-label="Agrandir : salle de bain"><img src="img/sdb-vasque.jpg" alt="Salle de bain avec vasque, miroir rond et douche" width="896" height="1061" loading="lazy"><span class="loupe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg></span></button>
+      <button type="button" data-legende="Escalier carrelé, marche par marche" aria-label="Agrandir : escalier carrelé"><img src="img/escalier.jpg" alt="Escalier entièrement carrelé" width="896" height="1061" loading="lazy"><span class="loupe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg></span></button>
+      <button type="button" data-legende="Couloir en damier rouge et crème" aria-label="Agrandir : couloir en damier"><img src="img/couloir-damier.jpg" alt="Couloir carrelé en damier rouge et crème" width="956" height="1061" loading="lazy"><span class="loupe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg></span></button>
+      <button type="button" data-legende="Sol en hexagones dans un séjour" aria-label="Agrandir : sol en hexagones"><img src="img/hexagones.jpg" alt="Sol en hexagones noirs, blancs et bois dans un séjour" width="896" height="672" loading="lazy"><span class="loupe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg></span></button>
+      <button type="button" data-legende="Terrasse en dalles de pierre claire" aria-label="Agrandir : terrasse en pierre claire"><img src="img/terrasse-pierre-claire.jpg" alt="Terrasse en dalles de pierre claire le long d'une maison" width="1100" height="983" loading="lazy"><span class="loupe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg></span></button>
+      <button type="button" class="plus" data-legende="Douche à l'italienne aux reflets bleu-vert" aria-label="Agrandir : douche"><img src="img/douche.jpg" alt="Douche à l'italienne aux reflets bleu-vert" width="896" height="1061" loading="lazy"><span class="loupe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg></span></button>
+      <button type="button" class="plus" data-legende="Terrasse effet bois contre un mur en pierre" aria-label="Agrandir : terrasse effet bois"><img src="img/terrasse-bois.jpg" alt="Terrasse effet bois contre un mur en pierre" width="956" height="717" loading="lazy"><span class="loupe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg></span></button>
+      <button type="button" class="plus" data-legende="Grands carreaux avec joints bruns dans une pièce en pierre" aria-label="Agrandir : sol à joints bruns"><img src="img/sol-joints.jpg" alt="Grands carreaux avec joints bruns dans une pièce avec cheminée" width="1100" height="824" loading="lazy"><span class="loupe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg></span></button>
+      <button type="button" class="plus" data-legende="Couloir en carreaux à motifs vert et crème" aria-label="Agrandir : couloir en carreaux à motifs"><img src="img/couloir-carreaux.jpg" alt="Couloir en carreaux à motifs vert et crème" width="956" height="1061" loading="lazy"><span class="loupe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg></span></button>
+      <button type="button" class="plus" data-legende="Allée en travertin devant un garage" aria-label="Agrandir : allée en travertin"><img src="img/allee-travertin.jpg" alt="Allée en travertin devant un garage" width="1100" height="983" loading="lazy"><span class="loupe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg></span></button>
+      <button type="button" class="plus" data-legende="Salle de bain avec douche habillée de bois" aria-label="Agrandir : salle de bain bois"><img src="img/sdb-bois.jpg" alt="Salle de bain avec grande vasque et douche habillée de bois" width="896" height="1061" loading="lazy"><span class="loupe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg></span></button>
+    </div>
+    <p class="lien-fb">Retrouvez d'autres chantiers sur <a href="https://www.facebook.com/profile.php?id=100086159867487" target="_blank" rel="noopener">notre page Facebook</a>.</p>
+  </div>
+</section>
+
+<!-- ===== MÉTHODE ===== -->
+<section class="sec" id="methode">
+  <div class="wrap">
+    <span class="etiquette"><i></i>Méthode</span>
+    <h2>Un chantier suivi <em>du premier regard au dernier joint.</em></h2>
+    <p class="intro">Vous savez toujours où nous en sommes. Voici comment se déroule un chantier avec nous.</p>
+    <div class="etapes" id="etapes">
+      <div class="ligne-or" aria-hidden="true"><span id="ligne-or-fill"></span></div>
+      <div class="etape"><div class="pastille"><span>1</span></div><h3>Visite et conseils</h3><p>Nous venons voir les lieux, prenons les mesures et vous conseillons carrelage, pierre ou faïence.</p></div>
+      <div class="etape"><div class="pastille"><span>2</span></div><h3>Devis détaillé</h3><p>Vous recevez un devis clair, avec les matériaux et la pose. Sans engagement.</p></div>
+      <div class="etape"><div class="pastille"><span>3</span></div><h3>Préparation du support</h3><p>Dépose si besoin, chape liquide, mise à niveau : le support est prêt avant la première pose.</p></div>
+      <div class="etape"><div class="pastille"><span>4</span></div><h3>Pose et finitions</h3><p>Calepinage, pose, joints, nettoyage. Nous laissons un chantier propre.</p></div>
+    </div>
+  </div>
+</section>
+<div class="damier" aria-hidden="true"></div>
+
+<!-- ===== AVIS ===== -->
+<section class="sec" id="avis">
+  <div class="wrap">
+    <div class="avis-tete">
+      <div>
+        <span class="etiquette"><i></i>Avis</span>
+        <h2>Ce que disent <em>nos clients.</em></h2>
+      </div>
+      <div class="note-g" aria-label="Note de 5,0 sur 5 sur Google, 5 avis">
+        <span class="gros">5,0</span>
+        <div><div class="et" aria-hidden="true">★★★★★</div><small>5 avis sur Google</small></div>
+      </div>
+    </div>
+    <div class="avis-colonnes" id="avis-liste">
+      <blockquote><div class="et" aria-label="5 étoiles sur 5">★★★★★</div><p>Très satisfaite de Bobet Carrelage pour la pose du travertin opus romain silver autour de notre piscine avec terrasse. Le travail a été réalisé dans les temps et parfaitement posé malgré la complexité du type de pose des pierres. Les dates et délais ont été respectés. Le rendu final se passe de commentaire. Nous avons d autres travaux de carrelage à effectuer, nous ferons appel à Bobet carrelage sans hésitation. Je recommande vivement cette entreprise. Merci encore.</p><footer>Maud L. <span>· il y a 2 ans</span></footer></blockquote>
+      <blockquote><div class="et" aria-label="5 étoiles sur 5">★★★★★</div><p>Très professionnel et super travail réalisé,rien à redire.</p><footer>Matthieu M. <span>· il y a 2 ans</span></footer></blockquote>
+      <blockquote><div class="et" aria-label="5 étoiles sur 5">★★★★★</div><p>Très satisfaite du travail effectué. Pose de travertin en plusieurs formats réalisés avec soins. Professionnel et ponctuel rien a redire.</p><footer>Maëlle L. <span>· il y a 2 ans</span></footer></blockquote>
+      <blockquote><div class="et" aria-label="5 étoiles sur 5">★★★★★</div><p>Super travaille, un travail très professionnel, pour reprendre ses dires « j'ai fais comme si c'était chez moi »! Ça reflète bien la qualité du travail effectué! Merci James!</p><footer>NEKO TELYON <span>· il y a 2 ans</span></footer></blockquote>
+      <blockquote><div class="et" aria-label="5 étoiles sur 5">★★★★★</div><p>Très bon carreleur qualité prix !!!</p><footer>Pro Tech Couverture <span>· il y a 11 mois</span></footer></blockquote>
+    </div>
+    <a class="btn-fiche" href="https://www.google.com/maps/place/Bobet+carrelage/@48.1326014,0.3934091,11606m/data=!3m1!1e3!4m8!3m7!1s0xa27656ab2625ac0f:0x3041a963c2b0723c!8m2!3d48.1326014!4d0.3934091!9m1!1b1!16s%2Fg%2F11txff4njc" target="_blank" rel="noopener">Voir tous nos avis sur Google
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="sec sombre" id="contact">
+  <div class="wrap">
+    <span class="etiquette"><i></i>Contact</span>
+    <h2>Parlons de <em>votre projet.</em></h2>
+    <div class="contact">
+      <div>
+        <a class="tel-gros" href="tel:+33626314612"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>06 26 31 46 12</a>
+        <ul class="coordonnees">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg><a href="mailto:bobetcarrelages@gmail.com">bobetcarrelages@gmail.com</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Torcé-en-Vallée (72110), et dans les environs</span></li>
+        </ul>
+        <div class="horaires">
+          <h3>Horaires</h3>
+          <dl>
+            <dt>Lundi au vendredi</dt><dd>8h – 18h</dd>
+            <dt>Samedi et dimanche</dt><dd>Fermé</dd>
+          </dl>
+        </div>
+        <div class="reseaux">
+          <a href="https://www.facebook.com/profile.php?id=100086159867487" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22v-8.2h2.8l.5-3.3h-3.3V8.4c0-1 .4-1.7 1.8-1.7h1.6V3.8c-.3 0-1.3-.2-2.5-.2-2.5 0-4.1 1.5-4.1 4.2v2.7H7.5v3.3h2.8V22z"/></svg>Facebook</a>
+          <a href="https://www.instagram.com/bobetcarrelages/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".9" fill="currentColor" stroke="none"/></svg>Instagram</a>
+          <a href="https://www.google.com/maps/place/Bobet+carrelage/@48.1326014,0.3934091,11606m/data=!3m1!1e3!4m8!3m7!1s0xa27656ab2625ac0f:0x3041a963c2b0723c!8m2!3d48.1326014!4d0.3934091!9m1!1b1!16s%2Fg%2F11txff4njc" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Fiche Google</a>
+        </div>
+      </div>
+      <form class="formulaire" id="formulaire" novalidate>
+        <h3>Demandez votre devis</h3>
+        <p class="sous">Décrivez-nous votre projet, nous vous rappelons.</p>
+        <div class="deux">
+          <div class="champ"><label for="f-nom">Votre nom</label><input id="f-nom" name="nom" autocomplete="name" required></div>
+          <div class="champ"><label for="f-tel">Votre téléphone</label><input id="f-tel" name="tel" type="tel" autocomplete="tel" required></div>
+        </div>
+        <div class="champ"><label for="f-projet">Votre projet</label>
+          <select id="f-projet" name="projet">
+            <option>Salle de bain</option><option>Sol intérieur</option><option>Terrasse ou extérieur</option><option>Escalier</option><option>Pierres naturelles</option><option>Autre projet</option>
+          </select></div>
+        <div class="champ"><label for="f-msg">Votre message</label><textarea id="f-msg" name="message"></textarea></div>
+        <button type="submit">Envoyer ma demande</button>
+        <div class="merci" role="status">Merci ! Sur votre vrai site, cette demande vous arrivera par e-mail.</div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="pied">
+  <div class="wrap">
+    <div><img src="img/logo-titre.jpg" alt="Bobet Carrelage" width="105" height="56"></div>
+    <div>Bobet Carrelage · Torcé-en-Vallée (72110)<br><a href="tel:+33626314612">06 26 31 46 12</a> · <a href="mailto:bobetcarrelages@gmail.com">bobetcarrelages@gmail.com</a></div>
+    <div class="reseaux">
+      <a href="https://www.facebook.com/profile.php?id=100086159867487" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22v-8.2h2.8l.5-3.3h-3.3V8.4c0-1 .4-1.7 1.8-1.7h1.6V3.8c-.3 0-1.3-.2-2.5-.2-2.5 0-4.1 1.5-4.1 4.2v2.7H7.5v3.3h2.8V22z"/></svg>Facebook</a>
+      <a href="https://www.instagram.com/bobetcarrelages/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".9" fill="currentColor" stroke="none"/></svg>Instagram</a>
+      <a href="https://www.google.com/maps/place/Bobet+carrelage/@48.1326014,0.3934091,11606m/data=!3m1!1e3!4m8!3m7!1s0xa27656ab2625ac0f:0x3041a963c2b0723c!8m2!3d48.1326014!4d0.3934091!9m1!1b1!16s%2Fg%2F11txff4njc" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Fiche Google</a>
+    </div>
+  </div>
+</footer>
+
+<div class="barre-mob">
+  <a class="a1" href="tel:+33626314612"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Appeler</a>
+  <a class="a2" href="#contact">Devis</a>
+</div>
+
+<div class="visionneuse" id="visionneuse" role="dialog" aria-modal="true" aria-label="Photo agrandie">
+  <button class="fermer" id="v-fermer" aria-label="Fermer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <button class="nav-v prec" id="v-prec" aria-label="Photo précédente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+  <figure><img id="v-img" src="" alt=""><figcaption><span id="v-legende"></span> · <span id="v-compte"></span></figcaption></figure>
+  <button class="nav-v suiv" id="v-suiv" aria-label="Photo suivante"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+</div>
+
+<script src="js/gsap.min.js"></script>
+<script src="js/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var header=document.querySelector('.header');
+  function hh(){return header.getBoundingClientRect().height}
+
+  /* Menu : ancres qui atterrissent pile sous l'en-tête */
+  var liens=[].slice.call(document.querySelectorAll('.menu a'));
+  var secs=liens.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function aller(id){
+    var el=document.querySelector(id);if(!el)return;
+    var y=el.getBoundingClientRect().top+window.pageYOffset-hh();
+    window.scrollTo(0,Math.max(0,Math.round(y)));
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('href');if(id==='#'||id==='#contenu')return;
+      e.preventDefault();aller(id);
+      menu.classList.remove('ouvert');burger.setAttribute('aria-expanded','false');
+    });
+  });
+  var menu=document.getElementById('menu'),burger=document.getElementById('burger');
+  burger.addEventListener('click',function(){
+    var o=menu.classList.toggle('ouvert');burger.setAttribute('aria-expanded',o?'true':'false');
+  });
+  /* Lien actif : change seulement quand la section atteint le bas de l'en-tête */
+  function spy(){
+    var h=hh()+2,cur=-1;
+    secs.forEach(function(s,i){if(s.getBoundingClientRect().top<=h)cur=i});
+    liens.forEach(function(a,i){a.classList.toggle('actif',i===cur)});
+  }
+  window.addEventListener('scroll',spy,{passive:true});window.addEventListener('resize',spy);spy();
+
+  /* Visionneuse photos : boutons et clavier uniquement (la molette reste libre) */
+  var vi=document.getElementById('visionneuse'),vimg=document.getElementById('v-img'),vleg=document.getElementById('v-legende'),vc=document.getElementById('v-compte'),vp=document.getElementById('v-prec'),vs=document.getElementById('v-suiv'),vf=document.getElementById('v-fermer');
+  var liste=[],k=0,dernier=null;
+  function visibles(){return [].slice.call(document.querySelectorAll('#galerie button')).filter(function(b){return b.offsetParent!==null})}
+  function montre(i){
+    k=i;var b=liste[k],im=b.querySelector('img');
+    vimg.src=im.getAttribute('src');vimg.alt=im.alt;vleg.textContent=b.getAttribute('data-legende');
+    vc.textContent=(k+1)+' / '+liste.length;vp.disabled=k===0;vs.disabled=k===liste.length-1;
+  }
+  function ouvre(b){liste=visibles();dernier=b;montre(liste.indexOf(b));vi.classList.add('ouvert');document.body.style.overflow='hidden';vf.focus()}
+  function ferme(){vi.classList.remove('ouvert');document.body.style.overflow='';if(dernier)dernier.focus()}
+  document.querySelectorAll('#galerie button').forEach(function(b){b.addEventListener('click',function(){ouvre(b)})});
+  vp.addEventListener('click',function(){if(k>0)montre(k-1)});
+  vs.addEventListener('click',function(){if(k<liste.length-1)montre(k+1)});
+  vf.addEventListener('click',ferme);
+  vi.addEventListener('click',function(e){if(e.target===vi)ferme()});
+  document.addEventListener('keydown',function(e){
+    if(!vi.classList.contains('ouvert'))return;
+    if(e.key==='Escape')ferme();
+    if(e.key==='ArrowLeft'&&k>0)montre(k-1);
+    if(e.key==='ArrowRight'&&k<liste.length-1)montre(k+1);
+  });
+  var tx=null;
+  vi.addEventListener('touchstart',function(e){tx=e.touches[0].clientX},{passive:true});
+  vi.addEventListener('touchend',function(e){
+    if(tx===null)return;var d=e.changedTouches[0].clientX-tx;tx=null;
+    if(Math.abs(d)>50){if(d<0&&k<liste.length-1)montre(k+1);if(d>0&&k>0)montre(k-1)}
+  },{passive:true});
+
+  /* Formulaire : message de remerciement (sur GitHub Pages rien n'est envoyé) */
+  var f=document.getElementById('formulaire');
+  f.addEventListener('submit',function(e){e.preventDefault();f.classList.add('envoye')});
+
+  /* Effets GSAP (désactivés si l'utilisateur préfère moins d'animations) */
+  if(!window.gsap||!window.ScrollTrigger)return;
+  gsap.registerPlugin(ScrollTrigger);
+  var mm=gsap.matchMedia();
+  mm.add('(prefers-reduced-motion: no-preference)',function(){
+    /* 1. Pose des losanges : un par un, dans le désordre, comme un carreleur qui pose */
+    var dias=gsap.utils.shuffle(gsap.utils.toArray('.dia'));
+    gsap.fromTo(dias,{opacity:0,scale:.9},{opacity:1,scale:1,duration:.7,ease:'power2.out',stagger:.18,delay:.15,clearProps:'transform'});
+    gsap.fromTo('.cadre-or polygon',{opacity:0},{opacity:1,duration:1,delay:1.1,ease:'power1.out'});
+    /* 2. Titre : les lignes se dévoilent */
+    gsap.fromTo('.hero h1 .ligne>span',{yPercent:105},{yPercent:0,duration:.9,ease:'power3.out',stagger:.12,delay:.1});
+    gsap.fromTo('#hero-trait',{scaleX:0},{scaleX:1,duration:1,ease:'power2.inOut',delay:.7});
+    /* 3. Trame de losanges : défile doucement avec la page */
+    gsap.fromTo('#mosaique',{yPercent:0},{yPercent:-5,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+    /* 4. Bandeaux damier : glissent selon le défilement */
+    gsap.utils.toArray('.damier').forEach(function(d){
+      gsap.fromTo(d,{backgroundPositionX:0},{backgroundPositionX:-72,ease:'none',scrollTrigger:{trigger:d,start:'top bottom',end:'bottom top',scrub:true}});
+    });
+    /* 5. Titres de section : fondu */
+    gsap.utils.toArray('.etiquette,h2,.intro').forEach(function(el){
+      gsap.fromTo(el,{opacity:0},{opacity:1,duration:.7,ease:'power1.out',scrollTrigger:{trigger:el,start:'top 92%',once:true}});
+    });
+    /* 6. Tuiles, photos, avis : fondu seulement, état final explicite */
+    function fondu(sel,trig){
+      gsap.fromTo(sel,{opacity:0},{opacity:1,duration:.6,ease:'power1.out',stagger:.07,clearProps:'opacity',scrollTrigger:{trigger:trig,start:'top 85%',once:true}});
+    }
+    fondu('#tuiles .tuile','#tuiles');fondu('#galerie button','#galerie');fondu('.avis-colonnes blockquote','#avis-liste');
+    /* 7. Méthode : le trait doré se trace, les losanges apparaissent */
+    gsap.fromTo('#ligne-or-fill',{scaleX:0},{scaleX:1,duration:1.6,ease:'power2.inOut',scrollTrigger:{trigger:'#etapes',start:'top 80%',once:true}});
+    gsap.fromTo('.etape',{opacity:0},{opacity:1,duration:.6,stagger:.25,clearProps:'opacity',scrollTrigger:{trigger:'#etapes',start:'top 80%',once:true}});
+    /* 8. Photo du savoir-faire : léger zoom arrière en défilant */
+    gsap.fromTo('.savoir-gauche .photo img',{scale:1.15},{scale:1,ease:'none',scrollTrigger:{trigger:'.savoir-gauche .photo',start:'top bottom',end:'bottom top',scrub:true}});
+    ScrollTrigger.refresh();
+  });
+})();
+</script>
+</body>
+</html>
