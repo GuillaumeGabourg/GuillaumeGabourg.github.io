@@ -269,6 +269,7 @@ section{scroll-margin-top:76px}
 .avis{background:var(--paper)}
 .avis-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,64px);align-items:start}
 .avis-score{display:grid;gap:20px;align-content:start}
+@media (min-width:901px){.avis-score{position:sticky;top:110px}}
 .avis-score h2{font-size:clamp(1.75rem,3.2vw,2.6rem)}
 .score{display:flex;align-items:center;gap:18px;padding:20px 22px;border-radius:var(--r);background:var(--white);border:1px solid var(--line)}
 .score .big{font-size:clamp(3rem,6vw,4.2rem);font-weight:700;line-height:1;letter-spacing:-.03em}
@@ -279,7 +280,7 @@ section{scroll-margin-top:76px}
 .btn--g svg.g{width:20px;height:20px}
 .reviews{display:grid;gap:16px}
 .review{margin:0;display:grid;gap:16px;padding:clamp(20px,3vw,28px);border-radius:var(--r);background:var(--white);border:1px solid var(--line);position:relative}
-.review::after{content:"\201D";position:absolute;right:22px;top:6px;font-size:5rem;line-height:1;color:var(--sage-tint);font-weight:700;pointer-events:none}
+.review::after{content:"\201D";position:absolute;right:20px;bottom:-14px;font-size:6rem;line-height:1;color:var(--sage-tint);font-weight:700;pointer-events:none}
 .r-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .r-src{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;color:var(--ink-soft)}
 .r-src svg.g{width:16px;height:16px}
