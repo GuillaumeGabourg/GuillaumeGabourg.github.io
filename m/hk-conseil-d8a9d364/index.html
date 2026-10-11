@@ -1,0 +1,910 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>HK Conseil · Études et Solutions Travaux · Maîtrise d’œuvre en Mayenne, Orne et Sarthe</title>
+<meta name="description" content="HK Conseil : votre partenaire pour vos projets de constructions et rénovations en Mayenne (53), Orne (61) et Sarthe (72). Études, plans, permis et suivi de chantier.">
+<link rel="icon" href="img/logo-mark-ink.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+<style>
+html,body{margin:0;padding:0}
+[hidden]{display:none!important}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+/* Système dérivé du logo : vert sauge #88AC88, noir #1E211E, blanc ; Poppins (typo du logo).
+   Style suisse épuré : grille nette, beaucoup d'air, photos de chantier mises en scène. Thème clair unique, voulu. */
+:root{
+  --sage:#88ac88;
+  --sage-deep:#3f6b3f;
+  --sage-tint:#e4ece3;
+  --ink:#1e211e;
+  --ink-soft:#4a514a;
+  --paper:#f5f4f0;
+  --stone:#e1dfd9;
+  --white:#ffffff;
+  --line:rgba(30,33,30,.12);
+  --f:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --r:20px;
+  --r-sm:12px;
+  --gutter:clamp(16px,4vw,48px);
+  --max:1240px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{background:var(--paper);color:var(--ink)}
+body{font-family:var(--f);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img{display:block;max-width:100%;height:auto}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--sage-deep);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+h1,h2,h3{margin:0;font-weight:600;letter-spacing:-.025em;line-height:1.1;text-wrap:balance}
+p{margin:0}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:.74rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--sage-deep)}
+.eyebrow::before{content:"";width:28px;height:1.5px;background:currentColor}
+section{scroll-margin-top:0}
+.sec{padding-block:clamp(64px,9vw,120px)}
+.sec-head{display:grid;gap:18px;margin-bottom:clamp(32px,5vw,56px);max-width:860px}
+.sec-head h2{font-size:clamp(1.75rem,3.4vw,2.8rem)}
+.hl{color:var(--sage-deep)}
+
+/* boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:50px;padding:0 26px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);font-weight:500;font-size:.95rem;text-decoration:none;cursor:pointer;position:relative;overflow:hidden;isolation:isolate;transition:color .3s var(--ease),border-color .3s}
+.btn::before{content:"";position:absolute;inset:0;background:var(--ink);transform:translateY(101%);transition:transform .4s var(--ease);z-index:-1}
+.btn:hover{color:var(--white)}
+.btn:hover::before{transform:translateY(0)}
+.btn--sage{background:var(--sage-deep);border-color:var(--sage-deep);color:var(--white)}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;transition:transform .3s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+
+/* header */
+.progress{position:fixed;top:0;left:0;right:0;height:3px;background:var(--sage);transform:scaleX(0);transform-origin:0 50%;z-index:90}
+.header{position:fixed;top:0;left:0;right:0;z-index:80;padding-top:env(safe-area-inset-top,0px);background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:transform .45s var(--ease),border-color .3s}
+.header.is-scrolled{border-bottom-color:var(--line)}
+.header.is-hidden{transform:translateY(-100%)}
+.header .wrap{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;min-width:0}
+.brand img{width:52px;height:auto}
+.brand-txt{display:grid;line-height:1.15;padding-left:14px;border-left:1px solid var(--line)}
+.brand-txt b{font-weight:700;font-size:.95rem;letter-spacing:.14em}
+.brand-txt small{font-weight:300;font-size:.68rem;letter-spacing:.12em;color:var(--ink-soft);white-space:nowrap}
+.nav{display:flex;align-items:center;gap:4px}
+.nav a{text-decoration:none;font-size:.92rem;font-weight:500;padding:10px 16px;border-radius:999px;transition:background .25s}
+.nav a:not(.btn):hover{background:var(--stone)}
+.nav .btn{min-height:44px;margin-left:8px}
+.burger{display:none;width:48px;height:48px;border-radius:50%;border:0;background:var(--ink);cursor:pointer;position:relative;flex:none}
+.burger span{position:absolute;left:15px;right:15px;height:2px;border-radius:2px;background:var(--white);transition:transform .4s var(--ease),opacity .25s}
+.burger span:nth-child(1){top:18px}.burger span:nth-child(2){top:23px}.burger span:nth-child(3){top:28px}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(5px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
+@media (max-width:920px){.nav{display:none}.burger{display:block}}
+@media (max-width:420px){.brand-txt small{display:none}.brand img{width:44px}}
+
+.menu{position:fixed;inset:0;z-index:75;background:var(--sage);display:flex;flex-direction:column;justify-content:space-between;padding:calc(env(safe-area-inset-top,0px) + 104px) var(--gutter) calc(env(safe-area-inset-bottom,0px) + 32px);clip-path:circle(0% at calc(100% - 40px) 38px);visibility:hidden;transition:clip-path .65s cubic-bezier(.7,0,.2,1),visibility 0s .65s}
+.menu.is-open{clip-path:circle(150% at calc(100% - 40px) 38px);visibility:visible;transition:clip-path .65s cubic-bezier(.7,0,.2,1),visibility 0s}
+.menu nav{display:grid}
+.menu nav a{display:flex;justify-content:space-between;align-items:center;padding-block:14px;border-bottom:1px solid rgba(30,33,30,.18);text-decoration:none;font-size:clamp(2rem,9vw,3rem);font-weight:600;letter-spacing:-.02em}
+.menu nav a svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.6}
+.menu-foot{display:grid;gap:4px;font-weight:500}
+.menu-foot img{width:64px;margin-bottom:10px}
+
+/* hero */
+.hero{padding-block:calc(76px + clamp(36px,6vw,72px)) clamp(56px,8vw,96px);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-8%;top:-20%;width:46%;aspect-ratio:1;background:var(--sage-tint);border-radius:50%;z-index:-1}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(36px,6vw,80px);align-items:center}
+.zones{display:inline-flex;flex-wrap:wrap;background:var(--white);border:1px solid var(--line);border-radius:999px;padding:6px;gap:4px;margin-bottom:clamp(24px,4vw,36px);box-shadow:0 10px 30px -18px rgba(30,33,30,.35)}
+.zone{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 8px;border-radius:999px;font-size:.88rem;font-weight:500}
+.zone b{display:grid;place-items:center;min-width:38px;height:38px;border-radius:50%;background:var(--ink);color:var(--white);font-weight:600;font-size:.86rem;letter-spacing:.02em}
+.zone:nth-child(2) b{background:var(--sage-deep)}
+.zone:nth-child(3) b{background:var(--sage);color:var(--ink)}
+.hero h1{font-size:clamp(2.1rem,4.4vw,3.85rem);perspective:800px}
+.hero .types{margin-top:24px;font-size:1.06rem;color:var(--ink-soft);max-width:46ch}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero-media{position:relative}
+.hero-caption{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:14px;font-size:.88rem;color:var(--ink-soft)}
+.hero-caption b{color:var(--ink);font-weight:600}
+.hero-caption .see{display:inline-flex;align-items:center;gap:8px;min-height:44px;text-decoration:none;color:var(--ink)}
+.hero-caption .see svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;transition:transform .3s var(--ease)}
+.hero-caption .see:hover svg{transform:translateX(3px)}
+.drag-hint{white-space:nowrap}
+.hero-caption .see:hover b{text-decoration:underline}
+.drag-hint{display:inline-flex;align-items:center;gap:8px}
+.drag-hint svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8}
+@media (max-width:520px){.zones{display:flex;flex-wrap:nowrap;justify-content:space-between;width:100%}.zone{padding:5px 10px 5px 5px;gap:8px;font-size:.82rem}.zone b{min-width:32px;height:32px;font-size:.78rem}.hero-caption{font-size:.8rem}.hero-caption>span{white-space:nowrap}.drag-hint{display:none!important}.quote .mark{display:none}}
+@media (max-width:900px){.hero-grid{grid-template-columns:minmax(0,1fr)}.hero::after{width:90%;right:-40%;top:-10%}}
+
+/* avant / en cours */
+.ba{position:relative;aspect-ratio:700/760;max-width:100%;border-radius:var(--r);overflow:hidden;background:var(--stone);touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:ew-resize;--pos:50%;box-shadow:0 40px 80px -40px rgba(30,33,30,.45)}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none;pointer-events:none}
+.ba .before{clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
+.ba .split{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;margin-left:-1px;background:var(--white);pointer-events:none}
+.ba .knob{position:absolute;top:50%;left:var(--pos);width:52px;height:52px;margin:-26px 0 0 -26px;border-radius:50%;border:0;background:var(--white);display:grid;place-items:center;cursor:ew-resize;box-shadow:0 8px 24px rgba(30,33,30,.3);transition:transform .25s var(--ease)}
+.ba .knob:hover{transform:scale(1.08)}
+.ba .knob svg{width:24px;height:24px;fill:none;stroke:var(--ink);stroke-width:2}
+.ba .tag{position:absolute;top:14px;padding:6px 12px;border-radius:999px;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;pointer-events:none}
+.ba .tag-b{left:14px;background:var(--ink);color:var(--white)}
+.ba .tag-a{right:14px;background:var(--sage);color:var(--ink)}
+
+/* citation */
+.quote{background:var(--sage);padding-block:clamp(64px,9vw,112px);position:relative;overflow:hidden}
+.quote .mark{position:absolute;right:max(var(--gutter),calc((100% - var(--max))/2));top:50%;width:min(34vw,380px);transform:translateY(-50%);opacity:.22;pointer-events:none}
+.quote blockquote{margin:0;position:relative;font-size:clamp(1.6rem,4vw,3.2rem);font-weight:600;letter-spacing:-.02em;line-height:1.15;max-width:22ch}
+.quote .q{color:var(--white)}
+
+/* prestations : onglets sur ordinateur, accordéon sur mobile */
+.presta{background:var(--white)}
+.tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:28px}
+.tab{display:flex;align-items:center;gap:12px;min-height:58px;padding:10px 16px 10px 10px;border-radius:999px;border:1px solid var(--line);background:var(--paper);cursor:pointer;font-weight:500;text-align:left;line-height:1.3;transition:background .3s,color .3s,border-color .3s}
+.tab .n,.acc-head .n{position:relative;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--white);font-weight:600;font-size:.9rem;flex:none;transition:background .3s,color .3s}
+.tab .n::before{content:"";position:absolute;inset:-5px;border-radius:50%;background:conic-gradient(var(--sage) calc(var(--p,0) * 360deg),transparent 0);-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 2.5px));mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 2.5px))}
+.tab .go{margin-left:auto;display:grid;place-items:center;width:28px;height:28px;flex:none;border-radius:50%;opacity:.5;transition:opacity .3s,transform .3s var(--ease)}
+.tab .go svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2}
+.tab[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:var(--white)}
+.tab[aria-selected="true"] .n{background:var(--sage);color:var(--ink)}
+.tab[aria-selected="true"] .go{visibility:hidden}
+.tab:not([aria-selected="true"]):hover{background:var(--sage-tint)}
+.tab:hover .go,.tab.nudge .go{opacity:1}
+.tab:hover .go{transform:translateX(3px)}
+.acc-head{display:none}
+.panel{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
+.panel-media{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:16/11;background:var(--stone)}
+.panel-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none}
+.panel-media .chip{position:absolute;left:14px;bottom:14px;padding:6px 14px;border-radius:999px;background:var(--white);font-size:.78rem;font-weight:600;z-index:1}
+.panel-body{display:grid;gap:16px}
+.panel-body h3{font-size:clamp(1.5rem,2.6vw,2.1rem)}
+.panel-body p{color:var(--ink-soft)}
+.panel-body .lead{color:var(--ink);font-weight:500}
+.checks{list-style:none;margin:4px 0 0;padding:0;display:grid}
+.checks li{display:flex;gap:14px;align-items:center;padding:13px 0;border-top:1px solid var(--line);font-weight:500}
+.checks li:last-child{border-bottom:1px solid var(--line)}
+.checks li::before{content:"";flex:none;width:24px;height:24px;border-radius:50%;background:var(--sage) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231e211e' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/14px no-repeat}
+.next-step{justify-self:start;display:inline-flex;align-items:center;gap:16px;margin-top:6px;min-height:56px;padding:8px 8px 8px 22px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;cursor:pointer;text-align:left;text-decoration:none;font-weight:600;font-size:.95rem;line-height:1.25;transition:background .3s,color .3s}
+.next-step small{display:block;font-size:.7rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;opacity:.6;margin-bottom:2px}
+.next-step:hover{background:var(--ink);color:var(--white)}
+.next-step .arr{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--sage);color:var(--ink);animation:poke 1.8s var(--ease) infinite}
+.next-step .arr svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2}
+.next-step:hover .arr{animation:none}
+@keyframes poke{0%,60%,100%{transform:translateX(0)}30%{transform:translateX(5px)}}
+
+@media (max-width:900px){
+  .tabs{display:none}
+  .steps{display:grid;gap:10px}
+  .step{border:1px solid var(--line);border-radius:18px;background:var(--paper);overflow:hidden;transition:background .3s,border-color .3s}
+  .step.is-open{background:var(--white);border-color:var(--ink)}
+  .acc-head{display:flex;align-items:center;gap:14px;width:100%;min-height:64px;padding:12px 14px;border:0;background:none;cursor:pointer;text-align:left;font-weight:600;font-size:1rem;line-height:1.3}
+  .acc-head .t{flex:1;min-width:0}
+  .step.is-open .acc-head .n{background:var(--ink);color:var(--white)}
+  .acc-head .chev{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--white);transition:transform .35s var(--ease),background .3s}
+  .step.is-open .acc-head .chev{transform:rotate(180deg);background:var(--sage)}
+  .acc-head .chev svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2}
+  .panel{grid-template-columns:minmax(0,1fr);gap:18px;padding:0 14px 18px}
+  .panel-media{aspect-ratio:16/9;border-radius:14px}
+  .panel-body h3{display:none}
+  .next-step{width:100%;justify-content:space-between}
+}
+
+/* réalisations */
+.works{background:var(--ink);color:var(--white)}
+.works .eyebrow{color:var(--sage)}
+.project{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(28px,5vw,64px);align-items:start}
+.project+.project{margin-top:clamp(40px,6vw,72px);padding-top:clamp(40px,6vw,72px);border-top:1px solid rgba(255,255,255,.12)}
+.project--video{align-items:center}
+.switch-wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;margin-bottom:14px}
+.switch{display:flex;gap:6px;padding:5px;border-radius:999px;background:rgba(255,255,255,.07)}
+.switch button{position:relative;overflow:hidden;min-height:44px;padding:0 18px;border-radius:999px;border:0;background:transparent;color:rgba(255,255,255,.8);cursor:pointer;font-weight:500;font-size:.92rem;transition:background .3s,color .3s}
+.switch button .bar{position:absolute;left:14px;right:14px;bottom:6px;height:2px;border-radius:2px;background:var(--ink);transform:scaleX(var(--p,0));transform-origin:left}
+.switch button[aria-pressed="true"]{background:var(--sage);color:var(--ink)}
+.switch button:not([aria-pressed="true"]):hover{color:var(--white);background:rgba(255,255,255,.08)}
+.switch-hint{font-size:.82rem;color:rgba(255,255,255,.6);display:inline-flex;align-items:center;gap:8px}
+.switch-hint svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2}
+.stage{position:relative}
+.works .ba{box-shadow:none}
+.int{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;aspect-ratio:700/749;max-width:100%}
+.int-col{position:relative;display:grid;gap:8px;min-height:0}
+.int .tag{position:absolute;top:12px;padding:6px 12px;border-radius:999px;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;pointer-events:none}
+.int .tag-b{left:12px;background:var(--white);color:var(--ink)}
+.int .tag-a{left:12px;background:var(--sage);color:var(--ink)}
+.g{position:relative;display:block;width:100%;height:100%;min-height:0;border:0;padding:0;border-radius:14px;overflow:hidden;cursor:zoom-in;background:#2b2f2b}
+.g img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none;transition:transform .7s var(--ease)}
+.g:hover img{transform:scale(1.05)}
+.g .zoom{position:absolute;right:10px;bottom:10px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;transition:transform .3s var(--ease)}
+.g:hover .zoom{transform:scale(1.1)}
+.g .zoom svg{width:18px;height:18px;fill:none;stroke:var(--ink);stroke-width:2}
+.post{display:grid;gap:16px;align-content:start}
+.p-tag{justify-self:start;padding:6px 12px;border-radius:999px;border:1px solid rgba(136,172,136,.5);color:var(--sage);font-size:.74rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase}
+.post h3{font-size:clamp(1.5rem,2.6vw,2.1rem)}
+.post .intro{color:rgba(255,255,255,.78);font-size:1.02rem}
+.post ul{list-style:none;margin:0;padding:0;display:grid}
+.post li{display:flex;gap:14px;padding:12px 0;border-top:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.88)}
+.post li::before{content:"";flex:none;width:8px;height:8px;margin-top:10px;border-radius:2px;background:var(--sage);transform:rotate(45deg)}
+.post .next{padding:14px 16px;border-radius:var(--r-sm);background:rgba(136,172,136,.14);border:1px solid rgba(136,172,136,.35)}
+.post .next b{color:var(--sage);font-weight:600}
+.post .credit{color:rgba(255,255,255,.6);font-size:.92rem}
+.video{position:relative;display:block;border-radius:var(--r);overflow:hidden;aspect-ratio:16/9;background:#2b2f2b}
+.video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none;background:#2b2f2b}
+.video.is-playing video{object-fit:contain;background:#000}
+.video.is-playing .play,.video.is-playing .tag,.video.is-playing .dur{display:none}
+.video .dur{position:absolute;right:14px;bottom:14px;padding:5px 10px;border-radius:999px;background:rgba(0,0,0,.6);color:#fff;font-size:.78rem;font-weight:500;font-variant-numeric:tabular-nums}
+.video .play{position:absolute;left:50%;top:50%;width:76px;height:76px;margin:-38px 0 0 -38px;border:0;cursor:pointer;border-radius:50%;background:var(--white);display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:transform .3s var(--ease)}
+.video .play:hover{transform:scale(1.08)}
+.video .play svg{width:28px;height:28px;fill:var(--ink);margin-left:4px}
+.video .tag{position:absolute;left:14px;top:14px;padding:6px 12px;border-radius:999px;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;background:var(--sage);color:var(--ink)}
+.fb-link{justify-self:start;display:inline-flex;align-items:center;gap:8px;min-height:44px;color:var(--sage);font-weight:600;text-decoration:none;border-bottom:1px solid transparent}
+.fb-link:hover{border-bottom-color:currentColor}
+.fb-link svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2}
+@media (max-width:900px){.project{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:520px){.switch{width:100%}.switch button{flex:1;padding:0 8px}.switch-hint{width:100%;justify-content:center}.g .zoom{width:32px;height:32px;right:8px;bottom:8px}.int .tag{top:8px;font-size:.62rem;padding:4px 8px}.int .tag-b,.int .tag-a{left:8px}}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:100;background:#121412;display:grid;grid-template-rows:auto 1fr auto;padding:calc(env(safe-area-inset-top,0px) + 12px) 12px calc(env(safe-area-inset-bottom,0px) + 16px);color:var(--white)}
+.lb-top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:4px 4px 8px}
+.lb-count{font-size:.88rem;font-variant-numeric:tabular-nums;color:rgba(255,255,255,.7)}
+.lb-btn{width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:var(--white);display:grid;place-items:center;cursor:pointer;transition:background .25s}
+.lb-btn:hover{background:rgba(255,255,255,.18)}
+.lb-btn svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2}
+.lb-stage{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:12px;min-height:0;touch-action:pan-y}
+.lb-stage figure{margin:0;height:100%;min-height:0;display:grid;place-items:center}
+.lb-stage img{max-width:100%;max-height:100%;object-fit:contain;border-radius:10px;user-select:none;-webkit-user-drag:none}
+.lb-cap{display:flex;justify-content:center;align-items:center;gap:10px;padding-top:12px;font-size:.95rem}
+.lb-cap .t{padding:4px 10px;border-radius:999px;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--white);color:var(--ink)}
+.lb-cap .t.en{background:var(--sage)}
+.lb-thumbs{display:flex;justify-content:center;gap:6px;padding-top:12px;overflow-x:auto;scrollbar-width:none}
+.lb-thumbs button{flex:none;width:52px;height:52px;padding:0;border:2px solid transparent;border-radius:8px;overflow:hidden;background:none;cursor:pointer;opacity:.5;transition:opacity .25s,border-color .25s}
+.lb-thumbs button[aria-current="true"]{opacity:1;border-color:var(--sage)}
+.lb-thumbs img{width:100%;height:100%;object-fit:cover}
+@media (max-width:640px){.lb-stage{grid-template-columns:minmax(0,1fr)}.lb-stage .lb-btn{position:absolute;bottom:-4px;z-index:1}.lb-prev{left:4px}.lb-next{right:4px}.lb-cap{padding-inline:60px;text-align:center;flex-wrap:wrap}.lb-thumbs{display:none}}
+
+/* à propos */
+.about{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,6vw,80px);align-items:center}
+.portrait{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;background:var(--stone)}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:20% 50%;max-width:none}
+.portrait .name{position:absolute;left:14px;right:14px;bottom:14px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border-radius:var(--r-sm);background:rgba(255,255,255,.94);backdrop-filter:blur(6px)}
+.portrait .name b{font-weight:600}
+.portrait .name img{position:static;width:46px;height:auto}
+.about-body{display:grid;gap:20px}
+.about-body h2{font-size:clamp(1.75rem,3.4vw,2.8rem)}
+.about-body p{color:var(--ink-soft);font-size:1.02rem;max-width:62ch}
+.about-body p strong{color:var(--ink);font-weight:600}
+.depts{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:10px}
+.dept{flex:1 1 0;min-width:96px;max-width:180px;display:grid;justify-items:center;gap:6px;text-align:center;padding:20px 12px 18px;border-radius:16px;background:var(--sage);transition:background .3s,color .3s,transform .3s var(--ease)}
+.dept:hover{background:var(--sage-deep);color:var(--white);transform:translateY(-4px)}
+.dept svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8}
+.dept b{display:block;font-size:clamp(2.2rem,4vw,3rem);font-weight:700;line-height:1;letter-spacing:-.02em}
+.dept span{display:block;font-weight:500;font-size:.9rem}
+@media (max-width:900px){.about{grid-template-columns:minmax(0,1fr)}.portrait{aspect-ratio:4/3.4}}
+
+/* contact */
+.contact{background:var(--stone)}
+.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:stretch}
+.form-card{display:flex;flex-direction:column}
+.form-card form{flex:1;grid-template-rows:auto auto auto auto 1fr auto}
+.field.grow{grid-template-rows:auto 1fr}
+.field.grow textarea{height:100%;min-height:130px}
+.contact-info{display:grid;gap:22px}
+.contact-info h2{font-size:clamp(2rem,3.6vw,3rem)}
+.contact-info .intro{color:var(--ink-soft);font-size:1.02rem;max-width:46ch}
+.contact-info .intro strong{color:var(--ink);font-weight:600}
+.coords{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.coords li{display:grid;grid-template-columns:46px minmax(0,1fr);gap:16px;align-items:center;padding:16px 18px;border-radius:var(--r-sm);background:var(--paper)}
+.coords .ico{width:46px;height:46px;border-radius:50%;background:var(--white);display:grid;place-items:center;color:var(--sage-deep)}
+.coords .ico svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8}
+.coords .lbl{display:block;font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:2px}
+.coords .val{display:block;font-weight:500;line-height:1.55;overflow-wrap:anywhere;text-decoration:none}
+.coords .val.big{font-size:clamp(1.3rem,2.6vw,1.6rem);font-weight:600;letter-spacing:-.01em}
+.coords a.val:hover{color:var(--sage-deep)}
+.hours{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 20px;margin-top:6px}
+.h-row{display:grid;gap:1px}
+.h-row span{font-size:.86rem;color:var(--ink-soft)}
+.h-row b{font-weight:600;font-size:1.02rem;white-space:nowrap}
+@media (max-width:520px){.hours{grid-template-columns:minmax(0,1fr)}.h-row+.h-row{padding-top:10px;border-top:1px dashed var(--line)}}
+@media (max-width:520px){.coords li{grid-template-columns:38px minmax(0,1fr);gap:12px;padding:14px}.coords .ico{width:38px;height:38px}.coords .ico svg{width:18px;height:18px}}
+.free{line-height:1.4;display:inline-flex;align-items:center;gap:10px;justify-self:start;padding:10px 16px;border-radius:999px;background:var(--sage);font-weight:500;font-size:.92rem}
+.free svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8}
+.form-card{background:var(--white);border-radius:var(--r);padding:clamp(22px,3.4vw,40px)}
+form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 14px}
+.field{display:grid;gap:8px;min-width:0}
+.field.full,.group{grid-column:1/-1}
+.group{font-weight:600;margin-bottom:-6px}
+.field label{font-size:.86rem;font-weight:500}
+.field label small{font-weight:400;color:var(--ink-soft)}
+.field input,.field textarea{width:100%;font:inherit;font-size:1rem;color:var(--ink);background:var(--paper);border:1.5px solid transparent;border-radius:var(--r-sm);padding:13px 16px;transition:border-color .25s,background .25s}
+.field textarea{min-height:130px;resize:vertical}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--sage-deep);background:var(--white)}
+.field input[aria-invalid="true"],.field textarea[aria-invalid="true"]{border-color:#b3261e}
+.form-foot{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px}
+.form-status{font-size:.9rem;color:var(--ink-soft)}
+@media (max-width:900px){.contact-grid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:540px){form{grid-template-columns:minmax(0,1fr)}}
+
+/* footer */
+footer{background:var(--sage);color:var(--ink);padding-block:clamp(48px,7vw,80px) 28px}
+.foot{display:grid;grid-template-columns:minmax(0,1fr) auto auto auto;gap:32px clamp(32px,5vw,64px);align-items:start}
+.nw{white-space:nowrap}
+@media (min-width:521px){.nw-d{white-space:nowrap}}
+.foot-logo{width:min(100%,300px)}
+.foot h4{margin:0 0 10px;font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+.foot p{font-size:.92rem;line-height:1.75}
+.foot a{text-decoration:none;border-bottom:1px solid currentColor}
+.legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;margin-top:clamp(36px,5vw,56px);padding-top:18px;border-top:1px solid rgba(30,33,30,.2);font-size:.84rem}
+@media (max-width:900px){.foot{grid-template-columns:repeat(2,minmax(0,1fr))}.foot>div:first-child{grid-column:1/-1}}
+@media (max-width:420px){.foot{grid-template-columns:minmax(0,1fr)}}
+
+@media (max-width:640px){.sec{padding-block:56px}.free{border-radius:14px}.hero-actions .btn{width:100%}}
+.js-rv [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js-rv [data-reveal].in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*,*::before{transition-duration:.01ms!important}.next-step .arr{animation:none}}
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+
+<header class="header" id="hdr">
+  <div class="wrap">
+    <a class="brand" href="#accueil" data-goto="#accueil" aria-label="HK Conseil, retour en haut de page">
+      <img src="img/logo-mark-ink.webp" alt="" width="200" height="122">
+      <span class="brand-txt"><b>HK CONSEIL</b><small>Études &amp; Solutions Travaux</small></span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#prestations" data-goto="#prestations">Prestations</a>
+      <a href="#realisations" data-goto="#realisations">Réalisations</a>
+      <a href="#apropos" data-goto="#apropos">A propos</a>
+      <a class="btn btn--sage" href="#contact" data-goto="#contact">Contact</a>
+    </nav>
+    <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <nav aria-label="Menu">
+    <a href="#prestations" data-goto="#prestations">Prestations <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a href="#realisations" data-goto="#realisations">Réalisations <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a href="#apropos" data-goto="#apropos">A propos <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a href="#contact" data-goto="#contact">Contact <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </nav>
+  <div class="menu-foot">
+    <img src="img/logo-mark-ink.webp" alt="" width="200" height="122">
+    <span>Jordan Peltier</span>
+    <span>06.72.25.56.39</span>
+    <span>contact@hk-conseil.com</span>
+  </div>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photos du chantier" hidden>
+  <div class="lb-top">
+    <span class="lb-count" id="lb-count">1 / 9</span>
+    <button class="lb-btn" id="lb-close" type="button" aria-label="Fermer"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="lb-stage" id="lb-stage">
+    <button class="lb-btn lb-prev" id="lb-prev" type="button" aria-label="Photo précédente"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+    <figure><img id="lb-img" src="img/facade-encours.webp" alt=""></figure>
+    <button class="lb-btn lb-next" id="lb-next" type="button" aria-label="Photo suivante"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+  </div>
+  <div>
+    <div class="lb-cap"><span class="t" id="lb-tag">Avant</span><span id="lb-cap">Façade</span></div>
+    <div class="lb-thumbs" id="lb-thumbs"></div>
+  </div>
+</div>
+
+<div id="smooth-wrapper">
+<div id="smooth-content">
+<main>
+
+<section class="hero" id="accueil">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="zones" aria-label="Zone d’intervention">
+        <span class="zone"><b>53</b>Mayenne</span>
+        <span class="zone"><b>61</b>Orne</span>
+        <span class="zone"><b>72</b>Sarthe</span>
+      </div>
+      <h1 class="split">HK Conseil : votre partenaire pour vos <span class="hl">Projets de Constructions et Rénovations</span></h1>
+      <p class="types" data-hero>Maison individuelle, appartement, longère, gîte, location, bâtiment professionnel…</p>
+      <div class="hero-actions" data-hero>
+        <a class="btn btn--sage" href="#contact" data-goto="#contact">Contactez-nous ! <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn" href="tel:+33672255639">06.72.25.56.39</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <div class="ba" id="ba-hero" data-ba>
+        <img class="after" src="img/facade-encours.webp" alt="Façade de la longère en cours de rénovation, ouvertures en granit" width="701" height="760">
+        <img class="before" src="img/facade-avant.webp" alt="Façade de la longère avant les travaux" width="700" height="760">
+        <span class="tag tag-b">Avant</span><span class="tag tag-a">En cours</span>
+        <span class="split"></span>
+        <button class="knob" type="button" role="slider" aria-label="Comparer avant et en cours" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><svg viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg></button>
+      </div>
+      <div class="hero-caption"><a class="see" href="#realisations" data-goto="#realisations"><b>Rénovation d’une longère</b><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><span class="drag-hint"><svg viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg>Glissez pour comparer</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="quote" aria-label="Notre engagement">
+  <img class="mark" src="img/logo-mark-white.webp" alt="" width="200" height="122">
+  <div class="wrap">
+    <blockquote class="split-words"><span class="q">“</span>Une maitrise d’œuvre de qualité, connectée à la réalité, pour un projet optimisé<span class="q">”</span></blockquote>
+  </div>
+</section>
+
+<section class="sec presta" id="prestations">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow">Prestations</span>
+      <h2>Nos prestations d’accompagnement à la carte : <span class="hl">Etudes, Solutions travaux et Maîtrise d’ouvrage</span></h2>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Étapes des prestations" data-reveal>
+      <button class="tab" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true"><span class="n">1</span>Etudes Préalables<span class="go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span></button>
+      <button class="tab" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1"><span class="n">2</span>Plans &amp; Autorisations d’urbanisme<span class="go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span></button>
+      <button class="tab" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" tabindex="-1"><span class="n">3</span>Réalisation du projet<span class="go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span></button>
+    </div>
+
+    <div class="steps" data-reveal>
+      <div class="step is-open">
+        <button class="acc-head" type="button" aria-expanded="true" aria-controls="panel-1"><span class="n">1</span><span class="t">Etudes Préalables</span><span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></button>
+        <div class="panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+          <div class="panel-media"><img src="img/etudes.webp" alt="Plan dessiné à la main sur une table, avec règle et rouleau de calque" width="811" height="507"><span class="chip">Étape 1</span></div>
+          <div class="panel-body">
+          <h3>Etudes Préalables</h3>
+          <p>Qu’il s’agisse de réhabilitation, de rénovation ou de construction neuve, chaque projet peut nécessiter diverses études préalables afin de répondre à vos critères, vos souhaits et votre budget. HK Conseil assure également la conformité du projet avec la règlementation et les contraintes potentielles.</p>
+          <ul class="checks">
+            <li>Études de faisabilité &amp; Diagnostic</li>
+            <li>Études de conception &amp; Avant-projet</li>
+            <li>Études Budgétaires</li>
+          </ul>
+          <button class="next-step" type="button" data-step="1"><span><small>Étape suivante</small>Plans &amp; Autorisations d’urbanisme</span><span class="arr"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <button class="acc-head" type="button" aria-expanded="false" aria-controls="panel-2"><span class="n">2</span><span class="t">Plans &amp; Autorisations d’urbanisme</span><span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></button>
+        <div class="panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
+          <div class="panel-media"><img src="img/plans.webp" alt="Liasse de plans de maison avec cartouche, posée sur une table" width="912" height="570"><span class="chip">Étape 2</span></div>
+          <div class="panel-body">
+          <h3>Plans &amp; Autorisations d’urbanisme</h3>
+          <p>Lorsque vous réalisez une opération de travaux, celle-ci peut être soumise à la demande d’une autorisation d’urbanisme. Ces demandes administratives doivent être accompagnées de plans particuliers comprenant des informations réglementaires (plan de masse, plan de situation…).</p>
+          <p class="lead">HK Conseil vous accompagne et réalise pour vous :</p>
+          <ul class="checks">
+            <li>Plans de projet</li>
+            <li>Permis de construire</li>
+            <li>Déclaration préalable</li>
+          </ul>
+          <button class="next-step" type="button" data-step="2"><span><small>Étape suivante</small>Réalisation du projet</span><span class="arr"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <button class="acc-head" type="button" aria-expanded="false" aria-controls="panel-3"><span class="n">3</span><span class="t">Réalisation du projet</span><span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></button>
+        <div class="panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
+          <div class="panel-media"><img src="img/realisation.webp" alt="Intérieur en chantier avec étais, banches et échafaudages" width="912" height="570"><span class="chip">Étape 3</span></div>
+          <div class="panel-body">
+          <h3>Réalisation du projet</h3>
+          <p class="lead">C’est le moment de concrétiser votre projet !</p>
+          <p>HK Conseil assure un suivi personnalisé selon vos besoins de l’appel d’offre à la réception des travaux :</p>
+          <ul class="checks">
+            <li>Consultation des entreprises &amp; Analyse des offres</li>
+            <li>Planning &amp; Organisation du chantier</li>
+            <li>Suivi des travaux &amp; Comptes-rendus</li>
+            <li>Assistance aux opérations de réception</li>
+          </ul>
+          <a class="next-step" href="#contact" data-goto="#contact"><span><small>Un projet ?</small>Contactez-nous !</span><span class="arr"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec works" id="realisations">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow">Réalisations</span>
+      <h2>Les chantiers HK Conseil</h2>
+    </div>
+
+    <article class="project" data-reveal>
+      <div class="project-viewer">
+        <div class="switch-wrap">
+          <div class="switch" role="group" aria-label="Choisir la partie du chantier">
+            <button type="button" aria-pressed="true" data-type="ba" data-before="img/pignon-avant.webp" data-after="img/pignon-encours.webp" data-ab="Pignon de la longère avant les travaux" data-aa="Pignon en cours de rénovation, sous échafaudage">Pignon<span class="bar"></span></button>
+            <button type="button" aria-pressed="false" data-type="ba" data-before="img/grange-avant.webp" data-after="img/grange-encours.webp" data-ab="Intérieur de la grange avant les travaux" data-aa="Grange en cours, murs en parpaing de séparation">Grange<span class="bar"></span></button>
+            <button type="button" aria-pressed="false" data-type="int">Intérieur<span class="bar"></span></button>
+          </div>
+          <span class="switch-hint" id="switch-hint"><svg viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg><span>Glissez pour comparer</span></span>
+        </div>
+        <div class="stage">
+          <div class="ba" id="ba-works" data-ba>
+            <img class="after" src="img/pignon-encours.webp" alt="Pignon en cours de rénovation, sous échafaudage" width="700" height="749" loading="lazy">
+            <img class="before" src="img/pignon-avant.webp" alt="Pignon de la longère avant les travaux" width="701" height="749" loading="lazy">
+            <span class="tag tag-b">Avant</span><span class="tag tag-a">En cours</span>
+            <span class="split"></span>
+            <button class="knob" type="button" role="slider" aria-label="Comparer avant et en cours" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><svg viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg></button>
+          </div>
+          <div class="int" id="int-view" hidden>
+            <div class="int-col">
+              <button class="g" type="button" data-i="0"><img src="img/interieur-avant-1.webp" alt="" loading="lazy" width="468" height="482"><span class="tag tag-b">Avant</span><span class="zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5M11 8v6M8 11h6"/></svg></span></button>
+              <button class="g" type="button" data-i="1"><img src="img/interieur-avant-2.webp" alt="" loading="lazy" width="458" height="482"><span class="tag tag-b">Avant</span><span class="zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5M11 8v6M8 11h6"/></svg></span></button>
+            </div>
+            <div class="int-col">
+              <button class="g" type="button" data-i="2"><img src="img/interieur-encours.webp" alt="" loading="lazy" width="462" height="482"><span class="tag tag-a">En cours</span><span class="zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5M11 8v6M8 11h6"/></svg></span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="post">
+        <span class="p-tag">Chantier en cours · Longère</span>
+        <h3>Rénovation d’une longère</h3>
+        <p class="intro">Un beau chantier qui avance pour la rénovation de cette longère !</p>
+        <ul>
+          <li>Démolition des planchers</li>
+          <li>Modification et création d’ouvertures extérieures en pierre de granit local</li>
+          <li>Création d’une ouverture intérieure</li>
+          <li>Construction de murs en parpaing pour la séparation du bâtiment principal</li>
+        </ul>
+        <p class="next"><b>À venir :</b> création des réseaux enterrés et réalisation des dalles de plancher.</p>
+        <p class="credit">On avance bien, maçonnerie réalisé ici par l’entreprise Berson Batiment</p>
+      </div>
+    </article>
+
+    <article class="project project--video" data-reveal>
+      <div class="video" id="video-trans">
+        <video src="img/trans-3d.mp4" poster="img/trans-poster.webp" preload="none" playsinline muted width="1280" height="720" aria-label="Visite 3D de la maison de bourg rénovée"></video>
+        <button class="play" type="button" aria-label="Lire la vidéo de la conception 3D"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></button>
+        <span class="tag tag-a">Conception 3D</span>
+        <span class="dur">2 min 26</span>
+      </div>
+      <div class="post">
+        <span class="p-tag">Projet · Trans</span>
+        <h3>Rénovation complète d’une maison de bourg</h3>
+        <p class="intro">La conception 3D pour visualiser, représenter les volumes et s’immerger au coeur du projet fini. Simple et efficace elle est un vrai atout pour tout les acteurs du projet.</p>
+
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="sec" id="apropos">
+  <div class="wrap about">
+    <div class="portrait" data-reveal>
+      <img src="img/jordan.webp" alt="Jordan Peltier à son bureau, devant un plan et une modélisation 3D" width="870" height="721" loading="lazy">
+      <div class="name"><b>Jordan Peltier</b><img src="img/logo-mark-ink.webp" alt="" width="200" height="122"></div>
+    </div>
+    <div class="about-body" data-reveal>
+      <span class="eyebrow">A propos</span>
+      <h2>HK Conseil vous accompagne dans vos projets travaux</h2>
+      <p>Après <strong>15 années d’expériences</strong> dans divers domaines liés à construction/rénovation, Jordan Peltier met ses connaissances à votre service pour faciliter vos projets de rénovation, extension ou construction, par une maîtrise d’œuvre proche du terrain et connectée à la réalité.</p>
+      <p><strong>Que ce soit pour des conseils avant l’achat d’un bien / terrain, un projet de rénovation par vos soins ou par des artisans, ou pour un accompagnement total de maître d’œuvre,</strong> HK Conseil travaille en étroite collaboration avec des partenaires sélectionnés (bureaux d’études, architectes…) pour répondre à l’ensemble de vos projets.</p>
+      <p>Nous nous déplaçons en Mayenne (53), Orne (61) et Sarthe (72).</p>
+      <div class="depts">
+        <div class="dept"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><b>53</b><span>Mayenne</span></div>
+        <div class="dept"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><b>61</b><span>Orne</span></div>
+        <div class="dept"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><b>72</b><span>Sarthe</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-info" data-reveal>
+      <span class="eyebrow">Contact</span>
+      <h2>Contactez‑nous&nbsp;!</h2>
+      <p class="intro">Pour en savoir plus sur nos prestations travaux et maîtrise d’ouvrage, <strong>contactez Jordan Peltier</strong> par téléphone, email ou via le formulaire ci-après.</p>
+      <ul class="coords">
+        <li><span class="ico"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span><div><span class="lbl">Téléphone · Jordan Peltier</span><a class="val big" href="tel:+33672255639">06.72.25.56.39</a></div></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><div><span class="lbl">Email</span><a class="val" href="mailto:contact@hk-conseil.com">contact@hk-conseil.com</a></div></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><span class="lbl">Adresse</span><span class="val"><span class="nw-d">17 boulevard du Général de Gaulle</span><br>53700 Villaines-la-Juhel</span></div></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><span class="lbl">Horaires de contact</span><div class="hours"><div class="h-row"><span>Du lundi au vendredi</span><b>8h30 à 18h30</b></div><div class="h-row"><span>Samedi</span><b>9h à 12h30</b></div></div></div></li>
+      </ul>
+      <span class="free"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Rendez-vous et devis gratuit sans engagement.</span>
+    </div>
+
+    <div class="form-card" data-reveal>
+      <form id="contact-form" novalidate>
+        <span class="group">Nom</span>
+        <div class="field"><label for="f-prenom">Prénom <small>(obligatoire)</small></label><input id="f-prenom" name="prenom" autocomplete="given-name" required></div>
+        <div class="field"><label for="f-nom">Nom de famille <small>(obligatoire)</small></label><input id="f-nom" name="nom" autocomplete="family-name" required></div>
+        <div class="field"><label for="f-email">E-mail <small>(obligatoire)</small></label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="f-tel">Téléphone <small>(obligatoire)</small></label><input id="f-tel" name="tel" type="tel" autocomplete="tel" required></div>
+        <div class="field full"><label for="f-lieu">Localisation du projet <small>(obligatoire)</small></label><input id="f-lieu" name="lieu" placeholder="Ville, département..." required></div>
+        <div class="field full grow"><label for="f-msg">Message <small>(obligatoire)</small></label><textarea id="f-msg" name="message" required></textarea></div>
+        <div class="form-foot">
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          <button class="btn btn--sage" type="submit">Envoyer <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><img class="foot-logo" src="img/logo-full.webp" alt="HK Conseil, Études et Solutions Travaux" width="720" height="340" loading="lazy"></div>
+      <div><h4>HK Conseil</h4><p><span class="nw">17 boulevard du Général de Gaulle</span><br>53700 Villaines-la-Juhel</p><p style="margin-top:10px">Jordan Peltier<br>contact@hk-conseil.com<br>06.72.25.56.39</p></div>
+      <div><h4>Horaires de contact</h4><p>Du lundi au vendredi<br>8h30 à 18h30</p><p style="margin-top:10px">Samedi<br>9h à 12h30</p></div>
+      <div><h4>Nous suivre</h4><p><a href="https://www.facebook.com/profile.php?id=61573998110466" target="_blank" rel="noopener">Facebook</a></p></div>
+    </div>
+    <div class="legal"><span>Mentions légales - Politique de confidentialité - CGV</span><span>Site réalisé par Stena Web</span></div>
+  </div>
+</footer>
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollSmoother.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollToPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
+<script>
+(function(){
+  var G=window.gsap, reduce=matchMedia('(prefers-reduced-motion: reduce)').matches, smoother=null;
+
+  /* ---------- avant / en cours ---------- */
+  function initBA(el){
+    var knob=el.querySelector('.knob'), dragging=false;
+    function set(p){p=Math.max(0,Math.min(100,p));el.style.setProperty('--pos',p+'%');knob.setAttribute('aria-valuenow',Math.round(p));el._pos=p;}
+    function fromEvent(e){var r=el.getBoundingClientRect();return (e.clientX-r.left)/r.width*100;}
+    el.addEventListener('pointerdown',function(e){dragging=true;el.setPointerCapture(e.pointerId);if(el._tw)el._tw.kill();set(fromEvent(e));});
+    el.addEventListener('pointermove',function(e){if(dragging)set(fromEvent(e));});
+    ['pointerup','pointercancel','lostpointercapture'].forEach(function(t){el.addEventListener(t,function(){dragging=false;});});
+    knob.addEventListener('keydown',function(e){
+      var p=el._pos==null?50:el._pos;
+      if(e.key==='ArrowLeft'||e.key==='ArrowDown'){e.preventDefault();set(p-5);}
+      if(e.key==='ArrowRight'||e.key==='ArrowUp'){e.preventDefault();set(p+5);}
+      if(e.key==='Home'){e.preventDefault();set(0);} if(e.key==='End'){e.preventDefault();set(100);}
+    });
+    el._set=set;set(50);
+    el._sweep=function(){
+      if(!G||reduce)return;
+      var o={p:50};
+      el._tw=G.timeline().to(o,{p:78,duration:.9,ease:'power2.inOut',onUpdate:function(){set(o.p);}})
+        .to(o,{p:24,duration:1.1,ease:'power2.inOut',onUpdate:function(){set(o.p);}})
+        .to(o,{p:50,duration:.8,ease:'power2.out',onUpdate:function(){set(o.p);}});
+    };
+  }
+  document.querySelectorAll('[data-ba]').forEach(initBA);
+
+  /* lecture automatique : montre qu'il y a d'autres vues / étapes, s'arrête au premier clic ou après un tour */
+  function Auto(o){
+    var stopped=false,inView=false,hover=false,elapsed=0,last=null,start=o.getCur();
+    var timer=null;
+    function tick(){
+      var ts=performance.now();
+      if(stopped){clearInterval(timer);return;}
+      var r=o.root.getBoundingClientRect(),vh=window.innerHeight||document.documentElement.clientHeight;
+      inView=r.height>0&&r.top>=-r.height*.4&&r.bottom<=vh+r.height*.4&&r.top<vh*.85;
+      if(inView&&!hover&&last!==null)elapsed+=Math.min(ts-last,1100);
+      last=ts;
+      var p=Math.min(elapsed/o.dur,1);o.setP(o.getCur(),p);
+      if(p>=1){elapsed=0;o.setP(o.getCur(),0);var n=(o.getCur()+1)%o.count;o.go(n);if(n===start){api.stop();return;}}
+    }
+    var api={stop:function(){if(stopped)return;stopped=true;for(var k=0;k<o.count;k++)o.setP(k,0);if(o.onStop)o.onStop();}};
+    if(reduce){return api;}
+    timer=setInterval(tick,60);
+    return api;
+  }
+
+  var navLock=0;
+  var isMobile=function(){return matchMedia('(max-width:900px)').matches;};
+
+  /* sélecteur de vues (réalisations) : Pignon / Grange / Intérieur */
+  var baW=document.getElementById('ba-works'), intV=document.getElementById('int-view'), hint=document.querySelector('#switch-hint span'),
+      sw=[].slice.call(document.querySelectorAll('.switch button')), swCur=0;
+  function swShow(k){
+    var b=sw[k];if(k===swCur)return;swCur=k;
+    sw.forEach(function(x,n){x.setAttribute('aria-pressed',n===k?'true':'false');});
+    var isInt=b.dataset.type==='int', from=isInt?baW:(baW.hidden?intV:baW);
+    function swap(){
+      if(isInt){baW.hidden=true;intV.hidden=false;hint.textContent=(isMobile()?'Touchez':'Cliquez sur')+' une photo pour l’agrandir';hint.previousElementSibling.style.display='none';}
+      else{
+        var bi=baW.querySelector('.before'),ai=baW.querySelector('.after');
+        bi.src=b.dataset.before;bi.alt=b.dataset.ab;ai.src=b.dataset.after;ai.alt=b.dataset.aa;
+        intV.hidden=true;baW.hidden=false;baW._set(50);hint.textContent='Glissez pour comparer';hint.previousElementSibling.style.display='';
+      }
+    }
+    if(G&&!reduce){
+      G.to(from,{opacity:0,duration:.2,onComplete:function(){
+        G.set(from,{opacity:1});swap();var to=isInt?intV:baW;
+        G.fromTo(to,{opacity:0,y:10},{opacity:1,y:0,duration:.4,ease:'power3.out',onComplete:isInt?null:baW._sweep});
+      }});
+    } else swap();
+  }
+  var swAuto=Auto({count:sw.length,dur:6500,root:document.querySelector('.stage'),getCur:function(){return swCur;},go:swShow,
+    setP:function(k,p){sw[k].querySelector('.bar').style.setProperty('--p',p);}});
+  sw.forEach(function(b,k){b.addEventListener('click',function(){swAuto.stop();swShow(k);});});
+  baW.addEventListener('pointerdown',function(){swAuto.stop();});
+  intV.addEventListener('click',function(){swAuto.stop();});
+
+  /* ---------- prestations : onglets (ordinateur) + accordéon (mobile), même état ---------- */
+  var tabs=[].slice.call(document.querySelectorAll('.tab')),steps=[].slice.call(document.querySelectorAll('.step')),
+      heads=[].slice.call(document.querySelectorAll('.acc-head')),panels=[].slice.call(document.querySelectorAll('.panel')),cur=0;
+  function show(i,opts){
+    opts=opts||{};
+    if(i===cur)return;
+    var prev=cur;cur=i;
+    tabs.forEach(function(t,k){t.setAttribute('aria-selected',k===i?'true':'false');t.tabIndex=k===i?0:-1;t.classList.toggle('nudge',k===(i+1)%tabs.length);});
+    heads.forEach(function(h,k){h.setAttribute('aria-expanded',k===i?'true':'false');});
+    steps.forEach(function(st,k){st.classList.toggle('is-open',k===i);});
+    panels[prev].hidden=true;panels[i].hidden=false;
+    if(opts.focus)tabs[i].focus();
+    var p=panels[i];
+    if(G&&!reduce){
+      if(isMobile()){
+        G.fromTo(p,{height:0,opacity:0},{height:'auto',opacity:1,duration:.45,ease:'power3.out',clearProps:'height',onComplete:function(){if(window.ScrollTrigger)ScrollTrigger.refresh();}});
+      } else {
+        G.fromTo(p.querySelector('.panel-media img'),{clipPath:'inset(0 0 0 100%)',scale:1.12},{clipPath:'inset(0 0 0 0%)',scale:1,duration:.9,ease:'power4.out'});
+        G.fromTo(p.querySelectorAll('.panel-body > *'),{y:18,opacity:0},{y:0,opacity:1,duration:.5,stagger:.05,ease:'power3.out'});
+      }
+    }
+    if(opts.scroll&&isMobile()){setTimeout(function(){goto(heads[i],90);},60);}
+  }
+  tabs[1].classList.add('nudge');
+  var tabAuto=Auto({count:tabs.length,dur:9000,root:document.querySelector('.tabs'),getCur:function(){return cur;},go:function(k){if(!isMobile())show(k);},
+    setP:function(k,p){tabs[k].querySelector('.n').style.setProperty('--p',isMobile()?0:p);}});
+  tabs.forEach(function(t,k){
+    t.addEventListener('click',function(){tabAuto.stop();show(k);});
+    t.addEventListener('keydown',function(e){
+      if(e.key==='ArrowRight'){e.preventDefault();tabAuto.stop();show((cur+1)%tabs.length,{focus:true});}
+      if(e.key==='ArrowLeft'){e.preventDefault();tabAuto.stop();show((cur+tabs.length-1)%tabs.length,{focus:true});}
+    });
+  });
+  heads.forEach(function(h,k){h.addEventListener('click',function(){tabAuto.stop();show(k,{scroll:true});});});
+  document.querySelectorAll('.next-step[data-step]').forEach(function(b){
+    b.addEventListener('click',function(){
+      tabAuto.stop();var n=+b.dataset.step;show(n,{scroll:true});
+      if(!isMobile()){var tl=document.querySelector('.tabs');if(tl.getBoundingClientRect().top<70)goto(tl,96);}
+    });
+  });
+  panels.forEach(function(pn){pn.addEventListener('pointerdown',function(){tabAuto.stop();});});
+
+  /* vidéo du projet de Trans */
+  var vt=document.getElementById('video-trans');
+  if(vt){var vv=vt.querySelector('video');
+    vt.querySelector('.play').addEventListener('click',function(){
+      vt.classList.add('is-playing');vv.controls=true;
+      var pr=vv.play();if(pr&&pr.catch)pr.catch(function(){});
+    });
+  }
+
+  /* ---------- galerie + visionneuse ---------- */
+  var photos=[
+    {src:'img/interieur-avant-1.webp',t:'Avant',c:'Intérieur',alt:'Ancienne pièce de vie encombrée, avant les travaux'},
+    {src:'img/interieur-avant-2.webp',t:'Avant',c:'Intérieur',alt:'Pièce au plafond abîmé, avant les travaux'},
+    {src:'img/interieur-encours.webp',t:'En cours',c:'Intérieur',alt:'Volume ouvert jusqu’à la charpente après la démolition des planchers'}
+  ];
+  document.querySelectorAll('.g').forEach(function(b){
+    var p=photos[+b.dataset.i];b.setAttribute('aria-label','Agrandir : '+p.c+', '+p.t.toLowerCase());
+    b.querySelector('img').alt=p.alt;
+  });
+  var lb=document.getElementById('lb'),lbImg=document.getElementById('lb-img'),lbTag=document.getElementById('lb-tag'),lbCap=document.getElementById('lb-cap'),lbCount=document.getElementById('lb-count'),lbThumbs=document.getElementById('lb-thumbs'),li=0,lastFocus=null;
+  photos.forEach(function(p,k){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Photo '+(k+1));b.innerHTML='<img src="'+p.src+'" alt="">';b.addEventListener('click',function(){go(k,k>li?1:-1);});lbThumbs.appendChild(b);});
+  function render(i){
+    var p=photos[i];lbImg.src=p.src;lbImg.alt=p.alt;lbTag.textContent=p.t;lbTag.className='t'+(p.t==='En cours'?' en':'');lbCap.textContent=p.c;lbCount.textContent=(i+1)+' / '+photos.length;
+    [].forEach.call(lbThumbs.children,function(b,k){b.setAttribute('aria-current',k===i?'true':'false');});
+  }
+  function go(i,dir){
+    li=(i+photos.length)%photos.length;
+    if(G&&!reduce){G.to(lbImg,{x:-40*dir,opacity:0,duration:.15,ease:'power2.in',onComplete:function(){render(li);G.fromTo(lbImg,{x:40*dir,opacity:0},{x:0,opacity:1,duration:.35,ease:'power3.out'});}});}
+    else render(li);
+  }
+  function open(i){
+    lastFocus=document.activeElement;li=i;render(i);lb.hidden=false;
+    if(smoother)smoother.paused(true);else document.documentElement.style.overflow='hidden';
+    if(G&&!reduce){G.fromTo(lb,{opacity:0},{opacity:1,duration:.3});G.fromTo(lbImg,{scale:.94,opacity:0},{scale:1,opacity:1,duration:.5,ease:'power3.out'});}
+    document.getElementById('lb-close').focus();
+  }
+  function close(){
+    lb.hidden=true;
+    if(smoother)smoother.paused(false);else document.documentElement.style.overflow='';
+    if(lastFocus)lastFocus.focus();
+  }
+  document.querySelectorAll('.g').forEach(function(b){b.addEventListener('click',function(){open(+b.dataset.i);});});
+  document.getElementById('lb-close').addEventListener('click',close);
+  document.getElementById('lb-prev').addEventListener('click',function(){go(li-1,-1);});
+  document.getElementById('lb-next').addEventListener('click',function(){go(li+1,1);});
+  lb.addEventListener('click',function(e){if(e.target===lb||e.target.tagName==='FIGURE')close();});
+  var sx=null,stage=document.getElementById('lb-stage');
+  stage.addEventListener('pointerdown',function(e){sx=e.clientX;});
+  stage.addEventListener('pointerup',function(e){if(sx===null)return;var dx=e.clientX-sx;sx=null;if(Math.abs(dx)>50)go(li+(dx<0?1:-1),dx<0?1:-1);});
+  document.addEventListener('keydown',function(e){
+    if(lb.hidden){if(e.key==='Escape')setMenu(false);return;}
+    if(e.key==='Escape')close();
+    if(e.key==='ArrowRight')go(li+1,1);
+    if(e.key==='ArrowLeft')go(li-1,-1);
+    if(e.key==='Tab'){var f=[].slice.call(lb.querySelectorAll('button')).filter(function(x){return x.offsetParent!==null;});var a=f[0],z=f[f.length-1];
+      if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus();}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus();}}
+  });
+
+  /* ---------- menu ---------- */
+  var burger=document.getElementById('burger'),menu=document.getElementById('menu'),hdr=document.getElementById('hdr');
+  function setMenu(o){
+    burger.setAttribute('aria-expanded',o?'true':'false');burger.setAttribute('aria-label',o?'Fermer le menu':'Ouvrir le menu');
+    menu.classList.toggle('is-open',o);menu.setAttribute('aria-hidden',o?'false':'true');hdr.classList.remove('is-hidden');
+    if(o&&G&&!reduce)G.fromTo('.menu nav a, .menu-foot',{y:36,opacity:0},{y:0,opacity:1,duration:.55,stagger:.06,delay:.2,ease:'power3.out'});
+  }
+  burger.addEventListener('click',function(){setMenu(burger.getAttribute('aria-expanded')!=='true');});
+
+  /* ---------- formulaire ---------- */
+  var form=document.getElementById('contact-form'),st=document.getElementById('form-status');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();var bad=null;
+    [].forEach.call(form.querySelectorAll('[required]'),function(f){var ok=f.checkValidity();f.setAttribute('aria-invalid',ok?'false':'true');if(!ok&&!bad)bad=f;});
+    if(bad){st.textContent='Merci de remplir tous les champs obligatoires.';bad.focus();return;}
+    st.textContent='Maquette : le formulaire sera relié à contact@hk-conseil.com à la mise en ligne.';
+  });
+  /* ---------- navigation ---------- */
+  function goto(t,off){
+    off=off||0; /* les sections commencent pile en haut de l'écran */
+    if(smoother)smoother.scrollTo(t,true,'top '+off+'px');
+    else if(G&&window.ScrollToPlugin)G.to(window,{duration:reduce?0:.8,scrollTo:{y:t,offsetY:off},ease:'power3.inOut'});
+    else t.scrollIntoView();
+  }
+  document.querySelectorAll('[data-goto]').forEach(function(a){
+    a.addEventListener('click',function(e){var t=document.querySelector(a.getAttribute('data-goto'));if(!t)return;e.preventDefault();setMenu(false);if(t.id!=='accueil'){navLock=Date.now()+1400;hdr.classList.add('is-hidden');}goto(t);});
+  });
+
+  if(!G){document.querySelectorAll('[data-ba]').forEach(function(el){el._set(50);});return;}
+  G.registerPlugin.apply(G,[window.ScrollTrigger,window.ScrollSmoother,window.ScrollToPlugin,window.SplitText].filter(Boolean));
+  G.ticker.lagSmoothing(0); /* les animations finissent à l'heure même si le navigateur ralentit l'affichage */
+  /* défilement lissé uniquement sur ordinateur (souris) : sur mobile on garde le défilement natif */
+  var desktopPointer=matchMedia('(hover:hover) and (pointer:fine)').matches&&innerWidth>900;
+  if(window.ScrollSmoother&&!reduce&&desktopPointer){try{smoother=ScrollSmoother.create({wrapper:'#smooth-wrapper',content:'#smooth-content',smooth:1,effects:false});}catch(e){smoother=null;}}
+
+  if(window.ScrollTrigger){
+    ScrollTrigger.create({start:0,end:'max',onUpdate:function(s){
+      var y=s.scroll();hdr.classList.toggle('is-scrolled',y>10);
+      if(Date.now()<navLock)return;
+      if(!menu.classList.contains('is-open'))hdr.classList.toggle('is-hidden',s.direction===1&&y>400);
+    }});
+    G.to('.progress',{scaleX:1,ease:'none',scrollTrigger:{start:0,end:'max',scrub:.3}});
+  }
+  if(reduce)return;
+
+  /* apparitions au défilement : le contenu n'est jamais bloqué invisible.
+     Détection par position réelle (pas de calcul figé) + transition CSS + filet de sécurité. */
+  var rv=[].slice.call(document.querySelectorAll('[data-reveal]'));
+  document.documentElement.classList.add('js-rv');
+  var onIn={'ba-works':function(){document.getElementById('ba-works')._sweep();}};
+  function checkRv(){
+    var vh=window.innerHeight||document.documentElement.clientHeight;
+    rv=rv.filter(function(el){
+      var r=el.getBoundingClientRect();
+      if(r.top<vh*.92){el.classList.add('in');return false;}
+      return true;
+    });
+    var bw=document.getElementById('ba-works');
+    if(onIn['ba-works']){var r2=bw.getBoundingClientRect();if(r2.top<vh*.7&&r2.bottom>0){onIn['ba-works']();onIn['ba-works']=null;}}
+    var tb=document.querySelector('.tabs');
+    if(!checkRv.nudged&&tb.offsetParent&&tb.getBoundingClientRect().top<vh*.8){checkRv.nudged=true;G.fromTo('.tab.nudge',{x:0},{x:8,duration:.22,ease:'power2.out',yoyo:true,repeat:3,delay:.6});}
+  }
+  window.addEventListener('scroll',checkRv,{passive:true});
+  window.addEventListener('resize',checkRv);
+  setInterval(checkRv,250);
+  checkRv();
+
+  /* intro du haut de page */
+  document.fonts.ready.then(function(){
+    var tl=G.timeline({delay:.1});
+    tl.from('.zone',{y:14,opacity:0,duration:.5,stagger:.08,ease:'back.out(1.6)'},0);
+    if(window.SplitText){
+      var h=new SplitText('.hero h1',{type:'words,chars'});
+      tl.from(h.chars,{yPercent:60,rotationX:-80,opacity:0,transformOrigin:'50% 50% -20px',duration:.6,stagger:.01,ease:'back.out(1.5)'},.15);
+    }
+    tl.from('.hero [data-hero]',{y:20,opacity:0,duration:.6,stagger:.1,ease:'power3.out'},.5)
+      .from('.hero-media',{y:40,opacity:0,scale:.96,duration:.9,ease:'power3.out'},.3)
+      .add(function(){document.getElementById('ba-hero')._sweep();},1.1);
+    setTimeout(function(){if(tl.progress()<1)tl.progress(1);},3500); /* filet de sécurité */
+    if(window.ScrollTrigger)ScrollTrigger.refresh();
+  });
+})();
+</script>
+
+</body>
+</html>
