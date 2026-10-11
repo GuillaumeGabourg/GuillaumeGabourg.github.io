@@ -346,6 +346,7 @@ footer{background:var(--sage);color:var(--ink);padding-block:clamp(48px,7vw,80px
 .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;margin-top:clamp(36px,5vw,56px);padding-top:18px;border-top:1px solid rgba(30,33,30,.2);font-size:.84rem}
 @media (max-width:900px){.foot{grid-template-columns:repeat(2,minmax(0,1fr))}.foot>div:first-child{grid-column:1/-1}}
 @media (max-width:420px){.foot{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:900px){.foot>div:first-child{display:flex;justify-content:center}.foot-logo{margin-inline:auto}}
 
 @media (max-width:640px){.sec{padding-block:56px}.free{border-radius:14px}.hero-actions .btn{width:100%}}
 .js-rv [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
