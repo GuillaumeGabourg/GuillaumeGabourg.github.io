@@ -1,0 +1,6 @@
+/* Trait de plan et croix de dessinateur (voir calque.js). Aucun fond : seul le canvas.
+   Le curseur est masqué une fois pour toutes sur <html> ; les liens, boutons et champs gardent
+   leur propre curseur (main, texte...) car ils le définissent eux-mêmes. */
+.calque-trait{position:fixed;inset:0;width:100%;height:100%;z-index:9999;pointer-events:none}
+html.calque-cursor{cursor:none}
+@media (hover:none),(prefers-reduced-motion:reduce){.calque-trait{display:none}}
